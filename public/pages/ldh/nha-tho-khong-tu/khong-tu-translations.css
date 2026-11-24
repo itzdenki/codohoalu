@@ -1,0 +1,32 @@
+@font-face { font-family: khong-tu-latin; src: url('translation-latin.woff') format('woff'); font-display: swap; }
+@font-face { font-family: khong-tu-ko; src: url('translation-ko.woff') format('woff'); font-display: swap; }
+@font-face { font-family: khong-tu-zh; src: url('translation-zh.woff') format('woff'); font-display: swap; }
+@font-face { font-family: khong-tu-ja; src: url('translation-ja.woff') format('woff'); font-display: swap; }
+@font-face { font-family: khong-tu-title-extended; src: url('/pages/dth/gioi-thieu/intro-script.woff') format('woff'); font-display: swap; }
+@font-face { font-family: khong-tu-title-fallback; src: url('translation-title.woff') format('woff'); font-display: swap; }
+@font-face { font-family: khong-tu-initial-latin; src: url('initial-calligraphy.woff?v=2') format('woff'); unicode-range: U+0045, U+004B, U+004F; font-display: swap; }
+@font-face { font-family: khong-tu-initial-ko; src: url('initial-ko.woff') format('woff'); font-display: swap; }
+@font-face { font-family: khong-tu-initial-zh; src: url('initial-zh.woff') format('woff'); font-display: swap; }
+@font-face { font-family: khong-tu-initial-ja; src: url('initial-ja.woff') format('woff'); font-display: swap; }
+
+:root { --khong-tu-language: khong-tu-latin; --khong-tu-first-letter: khong-tu-initial-latin; }
+:root:lang(ko) { --khong-tu-language: khong-tu-ko, khong-tu-zh, khong-tu-latin; --khong-tu-first-letter: khong-tu-initial-ko; }
+:root:lang(zh-Hans) { --khong-tu-language: khong-tu-zh, khong-tu-latin; --khong-tu-first-letter: khong-tu-initial-zh; }
+:root:lang(ja) { --khong-tu-language: khong-tu-ja, khong-tu-latin; --khong-tu-first-letter: khong-tu-initial-ja; }
+
+.khong-tu-copy { font-family: ff1, var(--khong-tu-language), sans-serif; }
+.khong-tu-opening p::first-letter { font-family: var(--khong-tu-first-letter), ff3, ff1, sans-serif; }
+:root:lang(ko) .khong-tu-opening p::first-letter { font-size: 288px; line-height: .933333; }
+:root:lang(zh-Hans) .khong-tu-opening p::first-letter,
+:root:lang(ja) .khong-tu-opening p::first-letter { font-size: 320px; line-height: .84; }
+
+.khong-tu-foreign-title {
+  position: absolute; top: 47px; left: 5%; width: 360%; margin: 0;
+  color: rgb(1,20,39); text-align: center;
+  font: normal 120px/1.1 ff2, khong-tu-title-extended, khong-tu-title-fallback, var(--khong-tu-language), sans-serif;
+  transform: scale(.25); transform-origin: 0 0;
+  -webkit-font-smoothing: antialiased;
+}
+:root:lang(ko) .khong-tu-copy { word-break: keep-all; }
+:root:lang(zh-Hans) .khong-tu-copy,
+:root:lang(ja) .khong-tu-copy { line-break: strict; }

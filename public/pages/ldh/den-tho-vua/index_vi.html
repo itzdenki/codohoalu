@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Cố Đô Hoa Lư</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style id="inlined-all-css">
+/* Quy tắc nền tối thiểu cho nội dung xuất từ pdf2htmlEX */
+*{box-sizing:content-box}
+html,body{margin:0;padding:0}
+#page-container{position:relative;margin:0 auto;padding:0}
+.pf{position:relative;background-color:#fff;overflow:hidden;margin:0 auto;border:0;transform-origin:0 0}
+.pc{position:absolute;border:0;padding:0;margin:0;top:0;left:0;width:100%;height:100%;overflow:hidden;display:block;transform-origin:0 0}
+.pi{display:none}
+.bf,.bi{position:absolute;left:0;bottom:0;border:0;margin:0;padding:0;-ms-user-select:none;-webkit-user-select:none;user-select:none}
+.t{position:absolute;white-space:pre;transform-origin:0 100%;unicode-bidi:bidi-override}
+._{display:inline-block;color:transparent;overflow:hidden;width:0;height:0}
+.pc>*,.t{-webkit-font-smoothing:antialiased}
+@media print{.pf{margin:0;box-shadow:none;page-break-after:always;page-break-inside:avoid}}
+
+/* Dành riêng cho pdf2htmlEX (không cần thêm quy tắc) */
+
+:root{--blue:#0b3ea8;--blue2:#1a8fe3;--gold:#f2b705;--ink:#1c2a44;--bg:#eef3fb}
+*{-webkit-tap-highlight-color:transparent}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:#dfe7f3}
+#sidebar,.loading-indicator{display:none}
+a{color:var(--blue)}
+
+/* ===== Trang chủ ===== */
+.home{min-height:100vh;background:#0b2a6b url(/images/bg_v1_tinified.jpg) center top/cover fixed}
+.wrap{max-width:760px;margin:0 auto;background:rgba(255,255,255,.96);min-height:100vh;box-shadow:0 0 40px rgba(0,0,0,.35)}
+.wrap>header img,.hero img{display:block;width:100%;height:auto}
+.hero{background:linear-gradient(#fff,#e6f0fb);text-align:center;padding-bottom:6px;margin-top:-1px}
+.hero img{max-width:520px;margin:-20px auto -50px}
+.langs{display:flex;gap:10px;justify-content:center;padding:10px 12px}
+.langs button{border:2px solid transparent;background:#fff;border-radius:999px;padding:4px 12px 4px 6px;display:flex;align-items:center;gap:8px;font-weight:600;cursor:pointer;box-shadow:0 1px 4px rgba(0,0,0,.2)}
+.langs button img{width:28px;height:28px;border-radius:50%}
+.langs button.on{border-color:var(--blue2);background:#e5f2ff}
+.note{text-align:center;font-size:.85rem;color:#566;margin:0 16px 8px}
+.gallery{display:flex;gap:8px;overflow-x:auto;padding:8px 14px;scroll-snap-type:x mandatory}
+.gallery img{width:110px;height:110px;border-radius:12px;object-fit:cover;scroll-snap-align:start;border:2px solid var(--gold)}
+section.site{padding:10px 16px 18px}
+section.site h2{background:linear-gradient(90deg,var(--blue),var(--blue2));color:#fff;margin:14px 0 10px;padding:10px 14px;font-size:1.1rem;border-radius:10px;text-transform:uppercase}
+.list{display:grid;gap:8px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+.list a{display:flex;align-items:center;gap:10px;padding:10px 12px;background:var(--bg);border:1px solid #cfdcf0;border-radius:10px;text-decoration:none;color:var(--ink);font-weight:500}
+.list a:hover{background:#dbeaff;border-color:var(--blue2)}
+.list b{flex:none;min-width:30px;height:30px;border-radius:50%;background:#d62839;color:#fff;display:grid;place-items:center;font-size:.85rem}
+.list b.i{background:var(--blue2)}
+.list small{display:block;color:#667;font-weight:400}
+.wrap>footer img{display:block;width:100%;height:auto}
+.wrap>footer p{margin:0;padding:10px;text-align:center;background:#0a3aa8;color:#fff;font-size:.8rem}
+
+/* Trang thuyết minh */
+body.tm{background:#1d2740;padding-bottom:96px}
+#page-container{max-width:760px}
+#page-container .pf{margin:0 auto 10px;box-shadow:0 2px 12px rgba(0,0,0,.4)}
+.pfwrap{margin:0 auto 10px;overflow:hidden}
+#page-container .pfwrap .pf{margin:0;box-shadow:none}
+.pfwrap{box-shadow:0 2px 12px rgba(0,0,0,.4)}
+.topbar{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:8px;padding:8px 12px;background:linear-gradient(90deg,#0b3ea8,#1a8fe3);color:#fff}
+.topbar a{color:#fff;text-decoration:none;font-weight:700}
+.topbar .sp{flex:1}
+.topbar .fl{display:flex;gap:6px}
+.topbar .fl button{border:2px solid transparent;border-radius:50%;padding:0;background:none;cursor:pointer;opacity:.6}
+.topbar .fl button.on{border-color:#f2b705;opacity:1}
+.topbar .fl img{width:28px;height:28px;border-radius:50%;display:block}
+.player{position:fixed;left:0;right:0;bottom:0;z-index:30;background:#0b2a6b;color:#fff;padding:10px 14px;display:flex;align-items:center;gap:10px;box-shadow:0 -2px 12px rgba(0,0,0,.4)}
+.player .in{max-width:760px;margin:0 auto;display:flex;align-items:center;gap:10px;width:100%}
+.player button{width:44px;height:44px;border-radius:50%;border:0;background:#f2b705;color:#0b2a6b;font-size:18px;cursor:pointer;flex:none}
+.player input[type=range]{flex:1;min-width:0}
+.player .tm{font-variant-numeric:tabular-nums;font-size:.8rem;flex:none}
+.player.none{display:none}
+
+.ff0{font-family:sans-serif;visibility:hidden;}
+@font-face{font-family:ff1;font-display:swap;src:url(f1.woff)format("woff");}.ff1{font-family:ff1;line-height:1.193359;font-style:normal;font-weight:normal;visibility:visible;}
+@font-face{font-family:ff2;font-display:swap;src:url(f2.woff)format("woff");}.ff2{font-family:ff2;line-height:0.997000;font-style:normal;font-weight:normal;visibility:visible;}
+@font-face{font-family:ff3;font-display:swap;src:url(f3.woff)format("woff");}.ff3{font-family:ff3;line-height:0.999023;font-style:normal;font-weight:normal;visibility:visible;}
+@font-face{font-family:ff4;font-display:swap;src:url(f4.woff)format("woff");}.ff4{font-family:ff4;line-height:1.222000;font-style:normal;font-weight:normal;visibility:visible;}
+.m0{transform:matrix(0.250000,0.000000,0.000000,0.250000,0,0);-ms-transform:matrix(0.250000,0.000000,0.000000,0.250000,0,0);-webkit-transform:matrix(0.250000,0.000000,0.000000,0.250000,0,0);}
+.v0{vertical-align:0.000000px;}
+.ls1{letter-spacing:-3.136000px;}
+.ls0{letter-spacing:0.000000px;}
+.sc_{text-shadow:none;}
+.sc0{text-shadow:-0.015em 0 transparent,0 0.015em transparent,0.015em 0 transparent,0 -0.015em  transparent;}
+@media screen and (-webkit-min-device-pixel-ratio:0){
+.sc_{-webkit-text-stroke:0px transparent;}
+.sc0{-webkit-text-stroke:0.015em transparent;text-shadow:none;}
+}
+.ws2{word-spacing:-2.048000px;}
+.ws6{word-spacing:-1.984000px;}
+.ws1{word-spacing:-0.192000px;}
+.ws0{word-spacing:0.000000px;}
+.ws5{word-spacing:0.576000px;}
+.ws3{word-spacing:3.136000px;}
+.ws4{word-spacing:6.592000px;}
+._1{margin-left:-3.916800px;}
+._0{margin-left:-1.862400px;}
+._2{width:3.980800px;}
+.fc4{color:transparent;}
+.fc0{color:rgb(122,8,32);}
+.fc3{color:rgb(252,210,91);}
+.fc2{color:rgb(35,31,32);}
+.fc1{color:rgb(30,65,108);}
+.fs0{font-size:50.876800px;}
+.fs2{font-size:64.000000px;}
+.fs3{font-size:104.000000px;}
+.fs1{font-size:336.727200px;}
+.y0{bottom:-0.500000px;}
+.y1{bottom:27.040000px;}
+.y8{bottom:645.802300px;}
+.y7{bottom:669.802300px;}
+.y6{bottom:702.314300px;}
+.y5{bottom:726.314300px;}
+.y2{bottom:750.314300px;}
+.y4{bottom:774.314300px;}
+.y3{bottom:798.314300px;}
+.y9{bottom:899.683100px;}
+.h2{height:48.442266px;}
+.h4{height:60.937500px;}
+.h5{height:107.120000px;}
+.h3{height:265.004306px;}
+.h0{height:1077.170000px;}
+.h1{height:1077.500000px;}
+.w0{width:538.583000px;}
+.w1{width:539.000000px;}
+.x0{left:0.000000px;}
+.x1{left:49.969300px;}
+.x2{left:54.857900px;}
+.x4{left:56.198900px;}
+.x5{left:90.528600px;}
+.x3{left:92.822900px;}
+@media print{
+.v0{vertical-align:0.000000pt;}
+.ls1{letter-spacing:-4.181333pt;}
+.ls0{letter-spacing:0.000000pt;}
+.ws2{word-spacing:-2.730667pt;}
+.ws6{word-spacing:-2.645333pt;}
+.ws1{word-spacing:-0.256000pt;}
+.ws0{word-spacing:0.000000pt;}
+.ws5{word-spacing:0.768000pt;}
+.ws3{word-spacing:4.181333pt;}
+.ws4{word-spacing:8.789333pt;}
+._1{margin-left:-5.222400pt;}
+._0{margin-left:-2.483200pt;}
+._2{width:5.307733pt;}
+.fs0{font-size:67.835733pt;}
+.fs2{font-size:85.333333pt;}
+.fs3{font-size:138.666667pt;}
+.fs1{font-size:448.969600pt;}
+.y0{bottom:-0.666667pt;}
+.y1{bottom:36.053333pt;}
+.y8{bottom:861.069733pt;}
+.y7{bottom:893.069733pt;}
+.y6{bottom:936.419067pt;}
+.y5{bottom:968.419067pt;}
+.y2{bottom:1000.419067pt;}
+.y4{bottom:1032.419067pt;}
+.y3{bottom:1064.419067pt;}
+.y9{bottom:1199.577467pt;}
+.h2{height:64.589687pt;}
+.h4{height:81.250000pt;}
+.h5{height:142.826667pt;}
+.h3{height:353.339075pt;}
+.h0{height:1436.226667pt;}
+.h1{height:1436.666667pt;}
+.w0{width:718.110667pt;}
+.w1{width:718.666667pt;}
+.x0{left:0.000000pt;}
+.x1{left:66.625733pt;}
+.x2{left:73.143867pt;}
+.x4{left:74.931867pt;}
+.x5{left:120.704800pt;}
+.x3{left:123.763867pt;}
+}
+
+
+    .le-temple-copy {
+      position: absolute; left: 56.1989px; width: 1700px;
+      color: rgb(35,31,32); font: normal 64px/96px ff1, sans-serif;
+      text-align: justify; transform: scale(.25); transform-origin: 0 0;
+      -webkit-font-smoothing: antialiased;
+    }
+    .le-temple-copy p { margin: 0 0 28px; }
+    .le-temple-copy p:last-child { margin-bottom: 0; }
+    .le-temple-opening { top: 270px; }
+    .le-temple-continuation { top: 56px; }
+    .le-temple-opening p:first-child::first-letter {
+      float: left; margin: 32px 0 -32px -5.364px;
+      color: rgb(30,65,108);
+      font: normal 336.7272px/.78 ff2, ff1, sans-serif;
+    }
+    </style>
+    <link rel="preload" as="image" href="bg1.jpg"/>
+<script>
+        var loaded = 0;
+        const totalLoaded = 6;
+    </script>
+</head>
+<body>
+<div id="sidebar">
+    <div id="outline">
+    </div>
+</div>
+<div id="page-container">
+<div id="pf1" class="pf w0 h0" data-page-no="1"><div class="pc pc1 w0 h0"><img class="bi x0 y0 w1 h1" alt="" src="bg1.jpg" decoding="async"/><div class="t m0 x1 h2 y1 ff1 fs0 fc0 sc0 ls0 ws0"><span class="fc4 sc0">12</span></div><div class="t m0 x5 h5 y9 ff4 fs3 fc3 sc0 ls0 ws0">ĐỀN THỜ VUA LÊ Đ<span class="_ _0"></span>ẠI HÀNH </div><div class="le-temple-copy le-temple-opening"><p>Đền thờ Vua Lê Đại Hành được khởi dựng từ thế kỷ XVII trên chính nền móng cung điện xưa, ngôi đền mang lối kiến trúc “nội công ngoại quốc” đồng điệu với đền Vua Đinh, đồng thời lưu giữ trọn vẹn nhiều mảng điêu khắc đặc sắc của thời Hậu Lê.</p><p>Ngay tại khu vực hiên đền, quý khách sẽ được chiêm ngưỡng đỉnh cao của nghệ thuật chạm khắc gỗ thế kỷ XVII.</p></div></div></div>
+<div id="pf2" class="pf w0 h0" data-page-no="2"><div class="pc pc2 w0 h0"><img class="bi x0 y0 w1 h1" alt="" src="/bgall.jpg" decoding="async" loading="lazy"/><div class="t m0 x1 h2 y1 ff1 fs0 fc0 sc0 ls0 ws0">13</div><div class="le-temple-copy le-temple-continuation"><p>Các mảng chồng rường nổi bật với họa tiết hoa sen, hoa cúc và hình tượng rồng cách điệu tinh xảo. Đặc biệt, sự kết hợp giữa hoa sen thanh cao với hình ảnh hổ và khóm trúc không chỉ mang triết lý nhân quả sâu sắc, mà còn ẩn chứa câu chuyện thiêng liêng về truyền thuyết sinh ra vua Lê Hoàn.</p><p>Bên cạnh đó, sáu chiếc bẩy hiên được các nghệ nhân khéo léo tạc thành sáu thân rồng vươn mình sát xà ngang, hòa cùng các chủ đề “Long Hổ hội ngộ”, rồng phun lửa và ngậm ngọc để tạo nên những tác phẩm chạm lộng vô cùng sống động.</p><p>Bước sâu qua cánh cửa để vào khu vực nội điện thiết kế theo kiểu chữ Công gồm ba tòa, quý khách sẽ lần lượt cảm nhận rõ nét sự thâm nghiêm và tài hoa của tiền nhân:</p><p>Tòa Bái đường là nơi thờ Công đồng: Gây ấn tượng mạnh mẽ với đôi xà ngà voi cách điệu từ gỗ – một kỹ thuật đỉnh cao vừa đóng vai trò chịu lực đỡ mái, vừa khéo léo che kín các đầu hoành trong kiến trúc cổ truyền.</p><p>Tòa Thiêu hương: Không gian tưởng nhớ các công thần triều Tiền Lê, nổi bật với hệ thống vì ván mê được chạm khắc vô cùng tinh xảo các hoạt cảnh rồng ổ, rồng đàn, gửi gắm ước vọng về sự sinh sôi, phồn thực.</p><p>Tòa Chính cung: Nơi bài trí trang nghiêm tượng thờ Vua Lê Đại Hành, Thái hậu Dương Vân Nga và Khai Minh Vương Lê Long Đĩnh.</p><p>Vua Lê Đại Hành (tên húy là Lê Hoàn), sinh năm 941 tại Châu Ái (nay thuộc tỉnh Thanh Hóa). Cha mẹ mất sớm, viên quan sát họ Lê nhận làm con nuôi. Tuổi trưởng thành Lê Hoàn giúp cho Nam Việt Vương Đinh Liễn, con cả vua Đinh, ông tỏ rõ là người có chí lớn được Đinh Bộ Lĩnh khen là người trí dũng, giao cho cai quản quân sĩ. Khi đất nước xảy ra cuộc nội chiến 12 sứ quân, Lê Hoàn tham gia dẹp loạn, lập nhiều chiến công. Khi đất nước thống nhất, Đinh Tiên Hoàng phong cho Lê Hoàn giữ chức Thập đạo tướng quân. Năm 980, triều Đinh kết thúc, Lê Hoàn lên ngôi Hoàng đế, lập nên triều Tiền Lê, niên hiệu Thiên Phúc.</p></div></div></div>
+<div id="pf3" class="pf w0 h0" data-page-no="3"><div class="pc pc3 w0 h0"><img class="bi x0 y0 w1 h1" alt="" src="/bgall.jpg" decoding="async" loading="lazy"/><div class="t m0 x1 h2 y1 ff1 fs0 fc0 sc0 ls0 ws0">14</div><div class="le-temple-copy le-temple-continuation"><p>Sau khi đăng quang, vua Lê Đại Hành đã có hai chiến công hiển hách: kháng Tống bình Chiêm.</p><p>Thứ nhất là chiến công kháng Tống (năm 981): Dưới sự chỉ huy trực tiếp và tài tình của nhà vua, quân và dân ta đã thực hiện chiến lược đánh nhanh thắng nhanh, tiêu diệt toàn bộ lực lượng thủy quân của giặc tại cửa sông Bạch Đằng, bắt sống nhiều tướng địch ở Chi Lăng, buộc triều Tống phải ra lệnh rút quân.</p><p>Thứ hai là chiến dịch bình định quân Chiêm Thành (năm 982): đây là cuộc Nam phạt đầu tiên trong lịch sử dân tộc đã giành thắng lợi vang dội, khẳng định mạnh mẽ chủ quyền và uy thế của quốc gia Đại Cồ Việt.</p><p>Không chỉ là một nhà quân sự lỗi lạc, khi đất nước thanh bình, vua Lê Đại Hành còn đặc biệt quan tâm đến việc củng cố nội trị. Ngài cho đúc tiền “Thiên Phúc” để phát triển giao thương, mở mang đường xá, thủy lợi phục vụ nông nghiệp, đồng thời kiện toàn bộ hệ thống hành chính từ Lộ, Phủ đến Châu. Năm 1005, nhà vua băng hà, để lại một nền tảng quốc gia thái bình và thịnh trị. Sau đó người con trai Lê Long Đĩnh lên ngôi kế tục sự nghiệp được 4 năm, đến năm 1010, lịch sử sang trang khi nhà Lý dời đô từ Hoa Lư ra thành Thăng Long.</p><p>Đến với không gian linh thiêng này, chúng ta không thể không nhắc đến Thái hậu Dương Vân Nga – một trong những người phụ nữ bản lĩnh và tiêu biểu nhất của lịch sử thế kỷ X.</p><p>Khi vua Đinh Tiên Hoàng băng hà, ấu chúa Đinh Toàn mới 6 tuổi lên nối ngôi, giặc Tống lăm le xâm lược, đất nước rơi vào tình thế “ngàn cân treo sợi tóc”. Trước vận mệnh sống còn của dân tộc, gạt bỏ mọi lợi ích riêng tư và dòng tộc, Thái hậu đã quyết định trao chiếc áo long cổn của nhà Đinh cho Thập đạo tướng quân Lê Hoàn, đưa ông lên ngôi để chèo lái con thuyền quốc gia vượt qua cơn binh lửa. Quyết định thức thời, dũng cảm và đầy tầm nhìn ấy đã tạo cơ sở pháp lý vững chắc cho chiến thắng kháng Tống, bình Chiêm vang dội.</p><p>Đền thờ Vua Lê Đại Hành hôm nay không chỉ là biểu tượng cho lòng tôn kính, biết ơn sâu sắc của hậu thế đối với các bậc tiên đế, mà còn là nhịp cầu lịch sử đưa mỗi chúng ta chạm tay vào hào khí oai hùng một thời của cha ông tại miền đất cố đô.</p></div></div></div>
+</div>
+<div class="loading-indicator">
+</div>
+<script src="/assets/js/thuyet-minh.js"></script>
+</body>
+</html>

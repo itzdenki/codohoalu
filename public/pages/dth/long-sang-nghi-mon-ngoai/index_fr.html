@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Cố Đô Hoa Lư</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style id="inlined-all-css">
+/* Quy tắc nền tối thiểu cho nội dung xuất từ pdf2htmlEX */
+*{box-sizing:content-box}
+html,body{margin:0;padding:0}
+#page-container{position:relative;margin:0 auto;padding:0}
+.pf{position:relative;background-color:#fff;overflow:hidden;margin:0 auto;border:0;transform-origin:0 0}
+.pc{position:absolute;border:0;padding:0;margin:0;top:0;left:0;width:100%;height:100%;overflow:hidden;display:block;transform-origin:0 0}
+.pi{display:none}
+.bf,.bi{position:absolute;left:0;bottom:0;border:0;margin:0;padding:0;-ms-user-select:none;-webkit-user-select:none;user-select:none}
+.t{position:absolute;white-space:pre;transform-origin:0 100%;unicode-bidi:bidi-override}
+._{display:inline-block;color:transparent;overflow:hidden;width:0;height:0}
+.pc>*,.t{-webkit-font-smoothing:antialiased}
+@media print{.pf{margin:0;box-shadow:none;page-break-after:always;page-break-inside:avoid}}
+
+/* Dành riêng cho pdf2htmlEX (không cần thêm quy tắc) */
+
+:root{--blue:#0b3ea8;--blue2:#1a8fe3;--gold:#f2b705;--ink:#1c2a44;--bg:#eef3fb}
+*{-webkit-tap-highlight-color:transparent}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:#dfe7f3}
+#sidebar,.loading-indicator{display:none}
+a{color:var(--blue)}
+
+/* ===== Trang chủ ===== */
+.home{min-height:100vh;background:#0b2a6b url(/images/bg_v1_tinified.jpg) center top/cover fixed}
+.wrap{max-width:760px;margin:0 auto;background:rgba(255,255,255,.96);min-height:100vh;box-shadow:0 0 40px rgba(0,0,0,.35)}
+.wrap>header img,.hero img{display:block;width:100%;height:auto}
+.hero{background:linear-gradient(#fff,#e6f0fb);text-align:center;padding-bottom:6px;margin-top:-1px}
+.hero img{max-width:520px;margin:-20px auto -50px}
+.langs{display:flex;gap:10px;justify-content:center;padding:10px 12px}
+.langs button{border:2px solid transparent;background:#fff;border-radius:999px;padding:4px 12px 4px 6px;display:flex;align-items:center;gap:8px;font-weight:600;cursor:pointer;box-shadow:0 1px 4px rgba(0,0,0,.2)}
+.langs button img{width:28px;height:28px;border-radius:50%}
+.langs button.on{border-color:var(--blue2);background:#e5f2ff}
+.note{text-align:center;font-size:.85rem;color:#566;margin:0 16px 8px}
+.gallery{display:flex;gap:8px;overflow-x:auto;padding:8px 14px;scroll-snap-type:x mandatory}
+.gallery img{width:110px;height:110px;border-radius:12px;object-fit:cover;scroll-snap-align:start;border:2px solid var(--gold)}
+section.site{padding:10px 16px 18px}
+section.site h2{background:linear-gradient(90deg,var(--blue),var(--blue2));color:#fff;margin:14px 0 10px;padding:10px 14px;font-size:1.1rem;border-radius:10px;text-transform:uppercase}
+.list{display:grid;gap:8px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+.list a{display:flex;align-items:center;gap:10px;padding:10px 12px;background:var(--bg);border:1px solid #cfdcf0;border-radius:10px;text-decoration:none;color:var(--ink);font-weight:500}
+.list a:hover{background:#dbeaff;border-color:var(--blue2)}
+.list b{flex:none;min-width:30px;height:30px;border-radius:50%;background:#d62839;color:#fff;display:grid;place-items:center;font-size:.85rem}
+.list b.i{background:var(--blue2)}
+.list small{display:block;color:#667;font-weight:400}
+.wrap>footer img{display:block;width:100%;height:auto}
+.wrap>footer p{margin:0;padding:10px;text-align:center;background:#0a3aa8;color:#fff;font-size:.8rem}
+
+/* Trang thuyết minh */
+body.tm{background:#1d2740;padding-bottom:96px}
+#page-container{max-width:760px}
+#page-container .pf{margin:0 auto 10px;box-shadow:0 2px 12px rgba(0,0,0,.4)}
+.pfwrap{margin:0 auto 10px;overflow:hidden}
+#page-container .pfwrap .pf{margin:0;box-shadow:none}
+.pfwrap{box-shadow:0 2px 12px rgba(0,0,0,.4)}
+.topbar{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:8px;padding:8px 12px;background:linear-gradient(90deg,#0b3ea8,#1a8fe3);color:#fff}
+.topbar a{color:#fff;text-decoration:none;font-weight:700}
+.topbar .sp{flex:1}
+.topbar .fl{display:flex;gap:6px}
+.topbar .fl button{border:2px solid transparent;border-radius:50%;padding:0;background:none;cursor:pointer;opacity:.6}
+.topbar .fl button.on{border-color:#f2b705;opacity:1}
+.topbar .fl img{width:28px;height:28px;border-radius:50%;display:block}
+.player{position:fixed;left:0;right:0;bottom:0;z-index:30;background:#0b2a6b;color:#fff;padding:10px 14px;display:flex;align-items:center;gap:10px;box-shadow:0 -2px 12px rgba(0,0,0,.4)}
+.player .in{max-width:760px;margin:0 auto;display:flex;align-items:center;gap:10px;width:100%}
+.player button{width:44px;height:44px;border-radius:50%;border:0;background:#f2b705;color:#0b2a6b;font-size:18px;cursor:pointer;flex:none}
+.player input[type=range]{flex:1;min-width:0}
+.player .tm{font-variant-numeric:tabular-nums;font-size:.8rem;flex:none}
+.player.none{display:none}
+
+.ff0{font-family:sans-serif;visibility:hidden;}
+@font-face{font-family:ff1;font-display:swap;src:url(f1.woff)format("woff");}.ff1{font-family:ff1;line-height:1.016000;font-style:normal;font-weight:normal;visibility:visible;}
+@font-face{font-family:ff2;font-display:swap;src:url(f2.woff)format("woff");}.ff2{font-family:ff2;line-height:1.193359;font-style:normal;font-weight:normal;visibility:visible;}
+@font-face{font-family:ff3;font-display:swap;src:url(f3.woff)format("woff");}.ff3{font-family:ff3;line-height:1.321000;font-style:normal;font-weight:normal;visibility:visible;}
+@font-face{font-family:ff4;font-display:swap;src:url(f4.woff)format("woff");}.ff4{font-family:ff4;line-height:1.193359;font-style:normal;font-weight:normal;visibility:visible;}
+.m0{transform:matrix(0.250000,0.000000,0.000000,0.250000,0,0);-ms-transform:matrix(0.250000,0.000000,0.000000,0.250000,0,0);-webkit-transform:matrix(0.250000,0.000000,0.000000,0.250000,0,0);}
+.v0{vertical-align:0.000000px;}
+.ls0{letter-spacing:0.000000px;}
+.sc_{text-shadow:none;}
+.sc0{text-shadow:-0.015em 0 transparent,0 0.015em transparent,0.015em 0 transparent,0 -0.015em  transparent;}
+@media screen and (-webkit-min-device-pixel-ratio:0){
+.sc_{-webkit-text-stroke:0px transparent;}
+.sc0{-webkit-text-stroke:0.015em transparent;text-shadow:none;}
+}
+.ws1{word-spacing:-2.560000px;}
+.ws2{word-spacing:-2.304000px;}
+.ws3{word-spacing:-1.792000px;}
+.wsc{word-spacing:-1.280000px;}
+.ws7{word-spacing:-0.192000px;}
+.ws0{word-spacing:0.000000px;}
+.ws9{word-spacing:0.448000px;}
+.ws6{word-spacing:2.048000px;}
+.ws5{word-spacing:3.456000px;}
+.wsb{word-spacing:4.864000px;}
+.ws8{word-spacing:5.184000px;}
+.ws4{word-spacing:6.656000px;}
+.wsa{word-spacing:6.912000px;}
+._6{margin-left:-12.000000px;}
+._2{margin-left:-7.987200px;}
+._5{margin-left:-5.721600px;}
+._3{margin-left:-3.692800px;}
+._0{margin-left:-2.508800px;}
+._1{margin-left:-1.164800px;}
+._4{width:1.049600px;}
+.fc4{color:rgb(140,31,41);}
+.fc3{color:rgb(52,112,170);}
+.fc2{color:rgb(19,26,40);}
+.fc0{color:rgb(43,92,140);}
+.fc1{color:rgb(35,31,32);}
+.fs1{font-size:64.000000px;}
+.fs3{font-size:112.000000px;}
+.fs2{font-size:120.000000px;}
+.fs0{font-size:336.727200px;}
+.y0{bottom:-0.500000px;}
+.y17{bottom:106.962500px;}
+.y16{bottom:130.962500px;}
+.y15{bottom:154.962500px;}
+.y14{bottom:178.962500px;}
+.y13{bottom:202.962500px;}
+.y12{bottom:226.962500px;}
+.yf{bottom:574.261300px;}
+.ye{bottom:598.261300px;}
+.yd{bottom:630.773300px;}
+.yc{bottom:654.773300px;}
+.yb{bottom:678.773300px;}
+.ya{bottom:711.285300px;}
+.y9{bottom:735.285300px;}
+.y8{bottom:759.285300px;}
+.y7{bottom:783.285300px;}
+.y6{bottom:807.285300px;}
+.y5{bottom:831.285300px;}
+.y4{bottom:855.285300px;}
+.y1{bottom:879.285300px;}
+.y3{bottom:903.285300px;}
+.y2{bottom:927.285300px;}
+.y11{bottom:966.968600px;}
+.y10{bottom:999.472500px;}
+.h3{height:60.937500px;}
+.h5{height:90.272000px;}
+.h4{height:134.520000px;}
+.h2{height:271.402123px;}
+.h0{height:1077.170000px;}
+.h1{height:1077.500000px;}
+.w0{width:538.583000px;}
+.w1{width:539.000000px;}
+.x0{left:0.000000px;}
+.x1{left:55.346000px;}
+.x3{left:56.687100px;}
+.x2{left:93.311100px;}
+.x4{left:171.672600px;}
+.x5{left:173.494800px;}
+.x6{left:375.921300px;}
+@media print{
+.v0{vertical-align:0.000000pt;}
+.ls0{letter-spacing:0.000000pt;}
+.ws1{word-spacing:-3.413333pt;}
+.ws2{word-spacing:-3.072000pt;}
+.ws3{word-spacing:-2.389333pt;}
+.wsc{word-spacing:-1.706667pt;}
+.ws7{word-spacing:-0.256000pt;}
+.ws0{word-spacing:0.000000pt;}
+.ws9{word-spacing:0.597333pt;}
+.ws6{word-spacing:2.730667pt;}
+.ws5{word-spacing:4.608000pt;}
+.wsb{word-spacing:6.485333pt;}
+.ws8{word-spacing:6.912000pt;}
+.ws4{word-spacing:8.874667pt;}
+.wsa{word-spacing:9.216000pt;}
+._6{margin-left:-16.000000pt;}
+._2{margin-left:-10.649600pt;}
+._5{margin-left:-7.628800pt;}
+._3{margin-left:-4.923733pt;}
+._0{margin-left:-3.345067pt;}
+._1{margin-left:-1.553067pt;}
+._4{width:1.399467pt;}
+.fs1{font-size:85.333333pt;}
+.fs3{font-size:149.333333pt;}
+.fs2{font-size:160.000000pt;}
+.fs0{font-size:448.969600pt;}
+.y0{bottom:-0.666667pt;}
+.y17{bottom:142.616667pt;}
+.y16{bottom:174.616667pt;}
+.y15{bottom:206.616667pt;}
+.y14{bottom:238.616667pt;}
+.y13{bottom:270.616667pt;}
+.y12{bottom:302.616667pt;}
+.yf{bottom:765.681733pt;}
+.ye{bottom:797.681733pt;}
+.yd{bottom:841.031067pt;}
+.yc{bottom:873.031067pt;}
+.yb{bottom:905.031067pt;}
+.ya{bottom:948.380400pt;}
+.y9{bottom:980.380400pt;}
+.y8{bottom:1012.380400pt;}
+.y7{bottom:1044.380400pt;}
+.y6{bottom:1076.380400pt;}
+.y5{bottom:1108.380400pt;}
+.y4{bottom:1140.380400pt;}
+.y1{bottom:1172.380400pt;}
+.y3{bottom:1204.380400pt;}
+.y2{bottom:1236.380400pt;}
+.y11{bottom:1289.291467pt;}
+.y10{bottom:1332.630000pt;}
+.h3{height:81.250000pt;}
+.h5{height:120.362667pt;}
+.h4{height:179.360000pt;}
+.h2{height:361.869498pt;}
+.h0{height:1436.226667pt;}
+.h1{height:1436.666667pt;}
+.w0{width:718.110667pt;}
+.w1{width:718.666667pt;}
+.x0{left:0.000000pt;}
+.x1{left:73.794667pt;}
+.x3{left:75.582800pt;}
+.x2{left:124.414800pt;}
+.x4{left:228.896800pt;}
+.x5{left:231.326400pt;}
+.x6{left:501.228400pt;}
+}
+
+    </style>
+    <link rel="preload" as="image" href="bg1.jpg"/>
+<script>
+        var loaded = 0;
+        const totalLoaded = 6;
+    </script>
+<style>
+/* Preserve the illustrated page while making room for the updated text. */
+@font-face { font-family:LongSangDrop; font-display:swap;
+  src:url(/pages/ldh/den-tho-vua/f2.woff) format("woff"); }
+#pf1 { height:1357.17px; }
+#pf1 .pc1 { height:100%; background:#fff; isolation:isolate; }
+#pf1 .pc1 > .bi { top:0; bottom:auto; clip-path:inset(0 0 557.5px); }
+#pf1 .pc1::after { content:""; position:absolute; z-index:0; top:800px; bottom:0; left:0; width:100%;
+  background:url(bg1.jpg) center bottom / 100% auto no-repeat; pointer-events:none; }
+#pf1 .pc1 > .t, #pf1 .long-sang-vi-copy { z-index:1; }
+#pf1 .pc1 > .t.ff2.fs1, #pf1 .pc1 > .t.ff1.fs0 { display:none; }
+#pf1 .pc1 > .t.ff3.fs2.y10 { bottom:1279.4725px; }
+#pf1 .pc1 > .t.ff1.fs3.y11 { bottom:1246.9686px; }
+.long-sang-vi-copy { position:absolute; top:134px; left:56.6871px; width:425px;
+  color:rgb(35,31,32); font:16px/24px ff2, Arial, sans-serif; text-align:left; }
+.long-sang-vi-copy p { margin:0 0 8.512px; }
+.long-sang-vi-copy p:first-child { display:flow-root; }
+.long-sang-vi-copy p:first-child::first-letter { float:left; margin:0 2px 0 0;
+  color:rgb(43,92,140); font:84.1818px/.82 LongSangDrop, serif; }
+
+/* French text retains the illustrated layout and audio of this page. */
+@font-face { font-family:LongSangFrenchTitle; font-display:swap;
+  src:url(/pages/dth/gioi-thieu/intro-script.woff) format("woff"); }
+#pf1 { height:1397.17px; }
+#pf1 .pc1::after { top:840px; }
+#pf1 .pc1 > .t.ff3.fs2, #pf1 .pc1 > .t.ff1.fs3,
+#pf1 .pc1 > .t.ff4.fs1 { display:none; }
+.long-sang-fr-heading { position:absolute; z-index:1; top:31px; left:56.6871px;
+  width:425px; margin:0; color:rgb(19,26,40); text-align:center; font-weight:normal; }
+.long-sang-fr-main { display:block; font:26px/31px LongSangFrenchTitle, ff3, sans-serif; }
+.long-sang-fr-sub { display:block; color:rgb(52,112,170); font:italic 16px/19px ff2, Arial, sans-serif; }
+.long-sang-fr-caption { position:absolute; z-index:1; bottom:100px; left:375.9213px; width:150px;
+  color:rgb(140,31,41); font:italic 16px/24px ff4, Arial, sans-serif; }
+</style>
+</head>
+<body>
+<div id="sidebar">
+    <div id="outline">
+    </div>
+</div>
+<div id="page-container">
+    <div id="pf1" class="pf w0 h0" data-page-no="1"><div class="pc pc1 w0 h0"><img class="bi x0 y0 w1 h1" alt="" src="bg1.jpg"/><div class="t m0 x1 h2 y1 ff1 fs0 fc0 sc0 ls0 ws0">Đ</div><div class="t m0 x2 h3 y2 ff2 fs1 fc1 sc0 ls0 ws1">ền thờ V<span class="_ _0"></span>ua Đinh T<span class="_ _0"></span>iên Hoàng còn là một bảo tàng thu nhỏ với </div><div class="t m0 x2 h3 y3 ff2 fs1 fc1 sc0 ls0 ws2">rất nhiều hiện v<span class="_ _1"></span>ật cổ có giá trị lịch sử<span class="_ _0"></span>,<span class="_ _0"></span> v<span class="_ _1"></span>ăn hóa đặc biệt.<span class="_ _0"></span> T<span class="_ _2"></span>rư<span class="_ _0"></span>ớc </div><div class="t m0 x2 h3 y1 ff2 fs1 fc1 sc0 ls0 ws3">hết,<span class="_ _0"></span> phải k<span class="_ _0"></span>ể đến long sàng/sập đá đặt trước Nghi môn ngoại </div><div class="t m0 x3 h3 y4 ff2 fs1 fc1 sc0 ls0 ws4">có niên đại thế kỷ XVII,<span class="_ _0"></span> tiêu biểu cho đồ tr<span class="_ _0"></span>ọng khí tr<span class="_ _1"></span>ong không </div><div class="t m0 x3 h3 y5 ff2 fs1 fc1 sc0 ls0 ws5">gian thờ cúng của người V<span class="_ _1"></span>iệt,<span class="_ _0"></span> để ghi công v<span class="_ _1"></span>à tư<span class="_ _1"></span>ởng nhớ bậc Đế </div><div class="t m0 x3 h3 y6 ff2 fs1 fc1 sc0 ls0 ws6">vư<span class="_ _0"></span>ơng - Đinh Tiên Hoàng đế.<span class="_ _3"></span> Long sàng là t<span class="_ _0"></span>ác phẩm <span class="_ _4"></span>nghệ thuật </div><div class="t m0 x3 h3 y7 ff2 fs1 fc1 sc0 ls0 ws7">điêu khắc đá độc đáo có một không hai ở nư<span class="_ _0"></span>ớc ta,<span class="_ _3"></span> với nghệ thuật </div><div class="t m0 x3 h3 y8 ff2 fs1 fc1 sc0 ls0 ws8">trang trí nhiều ý niệm,<span class="_ _3"></span> giàu chất nhân văn,<span class="_ _3"></span> lưu giữ các tầng văn </div><div class="t m0 x3 h3 y9 ff2 fs1 fc1 sc0 ls0 ws9">hóa truyền thống của người V<span class="_ _0"></span>iệt,<span class="_ _0"></span> ẩn chứa nhiều thông điệp bí ẩn,<span class="_ _3"></span> </div><div class="t m0 x3 h3 ya ff2 fs1 fc1 sc0 ls0 ws0">cần đư<span class="_ _0"></span>ợc tiếp tục nghiên cứu và giải mã.</div><div class="t m0 x3 h3 yb ff2 fs1 fc1 sc0 ls0 wsa">Long sàng t<span class="_ _0"></span>ạc theo <span class="_ _4"></span>kiểu chân quỳ dạ cá,<span class="_ _3"></span> mặt Long sàng đư<span class="_ _0"></span>ợc </div><div class="t m0 x3 h3 yc ff2 fs1 fc1 sc0 ls0 wsb">chạm nổi hình ảnh r<span class="_ _0"></span>ồng khá lớn thân mập<span class="_ _1"></span>,<span class="_ _3"></span> đuôi thẳng,<span class="_ _0"></span> vẩy đơn,<span class="_ _3"></span> </div><div class="t m0 x3 h3 yd ff2 fs1 fc1 sc0 ls0 ws0">đao mác lá hỏa.</div><div class="t m0 x3 h3 ye ff2 fs1 fc1 sc0 ls0 wsc">Long sàng này đã đư<span class="_ _0"></span>ợc Thủ tư<span class="_ _0"></span>ớng Chính phủ ký <span class="_ _4"></span>quyết định công </div><div class="t m0 x3 h3 yf ff2 fs1 fc1 sc0 ls0 ws0">nhận là bảo vật quốc gia năm 20<span class="_ _1"></span>17<span class="_ _5"></span>.</div><div class="t m0 x4 h4 y10 ff3 fs2 fc2 sc0 ls0 ws0">2. L<span class="_ _0"></span>ONG SÀNG </div><div class="t m0 x5 h5 y11 ff1 fs3 fc3 sc0 ls0 ws0">(Phía ngoài nghi môn ngoại)</div><div class="t m0 x6 h3 y12 ff4 fs1 fc4 sc0 ls0 ws0">L<span class="_ _3"></span>ong sàng đá - </div><div class="t m0 x6 h3 y13 ff4 fs1 fc4 sc0 ls0 ws0">Bảo vật quốc gia <span class="_ _6"></span> </div><div class="t m0 x6 h3 y14 ff4 fs1 fc4 sc0 ls0 ws0">trước Nghi môn </div><div class="t m0 x6 h3 y15 ff4 fs1 fc4 sc0 ls0 ws0">ngoại - phong </div><div class="t m0 x6 h3 y16 ff4 fs1 fc4 sc0 ls0 ws0">cách nghệ thuật </div><div class="t m0 x6 h3 y17 ff4 fs1 fc4 sc0 ls0 ws0">thế kỷ XVII</div><h1 class="long-sang-fr-heading" aria-label="LE LIT DU DRAGON DU TEMPLE DE ĐINH (SITUÉ PRÈS DU PORTIQUE EXTÉRIEUR)"><span class="long-sang-fr-main">2. LE LIT DU DRAGON</span><span class="long-sang-fr-sub">DU TEMPLE DE ĐINH<br>(SITUÉ PRÈS DU PORTIQUE EXTÉRIEUR)</span></h1><div class="long-sang-vi-copy" lang="fr"><p>Le Lit du Dragon (Long Sàng) a été reconnu trésor national par décision du Premier ministre en 2017.</p><p>Le Lit du Dragon n&#x27;est pas ici le lit du roi, mais un objet de culte servant d&#x27;endroit pour préparer ou disposer les offrandes. Le Lit du Dragon est sculpté dans le style « pieds agenouillés, ventre de poisson », robuste et imposant, mais non moins gracieux. Le point d&#x27;orgue artistique le plus remarquable se concentre sur la surface du Lit du Dragon, où l&#x27;artisan a sculpté en relief l&#x27;image d&#x27;un grand dragon mythique aux lignes exquises et pleines d&#x27;autorité.</p><p>Ce qui fait la valeur unique et incomparable de ce trésor, c&#x27;est la créativité révolutionnaire de l&#x27;artisan populaire. Outre les griffes de dragon de forme pointue traditionnelle, l&#x27;ancien artisan a habilement transformé certaines griffes en mains humaines. L&#x27;alliance subtile de l&#x27;autorité sacrée du dragon et de la proximité de l&#x27;homme a insufflé une âme à la pierre, créant une œuvre d&#x27;art profondément marquée par la philosophie et l&#x27;esthétique.</p><p>Le Lit du Dragon en pierre situé au niveau du portique extérieur du temple du roi Đinh n&#x27;est pas seulement un objet de culte unique, mais aussi l&#x27;apogée de l&#x27;art de la sculpture sur pierre traditionnelle vietnamienne. En contemplant ce trésor, nous admirons davantage le talent des anciens sculpteurs, tout en étant fiers du glorieux héritage culturel de la nation.</p></div><div class="long-sang-fr-caption" lang="fr">Long Sàng en pierre — trésor national devant le portique extérieur, art du XVIIe siècle.</div></div><div class="pi" data-data='{"ctm":[1.000000,0.000000,0.000000,1.000000,0.000000,0.000000]}'></div></div>
+</div>
+<div class="loading-indicator">
+</div>
+<script src="/assets/js/thuyet-minh.js"></script>
+</body>
+</html>

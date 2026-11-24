@@ -1,0 +1,48 @@
+/* Keep the original artwork and replace its scaled text legend with usable links. */
+body.tm.dinh-map-ready { padding-bottom: 0; background: #e8dfcb; }
+.dinh-map-ready #page-container .pfwrap { height: auto !important; aspect-ratio: 538.583 / 660; margin-bottom: 0; }
+.dinh-map-ready #pf1 .t[onclick],
+.dinh-map-ready #pf1 .t.y7,
+.dinh-map-ready #pf1 .t.yc,
+.dinh-map-ready #pf1 .t.yd,
+.dinh-map-ready #pf1 .t.ye { display: none; }
+
+.dinh-map-title {
+  position: absolute;
+  top: 160px;
+  left: 0;
+  width: 100%;
+  margin: 0;
+  color: #6c0000;
+  font: bold 25px/1.12 Georgia, "Times New Roman", serif;
+  letter-spacing: .025em;
+  text-align: center;
+  white-space: pre-line;
+}
+.dinh-map-flag {
+  position: absolute;
+  z-index: 10;
+  width: 38px;
+  height: 32px;
+  border-radius: 4px;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+/* The two neighboring flags need separate, non-overlapping hit areas. */
+.dinh-map-flag-close { width: 24px; }
+.dinh-map-flag:focus-visible { outline: 3px solid #883400; outline-offset: 1px; }
+.dinh-map-flag:active { background: rgba(255, 212, 90, .35); }
+@media (hover: hover) { .dinh-map-flag:hover { background: rgba(255, 212, 90, .35); } }
+
+.dinh-map-key { box-sizing: border-box; max-width: 760px; margin: 0 auto; padding: 10px 12px 16px; background: #f8f1df; }
+.dinh-map-key *, .dinh-map-key *::before, .dinh-map-key *::after { box-sizing: border-box; }
+.dinh-map-prompt { margin: 0 0 8px; color: #4c392d; font: 14px/1.4 system-ui, sans-serif; text-align: center; }
+.dinh-map-list { display: grid; grid-auto-flow: column; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: repeat(5, minmax(52px, auto)); gap: 0 12px; }
+.dinh-map-list-item { display: flex; align-items: center; gap: 7px; min-width: 0; padding: 6px 3px; border-bottom: 1px solid #ddc99e; color: inherit; text-decoration: none; }
+.dinh-map-list-item:focus-visible { outline: 3px solid #a75816; outline-offset: -3px; }
+.dinh-map-list-item:active { background: #ead19b; }
+@media (hover: hover) { .dinh-map-list-item:hover { background: #f0dfb9; } }
+.dinh-map-number { display: grid; place-items: center; flex: 0 0 30px; width: 30px; height: 30px; border: 2px solid #d4aa56; border-radius: 50%; background: #a71312; color: #ffdf93; font: bold 18px/1 Georgia, serif; }
+.dinh-map-label { min-width: 0; color: #8b1713; font: 12px/1.25 Georgia, "Times New Roman", serif; overflow-wrap: anywhere; }
+.dinh-map-label strong, .dinh-map-label small { display: block; }
+.dinh-map-label small { margin-top: 2px; color: #422b23; font-size: 11px; line-height: 1.25; }

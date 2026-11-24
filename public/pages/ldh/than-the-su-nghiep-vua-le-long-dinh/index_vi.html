@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Cố Đô Hoa Lư</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style id="inlined-all-css">
+/* Quy tắc nền tối thiểu cho nội dung xuất từ pdf2htmlEX */
+*{box-sizing:content-box}
+html,body{margin:0;padding:0}
+#page-container{position:relative;margin:0 auto;padding:0}
+.pf{position:relative;background-color:#fff;overflow:hidden;margin:0 auto;border:0;transform-origin:0 0}
+.pc{position:absolute;border:0;padding:0;margin:0;top:0;left:0;width:100%;height:100%;overflow:hidden;display:block;transform-origin:0 0}
+.pi{display:none}
+.bf,.bi{position:absolute;left:0;bottom:0;border:0;margin:0;padding:0;-ms-user-select:none;-webkit-user-select:none;user-select:none}
+.t{position:absolute;white-space:pre;transform-origin:0 100%;unicode-bidi:bidi-override}
+._{display:inline-block;color:transparent;overflow:hidden;width:0;height:0}
+.pc>*,.t{-webkit-font-smoothing:antialiased}
+@media print{.pf{margin:0;box-shadow:none;page-break-after:always;page-break-inside:avoid}}
+
+/* Dành riêng cho pdf2htmlEX (không cần thêm quy tắc) */
+
+:root{--blue:#0b3ea8;--blue2:#1a8fe3;--gold:#f2b705;--ink:#1c2a44;--bg:#eef3fb}
+*{-webkit-tap-highlight-color:transparent}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:#dfe7f3}
+#sidebar,.loading-indicator{display:none}
+a{color:var(--blue)}
+
+/* ===== Trang chủ ===== */
+.home{min-height:100vh;background:#0b2a6b url(/images/bg_v1_tinified.jpg) center top/cover fixed}
+.wrap{max-width:760px;margin:0 auto;background:rgba(255,255,255,.96);min-height:100vh;box-shadow:0 0 40px rgba(0,0,0,.35)}
+.wrap>header img,.hero img{display:block;width:100%;height:auto}
+.hero{background:linear-gradient(#fff,#e6f0fb);text-align:center;padding-bottom:6px;margin-top:-1px}
+.hero img{max-width:520px;margin:-20px auto -50px}
+.langs{display:flex;gap:10px;justify-content:center;padding:10px 12px}
+.langs button{border:2px solid transparent;background:#fff;border-radius:999px;padding:4px 12px 4px 6px;display:flex;align-items:center;gap:8px;font-weight:600;cursor:pointer;box-shadow:0 1px 4px rgba(0,0,0,.2)}
+.langs button img{width:28px;height:28px;border-radius:50%}
+.langs button.on{border-color:var(--blue2);background:#e5f2ff}
+.note{text-align:center;font-size:.85rem;color:#566;margin:0 16px 8px}
+.gallery{display:flex;gap:8px;overflow-x:auto;padding:8px 14px;scroll-snap-type:x mandatory}
+.gallery img{width:110px;height:110px;border-radius:12px;object-fit:cover;scroll-snap-align:start;border:2px solid var(--gold)}
+section.site{padding:10px 16px 18px}
+section.site h2{background:linear-gradient(90deg,var(--blue),var(--blue2));color:#fff;margin:14px 0 10px;padding:10px 14px;font-size:1.1rem;border-radius:10px;text-transform:uppercase}
+.list{display:grid;gap:8px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+.list a{display:flex;align-items:center;gap:10px;padding:10px 12px;background:var(--bg);border:1px solid #cfdcf0;border-radius:10px;text-decoration:none;color:var(--ink);font-weight:500}
+.list a:hover{background:#dbeaff;border-color:var(--blue2)}
+.list b{flex:none;min-width:30px;height:30px;border-radius:50%;background:#d62839;color:#fff;display:grid;place-items:center;font-size:.85rem}
+.list b.i{background:var(--blue2)}
+.list small{display:block;color:#667;font-weight:400}
+.wrap>footer img{display:block;width:100%;height:auto}
+.wrap>footer p{margin:0;padding:10px;text-align:center;background:#0a3aa8;color:#fff;font-size:.8rem}
+
+/* Trang thuyết minh */
+body.tm{background:#1d2740;padding-bottom:96px}
+#page-container{max-width:760px}
+#page-container .pf{margin:0 auto 10px;box-shadow:0 2px 12px rgba(0,0,0,.4)}
+.pfwrap{margin:0 auto 10px;overflow:hidden}
+#page-container .pfwrap .pf{margin:0;box-shadow:none}
+.pfwrap{box-shadow:0 2px 12px rgba(0,0,0,.4)}
+.topbar{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:8px;padding:8px 12px;background:linear-gradient(90deg,#0b3ea8,#1a8fe3);color:#fff}
+.topbar a{color:#fff;text-decoration:none;font-weight:700}
+.topbar .sp{flex:1}
+.topbar .fl{display:flex;gap:6px}
+.topbar .fl button{border:2px solid transparent;border-radius:50%;padding:0;background:none;cursor:pointer;opacity:.6}
+.topbar .fl button.on{border-color:#f2b705;opacity:1}
+.topbar .fl img{width:28px;height:28px;border-radius:50%;display:block}
+.player{position:fixed;left:0;right:0;bottom:0;z-index:30;background:#0b2a6b;color:#fff;padding:10px 14px;display:flex;align-items:center;gap:10px;box-shadow:0 -2px 12px rgba(0,0,0,.4)}
+.player .in{max-width:760px;margin:0 auto;display:flex;align-items:center;gap:10px;width:100%}
+.player button{width:44px;height:44px;border-radius:50%;border:0;background:#f2b705;color:#0b2a6b;font-size:18px;cursor:pointer;flex:none}
+.player input[type=range]{flex:1;min-width:0}
+.player .tm{font-variant-numeric:tabular-nums;font-size:.8rem;flex:none}
+.player.none{display:none}
+
+.ff0{font-family:sans-serif;visibility:hidden;}
+@font-face{font-family:ff1;font-display:swap;src:url(f1.woff)format("woff");}.ff1{font-family:ff1;line-height:1.222000;font-style:normal;font-weight:normal;visibility:visible;}
+@font-face{font-family:ff2;font-display:swap;src:url(f2.woff)format("woff");}.ff2{font-family:ff2;line-height:0.997000;font-style:normal;font-weight:normal;visibility:visible;}
+@font-face{font-family:ff3;font-display:swap;src:url(f3.woff)format("woff");}.ff3{font-family:ff3;line-height:1.193359;font-style:normal;font-weight:normal;visibility:visible;}
+.m0{transform:matrix(0.250000,0.000000,0.000000,0.250000,0,0);-ms-transform:matrix(0.250000,0.000000,0.000000,0.250000,0,0);-webkit-transform:matrix(0.250000,0.000000,0.000000,0.250000,0,0);}
+.v0{vertical-align:0.000000px;}
+.ls1{letter-spacing:0.000000px;}
+.ls2{letter-spacing:0.640000px;}
+.ls3{letter-spacing:0.960000px;}
+.ls0{letter-spacing:5.600000px;}
+.sc_{text-shadow:none;}
+.sc0{text-shadow:-0.015em 0 transparent,0 0.015em transparent,0.015em 0 transparent,0 -0.015em  transparent;}
+@media screen and (-webkit-min-device-pixel-ratio:0){
+.sc_{-webkit-text-stroke:0px transparent;}
+.sc0{-webkit-text-stroke:0.015em transparent;text-shadow:none;}
+}
+.ws10{word-spacing:-4.288000px;}
+.ws11{word-spacing:-1.536000px;}
+.ws14{word-spacing:-1.472000px;}
+.ws12{word-spacing:-0.960000px;}
+.ws0{word-spacing:0.000000px;}
+.ws13{word-spacing:1.216000px;}
+.ws15{word-spacing:2.432000px;}
+.ws16{word-spacing:3.840000px;}
+.ws8{word-spacing:6.720000px;}
+.wsb{word-spacing:10.752000px;}
+.ws5{word-spacing:10.944000px;}
+.ws6{word-spacing:11.392000px;}
+.ws4{word-spacing:16.128000px;}
+.wsc{word-spacing:16.384000px;}
+.ws3{word-spacing:17.344000px;}
+.ws2{word-spacing:18.176000px;}
+.ws9{word-spacing:18.816000px;}
+.ws1{word-spacing:20.800000px;}
+.wsd{word-spacing:24.960000px;}
+.wsa{word-spacing:29.440000px;}
+.wsf{word-spacing:32.000000px;}
+.ws7{word-spacing:39.424000px;}
+.wse{word-spacing:40.384000px;}
+._7{margin-left:-9.401600px;}
+._4{margin-left:-7.180800px;}
+._1{margin-left:-5.600000px;}
+._5{margin-left:-4.406400px;}
+._0{margin-left:-3.200000px;}
+._3{margin-left:-1.200000px;}
+._6{width:3.142400px;}
+._2{width:5.600000px;}
+.fc2{color:rgb(35,31,32);}
+.fc0{color:rgb(1,20,39);}
+.fc1{color:rgb(30,66,109);}
+.fs2{font-size:64.000000px;}
+.fs0{font-size:80.000000px;}
+.fs1{font-size:325.363600px;}
+.y0{bottom:-0.500000px;}
+.y20{bottom:209.993200px;}
+.y1f{bottom:233.993200px;}
+.y1e{bottom:266.505200px;}
+.y1d{bottom:290.505200px;}
+.y1c{bottom:323.001200px;}
+.y1b{bottom:355.513200px;}
+.y1a{bottom:379.513200px;}
+.y19{bottom:403.513200px;}
+.y18{bottom:427.513200px;}
+.y17{bottom:432.505200px;}
+.y16{bottom:455.497200px;}
+.y15{bottom:478.489200px;}
+.y14{bottom:501.481200px;}
+.y13{bottom:524.473200px;}
+.y12{bottom:555.977200px;}
+.y11{bottom:578.969200px;}
+.y10{bottom:601.961200px;}
+.yf{bottom:624.953200px;}
+.ye{bottom:647.945200px;}
+.yd{bottom:670.937200px;}
+.yc{bottom:693.929200px;}
+.yb{bottom:716.921200px;}
+.ya{bottom:739.913200px;}
+.y9{bottom:771.417200px;}
+.y8{bottom:794.409200px;}
+.y7{bottom:817.401200px;}
+.y3{bottom:840.377200px;}
+.y6{bottom:840.393200px;}
+.y5{bottom:863.385200px;}
+.y4{bottom:886.377200px;}
+.y2{bottom:960.038500px;}
+.y1{bottom:985.038500px;}
+.h4{height:60.937500px;}
+.h2{height:82.400000px;}
+.h3{height:256.061153px;}
+.h0{height:1077.170000px;}
+.h1{height:1077.500000px;}
+.w0{width:538.583000px;}
+.w1{width:539.000000px;}
+.x0{left:0.000000px;}
+.x6{left:56.693700px;}
+.x1{left:129.412800px;}
+.x2{left:160.672800px;}
+.x7{left:310.277700px;}
+.x3{left:322.049100px;}
+.x5{left:323.349700px;}
+.x4{left:368.981700px;}
+@media print{
+.v0{vertical-align:0.000000pt;}
+.ls1{letter-spacing:0.000000pt;}
+.ls2{letter-spacing:0.853333pt;}
+.ls3{letter-spacing:1.280000pt;}
+.ls0{letter-spacing:7.466667pt;}
+.ws10{word-spacing:-5.717333pt;}
+.ws11{word-spacing:-2.048000pt;}
+.ws14{word-spacing:-1.962667pt;}
+.ws12{word-spacing:-1.280000pt;}
+.ws0{word-spacing:0.000000pt;}
+.ws13{word-spacing:1.621333pt;}
+.ws15{word-spacing:3.242667pt;}
+.ws16{word-spacing:5.120000pt;}
+.ws8{word-spacing:8.960000pt;}
+.wsb{word-spacing:14.336000pt;}
+.ws5{word-spacing:14.592000pt;}
+.ws6{word-spacing:15.189333pt;}
+.ws4{word-spacing:21.504000pt;}
+.wsc{word-spacing:21.845333pt;}
+.ws3{word-spacing:23.125333pt;}
+.ws2{word-spacing:24.234667pt;}
+.ws9{word-spacing:25.088000pt;}
+.ws1{word-spacing:27.733333pt;}
+.wsd{word-spacing:33.280000pt;}
+.wsa{word-spacing:39.253333pt;}
+.wsf{word-spacing:42.666667pt;}
+.ws7{word-spacing:52.565333pt;}
+.wse{word-spacing:53.845333pt;}
+._7{margin-left:-12.535467pt;}
+._4{margin-left:-9.574400pt;}
+._1{margin-left:-7.466667pt;}
+._5{margin-left:-5.875200pt;}
+._0{margin-left:-4.266667pt;}
+._3{margin-left:-1.600000pt;}
+._6{width:4.189867pt;}
+._2{width:7.466667pt;}
+.fs2{font-size:85.333333pt;}
+.fs0{font-size:106.666667pt;}
+.fs1{font-size:433.818133pt;}
+.y0{bottom:-0.666667pt;}
+.y20{bottom:279.990933pt;}
+.y1f{bottom:311.990933pt;}
+.y1e{bottom:355.340267pt;}
+.y1d{bottom:387.340267pt;}
+.y1c{bottom:430.668267pt;}
+.y1b{bottom:474.017600pt;}
+.y1a{bottom:506.017600pt;}
+.y19{bottom:538.017600pt;}
+.y18{bottom:570.017600pt;}
+.y17{bottom:576.673600pt;}
+.y16{bottom:607.329600pt;}
+.y15{bottom:637.985600pt;}
+.y14{bottom:668.641600pt;}
+.y13{bottom:699.297600pt;}
+.y12{bottom:741.302933pt;}
+.y11{bottom:771.958933pt;}
+.y10{bottom:802.614933pt;}
+.yf{bottom:833.270933pt;}
+.ye{bottom:863.926933pt;}
+.yd{bottom:894.582933pt;}
+.yc{bottom:925.238933pt;}
+.yb{bottom:955.894933pt;}
+.ya{bottom:986.550933pt;}
+.y9{bottom:1028.556267pt;}
+.y8{bottom:1059.212267pt;}
+.y7{bottom:1089.868267pt;}
+.y3{bottom:1120.502933pt;}
+.y6{bottom:1120.524267pt;}
+.y5{bottom:1151.180267pt;}
+.y4{bottom:1181.836267pt;}
+.y2{bottom:1280.051333pt;}
+.y1{bottom:1313.384667pt;}
+.h4{height:81.250000pt;}
+.h2{height:109.866667pt;}
+.h3{height:341.414871pt;}
+.h0{height:1436.226667pt;}
+.h1{height:1436.666667pt;}
+.w0{width:718.110667pt;}
+.w1{width:718.666667pt;}
+.x0{left:0.000000pt;}
+.x6{left:75.591600pt;}
+.x1{left:172.550400pt;}
+.x2{left:214.230400pt;}
+.x7{left:413.703600pt;}
+.x3{left:429.398800pt;}
+.x5{left:431.132933pt;}
+.x4{left:491.975600pt;}
+}
+
+    </style>
+    <link rel="preload" as="image" href="bg1.jpg"/>
+<script>
+        var loaded = 0;
+        const totalLoaded = 6;
+    </script>
+</head>
+<body>
+<div id="sidebar">
+    <div id="outline">
+    </div>
+</div>
+<div id="page-container">
+    <div id="pf1" class="pf w0 h0" data-page-no="1"><div class="pc pc1 w0 h0"><img class="bi x0 y0 w1 h1" alt="" src="bg1.jpg"/><div class="t m0 x1 h2 y1 ff1 fs0 fc0 sc0 ls0 ws0">Thân thế v<span class="_ _0"></span>à sự nghiệp<span class="_ _1"></span> <span class="_ _2"></span><span class="ls1"> </span></div><div class="t m0 x2 h2 y2 ff1 fs0 fc0 sc0 ls0 ws0">vua Lê L<span class="_ _1"></span>ong Đ<span class="_ _3"></span>ĩnh.</div><div class="t m0 x3 h3 y3 ff2 fs1 fc1 sc0 ls1 ws0">V</div><div class="t m0 x4 h4 y4 ff3 fs2 fc2 sc0 ls2 ws1">ua tên húy Chí<span class="_ _3"></span> </div><div class="t m0 x4 h4 y5 ff3 fs2 fc2 sc0 ls2 ws2">T<span class="_ _4"></span>rung sinh năm </div><div class="t m0 x4 h4 y6 ff3 fs2 fc2 sc0 ls2 ws3">985,<span class="_ _0"></span> con thứ 5 </div><div class="t m0 x5 h4 y7 ff3 fs2 fc2 sc0 ls2 ws4">của vua Lê Đại H<span class="_ _3"></span>ành.<span class="_ _5"></span> </div><div class="t m0 x5 h4 y8 ff3 fs2 fc2 sc0 ls2 ws5">Sau khi vua cha băng,<span class="_ _5"></span> </div><div class="t m0 x5 h4 y9 ff3 fs2 fc2 sc0 ls2 ws0">Long Đĩnh lên nối ngôi.<span class="_ _1"></span> </div><div class="t m0 x5 h4 ya ff3 fs2 fc2 sc0 ls2 ws6">Lên ngôi vua,<span class="_ _5"></span> Lê L<span class="_ _3"></span>ong </div><div class="t m0 x5 h4 yb ff3 fs2 fc2 sc0 ls2 ws7">Đĩnh chấn chỉnh lại </div><div class="t m0 x5 h4 yc ff3 fs2 fc2 sc0 ls2 ws8">triều đ<span class="_ _6"></span>ình,<span class="_ _0"></span> đặt quan hệ </div><div class="t m0 x5 h4 yd ff3 fs2 fc2 sc0 ls2 ws9">v<span class="_ _3"></span>ới nhà T<span class="_ _1"></span>ống và đem<span class="_ _3"></span> </div><div class="t m0 x5 h4 ye ff3 fs2 fc2 sc0 ls2 wsa">quân đi trấn áp các<span class="_ _3"></span> </div><div class="t m0 x5 h4 yf ff3 fs2 fc2 sc0 ls2 wsb">cuộc nổi dậy của mán </div><div class="t m0 x5 h4 y10 ff3 fs2 fc2 sc0 ls2 wsc">Cử Long (nay là Cẩm<span class="_ _3"></span> </div><div class="t m0 x5 h4 y11 ff3 fs2 fc2 sc0 ls2 wsd">Thủy<span class="_ _1"></span>,<span class="_ _0"></span> Thanh Hóa) và </div><div class="t m0 x5 h4 y12 ff3 fs2 fc2 sc0 ls2 ws0">những vùng xa.<span class="_ _5"></span> </div><div class="t m0 x5 h4 y13 ff3 fs2 fc2 sc0 ls3 wse">V<span class="_ _5"></span>ề ngoại giao<span class="_ _3"></span>,<span class="_ _5"></span> năm </div><div class="t m0 x5 h4 y14 ff3 fs2 fc2 sc0 ls3 wsf">100<span class="_ _3"></span>7<span class="_ _1"></span>,<span class="_ _0"></span> Long Đĩnh sai<span class="_ _3"></span> </div><div class="t m0 x5 h4 y15 ff3 fs2 fc2 sc0 ls3 ws1">sứ là Minh Sư<span class="_ _3"></span>ởng v<span class="_ _3"></span>à </div><div class="t m0 x5 h4 y16 ff3 fs2 fc2 sc0 ls3 ws10">chư<span class="_ _3"></span>ởng thư ký là Hoàng<span class="_ _3"></span> </div><div class="t m0 x6 h4 y17 ff3 fs2 fc2 sc0 ls3 ws11">Thành Nhã sang nhà T<span class="_ _1"></span>ống dâng biểu </div><div class="t m0 x7 h4 y18 ff3 fs2 fc2 sc0 ls3 ws11">xin Cửu kinh và kinh sách<span class="_ _3"></span> </div><div class="t m0 x6 h4 y19 ff3 fs2 fc2 sc0 ls3 ws12">Đại <span class="_ _6"></span><span class="ws13">T<span class="_ _7"></span>ạng.<span class="_ _0"></span> Nhà T<span class="_ _1"></span>ống ưng thuận.<span class="_ _0"></span> Long Đĩnh còn cho người sang<span class="_ _3"></span> </span></div><div class="t m0 x6 h4 y1a ff3 fs2 fc2 sc0 ls3 ws14">mua bán,<span class="_ _0"></span> trao đổi hàng hóa v<span class="_ _3"></span>ới người T<span class="_ _4"></span>ống ở Liêm Châu và trấn<span class="_ _3"></span> </div><div class="t m0 x6 h4 y1b ff3 fs2 fc2 sc0 ls3 ws0">Như Hồng.<span class="_ _5"></span> </div><div class="t m0 x6 h4 y1c ff3 fs2 fc2 sc0 ls1 ws0">Năm 1009<span class="_ _3"></span>,<span class="_ _5"></span> vua băng hà,<span class="_ _0"></span> hư<span class="_ _3"></span>ởng thọ 2<span class="_ _3"></span>4 tuổi.</div><div class="t m0 x6 h4 y1d ff3 fs2 fc2 sc0 ls1 ws15">T<span class="_ _4"></span>riều T<span class="_ _3"></span>iền L<span class="_ _3"></span>ê k<span class="_ _3"></span>ết thúc,<span class="_ _5"></span> triều thần đã suy tôn Điện tiền đô chỉ huy </div><div class="t m0 x6 h4 y1e ff3 fs2 fc2 sc0 ls1 ws0">sứ L<span class="_ _0"></span>ý Công Uẩn lên ngôi Hoàng đế,<span class="_ _0"></span> lập nên vư<span class="_ _3"></span>ơng triều L<span class="_ _0"></span>ý<span class="_ _1"></span>.</div><div class="t m0 x6 h4 y1f ff3 fs2 fc2 sc0 ls1 ws16">Năm 10<span class="_ _3"></span>10<span class="_ _3"></span>,<span class="_ _5"></span> để phát triển đất nước,<span class="_ _5"></span> nhà L<span class="_ _0"></span>ý dời đô từ Hoa Lư đến </div><div class="t m0 x6 h4 y20 ff3 fs2 fc2 sc0 ls1 ws0">Thăng Long.<span class="_ _5"></span> </div></div><div class="pi" data-data='{"ctm":[1.000000,0.000000,0.000000,1.000000,0.000000,0.000000]}'></div></div>
+</div>
+<div class="loading-indicator">
+</div>
+<script src="/assets/js/thuyet-minh.js"></script>
+</body>
+</html>

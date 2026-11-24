@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Cố Đô Hoa Lư</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style id="inlined-all-css">
+/* Quy tắc nền tối thiểu cho nội dung xuất từ pdf2htmlEX */
+*{box-sizing:content-box}
+html,body{margin:0;padding:0}
+#page-container{position:relative;margin:0 auto;padding:0}
+.pf{position:relative;background-color:#fff;overflow:hidden;margin:0 auto;border:0;transform-origin:0 0}
+.pc{position:absolute;border:0;padding:0;margin:0;top:0;left:0;width:100%;height:100%;overflow:hidden;display:block;transform-origin:0 0}
+.pi{display:none}
+.bf,.bi{position:absolute;left:0;bottom:0;border:0;margin:0;padding:0;-ms-user-select:none;-webkit-user-select:none;user-select:none}
+.t{position:absolute;white-space:pre;transform-origin:0 100%;unicode-bidi:bidi-override}
+._{display:inline-block;color:transparent;overflow:hidden;width:0;height:0}
+.pc>*,.t{-webkit-font-smoothing:antialiased}
+@media print{.pf{margin:0;box-shadow:none;page-break-after:always;page-break-inside:avoid}}
+
+/* Dành riêng cho pdf2htmlEX (không cần thêm quy tắc) */
+
+:root{--blue:#0b3ea8;--blue2:#1a8fe3;--gold:#f2b705;--ink:#1c2a44;--bg:#eef3fb}
+*{-webkit-tap-highlight-color:transparent}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:#dfe7f3}
+#sidebar,.loading-indicator{display:none}
+a{color:var(--blue)}
+
+/* ===== Trang chủ ===== */
+.home{min-height:100vh;background:#0b2a6b url(/images/bg_v1_tinified.jpg) center top/cover fixed}
+.wrap{max-width:760px;margin:0 auto;background:rgba(255,255,255,.96);min-height:100vh;box-shadow:0 0 40px rgba(0,0,0,.35)}
+.wrap>header img,.hero img{display:block;width:100%;height:auto}
+.hero{background:linear-gradient(#fff,#e6f0fb);text-align:center;padding-bottom:6px;margin-top:-1px}
+.hero img{max-width:520px;margin:-20px auto -50px}
+.langs{display:flex;gap:10px;justify-content:center;padding:10px 12px}
+.langs button{border:2px solid transparent;background:#fff;border-radius:999px;padding:4px 12px 4px 6px;display:flex;align-items:center;gap:8px;font-weight:600;cursor:pointer;box-shadow:0 1px 4px rgba(0,0,0,.2)}
+.langs button img{width:28px;height:28px;border-radius:50%}
+.langs button.on{border-color:var(--blue2);background:#e5f2ff}
+.note{text-align:center;font-size:.85rem;color:#566;margin:0 16px 8px}
+.gallery{display:flex;gap:8px;overflow-x:auto;padding:8px 14px;scroll-snap-type:x mandatory}
+.gallery img{width:110px;height:110px;border-radius:12px;object-fit:cover;scroll-snap-align:start;border:2px solid var(--gold)}
+section.site{padding:10px 16px 18px}
+section.site h2{background:linear-gradient(90deg,var(--blue),var(--blue2));color:#fff;margin:14px 0 10px;padding:10px 14px;font-size:1.1rem;border-radius:10px;text-transform:uppercase}
+.list{display:grid;gap:8px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+.list a{display:flex;align-items:center;gap:10px;padding:10px 12px;background:var(--bg);border:1px solid #cfdcf0;border-radius:10px;text-decoration:none;color:var(--ink);font-weight:500}
+.list a:hover{background:#dbeaff;border-color:var(--blue2)}
+.list b{flex:none;min-width:30px;height:30px;border-radius:50%;background:#d62839;color:#fff;display:grid;place-items:center;font-size:.85rem}
+.list b.i{background:var(--blue2)}
+.list small{display:block;color:#667;font-weight:400}
+.wrap>footer img{display:block;width:100%;height:auto}
+.wrap>footer p{margin:0;padding:10px;text-align:center;background:#0a3aa8;color:#fff;font-size:.8rem}
+
+/* Trang thuyết minh */
+body.tm{background:#1d2740;padding-bottom:96px}
+#page-container{max-width:760px}
+#page-container .pf{margin:0 auto 10px;box-shadow:0 2px 12px rgba(0,0,0,.4)}
+.pfwrap{margin:0 auto 10px;overflow:hidden}
+#page-container .pfwrap .pf{margin:0;box-shadow:none}
+.pfwrap{box-shadow:0 2px 12px rgba(0,0,0,.4)}
+.topbar{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:8px;padding:8px 12px;background:linear-gradient(90deg,#0b3ea8,#1a8fe3);color:#fff}
+.topbar a{color:#fff;text-decoration:none;font-weight:700}
+.topbar .sp{flex:1}
+.topbar .fl{display:flex;gap:6px}
+.topbar .fl button{border:2px solid transparent;border-radius:50%;padding:0;background:none;cursor:pointer;opacity:.6}
+.topbar .fl button.on{border-color:#f2b705;opacity:1}
+.topbar .fl img{width:28px;height:28px;border-radius:50%;display:block}
+.player{position:fixed;left:0;right:0;bottom:0;z-index:30;background:#0b2a6b;color:#fff;padding:10px 14px;display:flex;align-items:center;gap:10px;box-shadow:0 -2px 12px rgba(0,0,0,.4)}
+.player .in{max-width:760px;margin:0 auto;display:flex;align-items:center;gap:10px;width:100%}
+.player button{width:44px;height:44px;border-radius:50%;border:0;background:#f2b705;color:#0b2a6b;font-size:18px;cursor:pointer;flex:none}
+.player input[type=range]{flex:1;min-width:0}
+.player .tm{font-variant-numeric:tabular-nums;font-size:.8rem;flex:none}
+.player.none{display:none}
+
+.ff0{font-family:sans-serif;visibility:hidden;}
+@font-face{font-family:ff1;font-display:swap;src:url(f1.woff)format("woff");}.ff1{font-family:ff1;line-height:1.193359;font-style:normal;font-weight:normal;visibility:visible;}
+@font-face{font-family:ff2;font-display:swap;src:url(f2.woff)format("woff");}.ff2{font-family:ff2;line-height:1.391000;font-style:normal;font-weight:normal;visibility:visible;}
+.m0{transform:matrix(0.250000,0.000000,0.000000,0.250000,0,0);-ms-transform:matrix(0.250000,0.000000,0.000000,0.250000,0,0);-webkit-transform:matrix(0.250000,0.000000,0.000000,0.250000,0,0);}
+.v0{vertical-align:0.000000px;}
+.ls0{letter-spacing:0.000000px;}
+.sc_{text-shadow:none;}
+.sc0{text-shadow:-0.015em 0 transparent,0 0.015em transparent,0.015em 0 transparent,0 -0.015em  transparent;}
+@media screen and (-webkit-min-device-pixel-ratio:0){
+.sc_{-webkit-text-stroke:0px transparent;}
+.sc0{-webkit-text-stroke:0.015em transparent;text-shadow:none;}
+}
+.ws4{word-spacing:-0.192000px;}
+.ws0{word-spacing:0.000000px;}
+.ws3{word-spacing:0.064000px;}
+.ws7{word-spacing:0.384000px;}
+.ws1{word-spacing:0.448000px;}
+.ws6{word-spacing:3.456000px;}
+.ws5{word-spacing:5.184000px;}
+.ws2{word-spacing:5.504000px;}
+._2{margin-left:-5.132800px;}
+._0{margin-left:-4.051200px;}
+._1{margin-left:-2.848000px;}
+._3{margin-left:-1.484800px;}
+.fc2{color:rgb(35,31,32);}
+.fc0{color:rgb(122,8,32);}
+.fc1{color:rgb(1,20,39);}
+.fs0{font-size:50.876800px;}
+.fs2{font-size:64.000000px;}
+.fs1{font-size:120.000000px;}
+.y0{bottom:-0.500000px;}
+.y1{bottom:27.040000px;}
+.yb{bottom:445.968600px;}
+.ya{bottom:469.968600px;}
+.y9{bottom:493.968600px;}
+.y8{bottom:517.968600px;}
+.y7{bottom:541.968600px;}
+.y6{bottom:565.968600px;}
+.y5{bottom:589.968600px;}
+.y4{bottom:934.464600px;}
+.y3{bottom:958.464600px;}
+.y2{bottom:999.472500px;}
+.h2{height:48.442266px;}
+.h4{height:60.937500px;}
+.h3{height:138.720000px;}
+.h0{height:1077.170000px;}
+.h1{height:1077.500000px;}
+.w0{width:538.583000px;}
+.w1{width:539.000000px;}
+.x0{left:0.000000px;}
+.x1{left:52.543500px;}
+.x3{left:56.692900px;}
+.x2{left:131.188400px;}
+@media print{
+.v0{vertical-align:0.000000pt;}
+.ls0{letter-spacing:0.000000pt;}
+.ws4{word-spacing:-0.256000pt;}
+.ws0{word-spacing:0.000000pt;}
+.ws3{word-spacing:0.085333pt;}
+.ws7{word-spacing:0.512000pt;}
+.ws1{word-spacing:0.597333pt;}
+.ws6{word-spacing:4.608000pt;}
+.ws5{word-spacing:6.912000pt;}
+.ws2{word-spacing:7.338667pt;}
+._2{margin-left:-6.843733pt;}
+._0{margin-left:-5.401600pt;}
+._1{margin-left:-3.797333pt;}
+._3{margin-left:-1.979733pt;}
+.fs0{font-size:67.835733pt;}
+.fs2{font-size:85.333333pt;}
+.fs1{font-size:160.000000pt;}
+.y0{bottom:-0.666667pt;}
+.y1{bottom:36.053333pt;}
+.yb{bottom:594.624800pt;}
+.ya{bottom:626.624800pt;}
+.y9{bottom:658.624800pt;}
+.y8{bottom:690.624800pt;}
+.y7{bottom:722.624800pt;}
+.y6{bottom:754.624800pt;}
+.y5{bottom:786.624800pt;}
+.y4{bottom:1245.952800pt;}
+.y3{bottom:1277.952800pt;}
+.y2{bottom:1332.630000pt;}
+.h2{height:64.589687pt;}
+.h4{height:81.250000pt;}
+.h3{height:184.960000pt;}
+.h0{height:1436.226667pt;}
+.h1{height:1436.666667pt;}
+.w0{width:718.110667pt;}
+.w1{width:718.666667pt;}
+.x0{left:0.000000pt;}
+.x1{left:70.058000pt;}
+.x3{left:75.590533pt;}
+.x2{left:174.917867pt;}
+}
+
+    </style>
+    <link rel="preload" as="image" href="bg1.jpg"/>
+<script>
+        var loaded = 0;
+        const totalLoaded = 6;
+    </script>
+</head>
+<body>
+<div id="sidebar">
+    <div id="outline">
+    </div>
+</div>
+<div id="page-container">
+    <div id="pf1" class="pf w0 h0" data-page-no="1"><div class="pc pc1 w0 h0"><img class="bi x0 y0 w1 h1" alt="" src="bg1.jpg"/><div class="t m0 x1 h2 y1 ff1 fs0 fc0 sc0 ls0 ws0">4</div><div class="t m0 x2 h3 y2 ff2 fs1 fc1 sc0 ls0 ws0">2. NGHI MÔN NGOẠI</div><div class="t m0 x3 h4 y3 ff1 fs2 fc2 sc0 ls0 ws1">Nghi môn ngoại đền thờ vua Lê mang phong cách kiến trúc triều </div><div class="t m0 x3 h4 y4 ff1 fs2 fc2 sc0 ls0 ws0">Nguyễn,<span class="_ _0"></span> thế kỷ XIX.<span class="_ _0"></span> </div><div class="t m0 x3 h4 y5 ff1 fs2 fc2 sc0 ls0 ws2">Bát bửu là đề tài trang trí chủ đạo<span class="_ _1"></span>,<span class="_ _0"></span> với hình ảnh của: hòm sách,<span class="_ _0"></span> </div><div class="t m0 x3 h4 y6 ff1 fs2 fc2 sc0 ls0 ws3">ống bút,<span class="_ _0"></span> bầu rượu,<span class="_ _0"></span> bàn cờ<span class="_ _2"></span>,<span class="_ _0"></span> cuốn thư<span class="_ _1"></span>,<span class="_ _1"></span> đàn,<span class="_ _1"></span> lẵng quả,<span class="_ _1"></span> túi thiêng.<span class="_ _0"></span> Các </div><div class="t m0 x3 h4 y7 ff1 fs2 fc2 sc0 ls0 ws4">vật quý đư<span class="_ _1"></span>ợc trang trí k<span class="_ _3"></span>ết hợp v<span class="_ _3"></span>ới dải lụa mềm mại đã làm cho cái </div><div class="t m0 x3 h4 y8 ff1 fs2 fc2 sc0 ls0 ws5">động và cái tĩnh đan x<span class="_ _3"></span>en,<span class="_ _1"></span> thêm phần sinh động,<span class="_ _0"></span> chặt chẽ trong </div><div class="t m0 x3 h4 y9 ff1 fs2 fc2 sc0 ls0 ws6">bố cục tạo hình.<span class="_ _0"></span> T<span class="_ _2"></span>ổng thể tạo nên những hòa điệu t<span class="_ _3"></span>âm linh,<span class="_ _1"></span> triết </div><div class="t m0 x3 h4 ya ff1 fs2 fc2 sc0 ls0 ws7">lý<span class="_ _2"></span>,<span class="_ _1"></span> mang ý nghĩa sâu xa,<span class="_ _0"></span> gắn liền với mong ư<span class="_ _1"></span>ớc về cuộc sống viên </div><div class="t m0 x3 h4 yb ff1 fs2 fc2 sc0 ls0 ws0">mãn,<span class="_ _0"></span> hạnh phúc.</div></div><div class="pi" data-data='{"ctm":[1.000000,0.000000,0.000000,1.000000,0.000000,0.000000]}'></div></div>
+</div>
+<div class="loading-indicator">
+</div>
+<script src="/assets/js/thuyet-minh.js"></script>
+</body>
+</html>

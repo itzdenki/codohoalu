@@ -1,0 +1,128 @@
+/* Match the PDF typography in index_vi.html, including its 4:1 text scale. */
+@font-face {
+  font-family: translation-latin;
+  src: url('translation-latin.woff?v=2') format('woff');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: translation-ko;
+  src: url('translation-ko.woff?v=2') format('woff');
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: translation-zh;
+  src: url('translation-zh.woff?v=2') format('woff');
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: translation-ja;
+  src: url('translation-ja.woff?v=2') format('woff');
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: translation-initial;
+  src: url('/pages/ldh/long-sang-san-rong/f2.woff') format('woff');
+  font-display: swap;
+}
+@font-face {
+  font-family: translation-subtitle;
+  src: url('translation-subtitle.woff?v=2') format('woff');
+  font-display: swap;
+}
+@font-face {
+  font-family: translation-caption;
+  src: url('f4.woff') format('woff');
+  font-style: italic;
+  font-display: swap;
+}
+
+:root { --translation-font: translation-latin; }
+:root:lang(ko) { --translation-font: translation-ko, translation-latin; }
+:root:lang(zh-Hans) { --translation-font: translation-zh, translation-latin; }
+:root:lang(ja) { --translation-font: translation-ja, translation-latin; }
+
+#pf1 .pc1 > .t:not(.x1),
+#pf2 .pc2 > .t:not(.xa) { display: none; }
+
+.translated-title,
+.translated-intro,
+.translated-caption {
+  position: absolute;
+  z-index: 1;
+  -webkit-font-smoothing: antialiased;
+}
+
+.translated-title {
+  top: 47px;
+  left: 5%;
+  width: 360%;
+  margin: 0;
+  color: rgb(19, 26, 40);
+  font: normal 120px/1.1 ff3, var(--translation-font), sans-serif;
+  text-align: center;
+  transform: scale(.25);
+  transform-origin: 0 0;
+}
+
+.translated-title small {
+  display: block;
+  margin-top: 36px;
+  color: rgb(52, 112, 170);
+  font: normal 112px/1.016 ff2, translation-subtitle, ff1, var(--translation-font), sans-serif;
+}
+
+.translated-intro {
+  top: 129px;
+  left: 10.525%;
+  width: 315.8%;
+  color: rgb(35, 31, 32);
+  font: normal 64px/96px ff1, var(--translation-font), sans-serif;
+  text-align: justify;
+  transform: scale(.25);
+  transform-origin: 0 0;
+}
+
+.translated-intro p { margin: 0 0 28px; }
+.translated-intro p:first-child::first-letter {
+  float: left;
+  margin: 32px 8px -32px 0;
+  color: rgb(43, 92, 140);
+  font: normal 336.7272px/.78 ff2, translation-initial, var(--translation-font), sans-serif;
+}
+
+.translated-caption {
+  color: rgb(140, 31, 41);
+  font: italic 64px/84px translation-caption, var(--translation-font), sans-serif;
+  transform: scale(.25);
+  transform-origin: 100% 100%;
+}
+.caption-one { right: 5%; bottom: 150px; width: 96%; }
+.caption-two { right: 8%; bottom: 350px; width: 224%; text-align: center; }
+.caption-three, .caption-four {
+  left: 15%;
+  width: 280%;
+  text-align: center;
+  transform-origin: 0 100%;
+}
+.caption-three { bottom: 825px; }
+.caption-four { bottom: 114px; }
+
+.translated-continuation {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 760px;
+  aspect-ratio: 1078 / 2155;
+  margin: 0 auto;
+  padding: min(10.5vw, 80px);
+  background: #f2eee7 url('/bgall.jpg') center top / 100% 100% no-repeat;
+  color: rgb(35, 31, 32);
+  font: normal min(2.971vw, 22.58px)/1.5 ff1, var(--translation-font), sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+.translated-continuation p { margin: 0 0 1em; }
+.translated-continuation p:last-child { margin-bottom: 0; }

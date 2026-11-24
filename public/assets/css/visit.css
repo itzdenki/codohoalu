@@ -1,0 +1,253 @@
+.visit-home {
+  --visit-paper: #fff4d6;
+  --visit-ink: #60371f;
+  --visit-gold: #d99b32;
+  --visit-sheet-width: 480px;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  overscroll-behavior: contain;
+  background: var(--red-deep);
+  color: var(--visit-ink);
+  font-family: 'Be Vietnam Pro', system-ui, sans-serif;
+}
+
+.visit-home-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  max-width: var(--visit-sheet-width);
+  min-height: var(--guide-top-height);
+  margin: 0 auto;
+  background: linear-gradient(#fffaf0, var(--visit-paper));
+  border-bottom: 1px solid #ddba78;
+}
+
+.visit-home-header .guide-bar-inner {
+  min-height: var(--guide-top-height);
+  height: auto;
+  gap: 6px;
+  padding-inline: clamp(6px, 2vw, 12px);
+}
+
+.visit-home-header .guide-languages {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.visit-home-header .top-flag-btn.is-active {
+  border-color: #c28e46;
+  background-color: #f4e1b6;
+}
+
+.visit-home-header .visit-menu-close {
+  border: 0;
+  border-inline-start: 1px solid #ddba78;
+  border-radius: 0;
+  color: var(--visit-ink);
+}
+
+.visit-home-wrap {
+  width: min(100%, var(--visit-sheet-width));
+  margin: 0 auto;
+  container-type: inline-size;
+  background:
+    linear-gradient(90deg, #f8de9d88, #fff5d790 23% 77%, #f8de9d88),
+    var(--visit-paper) url('/images/article-cloud-bg.jpg') center / 100% 100% no-repeat;
+}
+
+.visit-menu-banner {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 82px;
+  padding: 16px;
+  background: var(--visit-paper) url('/images/article-cloud-bg.jpg') center / cover no-repeat;
+  text-align: center;
+}
+
+.visit-menu-banner h1 {
+  color: var(--visit-ink);
+  font: 700 clamp(16px, 4.7cqw, 23px)/1.3 'Hoa Lu Menu', Georgia, serif;
+}
+
+.visit-menu-banner[data-lang="vi"] {
+  min-height: 0;
+  padding: 0;
+  aspect-ratio: 350 / 112;
+  background: url('/images/menu/header-banner.png') center / 100% 100% no-repeat;
+}
+
+/* Keep the heading accessible when it is already printed in the artwork. */
+.visit-menu-banner[data-lang="vi"] h1 {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.visit-topic-list {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  gap: clamp(8px, 3.3cqw, 15px) clamp(11px, 4.7cqw, 21px);
+  padding: 2px 5.3% 8px;
+}
+
+.visit-topic-list::before,
+.visit-topic-list::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: 2px;
+  bottom: 2px;
+  width: 6%;
+  background: url('/images/menu/header-banner.png') left top / 350px 112px repeat-y;
+  opacity: .45;
+  pointer-events: none;
+}
+
+.visit-topic-list::before {
+  left: 0;
+  mask-image: linear-gradient(to right, #000, transparent);
+}
+
+.visit-topic-list::after {
+  right: 0;
+  background-position: right 36px;
+  mask-image: linear-gradient(to left, #000, transparent);
+}
+
+.visit-topic {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--visit-ink);
+  text-align: center;
+  cursor: pointer;
+}
+
+.visit-topic-image {
+  display: block;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border: 1.5px solid var(--visit-gold);
+  border-radius: clamp(7px, 2.6cqw, 12px);
+  background: #f0d8a6;
+}
+
+.visit-topic-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .25s ease;
+}
+
+.visit-topic-title {
+  display: block;
+  padding: 5px 1px 0;
+  font: 700 clamp(10px, 3.55cqw, 15px)/1.32 'Hoa Lu Menu', Georgia, serif;
+  overflow-wrap: break-word;
+}
+
+.visit-overview-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  min-width: 124px;
+  margin: 12px auto 4px;
+  padding: 4px 12px;
+  border: 1px solid var(--visit-gold);
+  border-radius: 9px;
+  background: #ffedbe;
+  color: var(--visit-ink);
+  font: 700 13px/1.3 'Hoa Lu Menu', Georgia, serif;
+  cursor: pointer;
+}
+
+.visit-overview-images {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.visit-overview-images img {
+  display: block;
+  width: 28px;
+  height: 28px;
+  border: 1px solid var(--visit-gold);
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+.visit-overview-images img + img { margin-inline-start: -5px; }
+.visit-overview-arrow { font: 20px/1 system-ui, sans-serif; }
+
+.visit-menu-footer {
+  position: relative;
+  display: grid;
+  place-items: center;
+  padding: 10px 16px;
+}
+
+.visit-menu-footer-close {
+  min-width: 80px;
+  min-height: 44px;
+  padding: 0 16px;
+  border: 1px solid var(--visit-gold);
+  border-radius: 9px;
+  background: linear-gradient(#b88036, #784615);
+  color: var(--visit-paper);
+  font: italic 700 14px/1.3 'Hoa Lu Menu', Georgia, serif;
+  cursor: pointer;
+}
+
+.visit-menu-footer[data-lang="vi"] {
+  padding: 0;
+}
+
+.visit-menu-footer[data-lang="vi"] .visit-menu-footer-close {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.visit-menu-footer-close img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.visit-menu-footer[data-lang="vi"] .visit-menu-footer-close:focus-visible {
+  outline-offset: -3px;
+}
+
+.visit-home button:focus-visible { outline: 2px solid #a15c19; outline-offset: 2px; }
+.visit-home-header button:focus-visible { outline-color: #8c561d; outline-offset: -2px; }
+
+@media (hover: hover) {
+  .visit-home-header .top-flag-btn:not(.is-active):hover,
+  .visit-home-header .visit-menu-close:hover { background-color: #f4e1b6; }
+  .visit-overview-button:hover { background: #ffdf95; }
+  .visit-topic:hover .visit-topic-image { border-color: #a15c19; }
+  .visit-topic:hover img { transform: scale(1.035); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .visit-topic-image img { transition: none; }
+}

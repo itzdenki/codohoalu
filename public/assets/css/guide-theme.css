@@ -1,0 +1,17 @@
+:root {
+  --red-deep: #43171c;
+  --red-main: #65272d;
+  --red-light: #843840;
+  --gold: #c99b60;
+  --gold-light: #f2d6a4;
+  --guide-cream: #fff3df;
+  --guide-line: rgba(242, 214, 164, .38);
+}
+
+/* Chrome used by the original temple articles and maps. */
+body.tm,
+body.tm.dinh-map-ready { background-color: var(--red-main); }
+.tm .topbar,
+.tm .player { background: var(--red-deep); color: var(--guide-cream); }
+.tm .player button { background: var(--gold-light); color: var(--red-deep); }
+.tm .player input[type="range"] { accent-color: var(--gold-light); }

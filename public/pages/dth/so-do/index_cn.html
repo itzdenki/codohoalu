@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+    <meta charset="UTF-8">
+    <title>Cố Đô Hoa Lư</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style id="inlined-all-css">
+/* Quy tắc nền tối thiểu cho nội dung xuất từ pdf2htmlEX */
+*{box-sizing:content-box}
+html,body{margin:0;padding:0}
+#page-container{position:relative;margin:0 auto;padding:0}
+.pf{position:relative;background-color:#fff;overflow:hidden;margin:0 auto;border:0;transform-origin:0 0}
+.pc{position:absolute;border:0;padding:0;margin:0;top:0;left:0;width:100%;height:100%;overflow:hidden;display:block;transform-origin:0 0}
+.pi{display:none}
+.bf,.bi{position:absolute;left:0;bottom:0;border:0;margin:0;padding:0;-ms-user-select:none;-webkit-user-select:none;user-select:none}
+.t{position:absolute;white-space:pre;transform-origin:0 100%;unicode-bidi:bidi-override}
+._{display:inline-block;color:transparent;overflow:hidden;width:0;height:0}
+.pc>*,.t{-webkit-font-smoothing:antialiased}
+@media print{.pf{margin:0;box-shadow:none;page-break-after:always;page-break-inside:avoid}}
+
+/* Dành riêng cho pdf2htmlEX (không cần thêm quy tắc) */
+
+:root{--blue:#0b3ea8;--blue2:#1a8fe3;--gold:#f2b705;--ink:#1c2a44;--bg:#eef3fb}
+*{-webkit-tap-highlight-color:transparent}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:#dfe7f3}
+#sidebar,.loading-indicator{display:none}
+a{color:var(--blue)}
+
+/* ===== Trang chủ ===== */
+.home{min-height:100vh;background:#0b2a6b url(/images/bg_v1_tinified.jpg) center top/cover fixed}
+.wrap{max-width:760px;margin:0 auto;background:rgba(255,255,255,.96);min-height:100vh;box-shadow:0 0 40px rgba(0,0,0,.35)}
+.wrap>header img,.hero img{display:block;width:100%;height:auto}
+.hero{background:linear-gradient(#fff,#e6f0fb);text-align:center;padding-bottom:6px;margin-top:-1px}
+.hero img{max-width:520px;margin:-20px auto -50px}
+.langs{display:flex;gap:10px;justify-content:center;padding:10px 12px}
+.langs button{border:2px solid transparent;background:#fff;border-radius:999px;padding:4px 12px 4px 6px;display:flex;align-items:center;gap:8px;font-weight:600;cursor:pointer;box-shadow:0 1px 4px rgba(0,0,0,.2)}
+.langs button img{width:28px;height:28px;border-radius:50%}
+.langs button.on{border-color:var(--blue2);background:#e5f2ff}
+.note{text-align:center;font-size:.85rem;color:#566;margin:0 16px 8px}
+.gallery{display:flex;gap:8px;overflow-x:auto;padding:8px 14px;scroll-snap-type:x mandatory}
+.gallery img{width:110px;height:110px;border-radius:12px;object-fit:cover;scroll-snap-align:start;border:2px solid var(--gold)}
+section.site{padding:10px 16px 18px}
+section.site h2{background:linear-gradient(90deg,var(--blue),var(--blue2));color:#fff;margin:14px 0 10px;padding:10px 14px;font-size:1.1rem;border-radius:10px;text-transform:uppercase}
+.list{display:grid;gap:8px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+.list a{display:flex;align-items:center;gap:10px;padding:10px 12px;background:var(--bg);border:1px solid #cfdcf0;border-radius:10px;text-decoration:none;color:var(--ink);font-weight:500}
+.list a:hover{background:#dbeaff;border-color:var(--blue2)}
+.list b{flex:none;min-width:30px;height:30px;border-radius:50%;background:#d62839;color:#fff;display:grid;place-items:center;font-size:.85rem}
+.list b.i{background:var(--blue2)}
+.list small{display:block;color:#667;font-weight:400}
+.wrap>footer img{display:block;width:100%;height:auto}
+.wrap>footer p{margin:0;padding:10px;text-align:center;background:#0a3aa8;color:#fff;font-size:.8rem}
+
+/* Trang thuyết minh */
+body.tm{background:#1d2740;padding-bottom:96px}
+#page-container{max-width:760px}
+#page-container .pf{margin:0 auto 10px;box-shadow:0 2px 12px rgba(0,0,0,.4)}
+.pfwrap{margin:0 auto 10px;overflow:hidden}
+#page-container .pfwrap .pf{margin:0;box-shadow:none}
+.pfwrap{box-shadow:0 2px 12px rgba(0,0,0,.4)}
+.topbar{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:8px;padding:8px 12px;background:linear-gradient(90deg,#0b3ea8,#1a8fe3);color:#fff}
+.topbar a{color:#fff;text-decoration:none;font-weight:700}
+.topbar .sp{flex:1}
+.topbar .fl{display:flex;gap:6px}
+.topbar .fl button{border:2px solid transparent;border-radius:50%;padding:0;background:none;cursor:pointer;opacity:.6}
+.topbar .fl button.on{border-color:#f2b705;opacity:1}
+.topbar .fl img{width:28px;height:28px;border-radius:50%;display:block}
+.player{position:fixed;left:0;right:0;bottom:0;z-index:30;background:#0b2a6b;color:#fff;padding:10px 14px;display:flex;align-items:center;gap:10px;box-shadow:0 -2px 12px rgba(0,0,0,.4)}
+.player .in{max-width:760px;margin:0 auto;display:flex;align-items:center;gap:10px;width:100%}
+.player button{width:44px;height:44px;border-radius:50%;border:0;background:#f2b705;color:#0b2a6b;font-size:18px;cursor:pointer;flex:none}
+.player input[type=range]{flex:1;min-width:0}
+.player .tm{font-variant-numeric:tabular-nums;font-size:.8rem;flex:none}
+.player.none{display:none}
+
+.ff0{font-family:sans-serif;visibility:hidden;}
+@font-face{font-family:ff1;font-display:swap;src:url(f1.woff)format("woff");}.ff1{font-family:ff1;line-height:1.193359;font-style:normal;font-weight:normal;visibility:visible;}
+@font-face{font-family:ff2;font-display:swap;src:url(f2.woff)format("woff");}.ff2{font-family:ff2;line-height:1.193359;font-style:normal;font-weight:normal;visibility:visible;}
+.m0{transform:matrix(0.250000,0.000000,0.000000,0.250000,0,0);-ms-transform:matrix(0.250000,0.000000,0.000000,0.250000,0,0);-webkit-transform:matrix(0.250000,0.000000,0.000000,0.250000,0,0);}
+.v0{vertical-align:0.000000px;}
+.ls1{letter-spacing:-0.720000px;}
+.ls0{letter-spacing:0.000000px;}
+.ls2{letter-spacing:7.280000px;}
+.sc_{text-shadow:none;}
+.sc0{text-shadow:-0.015em 0 transparent,0 0.015em transparent,0.015em 0 transparent,0 -0.015em  transparent;}
+@media screen and (-webkit-min-device-pixel-ratio:0){
+.sc_{-webkit-text-stroke:0px transparent;}
+.sc0{-webkit-text-stroke:0.015em transparent;text-shadow:none;}
+}
+.ws0{word-spacing:0.000000px;}
+._2{margin-left:-8.942400px;}
+._3{margin-left:-6.336000px;}
+._5{margin-left:-5.097600px;}
+._1{margin-left:-3.520800px;}
+._0{margin-left:-1.735200px;}
+._4{width:1.699200px;}
+._6{width:8.440400px;}
+.fc3{color:transparent;}
+.fc0{color:rgb(210,32,39);}
+.fc2{color:rgb(108,0,0);}
+.fc1{color:rgb(35,31,32);}
+.fs1{font-size:56.000000px;}
+.fs0{font-size:72.000000px;}
+.fs2{font-size:104.000000px;}
+.y0{bottom:-0.500000px;}
+.yb{bottom:64.169600px;}
+.ya{bottom:86.169600px;}
+.y9{bottom:125.139800px;}
+.y8{bottom:147.139800px;}
+.y7{bottom:186.278500px;}
+.y6{bottom:208.278500px;}
+.y5{bottom:230.278500px;}
+.y4{bottom:269.417200px;}
+.y3{bottom:291.417200px;}
+.y2{bottom:326.110100px;}
+.y1{bottom:348.110100px;}
+.yc{bottom:392.555900px;}
+.ye{bottom:861.924800px;}
+.yd{bottom:889.924800px;}
+.h3{height:53.320312px;}
+.h2{height:68.554688px;}
+.h4{height:99.023438px;}
+.h0{height:1077.170000px;}
+.h1{height:1077.500000px;}
+.w0{width:538.583000px;}
+.w1{width:539.000000px;}
+.x0{left:0.000000px;}
+.x1{left:49.024600px;}
+.x2{left:63.197800px;}
+.x6{left:77.072100px;}
+.x5{left:117.447800px;}
+.x3{left:236.692900px;}
+.x4{left:250.866100px;}
+@media print{
+.v0{vertical-align:0.000000pt;}
+.ls1{letter-spacing:-0.960000pt;}
+.ls0{letter-spacing:0.000000pt;}
+.ls2{letter-spacing:9.706667pt;}
+.ws0{word-spacing:0.000000pt;}
+._2{margin-left:-11.923200pt;}
+._3{margin-left:-8.448000pt;}
+._5{margin-left:-6.796800pt;}
+._1{margin-left:-4.694400pt;}
+._0{margin-left:-2.313600pt;}
+._4{width:2.265600pt;}
+._6{width:11.253867pt;}
+.fs1{font-size:74.666667pt;}
+.fs0{font-size:96.000000pt;}
+.fs2{font-size:138.666667pt;}
+.y0{bottom:-0.666667pt;}
+.yb{bottom:85.559467pt;}
+.ya{bottom:114.892800pt;}
+.y9{bottom:166.853067pt;}
+.y8{bottom:196.186400pt;}
+.y7{bottom:248.371333pt;}
+.y6{bottom:277.704667pt;}
+.y5{bottom:307.038000pt;}
+.y4{bottom:359.222933pt;}
+.y3{bottom:388.556267pt;}
+.y2{bottom:434.813467pt;}
+.y1{bottom:464.146800pt;}
+.yc{bottom:523.407867pt;}
+.ye{bottom:1149.233067pt;}
+.yd{bottom:1186.566400pt;}
+.h3{height:71.093750pt;}
+.h2{height:91.406250pt;}
+.h4{height:132.031250pt;}
+.h0{height:1436.226667pt;}
+.h1{height:1436.666667pt;}
+.w0{width:718.110667pt;}
+.w1{width:718.666667pt;}
+.x0{left:0.000000pt;}
+.x1{left:65.366133pt;}
+.x2{left:84.263733pt;}
+.x6{left:102.762800pt;}
+.x5{left:156.597067pt;}
+.x3{left:315.590533pt;}
+.x4{left:334.488133pt;}
+}
+
+    </style>
+    <link rel="preload" as="image" href="bg1.jpg"/>
+<script>
+        var loaded = 0;
+        const totalLoaded = 6;
+    </script>
+    <link rel="stylesheet" href="/assets/css/dinh-map.css">
+</head>
+<body>
+<div id="sidebar">
+    <div id="outline">
+    </div>
+</div>
+<div id="page-container">
+    <div id="pf1" class="pf w0 h0" data-page-no="1">
+        <div class="pc pc1 w0 h0">
+            <img class="bi x0 y0 w1 h1" alt="" src="bg1.jpg"/>
+            <div class="t m0 x1 h2 y1 ff1 fs0 fc0 sc0 ls0 ws0" onclick="TravisUtility.goTo('pages/dth/ngo-mon-quan')">1<span class="_ _0"></span>.<span class="_ _1"></span> NGỌ MÔN QUAN </div><div class="t m0 x2 h2 y2 ff2 fs0 fc0 sc0 ls0 ws0" onclick="TravisUtility.goTo('pages/dth/ngo-mon-quan')">Meridian Gat<span class="_ _0"></span>e</div>
+            <div class="t m0 x3 h2 y1 ff1 fs0 fc0 sc0 ls0 ws0" onclick="TravisUtility.goTo('pages/dth/den-tho-vua-chi-tiet')">6.<span class="_ _1"></span> ĐỀN THỜ VUA ĐINH </div><div class="t m0 x4 h2 y2 ff2 fs0 fc0 sc0 ls1 ws0" onclick="TravisUtility.goTo('pages/dth/den-tho-vua-chi-tiet')">T<span class="_ _2"></span>emple of the Dinh Tien Hoan<span class="_ _0"></span>g King</div>
+            <div class="t m0 x1 h2 y3 ff1 fs0 fc0 sc0 ls0 ws0" onclick="TravisUtility.goTo('pages/dth/long-sang-nghi-mon-ngoai')">2.<span class="_ _1"></span> L<span class="_ _0"></span>ONG SÀNG </div><div class="t m0 x2 h2 y4 ff2 fs0 fc0 sc0 ls0 ws0" onclick="TravisUtility.goTo('pages/dth/long-sang-nghi-mon-ngoai')">Dragon bed</div>
+            <div class="t m0 x3 h2 y3 ff1 fs0 fc0 sc0 ls0 ws0" onclick="TravisUtility.goTo('pages/dth/nha-trung-bay')">7<span class="_ _3"></span>.<span class="_ _1"></span> NHÀ TRƯNG BÀ<span class="_ _3"></span>Y </div><div class="t m0 x4 h2 y4 ff2 fs0 fc0 sc0 ls0 ws0" onclick="TravisUtility.goTo('pages/dth/nha-trung-bay')">Exhibition r<span class="_ _0"></span>oom </div>
+            <div class="t m0 x1 h2 y5 ff1 fs0 fc0 sc0 ls0 ws0" onclick="TravisUtility.goTo('pages/dth/nghi-mon-ngoai')">3<span class="_ _0"></span>.<span class="_ _1"></span> NGHI MÔN NGOẠI </div><div class="t m0 x2 h2 y6 ff2 fs0 fc0 sc0 ls0 ws0" onclick="TravisUtility.goTo('pages/dth/nghi-mon-ngoai')">Outer Alt<span class="_ _0"></span>er<span class="_ _0"></span>-Cur<span class="_ _4"></span>t<span class="_ _0"></span>ain </div>
+            <div class="t m0 x3 h2 y5 ff1 fs0 fc0 sc0 ls0 ws0" onclick="TravisUtility.goTo('pages/dth/nha-khai-thanh')">8<span class="_ _0"></span>.<span class="_ _1"></span> NHÀ KHẢI THÁNH </div><div class="t m0 x4 h2 y6 ff2 fs0 fc0 sc0 ls0 ws0" onclick="TravisUtility.goTo('pages/dth/nha-khai-thanh')">The Dinh king’<span class="_ _5"></span>s par<span class="_ _0"></span>ents  </div><div class="t m0 x4 h2 y7 ff2 fs0 fc0 sc0 ls0 ws0">worshiping place </div>
+            <div class="t m0 x1 h2 y8 ff1 fs0 fc0 sc0 ls0 ws0" onclick="TravisUtility.goTo('pages/dth/nghi-mon-noi')">4.<span class="_ _1"></span> NGHI MÔN NỘI  </div><div class="t m0 x2 h2 y9 ff2 fs0 fc0 sc0 ls0 ws0" onclick="TravisUtility.goTo('pages/dth/nghi-mon-noi')">Inner Alt<span class="_ _0"></span>er<span class="_ _0"></span>-Cur<span class="_ _4"></span>tain</div>
+            <div class="t m0 x3 h2 y8 ff1 fs0 fc0 sc0 ls0 ws0" onclick="TravisUtility.goTo('pages/dth/nha-bia')">9<span class="_ _0"></span>.<span class="_ _1"></span> NHÀ BIA </div><div class="t m0 x4 h2 y9 ff2 fs0 fc0 sc0 ls0 ws0" onclick="TravisUtility.goTo('pages/dth/nha-bia')">Stela House</div>
+            <div class="t m0 x1 h2 ya ff1 fs0 fc0 sc0 ls0 ws0" onclick="TravisUtility.goTo('pages/dth/long-sang-san-rong')">5.<span class="_ _1"></span> L<span class="_ _0"></span>ONG SÀNG </div><div class="t m0 x2 h2 yb ff2 fs0 fc0 sc0 ls0 ws0" onclick="TravisUtility.goTo('pages/dth/long-sang-san-rong')">Dragon bed</div><div class="t m0 x5 h3 yc ff2 fs1 fc1 sc0 ls0 ws0">Chạm vào các mục dư<span class="_ _0"></span>ới để xem thuy<span class="_ _0"></span>ết minh chi tiết</div><div class="t m0 x6 h4 yd ff1 fs2 fc2 sc0 ls2 ws0">SƠ ĐỒ THAM QUAN ĐỀN THỜ<span class="_ _2"></span> <span class="_ _6"></span><span class="ls0"> </span></div><div class="t m0 x5 h4 ye ff1 fs2 fc2 sc0 ls2 ws0">VUA ĐINH TIÊN HO<span class="_ _1"></span>ÀNG</div>
+        </div><div class="pi" data-data='{"ctm":[1.000000,0.000000,0.000000,1.000000,0.000000,0.000000]}'></div>
+    </div>
+</div>
+<section id="dinh-map-key" class="dinh-map-key" hidden></section>
+<div class="loading-indicator">
+</div>
+<script src="/assets/js/thuyet-minh.js"></script>
+<script type="module" src="/assets/js/dinh-map.js"></script>
+</body>
+</html>

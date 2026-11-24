@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cố Đô Hoa Lư</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style id="inlined-all-css">
+/* Quy tắc nền tối thiểu cho nội dung xuất từ pdf2htmlEX */
+*{box-sizing:content-box}
+html,body{margin:0;padding:0}
+#page-container{position:relative;margin:0 auto;padding:0}
+.pf{position:relative;background-color:#fff;overflow:hidden;margin:0 auto;border:0;transform-origin:0 0}
+.pc{position:absolute;border:0;padding:0;margin:0;top:0;left:0;width:100%;height:100%;overflow:hidden;display:block;transform-origin:0 0}
+.pi{display:none}
+.bf,.bi{position:absolute;left:0;bottom:0;border:0;margin:0;padding:0;-ms-user-select:none;-webkit-user-select:none;user-select:none}
+.t{position:absolute;white-space:pre;transform-origin:0 100%;unicode-bidi:bidi-override}
+._{display:inline-block;color:transparent;overflow:hidden;width:0;height:0}
+.pc>*,.t{-webkit-font-smoothing:antialiased}
+@media print{.pf{margin:0;box-shadow:none;page-break-after:always;page-break-inside:avoid}}
+
+/* Dành riêng cho pdf2htmlEX (không cần thêm quy tắc) */
+
+:root{--blue:#0b3ea8;--blue2:#1a8fe3;--gold:#f2b705;--ink:#1c2a44;--bg:#eef3fb}
+*{-webkit-tap-highlight-color:transparent}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:#dfe7f3}
+#sidebar,.loading-indicator{display:none}
+a{color:var(--blue)}
+
+/* ===== Trang chủ ===== */
+.home{min-height:100vh;background:#0b2a6b url(/images/bg_v1_tinified.jpg) center top/cover fixed}
+.wrap{max-width:760px;margin:0 auto;background:rgba(255,255,255,.96);min-height:100vh;box-shadow:0 0 40px rgba(0,0,0,.35)}
+.wrap>header img,.hero img{display:block;width:100%;height:auto}
+.hero{background:linear-gradient(#fff,#e6f0fb);text-align:center;padding-bottom:6px;margin-top:-1px}
+.hero img{max-width:520px;margin:-20px auto -50px}
+.langs{display:flex;gap:10px;justify-content:center;padding:10px 12px}
+.langs button{border:2px solid transparent;background:#fff;border-radius:999px;padding:4px 12px 4px 6px;display:flex;align-items:center;gap:8px;font-weight:600;cursor:pointer;box-shadow:0 1px 4px rgba(0,0,0,.2)}
+.langs button img{width:28px;height:28px;border-radius:50%}
+.langs button.on{border-color:var(--blue2);background:#e5f2ff}
+.note{text-align:center;font-size:.85rem;color:#566;margin:0 16px 8px}
+.gallery{display:flex;gap:8px;overflow-x:auto;padding:8px 14px;scroll-snap-type:x mandatory}
+.gallery img{width:110px;height:110px;border-radius:12px;object-fit:cover;scroll-snap-align:start;border:2px solid var(--gold)}
+section.site{padding:10px 16px 18px}
+section.site h2{background:linear-gradient(90deg,var(--blue),var(--blue2));color:#fff;margin:14px 0 10px;padding:10px 14px;font-size:1.1rem;border-radius:10px;text-transform:uppercase}
+.list{display:grid;gap:8px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+.list a{display:flex;align-items:center;gap:10px;padding:10px 12px;background:var(--bg);border:1px solid #cfdcf0;border-radius:10px;text-decoration:none;color:var(--ink);font-weight:500}
+.list a:hover{background:#dbeaff;border-color:var(--blue2)}
+.list b{flex:none;min-width:30px;height:30px;border-radius:50%;background:#d62839;color:#fff;display:grid;place-items:center;font-size:.85rem}
+.list b.i{background:var(--blue2)}
+.list small{display:block;color:#667;font-weight:400}
+.wrap>footer img{display:block;width:100%;height:auto}
+.wrap>footer p{margin:0;padding:10px;text-align:center;background:#0a3aa8;color:#fff;font-size:.8rem}
+
+/* Trang thuyết minh */
+body.tm{background:#1d2740;padding-bottom:96px}
+#page-container{max-width:760px}
+#page-container .pf{margin:0 auto 10px;box-shadow:0 2px 12px rgba(0,0,0,.4)}
+.pfwrap{margin:0 auto 10px;overflow:hidden}
+#page-container .pfwrap .pf{margin:0;box-shadow:none}
+.pfwrap{box-shadow:0 2px 12px rgba(0,0,0,.4)}
+.topbar{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:8px;padding:8px 12px;background:linear-gradient(90deg,#0b3ea8,#1a8fe3);color:#fff}
+.topbar a{color:#fff;text-decoration:none;font-weight:700}
+.topbar .sp{flex:1}
+.topbar .fl{display:flex;gap:6px}
+.topbar .fl button{border:2px solid transparent;border-radius:50%;padding:0;background:none;cursor:pointer;opacity:.6}
+.topbar .fl button.on{border-color:#f2b705;opacity:1}
+.topbar .fl img{width:28px;height:28px;border-radius:50%;display:block}
+.player{position:fixed;left:0;right:0;bottom:0;z-index:30;background:#0b2a6b;color:#fff;padding:10px 14px;display:flex;align-items:center;gap:10px;box-shadow:0 -2px 12px rgba(0,0,0,.4)}
+.player .in{max-width:760px;margin:0 auto;display:flex;align-items:center;gap:10px;width:100%}
+.player button{width:44px;height:44px;border-radius:50%;border:0;background:#f2b705;color:#0b2a6b;font-size:18px;cursor:pointer;flex:none}
+.player input[type=range]{flex:1;min-width:0}
+.player .tm{font-variant-numeric:tabular-nums;font-size:.8rem;flex:none}
+.player.none{display:none}
+
+.ff0{font-family:sans-serif;visibility:hidden;}
+@font-face{font-family:ff1;font-display:swap;src:url(f1.woff)format("woff");}.ff1{font-family:ff1;line-height:1.193359;font-style:normal;font-weight:normal;visibility:visible;}
+@font-face{font-family:ff2;font-display:swap;src:url(f2.woff)format("woff");}.ff2{font-family:ff2;line-height:1.391000;font-style:normal;font-weight:normal;visibility:visible;}
+@font-face{font-family:ff3;font-display:swap;src:url(f3.woff)format("woff");}.ff3{font-family:ff3;line-height:0.997000;font-style:normal;font-weight:normal;visibility:visible;}
+.m0{transform:matrix(0.250000,0.000000,0.000000,0.250000,0,0);-ms-transform:matrix(0.250000,0.000000,0.000000,0.250000,0,0);-webkit-transform:matrix(0.250000,0.000000,0.000000,0.250000,0,0);}
+.v0{vertical-align:0.000000px;}
+.ls0{letter-spacing:0.000000px;}
+.sc_{text-shadow:none;}
+.sc0{text-shadow:-0.015em 0 transparent,0 0.015em transparent,0.015em 0 transparent,0 -0.015em  transparent;}
+@media screen and (-webkit-min-device-pixel-ratio:0){
+.sc_{-webkit-text-stroke:0px transparent;}
+.sc0{-webkit-text-stroke:0.015em transparent;text-shadow:none;}
+}
+.ws2{word-spacing:-4.352000px;}
+.ws4{word-spacing:-1.408000px;}
+.ws3{word-spacing:-1.024000px;}
+.ws0{word-spacing:0.000000px;}
+.ws8{word-spacing:0.704000px;}
+.ws6{word-spacing:1.024000px;}
+.wsa{word-spacing:2.048000px;}
+.ws1{word-spacing:2.240000px;}
+.wsc{word-spacing:3.264000px;}
+.wsb{word-spacing:4.160000px;}
+.ws9{word-spacing:4.800000px;}
+.ws7{word-spacing:6.080000px;}
+.ws5{word-spacing:6.464000px;}
+._1{margin-left:-7.065600px;}
+._2{margin-left:-3.718400px;}
+._3{margin-left:-2.553600px;}
+._0{margin-left:-1.548800px;}
+._4{width:1.228800px;}
+.fc3{color:rgb(35,31,32);}
+.fc2{color:rgb(43,94,144);}
+.fc0{color:rgb(122,8,32);}
+.fc1{color:rgb(1,20,39);}
+.fs0{font-size:50.876800px;}
+.fs3{font-size:64.000000px;}
+.fs1{font-size:120.000000px;}
+.fs2{font-size:336.727200px;}
+.y0{bottom:-0.500000px;}
+.y1{bottom:27.040000px;}
+.y12{bottom:300.848300px;}
+.y11{bottom:324.848300px;}
+.y10{bottom:348.848300px;}
+.yf{bottom:372.848300px;}
+.ye{bottom:396.848300px;}
+.yd{bottom:420.848300px;}
+.yc{bottom:444.848300px;}
+.yb{bottom:468.848300px;}
+.ya{bottom:492.848300px;}
+.y9{bottom:516.848300px;}
+.y8{bottom:549.344300px;}
+.y7{bottom:573.344300px;}
+.y6{bottom:869.856300px;}
+.y3{bottom:893.856300px;}
+.y5{bottom:917.856300px;}
+.y4{bottom:941.856300px;}
+.y2{bottom:988.533400px;}
+.h2{height:48.442266px;}
+.h5{height:60.937500px;}
+.h3{height:138.720000px;}
+.h4{height:265.004306px;}
+.h0{height:1077.170000px;}
+.h1{height:1077.500000px;}
+.w0{width:538.583000px;}
+.w1{width:539.000000px;}
+.x0{left:0.000000px;}
+.x1{left:52.462800px;}
+.x3{left:55.261800px;}
+.x4{left:56.696600px;}
+.x2{left:109.468400px;}
+@media print{
+.v0{vertical-align:0.000000pt;}
+.ls0{letter-spacing:0.000000pt;}
+.ws2{word-spacing:-5.802667pt;}
+.ws4{word-spacing:-1.877333pt;}
+.ws3{word-spacing:-1.365333pt;}
+.ws0{word-spacing:0.000000pt;}
+.ws8{word-spacing:0.938667pt;}
+.ws6{word-spacing:1.365333pt;}
+.wsa{word-spacing:2.730667pt;}
+.ws1{word-spacing:2.986667pt;}
+.wsc{word-spacing:4.352000pt;}
+.wsb{word-spacing:5.546667pt;}
+.ws9{word-spacing:6.400000pt;}
+.ws7{word-spacing:8.106667pt;}
+.ws5{word-spacing:8.618667pt;}
+._1{margin-left:-9.420800pt;}
+._2{margin-left:-4.957867pt;}
+._3{margin-left:-3.404800pt;}
+._0{margin-left:-2.065067pt;}
+._4{width:1.638400pt;}
+.fs0{font-size:67.835733pt;}
+.fs3{font-size:85.333333pt;}
+.fs1{font-size:160.000000pt;}
+.fs2{font-size:448.969600pt;}
+.y0{bottom:-0.666667pt;}
+.y1{bottom:36.053333pt;}
+.y12{bottom:401.131067pt;}
+.y11{bottom:433.131067pt;}
+.y10{bottom:465.131067pt;}
+.yf{bottom:497.131067pt;}
+.ye{bottom:529.131067pt;}
+.yd{bottom:561.131067pt;}
+.yc{bottom:593.131067pt;}
+.yb{bottom:625.131067pt;}
+.ya{bottom:657.131067pt;}
+.y9{bottom:689.131067pt;}
+.y8{bottom:732.459067pt;}
+.y7{bottom:764.459067pt;}
+.y6{bottom:1159.808400pt;}
+.y3{bottom:1191.808400pt;}
+.y5{bottom:1223.808400pt;}
+.y4{bottom:1255.808400pt;}
+.y2{bottom:1318.044533pt;}
+.h2{height:64.589687pt;}
+.h5{height:81.250000pt;}
+.h3{height:184.960000pt;}
+.h4{height:353.339075pt;}
+.h0{height:1436.226667pt;}
+.h1{height:1436.666667pt;}
+.w0{width:718.110667pt;}
+.w1{width:718.666667pt;}
+.x0{left:0.000000pt;}
+.x1{left:69.950400pt;}
+.x3{left:73.682400pt;}
+.x4{left:75.595467pt;}
+.x2{left:145.957867pt;}
+}
+
+
+    @font-face {
+      font-family: khong-tu-initial;
+      src: url('initial-calligraphy.woff') format('woff');
+      font-style: normal; font-weight: normal; font-display: swap;
+      unicode-range: U+004B;
+    }
+    .khong-tu-copy {
+      position: absolute; left: 56.6966px; width: 1700px;
+      color: rgb(35,31,32); font: normal 64px/96px ff1, sans-serif;
+      text-align: justify; transform: scale(.25); transform-origin: 0 0;
+      -webkit-font-smoothing: antialiased;
+    }
+    .khong-tu-copy p { margin: 0 0 28px; }
+    .khong-tu-copy p:last-child { margin-bottom: 0; }
+    .khong-tu-opening { top: 129px; }
+    .khong-tu-middle { top: 500px; }
+    .khong-tu-continuation { top: 56px; }
+    .khong-tu-opening p::first-letter {
+      float: left; margin: 32px 24px -32px 0;
+      color: rgb(43,94,144);
+      font: normal 384px/.70 khong-tu-initial, ff3, ff1, sans-serif;
+    }
+    </style>
+    <link rel="stylesheet" href="khong-tu-translations.css?v=20261116-1">
+    <link rel="preload" as="image" href="bg1.jpg"/>
+<script>
+        var loaded = 0;
+        const totalLoaded = 6;
+    </script>
+</head>
+<body data-ja-full data-zh-full>
+<div id="sidebar">
+    <div id="outline">
+    </div>
+</div>
+<div id="page-container">
+<div id="pf1" class="pf w0 h0" data-page-no="1"><div class="pc pc1 w0 h0"><img class="bi x0 y0 w1 h1" alt="" src="bg1.jpg" decoding="async"/><div class="t m0 x1 h2 y1 ff1 fs0 fc0 sc0 ls0 ws0">6</div><h1 class="khong-tu-foreign-title">4. TEMPLE OF CONFUCIUS</h1><div class="khong-tu-copy khong-tu-opening"><p>On a pilgrimage to the Hoa Lư Ancient Capital historical and cultural site, besides the temples honoring the wise rulers and talented generals</p></div><div class="khong-tu-copy khong-tu-middle"><p>of the Đinh and Early Lê dynasties, visitors can also step into a sacred space deeply marked by Eastern philosophy of life: the Temple of Confucius (Nhà thờ Đức Khổng Tử).</p><p>The presence of this structure within the grounds of the Temple of King Lê Đại Hành is a vivid testimony to the long history of cultural borrowing in Vietnam. More than that, it embodies the age-old tradition of love of learning and respect for teachers and their teachings, which has long permeated the mind of every child of the Vietnamese land.</p></div></div></div>
+<div id="pf2" class="pf w0 h0" data-page-no="2"><div class="pc pc2 w0 h0"><img class="bi x0 y0 w1 h1" alt="" src="/bgall.jpg" decoding="async" loading="lazy"/><div class="t m0 x1 h2 y1 ff1 fs0 fc0 sc0 ls0 ws0">7</div><div class="khong-tu-copy khong-tu-continuation"><p>Arriving at the Temple of Confucius, visitors cannot help being amazed at the ancient beauty of Nguyễn-dynasty architecture of the 19th century. The entire frame of precious wood was made using only traditional mortise-and-tenon joinery, with absolutely no iron nails. This refined craft shows the masterly skill of the artisans of old.</p><p>Spatially, the temple is laid out with two main buildings: the Bái Đường (worship hall) and the Hậu Cung (rear sanctum).</p><p>The Bái Đường welcomes visitors with a spacious, solemn space where reverent rites are prepared, while the Hậu Cung opens onto a deeply solemn and silent space, where the throne and ancestral tablets of Confucius and his four outstanding disciples are placed: Nhan Hồi (Yan Hui), Tăng Tử (Zengzi), Tử Tư (Zisi), and Mạnh Tử (Mencius).</p><p>Confucius (Khổng Tử; 551–479 BC), courtesy name Trọng Ni, was born in the state of Lỗ (Lu), in present-day Shandong province, China. He was a great philosopher, thinker, and educator, and the founder of Confucianism, a political and ethical doctrine that long served as the intellectual pillar of the feudal dynasties of the East. Running throughout his philosophy is the idea of “Nhân” (benevolence), combined with the doctrine of the rectification of names and roles (Chính danh định phận) and the Three Bonds and Five Constants (Tam cương, Ngũ thường). In Confucius’s view, only a society in which names and roles are rectified is stable, peaceful, and prosperous. In it, the Three Bonds define the pillar relationships between ruler and subject, father and son, and husband and wife, while the Five Constants are the five moral standards that the noble person (quân tử) must always cultivate: Nhân (benevolence), Lễ (propriety), Nghĩa (righteousness), Trí (wisdom), and Tín (trustworthiness).</p></div></div></div>
+<div id="pf3" class="pf w0 h0" data-page-no="3"><div class="pc pc3 w0 h0"><img class="bi x0 y0 w1 h1" alt="" src="/bgall.jpg" decoding="async" loading="lazy"/><div class="t m0 x1 h2 y1 ff1 fs0 fc0 sc0 ls0 ws0">8</div><div class="khong-tu-copy khong-tu-continuation"><p>Beyond being a politician or philosopher, Confucius was also a great educator. Holding that education should not discriminate by social class, he always upheld the love of learning: farmers must learn, and officials who govern must learn even more. This was an extremely progressive idea, ahead of its time in the society of that day.</p><p>Accompanying the thought of the great teacher were outstanding disciples who contributed greatly to preserving and spreading Confucian teaching:</p><p>Heading the Four Correlates (Tứ phối) is Nhan Hồi (Yan Hui) (521–481 BC), a native of Lỗ and Confucius’s most outstanding disciple. He was intelligent and quick, “learning one thing and grasping ten.” Later generations regarded Nhan Hồi as the ideal heir to Confucian teaching. Nhan Hồi died at only 32 and was revered by Confucian scholars as a “Sage” (Thánh), ranked first among the Four Correlates.</p><p>Next is Tăng Tử (Zengzi) (504–435 BC). Among Confucius’s disciples, Tăng Tử had the most thorough understanding and the deepest grasp of the underlying principles of his teaching. He left two classic works, the Đại học (Great Learning) and the Hiếu kinh (Classic of Filial Piety), which record Confucius’s instruction to his students. The school of Tăng Tử is regarded as having preserved the essence of Confucius’s teaching.</p></div></div></div>
+<div id="pf4" class="pf w0 h0" data-page-no="4"><div class="pc pc4 w0 h0"><img class="bi x0 y0 w1 h1" alt="" src="/bgall.jpg" decoding="async" loading="lazy"/><div class="t m0 x1 h2 y1 ff1 fs0 fc0 sc0 ls0 ws0">9</div><div class="khong-tu-copy khong-tu-continuation"><p>The next disciple is Tử Tư (Zisi) (483–402 BC). He is regarded as the orthodox heir to Confucius’s doctrine. The Trung dung (Doctrine of the Mean), compiled by Tử Tư, is a famous work representing the Confucian view of life. His thought holds an important place in the history of Chinese thought, and he spread Confucius’s teaching widely. Confucian scholars often call him Thuật Thánh (the “Transmitting Sage”), because he contributed to transmitting Confucius’s thought and legacy.</p><p>And finally Mạnh Tử (Mencius) (372–289 BC), a native of the state of Trâu (Zou), had great influence in spreading and developing Confucius’s teaching, and was revered by later generations of Confucian scholars as the Á Thánh (“Second Sage”).</p><p>Within the historical space of the Hoa Lư Ancient Capital, the Temple of Confucius is not merely a place of worship for the sages of Confucianism, but also a bridge connecting past and present. It gives future generations a chance to learn about profound philosophical values of life, and to absorb the moral principles of how to live as a person and the cultural essence of their forebears.</p><p>It can be affirmed that honoring Confucius and his outstanding disciples with worship within a national historic monument is clear evidence of a tradition of openness, of actively and selectively absorbing the essence of human culture to enrich a Vietnamese culture rich in national identity.</p></div></div></div>
+</div>
+<div class="loading-indicator">
+</div>
+<script src="/assets/js/thuyet-minh.js"></script>
+</body>
+</html>

@@ -1,0 +1,293 @@
+body.reader-guide,
+body.reader-guide-loading {
+  background: #f0e4cd;
+}
+
+body.reader-guide {
+  overflow: hidden;
+}
+
+.reader-guide-loading .visit-document { visibility: hidden; }
+
+.reader-experience {
+  --view-gold: #d19a46;
+  --view-ink: #542f23;
+  --view-side: clamp(8px, 2.6vw, 18px);
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  gap: 5px;
+  width: min(100%, 680px);
+  height: 100vh;
+  height: 100dvh;
+  min-height: 0;
+  margin: 0 auto;
+  padding: 0 var(--view-side) clamp(12px, 4.4vw, 21px);
+  overflow: hidden;
+  background:
+    linear-gradient(#fff2cf55, #fff1cf66),
+    #fff5de url('/images/article-cloud-bg.jpg') center / cover no-repeat;
+  color: var(--view-ink);
+}
+
+.reader-experience :focus-visible {
+  outline: 2px solid #a27231;
+  outline-offset: 2px;
+}
+
+.reader-experience [hidden] { display: none !important; }
+
+/* Use only the artwork above the directory title and below its close button. */
+.guide-view-heading::before,
+.reader-experience::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+}
+
+.guide-view-heading::before {
+  top: 0;
+  height: min(15vw, 66px);
+  background: url('/images/menu/header-banner.png') center top / 100% auto no-repeat;
+  -webkit-mask-image: linear-gradient(#000 68%, transparent);
+  mask-image: linear-gradient(#000 68%, transparent);
+}
+
+.reader-experience::after {
+  bottom: 0;
+  height: min(7vw, 36px);
+  background: url('/images/menu/footer-lotus.png') center bottom / 100% auto no-repeat;
+}
+
+.guide-view-heading {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  place-items: center;
+  min-height: 63px;
+  margin: 0 calc(-1 * var(--view-side));
+  padding: 12px 51px 8px;
+  text-align: center;
+}
+
+.guide-view-heading h1 {
+  color: #732c24;
+  font-family: hoa-lu-heading, var(--reader-title), Georgia, serif;
+  font-size: clamp(14px, 4.25vw, 23px);
+  font-weight: 700;
+  line-height: 1.23;
+  text-transform: uppercase;
+  text-wrap: balance;
+}
+
+.guide-pdf-button {
+  position: absolute;
+  top: 5px;
+  right: 7px;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid var(--view-gold);
+  border-radius: 8px;
+  background: var(--red-main);
+  color: #fff3d3;
+  font: 700 11px/1 system-ui, sans-serif;
+  cursor: pointer;
+}
+
+.guide-pdf-button[aria-pressed="true"] { font-size: 26px; }
+
+.guide-story-view {
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+  gap: 8px;
+  min-height: 0;
+}
+
+.guide-story-photo {
+  position: relative;
+  display: block;
+  width: 100%;
+  min-width: 0;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 2px solid var(--view-gold);
+  border-radius: 11px;
+  background: #7f5634;
+  box-shadow: inset 0 0 0 1px #fff1b9;
+  cursor: pointer;
+}
+
+.guide-story-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.guide-photo-play {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  display: grid;
+  place-items: center;
+  width: 54px;
+  height: 54px;
+  padding-left: 3px;
+  transform: translate(-50%, -50%);
+  border: 1px solid #f4dba3;
+  border-radius: 50%;
+  background: #43171cdb;
+  color: #fff3d3;
+  font: 700 19px/1 system-ui, sans-serif;
+  box-shadow: 0 4px 16px #2a171875;
+  pointer-events: none;
+}
+
+.guide-story-photo[data-playing="true"] .guide-photo-play { visibility: hidden; }
+
+.guide-caption-line {
+  min-height: calc(2.84em + 19px);
+  margin: 0;
+  padding: 9px 13px 10px;
+  border: 1px solid #cc9f5e;
+  border-radius: 10px;
+  background: linear-gradient(#fff9ec, #fff0d2);
+  box-shadow: 0 3px 10px #7447251a;
+  color: #4e352b;
+  font: clamp(13px, 3.55vw, 16px)/1.42 visit-body, var(--reader-language), sans-serif;
+  overflow-wrap: anywhere;
+}
+
+.guide-caption-read {
+  color: #7d3029;
+  background: linear-gradient(transparent 73%, #e7c991 73% 91%, transparent 91%);
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.guide-reading-view {
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+  min-height: 0;
+  min-width: 0;
+  border: 1px solid var(--view-gold);
+  border-radius: 10px;
+  background: #fff9ea;
+}
+
+.guide-page-viewport {
+  min-width: 0;
+  min-height: 0;
+  margin: 10px 11px 6px;
+  overflow: hidden;
+  direction: ltr;
+}
+
+.guide-page-flow {
+  height: 100%;
+  column-count: 1;
+  column-gap: 24px;
+  column-fill: auto;
+  color: #392b20;
+  font: 14px/1.5 visit-body, var(--reader-language), serif;
+}
+
+.guide-page-flow .reader-prose {
+  max-width: none;
+  text-align: start;
+  overflow-wrap: anywhere;
+}
+
+.guide-page-flow .reader-prose p {
+  margin: 0 0 .65em;
+  text-indent: 0;
+  orphans: 2;
+  widows: 2;
+}
+
+.guide-page-flow .reader-prose > p:first-of-type { display: block; }
+.guide-page-flow .reader-prose > p:first-of-type::first-letter {
+  float: none;
+  margin: 0;
+  color: inherit;
+  font: inherit;
+}
+
+.guide-page-flow .reader-figure {
+  margin: 6px auto 9px;
+  break-inside: avoid;
+}
+
+.guide-page-flow .reader-media {
+  display: grid;
+  place-items: center;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.guide-page-flow .reader-media img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: min(25vh, 186px);
+  object-fit: contain;
+}
+
+.guide-page-flow .reader-figure figcaption {
+  margin-top: 3px;
+  font-size: 11px;
+  line-height: 1.32;
+}
+
+.guide-page-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  min-width: 0;
+  margin: 0 9px;
+  padding: 3px 0;
+  border-top: 1px solid #e4bf7a;
+}
+
+.guide-page-buttons div { display: flex; gap: 4px; }
+.guide-page-number {
+  min-width: 3em;
+  white-space: nowrap;
+  font: 600 12px/1.3 system-ui, sans-serif;
+  font-variant-numeric: tabular-nums;
+}
+
+.guide-page-buttons button {
+  min-height: 36px;
+  padding: 0 9px;
+  border: 1px solid var(--view-gold);
+  border-radius: 7px;
+  background: #fff0cd;
+  color: var(--view-ink);
+  font: 600 12px/1.3 system-ui, sans-serif;
+  cursor: pointer;
+}
+
+.guide-page-buttons button:disabled { opacity: .45; cursor: default; }
+
+@media (max-height: 430px) {
+  .guide-view-heading { min-height: 52px; padding-block: 5px; }
+  .guide-view-heading h1 { font-size: clamp(13px, 3vw, 17px); }
+  .guide-caption-line {
+    min-height: calc(2.84em + 12px);
+    padding-block: 6px;
+  }
+}

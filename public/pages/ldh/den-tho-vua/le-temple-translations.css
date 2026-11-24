@@ -1,0 +1,37 @@
+@font-face { font-family: le-temple-latin; src: url('translation-latin.woff') format('woff'); font-display: swap; }
+@font-face { font-family: le-temple-ko; src: url('translation-ko.woff') format('woff'); font-display: swap; }
+@font-face { font-family: le-temple-zh; src: url('translation-zh.woff') format('woff'); font-display: swap; }
+@font-face { font-family: le-temple-ja; src: url('translation-ja.woff') format('woff'); font-display: swap; }
+@font-face { font-family: le-temple-title-extended; src: url('/pages/dth/gioi-thieu/intro-display.woff') format('woff'); font-display: swap; }
+@font-face { font-family: le-temple-title-fallback; src: url('translation-title.woff') format('woff'); font-display: swap; }
+@font-face { font-family: le-temple-initial-latin; src: url('initial-calligraphy.woff') format('woff'); font-display: swap; }
+@font-face { font-family: le-temple-initial-ko; src: url('initial-ko.woff') format('woff'); font-display: swap; }
+@font-face { font-family: le-temple-initial-zh; src: url('initial-zh.woff') format('woff'); font-display: swap; }
+@font-face { font-family: le-temple-initial-ja; src: url('initial-ja.woff') format('woff'); font-display: swap; }
+
+:root { --le-temple-language: le-temple-latin; --le-temple-initial: le-temple-initial-latin; }
+:root:lang(ko) { --le-temple-language: le-temple-ko, le-temple-zh, le-temple-latin; --le-temple-initial: le-temple-initial-ko; }
+:root:lang(zh-Hans) { --le-temple-language: le-temple-zh, le-temple-latin; --le-temple-initial: le-temple-initial-zh; }
+:root:lang(ja) { --le-temple-language: le-temple-ja, le-temple-zh, le-temple-latin; --le-temple-initial: le-temple-initial-ja; }
+
+.le-temple-copy { font-family: ff1, var(--le-temple-language), sans-serif; }
+.le-temple-opening p:first-child::first-letter {
+  margin: 32px 24px -32px 0;
+  font: normal 384px/.70 var(--le-temple-initial), ff2, ff1, sans-serif;
+}
+:root:lang(ko) .le-temple-opening p:first-child::first-letter { font-size: 288px; line-height: .933333; }
+:root:lang(zh-Hans) .le-temple-opening p:first-child::first-letter,
+:root:lang(ja) .le-temple-opening p:first-child::first-letter { font-size: 320px; line-height: .84; }
+
+.le-temple-foreign-title {
+  position: absolute; top: 112px; left: 56px; width: 1704px; height: 448px;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0; color: rgb(252,210,91); text-align: center;
+  font: normal 104px/1.222 ff4, le-temple-title-extended, le-temple-title-fallback, var(--le-temple-language), sans-serif;
+  transform: scale(.25); transform-origin: 0 0;
+  -webkit-font-smoothing: antialiased;
+}
+.le-temple-foreign-title span { display: block; width: 100%; }
+:root:lang(ko) .le-temple-copy { word-break: keep-all; }
+:root:lang(zh-Hans) .le-temple-copy,
+:root:lang(ja) .le-temple-copy { line-break: strict; }

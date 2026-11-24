@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Cố Đô Hoa Lư</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style id="inlined-all-css">
+/* Quy tắc nền tối thiểu cho nội dung xuất từ pdf2htmlEX */
+*{box-sizing:content-box}
+html,body{margin:0;padding:0}
+#page-container{position:relative;margin:0 auto;padding:0}
+.pf{position:relative;background-color:#fff;overflow:hidden;margin:0 auto;border:0;transform-origin:0 0}
+.pc{position:absolute;border:0;padding:0;margin:0;top:0;left:0;width:100%;height:100%;overflow:hidden;display:block;transform-origin:0 0}
+.pi{display:none}
+.bf,.bi{position:absolute;left:0;bottom:0;border:0;margin:0;padding:0;-ms-user-select:none;-webkit-user-select:none;user-select:none}
+.t{position:absolute;white-space:pre;transform-origin:0 100%;unicode-bidi:bidi-override}
+._{display:inline-block;color:transparent;overflow:hidden;width:0;height:0}
+.pc>*,.t{-webkit-font-smoothing:antialiased}
+@media print{.pf{margin:0;box-shadow:none;page-break-after:always;page-break-inside:avoid}}
+
+/* Dành riêng cho pdf2htmlEX (không cần thêm quy tắc) */
+
+:root{--blue:#0b3ea8;--blue2:#1a8fe3;--gold:#f2b705;--ink:#1c2a44;--bg:#eef3fb}
+*{-webkit-tap-highlight-color:transparent}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:#dfe7f3}
+#sidebar,.loading-indicator{display:none}
+a{color:var(--blue)}
+
+/* ===== Trang chủ ===== */
+.home{min-height:100vh;background:#0b2a6b url(/images/bg_v1_tinified.jpg) center top/cover fixed}
+.wrap{max-width:760px;margin:0 auto;background:rgba(255,255,255,.96);min-height:100vh;box-shadow:0 0 40px rgba(0,0,0,.35)}
+.wrap>header img,.hero img{display:block;width:100%;height:auto}
+.hero{background:linear-gradient(#fff,#e6f0fb);text-align:center;padding-bottom:6px;margin-top:-1px}
+.hero img{max-width:520px;margin:-20px auto -50px}
+.langs{display:flex;gap:10px;justify-content:center;padding:10px 12px}
+.langs button{border:2px solid transparent;background:#fff;border-radius:999px;padding:4px 12px 4px 6px;display:flex;align-items:center;gap:8px;font-weight:600;cursor:pointer;box-shadow:0 1px 4px rgba(0,0,0,.2)}
+.langs button img{width:28px;height:28px;border-radius:50%}
+.langs button.on{border-color:var(--blue2);background:#e5f2ff}
+.note{text-align:center;font-size:.85rem;color:#566;margin:0 16px 8px}
+.gallery{display:flex;gap:8px;overflow-x:auto;padding:8px 14px;scroll-snap-type:x mandatory}
+.gallery img{width:110px;height:110px;border-radius:12px;object-fit:cover;scroll-snap-align:start;border:2px solid var(--gold)}
+section.site{padding:10px 16px 18px}
+section.site h2{background:linear-gradient(90deg,var(--blue),var(--blue2));color:#fff;margin:14px 0 10px;padding:10px 14px;font-size:1.1rem;border-radius:10px;text-transform:uppercase}
+.list{display:grid;gap:8px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+.list a{display:flex;align-items:center;gap:10px;padding:10px 12px;background:var(--bg);border:1px solid #cfdcf0;border-radius:10px;text-decoration:none;color:var(--ink);font-weight:500}
+.list a:hover{background:#dbeaff;border-color:var(--blue2)}
+.list b{flex:none;min-width:30px;height:30px;border-radius:50%;background:#d62839;color:#fff;display:grid;place-items:center;font-size:.85rem}
+.list b.i{background:var(--blue2)}
+.list small{display:block;color:#667;font-weight:400}
+.wrap>footer img{display:block;width:100%;height:auto}
+.wrap>footer p{margin:0;padding:10px;text-align:center;background:#0a3aa8;color:#fff;font-size:.8rem}
+
+/* Trang thuyết minh */
+body.tm{background:#1d2740;padding-bottom:96px}
+#page-container{max-width:760px}
+#page-container .pf{margin:0 auto 10px;box-shadow:0 2px 12px rgba(0,0,0,.4)}
+.pfwrap{margin:0 auto 10px;overflow:hidden}
+#page-container .pfwrap .pf{margin:0;box-shadow:none}
+.pfwrap{box-shadow:0 2px 12px rgba(0,0,0,.4)}
+.topbar{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:8px;padding:8px 12px;background:linear-gradient(90deg,#0b3ea8,#1a8fe3);color:#fff}
+.topbar a{color:#fff;text-decoration:none;font-weight:700}
+.topbar .sp{flex:1}
+.topbar .fl{display:flex;gap:6px}
+.topbar .fl button{border:2px solid transparent;border-radius:50%;padding:0;background:none;cursor:pointer;opacity:.6}
+.topbar .fl button.on{border-color:#f2b705;opacity:1}
+.topbar .fl img{width:28px;height:28px;border-radius:50%;display:block}
+.player{position:fixed;left:0;right:0;bottom:0;z-index:30;background:#0b2a6b;color:#fff;padding:10px 14px;display:flex;align-items:center;gap:10px;box-shadow:0 -2px 12px rgba(0,0,0,.4)}
+.player .in{max-width:760px;margin:0 auto;display:flex;align-items:center;gap:10px;width:100%}
+.player button{width:44px;height:44px;border-radius:50%;border:0;background:#f2b705;color:#0b2a6b;font-size:18px;cursor:pointer;flex:none}
+.player input[type=range]{flex:1;min-width:0}
+.player .tm{font-variant-numeric:tabular-nums;font-size:.8rem;flex:none}
+.player.none{display:none}
+
+.ff0{font-family:sans-serif;visibility:hidden;}
+@font-face{font-family:ff1;font-display:swap;src:url(f1.woff)format("woff");}.ff1{font-family:ff1;line-height:1.193359;font-style:normal;font-weight:normal;visibility:visible;}
+@font-face{font-family:ff2;font-display:swap;src:url(f2.woff)format("woff");}.ff2{font-family:ff2;line-height:1.016000;font-style:normal;font-weight:normal;visibility:visible;}
+@font-face{font-family:ff3;font-display:swap;src:url(f3.woff)format("woff");}.ff3{font-family:ff3;line-height:1.222000;font-style:normal;font-weight:normal;visibility:visible;}
+@font-face{font-family:ff4;font-display:swap;src:url(f4.woff)format("woff");}.ff4{font-family:ff4;line-height:1.193359;font-style:normal;font-weight:normal;visibility:visible;}
+.m0{transform:matrix(0.250000,0.000000,0.000000,0.250000,0,0);-ms-transform:matrix(0.250000,0.000000,0.000000,0.250000,0,0);-webkit-transform:matrix(0.250000,0.000000,0.000000,0.250000,0,0);}
+.v0{vertical-align:0.000000px;}
+.ls0{letter-spacing:0.000000px;}
+.ls1{letter-spacing:1.280000px;}
+.sc_{text-shadow:none;}
+.sc0{text-shadow:-0.015em 0 transparent,0 0.015em transparent,0.015em 0 transparent,0 -0.015em  transparent;}
+@media screen and (-webkit-min-device-pixel-ratio:0){
+.sc_{-webkit-text-stroke:0px transparent;}
+.sc0{-webkit-text-stroke:0.015em transparent;text-shadow:none;}
+}
+.ws1{word-spacing:-2.688000px;}
+.ws2{word-spacing:-2.304000px;}
+.ws7{word-spacing:-2.240000px;}
+.ws15{word-spacing:-2.048000px;}
+.ws4{word-spacing:-1.344000px;}
+.ws10{word-spacing:-1.216000px;}
+.ws8{word-spacing:-0.832000px;}
+.ws0{word-spacing:0.000000px;}
+.wsa{word-spacing:0.128000px;}
+.ws1a{word-spacing:0.384000px;}
+.wse{word-spacing:1.088000px;}
+.ws6{word-spacing:1.280000px;}
+.ws13{word-spacing:1.344000px;}
+.ws17{word-spacing:1.536000px;}
+.ws5{word-spacing:1.728000px;}
+.wsb{word-spacing:1.920000px;}
+.ws14{word-spacing:2.624000px;}
+.ws18{word-spacing:3.200000px;}
+.ws19{word-spacing:3.264000px;}
+.wsd{word-spacing:3.968000px;}
+.ws11{word-spacing:4.096000px;}
+.ws12{word-spacing:5.056000px;}
+.ws3{word-spacing:5.568000px;}
+.wsf{word-spacing:5.632000px;}
+.ws16{word-spacing:6.016000px;}
+.ws9{word-spacing:7.232000px;}
+.wsc{word-spacing:7.680000px;}
+._2{margin-left:-7.180800px;}
+._3{margin-left:-5.958400px;}
+._4{margin-left:-4.025600px;}
+._0{margin-left:-2.508800px;}
+._1{margin-left:-1.184000px;}
+._5{width:1.600000px;}
+.fc6{color:rgb(125,20,37);}
+.fc5{color:transparent;}
+.fc0{color:rgb(122,8,32);}
+.fc4{color:rgb(140,31,41);}
+.fc1{color:rgb(43,92,140);}
+.fc2{color:rgb(35,31,32);}
+.fc3{color:rgb(251,210,92);}
+.fs0{font-size:50.876800px;}
+.fs2{font-size:64.000000px;}
+.fs3{font-size:104.000000px;}
+.fs1{font-size:336.727200px;}
+.y0{bottom:-0.500000px;}
+.y1{bottom:27.040000px;}
+.y10{bottom:157.679000px;}
+.y25{bottom:159.798100px;}
+.yd{bottom:516.789100px;}
+.y24{bottom:540.726100px;}
+.yc{bottom:540.789100px;}
+.y23{bottom:564.726100px;}
+.yb{bottom:564.789100px;}
+.y22{bottom:588.726100px;}
+.ya{bottom:588.789100px;}
+.y21{bottom:612.726100px;}
+.y9{bottom:612.789100px;}
+.y20{bottom:636.726100px;}
+.y8{bottom:636.789100px;}
+.y1f{bottom:660.726100px;}
+.y7{bottom:660.789100px;}
+.y1e{bottom:684.726100px;}
+.y6{bottom:693.301100px;}
+.y1d{bottom:708.726100px;}
+.y5{bottom:717.301100px;}
+.y1c{bottom:732.726100px;}
+.y2{bottom:741.301100px;}
+.y1b{bottom:756.726100px;}
+.y4{bottom:765.301100px;}
+.y1a{bottom:780.726100px;}
+.y3{bottom:789.301100px;}
+.y19{bottom:813.238100px;}
+.y18{bottom:837.238100px;}
+.y17{bottom:861.238100px;}
+.y16{bottom:885.238100px;}
+.yf{bottom:896.304000px;}
+.y15{bottom:909.238100px;}
+.ye{bottom:926.308000px;}
+.y14{bottom:933.238100px;}
+.y13{bottom:957.238100px;}
+.y12{bottom:981.238100px;}
+.y11{bottom:1005.238100px;}
+.h2{height:48.442266px;}
+.h4{height:60.937500px;}
+.h5{height:107.120000px;}
+.h3{height:271.402123px;}
+.h0{height:1077.170000px;}
+.h1{height:1077.500000px;}
+.w0{width:538.583000px;}
+.w1{width:539.000000px;}
+.x0{left:0.000000px;}
+.x1{left:52.574600px;}
+.x2{left:55.346000px;}
+.x4{left:56.687100px;}
+.x7{left:78.432900px;}
+.x3{left:93.311100px;}
+.x6{left:119.090100px;}
+.x9{left:158.404900px;}
+.x5{left:208.686100px;}
+.x8{left:477.659600px;}
+@media print{
+.v0{vertical-align:0.000000pt;}
+.ls0{letter-spacing:0.000000pt;}
+.ls1{letter-spacing:1.706667pt;}
+.ws1{word-spacing:-3.584000pt;}
+.ws2{word-spacing:-3.072000pt;}
+.ws7{word-spacing:-2.986667pt;}
+.ws15{word-spacing:-2.730667pt;}
+.ws4{word-spacing:-1.792000pt;}
+.ws10{word-spacing:-1.621333pt;}
+.ws8{word-spacing:-1.109333pt;}
+.ws0{word-spacing:0.000000pt;}
+.wsa{word-spacing:0.170667pt;}
+.ws1a{word-spacing:0.512000pt;}
+.wse{word-spacing:1.450667pt;}
+.ws6{word-spacing:1.706667pt;}
+.ws13{word-spacing:1.792000pt;}
+.ws17{word-spacing:2.048000pt;}
+.ws5{word-spacing:2.304000pt;}
+.wsb{word-spacing:2.560000pt;}
+.ws14{word-spacing:3.498667pt;}
+.ws18{word-spacing:4.266667pt;}
+.ws19{word-spacing:4.352000pt;}
+.wsd{word-spacing:5.290667pt;}
+.ws11{word-spacing:5.461333pt;}
+.ws12{word-spacing:6.741333pt;}
+.ws3{word-spacing:7.424000pt;}
+.wsf{word-spacing:7.509333pt;}
+.ws16{word-spacing:8.021333pt;}
+.ws9{word-spacing:9.642667pt;}
+.wsc{word-spacing:10.240000pt;}
+._2{margin-left:-9.574400pt;}
+._3{margin-left:-7.944533pt;}
+._4{margin-left:-5.367467pt;}
+._0{margin-left:-3.345067pt;}
+._1{margin-left:-1.578667pt;}
+._5{width:2.133333pt;}
+.fs0{font-size:67.835733pt;}
+.fs2{font-size:85.333333pt;}
+.fs3{font-size:138.666667pt;}
+.fs1{font-size:448.969600pt;}
+.y0{bottom:-0.666667pt;}
+.y1{bottom:36.053333pt;}
+.y10{bottom:210.238667pt;}
+.y25{bottom:213.064133pt;}
+.yd{bottom:689.052133pt;}
+.y24{bottom:720.968133pt;}
+.yc{bottom:721.052133pt;}
+.y23{bottom:752.968133pt;}
+.yb{bottom:753.052133pt;}
+.y22{bottom:784.968133pt;}
+.ya{bottom:785.052133pt;}
+.y21{bottom:816.968133pt;}
+.y9{bottom:817.052133pt;}
+.y20{bottom:848.968133pt;}
+.y8{bottom:849.052133pt;}
+.y1f{bottom:880.968133pt;}
+.y7{bottom:881.052133pt;}
+.y1e{bottom:912.968133pt;}
+.y6{bottom:924.401467pt;}
+.y1d{bottom:944.968133pt;}
+.y5{bottom:956.401467pt;}
+.y1c{bottom:976.968133pt;}
+.y2{bottom:988.401467pt;}
+.y1b{bottom:1008.968133pt;}
+.y4{bottom:1020.401467pt;}
+.y1a{bottom:1040.968133pt;}
+.y3{bottom:1052.401467pt;}
+.y19{bottom:1084.317467pt;}
+.y18{bottom:1116.317467pt;}
+.y17{bottom:1148.317467pt;}
+.y16{bottom:1180.317467pt;}
+.yf{bottom:1195.072000pt;}
+.y15{bottom:1212.317467pt;}
+.ye{bottom:1235.077333pt;}
+.y14{bottom:1244.317467pt;}
+.y13{bottom:1276.317467pt;}
+.y12{bottom:1308.317467pt;}
+.y11{bottom:1340.317467pt;}
+.h2{height:64.589687pt;}
+.h4{height:81.250000pt;}
+.h5{height:142.826667pt;}
+.h3{height:361.869498pt;}
+.h0{height:1436.226667pt;}
+.h1{height:1436.666667pt;}
+.w0{width:718.110667pt;}
+.w1{width:718.666667pt;}
+.x0{left:0.000000pt;}
+.x1{left:70.099467pt;}
+.x2{left:73.794667pt;}
+.x4{left:75.582800pt;}
+.x7{left:104.577200pt;}
+.x3{left:124.414800pt;}
+.x6{left:158.786800pt;}
+.x9{left:211.206533pt;}
+.x5{left:278.248133pt;}
+.x8{left:636.879467pt;}
+}
+
+    </style>
+    <link rel="preload" as="image" href="bg1.jpg"/>
+<script>
+        var loaded = 0;
+        const totalLoaded = 6;
+    </script>
+</head>
+<body>
+<div id="sidebar">
+    <div id="outline">
+    </div>
+</div>
+<div id="page-container">
+    <div id="pf1" class="pf w0 h0" data-page-no="1"><div class="pc pc1 w0 h0"><img class="bi x0 y0 w1 h1" alt="" src="bg1.jpg"/><div class="t m0 x1 h2 y1 ff1 fs0 fc0 sc0 ls0 ws0"><span class="fc5 sc0">8</span></div><div class="t m0 x2 h3 y2 ff2 fs1 fc1 sc0 ls0 ws0">Đ</div><div class="t m0 x3 h4 y3 ff1 fs2 fc2 sc0 ls0 ws1">ền thờ V<span class="_ _0"></span>ua Đinh T<span class="_ _0"></span>iên Hoàng tọa lạc tại x<span class="_ _1"></span>ã T<span class="_ _2"></span>rường Y<span class="_ _3"></span>ên,<span class="_ _0"></span> huy<span class="_ _0"></span>ện </div><div class="t m0 x3 h4 y4 ff1 fs2 fc2 sc0 ls0 ws2">Hoa Lư<span class="_ _0"></span>,<span class="_ _0"></span> tỉnh Ninh Bình.<span class="_ _4"></span> Ngôi đền này thường đư<span class="_ _0"></span>ợc nhân dân </div><div class="t m0 x3 h4 y2 ff1 fs2 fc2 sc0 ls0 ws3">gọi tắt là đền V<span class="_ _0"></span>ua Đinh/đền Đinh.<span class="_ _4"></span> Theo truyền thống,<span class="_ _4"></span> đền </div><div class="t m0 x4 h4 y5 ff1 fs2 fc2 sc0 ls0 ws4">do nhân dân làng T<span class="_ _2"></span>rường Y<span class="_ _3"></span>ên Thư<span class="_ _0"></span>ợng coi sóc,<span class="_ _0"></span> phụng thờ nên còn </div><div class="t m0 x4 h4 y6 ff1 fs2 fc2 sc0 ls0 ws0">đư<span class="_ _0"></span>ợc gọi là đền Thượng.</div><div class="t m0 x4 h4 y7 ff1 fs2 fc2 sc0 ls0 ws5">Cùng v<span class="_ _1"></span>ới đền thờ V<span class="_ _0"></span>ua L<span class="_ _1"></span>ê Đại Hành v<span class="_ _0"></span>à các di tích khác trong khu </div><div class="t m0 x4 h4 y8 ff1 fs2 fc2 sc0 ls0 ws6">vự<span class="_ _0"></span>c Cố đô Hoa Lư<span class="_ _0"></span>,<span class="_ _0"></span> ngôi đền này đư<span class="_ _0"></span>ợc xếp hạng di tích cấp quốc </div><div class="t m0 x4 h4 y9 ff1 fs2 fc2 sc0 ls0 ws7">gia tr<span class="_ _0"></span>ong đợ<span class="_ _5"></span>t đầu tiên của cả nư<span class="_ _0"></span>ớc năm 1962.<span class="_ _0"></span> Đồng thời,<span class="_ _0"></span> đền nằm </div><div class="t m0 x4 h4 ya ff1 fs2 fc2 sc0 ls0 ws8">tr<span class="_ _0"></span>ong khu di tích quốc gia đặc biệt Cố đô Hoa Lư được Thủ tư<span class="_ _0"></span>ớng </div><div class="t m0 x4 h4 yb ff1 fs2 fc2 sc0 ls0 ws9">Chính phủ xếp hạng năm 20<span class="_ _1"></span>12,<span class="_ _4"></span> là một thành phần quan trọng </div><div class="t m0 x4 h4 yc ff1 fs2 fc2 sc0 ls0 wsa">của di sản văn hóa v<span class="_ _1"></span>à thiên nhiên thế giới - Quần thể danh thắng </div><div class="t m0 x4 h4 yd ff1 fs2 fc2 sc0 ls0 ws0">T<span class="_ _2"></span>ràng An.</div><div class="t m0 x5 h5 ye ff3 fs3 fc3 sc0 ls0 ws0">Đền thờ  </div><div class="t m0 x6 h5 yf ff3 fs3 fc3 sc0 ls0 ws0">Vua Đ<span class="_ _0"></span>inh Tiên Ho<span class="_ _0"></span>àng</div><div class="t m0 x7 h4 y10 ff4 fs2 fc4 sc0 ls0 ws0">Khu di tích VH-L<span class="_ _1"></span>S Cố đô Hoa L<span class="_ _4"></span>ư nhìn từ hướng Đông Bắc</div></div><div class="pi" data-data='{"ctm":[1.000000,0.000000,0.000000,1.000000,0.000000,0.000000]}'></div></div>
+    <div id="pf2" class="pf w0 h0" data-page-no="2"><div class="pc pc2 w0 h0"><img class="bi x0 y0 w1 h1" alt="" loading="lazy" decoding="async" src="bg2.jpg"/><div class="t m0 x8 h2 y1 ff1 fs0 fc6 sc0 ls0 ws0"><span class="fc5 sc0">9</span></div><div class="t m0 x4 h4 y11 ff1 fs2 fc2 sc0 ls1 wsb">Đền là nơi thờ phụng V<span class="_ _0"></span>ua Đinh T<span class="_ _0"></span>iên Hoàng - vị anh hùng dân </div><div class="t m0 x4 h4 y12 ff1 fs2 fc2 sc0 ls1 wsc">tộc,<span class="_ _4"></span> người có công thu phục và dẹp loạn 12 sứ quân,<span class="_ _4"></span> thống<span class="_ _1"></span> </div><div class="t m0 x4 h4 y13 ff1 fs2 fc2 sc0 ls1 ws4">nhất đất nư<span class="_ _0"></span>ớc,<span class="_ _0"></span> lập nên nhà nư<span class="_ _1"></span>ớc Đại Cồ V<span class="_ _1"></span>iệt - nhà nư<span class="_ _1"></span>ớc phong<span class="_ _0"></span> </div><div class="t m0 x4 h4 y14 ff1 fs2 fc2 sc0 ls1 wsd">kiến trung ư<span class="_ _0"></span>ơng tập quyền đầu tiên tr<span class="_ _0"></span>ong lịch sử nước t<span class="_ _1"></span>a vào<span class="_ _0"></span> </div><div class="t m0 x4 h4 y15 ff1 fs2 fc2 sc0 ls1 wse">năm 968.<span class="_ _4"></span> Ngoài ra,<span class="_ _4"></span> tại đền còn thờ cúng thân phụ - thân mẫu<span class="_ _0"></span> </div><div class="t m0 x4 h4 y16 ff1 fs2 fc2 sc0 ls1 wsf">của V<span class="_ _0"></span>ua Đinh T<span class="_ _0"></span>iên Hoàng,<span class="_ _0"></span> các con trai của ngài là N<span class="_ _1"></span>am Việt<span class="_ _0"></span> </div><div class="t m0 x4 h4 y17 ff1 fs2 fc2 sc0 ls1 ws10">vư<span class="_ _0"></span>ơng Đinh Liễn,<span class="_ _0"></span> Thái tử Đinh Hạng Lang,<span class="_ _4"></span> V<span class="_ _4"></span>ệ vư<span class="_ _0"></span>ơng Đinh T<span class="_ _2"></span>oàn<span class="_ _0"></span> </div><div class="t m0 x4 h4 y18 ff1 fs2 fc2 sc0 ls1 ws11">và tứ trụ triều đ<span class="_ _5"></span>ình nhà Đinh là Đinh Điền,<span class="_ _0"></span> Nguyễn Bặc,<span class="_ _4"></span> T<span class="_ _2"></span>rịnh<span class="_ _1"></span> </div><div class="t m0 x4 h4 y19 ff1 fs2 fc2 sc0 ls1 ws0">T<span class="_ _2"></span>ú,<span class="_ _0"></span> Lưu Cơ<span class="_ _3"></span>.</div><div class="t m0 x4 h4 y1a ff1 fs2 fc2 sc0 ls0 ws12">Ngôi đền này cùng v<span class="_ _1"></span>ới đền thờ V<span class="_ _0"></span>ua L<span class="_ _1"></span>ê Đại Hành ở bên cạnh là </div><div class="t m0 x4 h4 y1b ff1 fs2 fc2 sc0 ls0 ws13">không gian văn hóa diễn r<span class="_ _1"></span>a lễ hội Cố đô Hoa Lư<span class="_ _0"></span>,<span class="_ _4"></span> đư<span class="_ _1"></span>ợc tổ chứ<span class="_ _0"></span>c từ </div><div class="t m0 x4 h4 y1c ff1 fs2 fc2 sc0 ls0 ws14">ngày mồng 9 đến ngày mồng 11 tháng Ba âm lịch hàng năm để </div><div class="t m0 x4 h4 y1d ff1 fs2 fc2 sc0 ls0 ws7">tôn vinh hai vị anh <span class="_ _1"></span>hùng dân tộc.<span class="_ _4"></span> Lễ hội có nhiều hoạt động <span class="_ _1"></span>phong </div><div class="t m0 x4 h4 y1e ff1 fs2 fc2 sc0 ls0 ws15">phú,<span class="_ _4"></span> đa dạng và mang những giá trị văn hóa truyền thống đặc sắc </div><div class="t m0 x4 h4 y1f ff1 fs2 fc2 sc0 ls0 ws16">như: lễ rư<span class="_ _0"></span>ớc nước,<span class="_ _4"></span> lễ mộc dục,<span class="_ _0"></span> dâng hư<span class="_ _0"></span>ơng,<span class="_ _0"></span> t<span class="_ _1"></span>ế cửu khúc…<span class="_ _4"></span> cùng </div><div class="t m0 x4 h4 y20 ff1 fs2 fc2 sc0 ls0 ws17">nhiều hoạt động sinh hoạt văn hóa khác,<span class="_ _4"></span> như: diễn tr<span class="_ _1"></span>ò cờ lau tập </div><div class="t m0 x4 h4 y21 ff1 fs2 fc2 sc0 ls0 ws18">trận,<span class="_ _4"></span> k<span class="_ _1"></span>éo chữ “Thái Bình<span class="_ _1"></span>” (niên hiệu của V<span class="_ _0"></span>ua Đinh T<span class="_ _0"></span>iên Hoàng)…<span class="_ _0"></span> </div><div class="t m0 x4 h4 y22 ff1 fs2 fc2 sc0 ls0 ws19">V<span class="_ _4"></span>ới những giá trị nổi tr<span class="_ _0"></span>ội,<span class="_ _0"></span> mang đậm bản sắc văn hóa dân t<span class="_ _1"></span>ộc,<span class="_ _4"></span> lễ </div><div class="t m0 x4 h4 y23 ff1 fs2 fc2 sc0 ls0 ws1a">hội Hoa Lư đã đư<span class="_ _0"></span>ợc ghi vào Danh mục di sản văn hóa phi vật thể </div><div class="t m0 x4 h4 y24 ff1 fs2 fc2 sc0 ls0 ws0">quốc gia.</div><div class="t m0 x9 h4 y25 ff4 fs2 fc4 sc0 ls0 ws0"> L<span class="_ _0"></span>ễ rước nước tr<span class="_ _0"></span>ong lễ hội Hoa L<span class="_ _0"></span>ư </div></div><div class="pi" data-data='{"ctm":[1.000000,0.000000,0.000000,1.000000,0.000000,0.000000]}'></div></div>
+</div>
+<div class="loading-indicator">
+</div>
+<script src="/assets/js/thuyet-minh.js"></script>
+</body>
+</html>

@@ -1,0 +1,173 @@
+.landing-cover {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: var(--red-deep);
+}
+
+.landing-cover-frame {
+  --cover-blue: #0c2b44;
+  --cover-gold: #f4d89e;
+  position: relative;
+  isolation: isolate;
+  container-type: inline-size;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background:
+    repeating-linear-gradient(35deg, transparent 0 15px, #eacb8a22 16px 17px, transparent 18px 27px),
+    repeating-linear-gradient(-35deg, transparent 0 15px, #eacb8a22 16px 17px, transparent 18px 27px),
+    linear-gradient(165deg, #1a4265, var(--cover-blue) 36%, #091b2c 70%, #194061);
+}
+
+@media (min-width: 769px), (orientation: landscape) {
+  .landing-cover-frame {
+    max-width: min(460px, 53vh);
+    max-width: min(460px, 53dvh);
+  }
+}
+
+.landing-cover-photo {
+  position: absolute;
+  inset: 0 0 3.5%;
+  overflow: hidden;
+  border-bottom: 2px solid #c09a60;
+  border-radius: 0 0 53% 47% / 0 0 9% 11%;
+  background: #174363;
+}
+
+.landing-cover-landscape {
+  position: absolute;
+  inset: 28% 0 0;
+  overflow: hidden;
+}
+
+/* The photo occupies x 3–387 and y 203–573 in the 390 × 696 source.
+   Center the crop on this area so the baked lettering and QR stay outside it. */
+.landing-cover-landscape img {
+  position: absolute;
+  top: calc(-100% * 203 / 370);
+  left: 50%;
+  display: block;
+  width: calc(100% * 390 / 384);
+  height: calc(100% * 696 / 370);
+  max-width: none;
+  transform: translateX(-50%);
+  object-fit: cover;
+  object-position: center 55.75%;
+}
+
+.landing-cover-sky {
+  position: absolute;
+  inset: 0 0 auto;
+  height: 35%;
+  overflow: hidden;
+  transform: scaleX(-1);
+  -webkit-mask-image: linear-gradient(#000 80%, transparent);
+  mask-image: linear-gradient(#000 80%, transparent);
+}
+
+/* Use the open sky above the mountains in the 768 × 1376 story image. */
+.landing-cover-sky img {
+  position: absolute;
+  top: 0;
+  left: calc(-100% * 10 / 478);
+  width: calc(100% * 768 / 478);
+  height: calc(100% * 1376 / 194);
+  max-width: none;
+  object-fit: cover;
+  object-position: 32.42% top;
+}
+
+.landing-cover-sky::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(255deg, #086397bd 4%, #0a507889 52%, #fdb34f24 100%);
+}
+
+.landing-cover-photo::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(#0a2c4b33, #0a2c4b44 19%, transparent 36%, transparent 79%, #07172999);
+  pointer-events: none;
+}
+
+.landing-cover-header,
+.landing-cover-title {
+  position: relative;
+  z-index: 1;
+}
+
+.landing-cover-header img,
+.landing-cover-title img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.landing-cover-title {
+  margin: 0;
+  margin-top: -3cqw;
+  animation: homeTitleSlide 2.6s ease-in-out both;
+}
+
+.landing-cover-actions {
+  position: absolute;
+  z-index: 2;
+  inset: auto 0 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 12px;
+  padding: clamp(8px, 3.6cqw, 16px);
+}
+
+.landing-cover-menu {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 46px;
+  height: 46px;
+  padding: 0;
+  border: 1px solid var(--cover-gold);
+  border-radius: 8px;
+  background: var(--cover-blue);
+  color: #fff9eb;
+  cursor: pointer;
+  box-shadow: 0 4px 10px #09101e66;
+}
+
+.landing-cover-menu-icon {
+  width: 22px;
+  height: 17px;
+  background: repeating-linear-gradient(to bottom, currentColor 0 2px, transparent 2px 5px);
+}
+
+.landing-cover-qr {
+  display: block;
+  flex: none;
+  width: 56px;
+  width: clamp(46px, 17.8cqw, 75px);
+  aspect-ratio: 1;
+  overflow: hidden;
+  border: 2px solid var(--cover-gold);
+  border-radius: 7px;
+  background: #fff;
+  box-shadow: 0 3px 10px #09101e66;
+  cursor: pointer;
+}
+
+.landing-cover-qr img { display: block; width: 100%; height: 100%; }
+.landing-cover-actions button:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+
+.qr-modal-card { max-height: 100%; overflow: auto; }
+.qr-modal-card .qr-image { width: min(200px, 100%); height: auto; padding: 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  .landing-cover-title { animation: none; }
+}

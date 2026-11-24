@@ -1,0 +1,15 @@
+{
+  "name": "codohoalu-panorama-audioguide",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "node server.cjs",
+    "start": "node server.cjs",
+    "test": "node --test --test-isolation=none tests/routes.test.mjs tests/server.test.cjs tests/access.test.mjs tests/japanese.test.cjs tests/dinh-map.test.mjs tests/visit-menu.test.mjs tests/reader-dock.test.cjs tests/reader-guide.test.mjs",
+    "generate-qr": "node scripts/generate-access-qr.mjs",
+    "split-audio": "node scripts/split-section-mp3.mjs"
+  },
+  "devDependencies": {
+    "qrcode": "^1.5.4"
+  }
+}

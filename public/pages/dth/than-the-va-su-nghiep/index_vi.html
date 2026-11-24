@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Cố Đô Hoa Lư</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style id="inlined-all-css">
+/* Quy tắc nền tối thiểu cho nội dung xuất từ pdf2htmlEX */
+*{box-sizing:content-box}
+html,body{margin:0;padding:0}
+#page-container{position:relative;margin:0 auto;padding:0}
+.pf{position:relative;background-color:#fff;overflow:hidden;margin:0 auto;border:0;transform-origin:0 0}
+.pc{position:absolute;border:0;padding:0;margin:0;top:0;left:0;width:100%;height:100%;overflow:hidden;display:block;transform-origin:0 0}
+.pi{display:none}
+.bf,.bi{position:absolute;left:0;bottom:0;border:0;margin:0;padding:0;-ms-user-select:none;-webkit-user-select:none;user-select:none}
+.t{position:absolute;white-space:pre;transform-origin:0 100%;unicode-bidi:bidi-override}
+._{display:inline-block;color:transparent;overflow:hidden;width:0;height:0}
+.pc>*,.t{-webkit-font-smoothing:antialiased}
+@media print{.pf{margin:0;box-shadow:none;page-break-after:always;page-break-inside:avoid}}
+
+/* Dành riêng cho pdf2htmlEX (không cần thêm quy tắc) */
+
+:root{--blue:#0b3ea8;--blue2:#1a8fe3;--gold:#f2b705;--ink:#1c2a44;--bg:#eef3fb}
+*{-webkit-tap-highlight-color:transparent}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:#dfe7f3}
+#sidebar,.loading-indicator{display:none}
+a{color:var(--blue)}
+
+/* ===== Trang chủ ===== */
+.home{min-height:100vh;background:#0b2a6b url(/images/bg_v1_tinified.jpg) center top/cover fixed}
+.wrap{max-width:760px;margin:0 auto;background:rgba(255,255,255,.96);min-height:100vh;box-shadow:0 0 40px rgba(0,0,0,.35)}
+.wrap>header img,.hero img{display:block;width:100%;height:auto}
+.hero{background:linear-gradient(#fff,#e6f0fb);text-align:center;padding-bottom:6px;margin-top:-1px}
+.hero img{max-width:520px;margin:-20px auto -50px}
+.langs{display:flex;gap:10px;justify-content:center;padding:10px 12px}
+.langs button{border:2px solid transparent;background:#fff;border-radius:999px;padding:4px 12px 4px 6px;display:flex;align-items:center;gap:8px;font-weight:600;cursor:pointer;box-shadow:0 1px 4px rgba(0,0,0,.2)}
+.langs button img{width:28px;height:28px;border-radius:50%}
+.langs button.on{border-color:var(--blue2);background:#e5f2ff}
+.note{text-align:center;font-size:.85rem;color:#566;margin:0 16px 8px}
+.gallery{display:flex;gap:8px;overflow-x:auto;padding:8px 14px;scroll-snap-type:x mandatory}
+.gallery img{width:110px;height:110px;border-radius:12px;object-fit:cover;scroll-snap-align:start;border:2px solid var(--gold)}
+section.site{padding:10px 16px 18px}
+section.site h2{background:linear-gradient(90deg,var(--blue),var(--blue2));color:#fff;margin:14px 0 10px;padding:10px 14px;font-size:1.1rem;border-radius:10px;text-transform:uppercase}
+.list{display:grid;gap:8px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+.list a{display:flex;align-items:center;gap:10px;padding:10px 12px;background:var(--bg);border:1px solid #cfdcf0;border-radius:10px;text-decoration:none;color:var(--ink);font-weight:500}
+.list a:hover{background:#dbeaff;border-color:var(--blue2)}
+.list b{flex:none;min-width:30px;height:30px;border-radius:50%;background:#d62839;color:#fff;display:grid;place-items:center;font-size:.85rem}
+.list b.i{background:var(--blue2)}
+.list small{display:block;color:#667;font-weight:400}
+.wrap>footer img{display:block;width:100%;height:auto}
+.wrap>footer p{margin:0;padding:10px;text-align:center;background:#0a3aa8;color:#fff;font-size:.8rem}
+
+/* Trang thuyết minh */
+body.tm{background:#1d2740;padding-bottom:96px}
+#page-container{max-width:760px}
+#page-container .pf{margin:0 auto 10px;box-shadow:0 2px 12px rgba(0,0,0,.4)}
+.pfwrap{margin:0 auto 10px;overflow:hidden}
+#page-container .pfwrap .pf{margin:0;box-shadow:none}
+.pfwrap{box-shadow:0 2px 12px rgba(0,0,0,.4)}
+.topbar{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:8px;padding:8px 12px;background:linear-gradient(90deg,#0b3ea8,#1a8fe3);color:#fff}
+.topbar a{color:#fff;text-decoration:none;font-weight:700}
+.topbar .sp{flex:1}
+.topbar .fl{display:flex;gap:6px}
+.topbar .fl button{border:2px solid transparent;border-radius:50%;padding:0;background:none;cursor:pointer;opacity:.6}
+.topbar .fl button.on{border-color:#f2b705;opacity:1}
+.topbar .fl img{width:28px;height:28px;border-radius:50%;display:block}
+.player{position:fixed;left:0;right:0;bottom:0;z-index:30;background:#0b2a6b;color:#fff;padding:10px 14px;display:flex;align-items:center;gap:10px;box-shadow:0 -2px 12px rgba(0,0,0,.4)}
+.player .in{max-width:760px;margin:0 auto;display:flex;align-items:center;gap:10px;width:100%}
+.player button{width:44px;height:44px;border-radius:50%;border:0;background:#f2b705;color:#0b2a6b;font-size:18px;cursor:pointer;flex:none}
+.player input[type=range]{flex:1;min-width:0}
+.player .tm{font-variant-numeric:tabular-nums;font-size:.8rem;flex:none}
+.player.none{display:none}
+
+.ff0{font-family:sans-serif;visibility:hidden;}
+@font-face{font-family:ff1;font-display:swap;src:url(f1.woff)format("woff");}.ff1{font-family:ff1;line-height:1.193359;font-style:normal;font-weight:normal;visibility:visible;}
+@font-face{font-family:ff2;font-display:swap;src:url(f2.woff)format("woff");}.ff2{font-family:ff2;line-height:1.016000;font-style:normal;font-weight:normal;visibility:visible;}
+@font-face{font-family:ff3;font-display:swap;src:url(f3.woff)format("woff");}.ff3{font-family:ff3;line-height:1.222000;font-style:normal;font-weight:normal;visibility:visible;}
+@font-face{font-family:ff4;font-display:swap;src:url(f4.woff)format("woff");}.ff4{font-family:ff4;line-height:1.193359;font-style:normal;font-weight:normal;visibility:visible;}
+.m0{transform:matrix(0.250000,0.000000,0.000000,0.250000,0,0);-ms-transform:matrix(0.250000,0.000000,0.000000,0.250000,0,0);-webkit-transform:matrix(0.250000,0.000000,0.000000,0.250000,0,0);}
+.v0{vertical-align:0.000000px;}
+.ls2{letter-spacing:-0.960000px;}
+.ls3{letter-spacing:-0.640000px;}
+.ls1{letter-spacing:-0.320000px;}
+.ls0{letter-spacing:0.000000px;}
+.sc_{text-shadow:none;}
+.sc0{text-shadow:-0.015em 0 transparent,0 0.015em transparent,0.015em 0 transparent,0 -0.015em  transparent;}
+@media screen and (-webkit-min-device-pixel-ratio:0){
+.sc_{-webkit-text-stroke:0px transparent;}
+.sc0{-webkit-text-stroke:0.015em transparent;text-shadow:none;}
+}
+.wsb{word-spacing:-3.264000px;}
+.wsc{word-spacing:-3.072000px;}
+.ws3a{word-spacing:-2.752000px;}
+.ws35{word-spacing:-2.560000px;}
+.ws1c{word-spacing:-2.432000px;}
+.ws28{word-spacing:-2.368000px;}
+.ws30{word-spacing:-1.856000px;}
+.ws1e{word-spacing:-1.792000px;}
+.wse{word-spacing:-1.728000px;}
+.ws27{word-spacing:-1.600000px;}
+.ws26{word-spacing:-1.408000px;}
+.ws7{word-spacing:-1.152000px;}
+.ws15{word-spacing:-0.960000px;}
+.ws18{word-spacing:-0.768000px;}
+.wsf{word-spacing:-0.704000px;}
+.ws1b{word-spacing:-0.640000px;}
+.ws5{word-spacing:-0.512000px;}
+.wsa{word-spacing:-0.192000px;}
+.ws29{word-spacing:-0.064000px;}
+.ws0{word-spacing:0.000000px;}
+.ws2{word-spacing:0.128000px;}
+.ws1f{word-spacing:0.192000px;}
+.ws34{word-spacing:0.320000px;}
+.ws33{word-spacing:0.384000px;}
+.ws39{word-spacing:0.640000px;}
+.ws32{word-spacing:0.704000px;}
+.ws14{word-spacing:0.768000px;}
+.ws12{word-spacing:0.832000px;}
+.ws1d{word-spacing:0.960000px;}
+.ws31{word-spacing:1.088000px;}
+.ws13{word-spacing:1.216000px;}
+.ws38{word-spacing:1.536000px;}
+.ws2d{word-spacing:1.600000px;}
+.ws17{word-spacing:1.792000px;}
+.ws10{word-spacing:1.856000px;}
+.ws6{word-spacing:2.048000px;}
+.ws3c{word-spacing:2.240000px;}
+.ws2c{word-spacing:2.304000px;}
+.ws20{word-spacing:2.432000px;}
+.ws9{word-spacing:2.560000px;}
+.ws37{word-spacing:2.944000px;}
+.ws2f{word-spacing:3.008000px;}
+.wsd{word-spacing:3.264000px;}
+.ws2b{word-spacing:3.648000px;}
+.ws11{word-spacing:3.776000px;}
+.ws8{word-spacing:3.904000px;}
+.ws19{word-spacing:4.032000px;}
+.ws2a{word-spacing:4.096000px;}
+.ws4{word-spacing:4.288000px;}
+.ws16{word-spacing:4.864000px;}
+.ws1{word-spacing:5.056000px;}
+.ws3d{word-spacing:5.248000px;}
+.ws21{word-spacing:5.440000px;}
+.ws22{word-spacing:5.504000px;}
+.ws3b{word-spacing:5.888000px;}
+.ws3{word-spacing:5.952000px;}
+.ws1a{word-spacing:6.400000px;}
+.ws36{word-spacing:6.464000px;}
+.ws24{word-spacing:7.552000px;}
+.ws23{word-spacing:7.872000px;}
+.ws25{word-spacing:8.000000px;}
+.ws2e{word-spacing:9.664000px;}
+._9{margin-left:-10.099200px;}
+._6{margin-left:-8.646400px;}
+._2{margin-left:-7.219200px;}
+._4{margin-left:-6.182400px;}
+._a{margin-left:-5.094400px;}
+._0{margin-left:-3.987200px;}
+._1{margin-left:-2.118400px;}
+._5{margin-left:-1.024000px;}
+._3{width:1.017600px;}
+._7{width:2.188800px;}
+._8{width:3.948800px;}
+.fc6{color:rgb(125,20,37);}
+.fc5{color:transparent;}
+.fc0{color:rgb(122,8,32);}
+.fc4{color:rgb(140,31,41);}
+.fc1{color:rgb(43,92,140);}
+.fc2{color:rgb(35,31,32);}
+.fc3{color:rgb(251,210,92);}
+.fs0{font-size:50.876800px;}
+.fs2{font-size:64.000000px;}
+.fs3{font-size:104.000000px;}
+.fs1{font-size:336.727200px;}
+.y0{bottom:-0.500000px;}
+.y1{bottom:27.040000px;}
+.yf{bottom:47.127900px;}
+.y35{bottom:64.838100px;}
+.y5a{bottom:66.198100px;}
+.y34{bottom:89.334100px;}
+.y59{bottom:90.198100px;}
+.y33{bottom:113.830100px;}
+.y58{bottom:114.198100px;}
+.y57{bottom:138.198100px;}
+.y32{bottom:138.326100px;}
+.y56{bottom:162.198100px;}
+.y31{bottom:162.822100px;}
+.y30{bottom:187.318100px;}
+.y55{bottom:194.694100px;}
+.y2f{bottom:211.814100px;}
+.y54{bottom:227.206100px;}
+.y2e{bottom:236.310100px;}
+.y53{bottom:251.206100px;}
+.y2d{bottom:269.318100px;}
+.y52{bottom:275.206100px;}
+.y2c{bottom:293.814100px;}
+.y51{bottom:299.206100px;}
+.y2b{bottom:318.310100px;}
+.y50{bottom:323.206100px;}
+.y2a{bottom:342.806100px;}
+.y4f{bottom:347.206100px;}
+.y29{bottom:367.302100px;}
+.y4e{bottom:371.206100px;}
+.y28{bottom:391.798100px;}
+.y4d{bottom:395.206100px;}
+.y27{bottom:416.294100px;}
+.y4c{bottom:419.206100px;}
+.y26{bottom:440.790100px;}
+.y4b{bottom:443.206100px;}
+.y4a{bottom:467.206100px;}
+.y25{bottom:473.798100px;}
+.y24{bottom:498.294100px;}
+.y49{bottom:499.718100px;}
+.y23{bottom:522.790100px;}
+.y48{bottom:523.718100px;}
+.y22{bottom:547.286100px;}
+.y47{bottom:547.718100px;}
+.yc{bottom:555.474300px;}
+.y46{bottom:571.718100px;}
+.yb{bottom:579.474300px;}
+.y21{bottom:580.294100px;}
+.y45{bottom:595.718100px;}
+.ya{bottom:603.474300px;}
+.y20{bottom:604.790100px;}
+.y44{bottom:619.718100px;}
+.y9{bottom:627.474300px;}
+.y1f{bottom:629.286100px;}
+.y43{bottom:643.718100px;}
+.y8{bottom:651.474300px;}
+.y1e{bottom:653.782100px;}
+.y42{bottom:667.718100px;}
+.y7{bottom:675.474300px;}
+.y1d{bottom:678.278100px;}
+.y6{bottom:699.474300px;}
+.y41{bottom:700.214100px;}
+.y1c{bottom:702.774100px;}
+.y5{bottom:723.474300px;}
+.y40{bottom:724.214100px;}
+.y1b{bottom:727.270100px;}
+.y2{bottom:747.474300px;}
+.y3f{bottom:748.214100px;}
+.y1a{bottom:751.766100px;}
+.y4{bottom:771.474300px;}
+.y3e{bottom:772.214100px;}
+.y19{bottom:776.262100px;}
+.y3{bottom:795.474300px;}
+.y18{bottom:800.758100px;}
+.y3d{bottom:804.726100px;}
+.y17{bottom:825.254100px;}
+.y3c{bottom:828.726100px;}
+.y16{bottom:849.750100px;}
+.y3b{bottom:852.726100px;}
+.y15{bottom:874.246100px;}
+.y3a{bottom:876.726100px;}
+.ye{bottom:882.792000px;}
+.y14{bottom:898.742100px;}
+.y39{bottom:909.238100px;}
+.yd{bottom:918.308000px;}
+.y13{bottom:923.238100px;}
+.y38{bottom:933.238100px;}
+.y12{bottom:947.734100px;}
+.y37{bottom:957.238100px;}
+.y11{bottom:980.742100px;}
+.y36{bottom:981.238100px;}
+.y10{bottom:1005.238100px;}
+.h2{height:48.442266px;}
+.h4{height:60.937500px;}
+.h5{height:107.120000px;}
+.h3{height:271.402123px;}
+.h0{height:1077.170000px;}
+.h1{height:1077.500000px;}
+.w0{width:538.583000px;}
+.w1{width:539.000000px;}
+.x0{left:0.000000px;}
+.x1{left:52.543500px;}
+.x2{left:54.857900px;}
+.x4{left:56.203800px;}
+.x3{left:102.587800px;}
+.x5{left:105.649200px;}
+.x6{left:119.065200px;}
+.x7{left:162.176200px;}
+.x8{left:477.864500px;}
+@media print{
+.v0{vertical-align:0.000000pt;}
+.ls2{letter-spacing:-1.280000pt;}
+.ls3{letter-spacing:-0.853333pt;}
+.ls1{letter-spacing:-0.426667pt;}
+.ls0{letter-spacing:0.000000pt;}
+.wsb{word-spacing:-4.352000pt;}
+.wsc{word-spacing:-4.096000pt;}
+.ws3a{word-spacing:-3.669333pt;}
+.ws35{word-spacing:-3.413333pt;}
+.ws1c{word-spacing:-3.242667pt;}
+.ws28{word-spacing:-3.157333pt;}
+.ws30{word-spacing:-2.474667pt;}
+.ws1e{word-spacing:-2.389333pt;}
+.wse{word-spacing:-2.304000pt;}
+.ws27{word-spacing:-2.133333pt;}
+.ws26{word-spacing:-1.877333pt;}
+.ws7{word-spacing:-1.536000pt;}
+.ws15{word-spacing:-1.280000pt;}
+.ws18{word-spacing:-1.024000pt;}
+.wsf{word-spacing:-0.938667pt;}
+.ws1b{word-spacing:-0.853333pt;}
+.ws5{word-spacing:-0.682667pt;}
+.wsa{word-spacing:-0.256000pt;}
+.ws29{word-spacing:-0.085333pt;}
+.ws0{word-spacing:0.000000pt;}
+.ws2{word-spacing:0.170667pt;}
+.ws1f{word-spacing:0.256000pt;}
+.ws34{word-spacing:0.426667pt;}
+.ws33{word-spacing:0.512000pt;}
+.ws39{word-spacing:0.853333pt;}
+.ws32{word-spacing:0.938667pt;}
+.ws14{word-spacing:1.024000pt;}
+.ws12{word-spacing:1.109333pt;}
+.ws1d{word-spacing:1.280000pt;}
+.ws31{word-spacing:1.450667pt;}
+.ws13{word-spacing:1.621333pt;}
+.ws38{word-spacing:2.048000pt;}
+.ws2d{word-spacing:2.133333pt;}
+.ws17{word-spacing:2.389333pt;}
+.ws10{word-spacing:2.474667pt;}
+.ws6{word-spacing:2.730667pt;}
+.ws3c{word-spacing:2.986667pt;}
+.ws2c{word-spacing:3.072000pt;}
+.ws20{word-spacing:3.242667pt;}
+.ws9{word-spacing:3.413333pt;}
+.ws37{word-spacing:3.925333pt;}
+.ws2f{word-spacing:4.010667pt;}
+.wsd{word-spacing:4.352000pt;}
+.ws2b{word-spacing:4.864000pt;}
+.ws11{word-spacing:5.034667pt;}
+.ws8{word-spacing:5.205333pt;}
+.ws19{word-spacing:5.376000pt;}
+.ws2a{word-spacing:5.461333pt;}
+.ws4{word-spacing:5.717333pt;}
+.ws16{word-spacing:6.485333pt;}
+.ws1{word-spacing:6.741333pt;}
+.ws3d{word-spacing:6.997333pt;}
+.ws21{word-spacing:7.253333pt;}
+.ws22{word-spacing:7.338667pt;}
+.ws3b{word-spacing:7.850667pt;}
+.ws3{word-spacing:7.936000pt;}
+.ws1a{word-spacing:8.533333pt;}
+.ws36{word-spacing:8.618667pt;}
+.ws24{word-spacing:10.069333pt;}
+.ws23{word-spacing:10.496000pt;}
+.ws25{word-spacing:10.666667pt;}
+.ws2e{word-spacing:12.885333pt;}
+._9{margin-left:-13.465600pt;}
+._6{margin-left:-11.528533pt;}
+._2{margin-left:-9.625600pt;}
+._4{margin-left:-8.243200pt;}
+._a{margin-left:-6.792533pt;}
+._0{margin-left:-5.316267pt;}
+._1{margin-left:-2.824533pt;}
+._5{margin-left:-1.365333pt;}
+._3{width:1.356800pt;}
+._7{width:2.918400pt;}
+._8{width:5.265067pt;}
+.fs0{font-size:67.835733pt;}
+.fs2{font-size:85.333333pt;}
+.fs3{font-size:138.666667pt;}
+.fs1{font-size:448.969600pt;}
+.y0{bottom:-0.666667pt;}
+.y1{bottom:36.053333pt;}
+.yf{bottom:62.837200pt;}
+.y35{bottom:86.450800pt;}
+.y5a{bottom:88.264133pt;}
+.y34{bottom:119.112133pt;}
+.y59{bottom:120.264133pt;}
+.y33{bottom:151.773467pt;}
+.y58{bottom:152.264133pt;}
+.y57{bottom:184.264133pt;}
+.y32{bottom:184.434800pt;}
+.y56{bottom:216.264133pt;}
+.y31{bottom:217.096133pt;}
+.y30{bottom:249.757467pt;}
+.y55{bottom:259.592133pt;}
+.y2f{bottom:282.418800pt;}
+.y54{bottom:302.941467pt;}
+.y2e{bottom:315.080133pt;}
+.y53{bottom:334.941467pt;}
+.y2d{bottom:359.090800pt;}
+.y52{bottom:366.941467pt;}
+.y2c{bottom:391.752133pt;}
+.y51{bottom:398.941467pt;}
+.y2b{bottom:424.413467pt;}
+.y50{bottom:430.941467pt;}
+.y2a{bottom:457.074800pt;}
+.y4f{bottom:462.941467pt;}
+.y29{bottom:489.736133pt;}
+.y4e{bottom:494.941467pt;}
+.y28{bottom:522.397467pt;}
+.y4d{bottom:526.941467pt;}
+.y27{bottom:555.058800pt;}
+.y4c{bottom:558.941467pt;}
+.y26{bottom:587.720133pt;}
+.y4b{bottom:590.941467pt;}
+.y4a{bottom:622.941467pt;}
+.y25{bottom:631.730800pt;}
+.y24{bottom:664.392133pt;}
+.y49{bottom:666.290800pt;}
+.y23{bottom:697.053467pt;}
+.y48{bottom:698.290800pt;}
+.y22{bottom:729.714800pt;}
+.y47{bottom:730.290800pt;}
+.yc{bottom:740.632400pt;}
+.y46{bottom:762.290800pt;}
+.yb{bottom:772.632400pt;}
+.y21{bottom:773.725467pt;}
+.y45{bottom:794.290800pt;}
+.ya{bottom:804.632400pt;}
+.y20{bottom:806.386800pt;}
+.y44{bottom:826.290800pt;}
+.y9{bottom:836.632400pt;}
+.y1f{bottom:839.048133pt;}
+.y43{bottom:858.290800pt;}
+.y8{bottom:868.632400pt;}
+.y1e{bottom:871.709467pt;}
+.y42{bottom:890.290800pt;}
+.y7{bottom:900.632400pt;}
+.y1d{bottom:904.370800pt;}
+.y6{bottom:932.632400pt;}
+.y41{bottom:933.618800pt;}
+.y1c{bottom:937.032133pt;}
+.y5{bottom:964.632400pt;}
+.y40{bottom:965.618800pt;}
+.y1b{bottom:969.693467pt;}
+.y2{bottom:996.632400pt;}
+.y3f{bottom:997.618800pt;}
+.y1a{bottom:1002.354800pt;}
+.y4{bottom:1028.632400pt;}
+.y3e{bottom:1029.618800pt;}
+.y19{bottom:1035.016133pt;}
+.y3{bottom:1060.632400pt;}
+.y18{bottom:1067.677467pt;}
+.y3d{bottom:1072.968133pt;}
+.y17{bottom:1100.338800pt;}
+.y3c{bottom:1104.968133pt;}
+.y16{bottom:1133.000133pt;}
+.y3b{bottom:1136.968133pt;}
+.y15{bottom:1165.661467pt;}
+.y3a{bottom:1168.968133pt;}
+.ye{bottom:1177.056000pt;}
+.y14{bottom:1198.322800pt;}
+.y39{bottom:1212.317467pt;}
+.yd{bottom:1224.410667pt;}
+.y13{bottom:1230.984133pt;}
+.y38{bottom:1244.317467pt;}
+.y12{bottom:1263.645467pt;}
+.y37{bottom:1276.317467pt;}
+.y11{bottom:1307.656133pt;}
+.y36{bottom:1308.317467pt;}
+.y10{bottom:1340.317467pt;}
+.h2{height:64.589687pt;}
+.h4{height:81.250000pt;}
+.h5{height:142.826667pt;}
+.h3{height:361.869498pt;}
+.h0{height:1436.226667pt;}
+.h1{height:1436.666667pt;}
+.w0{width:718.110667pt;}
+.w1{width:718.666667pt;}
+.x0{left:0.000000pt;}
+.x1{left:70.058000pt;}
+.x2{left:73.143867pt;}
+.x4{left:74.938400pt;}
+.x3{left:136.783733pt;}
+.x5{left:140.865600pt;}
+.x6{left:158.753600pt;}
+.x7{left:216.234933pt;}
+.x8{left:637.152667pt;}
+}
+
+    </style>
+    <link rel="preload" as="image" href="bg1.jpg"/>
+<script>
+        var loaded = 0;
+        const totalLoaded = 6;
+    </script>
+</head>
+<body>
+<div id="sidebar">
+    <div id="outline">
+    </div>
+</div>
+<div id="page-container">
+    <div id="pf1" class="pf w0 h0" data-page-no="1"><div class="pc pc1 w0 h0"><img class="bi x0 y0 w1 h1" alt="" src="bg1.jpg"/><div class="t m0 x1 h2 y1 ff1 fs0 fc0 sc0 ls0 ws0"><span class="fc5 sc0">4</span></div><div class="t m0 x2 h3 y2 ff2 fs1 fc1 sc0 ls0 ws0">V</div><div class="t m0 x3 h4 y3 ff1 fs2 fc2 sc0 ls0 ws1">ua tên húy là Đinh Bộ Lĩnh,<span class="_ _0"></span> sinh năm Giáp Thân (92<span class="_ _1"></span>4) ở </div><div class="t m0 x3 h4 y4 ff1 fs2 fc2 sc0 ls0 ws2">thôn Kim Lư<span class="_ _1"></span>,<span class="_ _0"></span> làng Đại Hữu,<span class="_ _1"></span> Châu Đại Hoàng (nay là x<span class="_ _1"></span>ã Gia </div><div class="t m0 x3 h4 y2 ff1 fs2 fc2 sc0 ls0 ws3">Phư<span class="_ _1"></span>ơng,<span class="_ _1"></span> huy<span class="_ _1"></span>ện Gia Viễn,<span class="_ _0"></span> tỉnh Ninh Bình),<span class="_ _1"></span> cha của ông là </div><div class="t m0 x4 h4 y5 ff1 fs2 fc2 sc0 ls0 ws4">Đinh Công T<span class="_ _2"></span>rứ - giữ chứ<span class="_ _1"></span>c Thứ sử Hoan Châu (nay là Nghệ An).<span class="_ _1"></span> </div><div class="t m0 x4 h4 y6 ff1 fs2 fc2 sc0 ls0 ws5">Sau khi cha mất,<span class="_ _0"></span> Đinh Bộ Lĩnh <span class="_ _3"></span>về quê sống v<span class="_ _1"></span>ới mẹ Đàm Thị,<span class="_ _0"></span> hàng </div><div class="t m0 x4 h4 y7 ff1 fs2 fc2 sc0 ls0 ws6">ngày đi chăn trâu cho chú v<span class="_ _1"></span>à tập trận cờ lau.<span class="_ _0"></span> T<span class="_ _4"></span>ừ bé Đinh Bộ Lĩnh </div><div class="t m0 x4 h4 y8 ff1 fs2 fc2 sc0 ls0 ws7">đã tỏ r<span class="_ _1"></span>a là người có khả năng chỉ huy<span class="_ _0"></span>,<span class="_ _0"></span> ông cùng các bạn chăn trâu </div><div class="t m0 x4 h4 y9 ff1 fs2 fc2 sc0 ls0 ws8">lấy bông lau làm cờ<span class="_ _4"></span>,<span class="_ _1"></span> dùng trâu làm ngựa,<span class="_ _0"></span> lấy đá thay vũ khí chia </div><div class="t m0 x4 h4 ya ff1 fs2 fc2 sc0 ls0 ws9">quân hai bên lập trận giả đánh nhau.<span class="_ _0"></span> Mỗi khi thắng trận các bạn </div><div class="t m0 x4 h4 yb ff1 fs2 fc2 sc0 ls0 wsa">tôn Đinh Bộ Lĩnh làm trư<span class="_ _1"></span>ởng,<span class="_ _0"></span> khoanh chéo tay làm kiệu khiêng và </div><div class="t m0 x4 h4 yc ff1 fs2 fc2 sc0 ls0 ws0">cầm hoa lau đi hai bên để rư<span class="_ _1"></span>ớc như nghi vệ Thiên tử<span class="_ _0"></span>.</div><div class="t m0 x5 h5 yd ff3 fs3 fc3 sc0 ls0 ws0">Thân thế v<span class="_ _0"></span>à sự nghiệp </div><div class="t m0 x6 h5 ye ff3 fs3 fc3 sc0 ls0 ws0">vua Đ<span class="_ _1"></span>inh Tiên Ho<span class="_ _1"></span>àng</div><div class="t m0 x7 h4 yf ff4 fs2 fc4 sc0 ls0 ws0">T<span class="_ _0"></span>ượng thờ V<span class="_ _1"></span>ua Đinh Tiên Hoàng</div></div><div class="pi" data-data='{"ctm":[1.000000,0.000000,0.000000,1.000000,0.000000,0.000000]}'></div></div>
+    <div id="pf2" class="pf w0 h0" data-page-no="2"><div class="pc pc2 w0 h0"><img class="bi x0 y0 w1 h1" alt="" loading="lazy" decoding="async" src="bg2.jpg"/><div class="t m0 x8 h2 y1 ff1 fs0 fc6 sc0 ls0 ws0"><span class="fc5 sc0">5</span></div><div class="t m0 x4 h4 y10 ff1 fs2 fc2 sc0 ls1 wsb">Năm 944,<span class="_ _0"></span> Ngô Quyền băng hà,<span class="_ _0"></span> triều Ngô suy v<span class="_ _1"></span>ong,<span class="_ _1"></span> các hào trư<span class="_ _1"></span>ởng </div><div class="t m0 x4 h4 y11 ff1 fs2 fc2 sc0 ls1 ws0">nổi lên cát cứ mỗi người một phư<span class="_ _1"></span>ơng,<span class="_ _1"></span> sử gọi là loạn 12 sứ quân.</div><div class="t m0 x4 h4 y12 ff1 fs2 fc2 sc0 ls2 wsc">Lúc này<span class="_ _0"></span>,<span class="_ _0"></span> yêu cầu cấp thiết là sớm chấm dứ<span class="_ _3"></span>t nạn cát cứ để thống nhất<span class="_ _3"></span> </div><div class="t m0 x4 h4 y13 ff1 fs2 fc2 sc0 ls2 wsd">đất nư<span class="_ _1"></span>ớc.<span class="_ _1"></span> Người làm nên sứ mệnh lịch sử đó là Đinh Bộ Lĩnh.<span class="_ _0"></span> Đinh<span class="_ _3"></span> </div><div class="t m0 x4 h4 y14 ff1 fs2 fc2 sc0 ls2 wse">Bộ Lĩnh đã chiêu binh tụ nghĩa,<span class="_ _0"></span> lấy động Hoa Lư làm căn cứ ban đầu<span class="_ _3"></span> </div><div class="t m0 x4 h4 y15 ff1 fs2 fc2 sc0 ls2 wsf">khởi nghiệp<span class="_ _1"></span>.<span class="_ _1"></span> Thấy lự<span class="_ _1"></span>c lư<span class="_ _1"></span>ợng của mình lúc đầu còn yếu,<span class="_ _0"></span> Đinh Bộ Lĩnh<span class="_ _3"></span> </div><div class="t m0 x4 h4 y16 ff1 fs2 fc2 sc0 ls2 ws5">đã liên k<span class="_ _1"></span>ết với sứ quân T<span class="_ _2"></span>r<span class="_ _1"></span>ần Lãm ở Bố Hải Khẩu (nay thuộc tỉnh Thái </div><div class="t m0 x4 h4 y17 ff1 fs2 fc2 sc0 ls2 ws10">Bình).<span class="_ _0"></span> Thấy Bộ Lĩnh là người khôi ngô tuấn tú,<span class="_ _1"></span> có tài thao lư<span class="_ _1"></span>ợc,<span class="_ _0"></span> T<span class="_ _2"></span>rần<span class="_ _3"></span> </div><div class="t m0 x4 h4 y18 ff1 fs2 fc2 sc0 ls2 ws11">Lãm đã trao t<span class="_ _1"></span>oàn bộ binh quyền.<span class="_ _0"></span> Đinh Bộ Lĩnh đã đưa toàn bộ lự<span class="_ _1"></span>c<span class="_ _3"></span> </div><div class="t m0 x4 h4 y19 ff1 fs2 fc2 sc0 ls2 ws12">lư<span class="_ _1"></span>ợng ở Bố Hải Khẩu v<span class="_ _1"></span>ề nhập với nghĩa binh ở động Hoa Lư<span class="_ _0"></span>.<span class="_ _1"></span> Thế và </div><div class="t m0 x4 h4 y1a ff1 fs2 fc2 sc0 ls2 ws13">lự<span class="_ _1"></span>c của nghĩa quân Hoa Lư đã lớn lên vư<span class="_ _5"></span>ợt bậc.<span class="_ _1"></span> Đinh Bộ Lĩnh quy<span class="_ _1"></span>ết<span class="_ _3"></span> </div><div class="t m0 x4 h4 y1b ff1 fs2 fc2 sc0 ls2 ws14">định vừa hưng binh đánh lớn vừa dụ hàng các sứ quân.<span class="_ _1"></span> T<span class="_ _2"></span>r<span class="_ _1"></span>ận đầu ra<span class="_ _3"></span> </div><div class="t m0 x4 h4 y1c ff1 fs2 fc2 sc0 ls2 ws15">quân Bộ Lĩnh dùng mưu dụ hàng sứ quân Phạm Bạch Hổ<span class="_ _1"></span>.<span class="_ _1"></span> Thừa thế,<span class="_ _1"></span> </div><div class="t m0 x4 h4 y1d ff1 fs2 fc2 sc0 ls2 ws16">ông k<span class="_ _1"></span>éo quân đến đánh tan sứ quân Đỗ Cảnh Thạc,<span class="_ _0"></span> ông lại hành<span class="_ _3"></span> </div><div class="t m0 x4 h4 y1e ff1 fs2 fc2 sc0 ls2 ws17">binh thần tốc phá sứ quân Nguy<span class="_ _1"></span>ễn Siêu,<span class="_ _1"></span> hạ thành Đường Lâm của </div><div class="t m0 x4 h4 y1f ff1 fs2 fc2 sc0 ls2 wse">sứ quân Ngô Nhật Khánh như tr<span class="_ _1"></span>ở bàn tay<span class="_ _0"></span>.<span class="_ _0"></span> Quân của Lữ Đường cũng<span class="_ _3"></span> </div><div class="t m0 x4 h4 y20 ff1 fs2 fc2 sc0 ls2 ws18">bị phá tan nhanh chóng.<span class="_ _0"></span> Đinh Bộ Lĩnh đánh đâu thắng đấy<span class="_ _0"></span>,<span class="_ _0"></span> uy d<span class="_ _3"></span>a<span class="_ _3"></span>n<span class="_ _3"></span>h </div><div class="t m0 x4 h4 y21 ff1 fs2 fc2 sc0 ls0 ws0">lẫy lừng.<span class="_ _1"></span> Ba quân tư<span class="_ _1"></span>ớng sĩ t<span class="_ _5"></span>ôn vinh là V<span class="_ _0"></span>ạn Thắng V<span class="_ _0"></span>ương.</div><div class="t m0 x4 h4 y22 ff1 fs2 fc2 sc0 ls0 ws19">Năm 968<span class="_ _1"></span>,<span class="_ _1"></span> sau khi dẹp x<span class="_ _1"></span>ong loạn,<span class="_ _1"></span> thống nhất đất nư<span class="_ _1"></span>ớc,<span class="_ _1"></span> Đinh Bộ </div><div class="t m0 x4 h4 y23 ff1 fs2 fc2 sc0 ls0 ws1a">Lĩnh lên ngôi Hoàng đế,<span class="_ _0"></span> đặt <span class="_ _3"></span>Quốc hiệu Đại Cồ Việt,<span class="_ _0"></span> đóng đô ở </div><div class="t m0 x4 h4 y24 ff1 fs2 fc2 sc0 ls0 ws0">Hoa Lư<span class="_ _1"></span>,<span class="_ _0"></span> “<span class="_ _0"></span>định trăm quan,<span class="_ _0"></span> đặt sáu quân,<span class="_ _0"></span> chế độ gần đầy đủ”<span class="_ _6"></span>.<span class="_ _0"></span> Nước </div><div class="t m0 x4 h4 y25 ff1 fs2 fc2 sc0 ls0 ws0">Nam t<span class="_ _1"></span>a chính thống kể từ đây<span class="_ _4"></span>.</div><div class="t m0 x4 h4 y26 ff1 fs2 fc2 sc0 ls3 ws8">Như vậy<span class="_ _4"></span>,<span class="_ _1"></span> v<span class="_ _1"></span>ới việc Đinh Bộ Lĩnh xư<span class="_ _3"></span>ng Hoàng đế,<span class="_ _0"></span> đặt Quốc hiệu và </div><div class="t m0 x4 h4 y27 ff1 fs2 fc2 sc0 ls3 ws1b">Niên hiệu riêng đã thể hiện ý chí và tinh thần tự t<span class="_ _1"></span>ôn rất cao của dân </div><div class="t m0 x4 h4 y28 ff1 fs2 fc2 sc0 ls3 ws13">tộc.<span class="_ _0"></span> Sau này tinh thần đó đã đư<span class="_ _1"></span>ợc L<span class="_ _1"></span>ý Thường Kiệt khẳng định như </div><div class="t m0 x4 h4 y29 ff1 fs2 fc2 sc0 ls3 ws9">một chân lý: “Nam quốc sơn hà N<span class="_ _1"></span>am đế cư” (Sông núi nư<span class="_ _1"></span>ớc Nam </div><div class="t m0 x4 h4 y2a ff1 fs2 fc2 sc0 ls3 ws1c">vua Nam ở<span class="_ _7"></span>).<span class="_ _0"></span> Như một tiền định,<span class="_ _1"></span> các triều phong kiến k<span class="_ _1"></span>ế tiếp: T<span class="_ _1"></span>iền Lê </div><div class="t m0 x4 h4 y2b ff1 fs2 fc2 sc0 ls3 ws1d">- L<span class="_ _0"></span>ý - T<span class="_ _2"></span>rần - Lê - Nguy<span class="_ _1"></span>ễn không trở lại xưng “V<span class="_ _0"></span>ương” ,<span class="_ _0"></span> hay “T<span class="_ _1"></span>iết độ<span class="_ _3"></span> </div><div class="t m0 x4 h4 y2c ff1 fs2 fc2 sc0 ls3 ws1e">sứ”<span class="_ _6"></span>,<span class="_ _0"></span> mà đều xưng “Đế”<span class="_ _6"></span>.<span class="_ _0"></span> V<span class="_ _8"></span>ì thế các bậc sử gia đã khẳng định Đinh Bộ </div><div class="t m0 x4 h4 y2d ff1 fs2 fc2 sc0 ls3 ws0">Lĩnh là người mở nền chính thống,<span class="_ _0"></span> tôn vinh là Đinh T<span class="_ _1"></span>iên Hoàng đế.</div><div class="t m0 x4 h4 y2e ff1 fs2 fc2 sc0 ls0 ws1f">Để củng cố nền độc lập thống nhất,<span class="_ _0"></span> vua Đinh Tiên Hoàng đã x<span class="_ _1"></span>ây </div><div class="t m0 x4 h4 y2f ff1 fs2 fc2 sc0 ls0 ws20">dựng bộ máy Nhà nư<span class="_ _1"></span>ớc phong kiến T<span class="_ _2"></span>rung ương t<span class="_ _5"></span>ập quyền.<span class="_ _0"></span> N<span class="_ _5"></span>ăm </div><div class="t m0 x4 h4 y30 ff1 fs2 fc2 sc0 ls0 ws1f">9<span class="_ _1"></span>71,<span class="_ _0"></span> vua đặt thứ bậc và ban áo mũ cho các quan v<span class="_ _1"></span>ăn võ: Nguyễn </div><div class="t m0 x4 h4 y31 ff1 fs2 fc2 sc0 ls0 ws21">Bặc đư<span class="_ _1"></span>ợc phong Định Quốc Công,<span class="_ _1"></span> Đinh Điền là Ngoại Giáp<span class="_ _1"></span>,<span class="_ _0"></span> Lê </div><div class="t m0 x4 h4 y32 ff1 fs2 fc2 sc0 ls0 ws22">Hoàn là Thập đạo tư<span class="_ _1"></span>ớng quân,<span class="_ _1"></span> Lưu Cơ là Đô hộ phủ sĩ cư<span class="_ _0"></span>,<span class="_ _1"></span> Ngô </div><div class="t m0 x4 h4 y33 ff1 fs2 fc2 sc0 ls0 ws23">Chân Lưu đư<span class="_ _1"></span>ợc ban hiệu là Khuông Việt Đại Sư<span class="_ _0"></span>...<span class="_ _1"></span> các con vua </div><div class="t m0 x4 h4 y34 ff1 fs2 fc2 sc0 ls0 ws24">Đinh cũng đư<span class="_ _1"></span>ợc phong chứ<span class="_ _5"></span>c như: Đinh Liễn đư<span class="_ _1"></span>ợc phong Nam </div><div class="t m0 x4 h4 y35 ff1 fs2 fc2 sc0 ls0 ws0">Việt V<span class="_ _0"></span>ương,<span class="_ _0"></span> Đinh T<span class="_ _6"></span>oàn đư<span class="_ _1"></span>ợc phong V<span class="_ _0"></span>ệ V<span class="_ _1"></span>ư<span class="_ _1"></span>ơng.</div></div><div class="pi" data-data='{"ctm":[1.000000,0.000000,0.000000,1.000000,0.000000,0.000000]}'></div></div>
+    <div id="pf3" class="pf w0 h0" data-page-no="3"><div class="pc pc3 w0 h0"><img class="bi x0 y0 w1 h1" alt="" loading="lazy" decoding="async" src="bg3.jpg"/><div class="t m0 x1 h2 y1 ff1 fs0 fc0 sc0 ls0 ws0"><span class="fc5 sc0">6</span></div><div class="t m0 x4 h4 y10 ff1 fs2 fc2 sc0 ls0 ws25">Để bảo vệ Nhà nư<span class="_ _1"></span>ớc,<span class="_ _0"></span> Đinh T<span class="_ _5"></span>iên Hoàng đã xây dựng lự<span class="_ _1"></span>c lư<span class="_ _1"></span>ợng </div><div class="t m0 x4 h4 y36 ff1 fs2 fc2 sc0 ls0 ws26">quân đội mạnh v<span class="_ _1"></span>ới 10 Đạo quân,<span class="_ _1"></span> L<span class="_ _5"></span>ê Hoàn đư<span class="_ _1"></span>ợc phong chứ<span class="_ _5"></span>c Thập </div><div class="t m0 x4 h4 y37 ff1 fs2 fc2 sc0 ls0 wsf">đạo tư<span class="_ _1"></span>ớng quân.<span class="_ _1"></span> Quân sĩ đư<span class="_ _1"></span>ợc trang bị vũ khí,<span class="_ _0"></span> quần áo<span class="_ _1"></span>,<span class="_ _1"></span> đội mũ “tứ </div><div class="t m0 x4 h4 y38 ff1 fs2 fc2 sc0 ls0 ws27">phư<span class="_ _1"></span>ơng bình đính”<span class="_ _9"></span>.<span class="_ _0"></span> Lực lư<span class="_ _1"></span>ợng quân đội mạnh để đảm bảo cho đất </div><div class="t m0 x4 h4 y39 ff1 fs2 fc2 sc0 ls0 ws0">nư<span class="_ _1"></span>ớc đư<span class="_ _5"></span>ợc ổn định.</div><div class="t m0 x4 h4 y3a ff1 fs2 fc2 sc0 ls0 ws28">V<span class="_ _0"></span>ề Nông nghiệp: Nhà vua quan tâm khẩn hoang lập làng,<span class="_ _0"></span> mở r<span class="_ _1"></span>ộng </div><div class="t m0 x4 h4 y3b ff1 fs2 fc2 sc0 ls0 ws29">diện tích cày cấy ở vùng đồng bằng v<span class="_ _1"></span>en biển.<span class="_ _1"></span> Lữ Đường - một sứ </div><div class="t m0 x4 h4 y3c ff1 fs2 fc2 sc0 ls0 ws2a">quân hàng phục Đinh Bộ Lĩnh đã khẩn hoang ở vùng hữu ngạn </div><div class="t m0 x4 h4 y3d ff1 fs2 fc2 sc0 ls0 ws0">sông Hồng.</div><div class="t m0 x4 h4 y3e ff1 fs2 fc2 sc0 ls0 ws2b">V<span class="_ _0"></span>ề Kinh t<span class="_ _1"></span>ế: Kinh tế hàng hóa đã hình thành tr<span class="_ _1"></span>ong nư<span class="_ _1"></span>ớc và có sự </div><div class="t m0 x4 h4 y3f ff1 fs2 fc2 sc0 ls0 ws2c">giao thư<span class="_ _1"></span>ơng với nư<span class="_ _1"></span>ớc ngoài,<span class="_ _0"></span> Nhà nước có các xư<span class="_ _1"></span>ởng thợ chuy<span class="_ _1"></span>ên </div><div class="t m0 x4 h4 y40 ff1 fs2 fc2 sc0 ls0 ws2d">đúc tiền.<span class="_ _0"></span> Đinh Tiên Hoàng đã cho đúc tiền “Thái Bình hưng bảo<span class="_ _0"></span>” </div><div class="t m0 x4 h4 y41 ff1 fs2 fc2 sc0 ls0 ws0">là đồng tiền đầu tiên của nư<span class="_ _1"></span>ớc ta.</div><div class="t m0 x4 h4 y42 ff1 fs2 fc2 sc0 ls0 ws2e">V<span class="_ _0"></span>ề V<span class="_ _a"></span>ăn hóa - Nghệ thuật: Đinh T<span class="_ _1"></span>iên Hoàng đã sử dụng nghệ </div><div class="t m0 x4 h4 y43 ff1 fs2 fc2 sc0 ls0 ws2f">thuật ca hát,<span class="_ _0"></span> diễn xướng để phục vụ quân đội,<span class="_ _0"></span> khích lệ tinh thần </div><div class="t m0 x4 h4 y44 ff1 fs2 fc2 sc0 ls0 ws1b">cho binh sĩ.<span class="_ _0"></span> Bà Phạm Thị T<span class="_ _2"></span>rân - người Hồng Châu (nay thuộc tỉnh </div><div class="t m0 x4 h4 y45 ff1 fs2 fc2 sc0 ls0 ws15">Hưng Y<span class="_ _4"></span>ên) dạy hát cho quân lính được phong chứ<span class="_ _1"></span>c Ưu Bà,<span class="_ _0"></span> về sau </div><div class="t m0 x4 h4 y46 ff1 fs2 fc2 sc0 ls0 ws30">bà đư<span class="_ _1"></span>ợc mệnh danh là T<span class="_ _a"></span>ổ nghề hát chèo<span class="_ _1"></span>.<span class="_ _1"></span> Như v<span class="_ _1"></span>ậy<span class="_ _0"></span>,<span class="_ _0"></span> kinh đô Hoa Lư </div><div class="t m0 x4 h4 y47 ff1 fs2 fc2 sc0 ls0 ws31">là trung tâm của nghệ thuật hát chèo cung đ<span class="_ _7"></span>ình và Ninh Bình rất </div><div class="t m0 x4 h4 y48 ff1 fs2 fc2 sc0 ls0 wsa">tự hào là một tr<span class="_ _1"></span>ong những cái nôi của nghệ thuật chèo nước t<span class="_ _1"></span>a từ </div><div class="t m0 x4 h4 y49 ff1 fs2 fc2 sc0 ls0 ws0">thế kỷ X.</div><div class="t m0 x4 h4 y4a ff1 fs2 fc2 sc0 ls0 ws32">Như vậy<span class="_ _4"></span>,<span class="_ _1"></span> dư<span class="_ _1"></span>ới triều Đinh,<span class="_ _1"></span> tình hình kinh t<span class="_ _1"></span>ế - văn hóa - xã hội nư<span class="_ _1"></span>ớc </div><div class="t m0 x4 h4 y4b ff1 fs2 fc2 sc0 ls0 ws33">ta đã đi v<span class="_ _1"></span>ào ổn định và phát triển.<span class="_ _1"></span> Cuộc đời v<span class="_ _1"></span>à sự nghiệp của vua </div><div class="t m0 x4 h4 y4c ff1 fs2 fc2 sc0 ls0 ws34">Đinh T<span class="_ _1"></span>iên Hoàng đã được khẳng định ông <span class="_ _5"></span>là vị anh hùng dân tộc </div><div class="t m0 x4 h4 y4d ff1 fs2 fc2 sc0 ls0 ws35">có công thống nhất đất nư<span class="_ _1"></span>ớc,<span class="_ _1"></span> xây dựng một Nhà nư<span class="_ _1"></span>ớc phong kiến </div><div class="t m0 x4 h4 y4e ff1 fs2 fc2 sc0 ls0 ws36">T<span class="_ _2"></span>rung ư<span class="_ _1"></span>ơng tập quyền đầu tiên của V<span class="_ _1"></span>iệt Nam.<span class="_ _0"></span> Sự nghiệp vĩ đại </div><div class="t m0 x4 h4 y4f ff1 fs2 fc2 sc0 ls0 ws37">ấy đư<span class="_ _1"></span>ợc nhà sử học Lê V<span class="_ _a"></span>ăn Hưu nhận xét: “T<span class="_ _1"></span>iên Hoàng tài năng </div><div class="t m0 x4 h4 y50 ff1 fs2 fc2 sc0 ls0 ws38">sáng suốt hơn người,<span class="_ _0"></span> dũng lược nhất đời.<span class="_ _0"></span> Đư<span class="_ _1"></span>ơng lúc nước V<span class="_ _1"></span>iệt ta </div><div class="t m0 x4 h4 y51 ff1 fs2 fc2 sc0 ls0 ws4">không chủ,<span class="_ _0"></span> các hùng trưởng cát cứ<span class="_ _0"></span>,<span class="_ _1"></span> đánh một cái là 12 sứ quân </div><div class="t m0 x4 h4 y52 ff1 fs2 fc2 sc0 ls0 ws39">thần phục hết r<span class="_ _1"></span>ồi mở nư<span class="_ _5"></span>ớc đóng đô<span class="_ _1"></span>,<span class="_ _1"></span> đổi xưng hoàng đế,<span class="_ _0"></span> đặt trăm </div><div class="t m0 x4 h4 y53 ff1 fs2 fc2 sc0 ls0 ws1d">quan,<span class="_ _0"></span> dự<span class="_ _3"></span>ng sáu quân,<span class="_ _0"></span> chế độ gần đủ,chắc là ý tr<span class="_ _1"></span>ời vì nư<span class="_ _1"></span>ớc Việt t<span class="_ _1"></span>a </div><div class="t m0 x4 h4 y54 ff1 fs2 fc2 sc0 ls0 ws0">lại sinh ra bậc Thánh triết<span class="_ _1"></span>”<span class="_ _6"></span>.</div><div class="t m0 x4 h4 y55 ff1 fs2 fc2 sc0 ls0 ws3a">Tháng 10 năm Kỷ M<span class="_ _1"></span>ão (979),<span class="_ _0"></span> nhà vua băng hà,<span class="_ _0"></span> hưởng thọ 56 tuổi.</div><div class="t m0 x4 h4 y56 ff1 fs2 fc2 sc0 ls0 ws3b">Sau khi vua Đinh băng hà,<span class="_ _0"></span> triều thần đưa ấu chúa Đinh T<span class="_ _6"></span>oàn 6 </div><div class="t m0 x4 h4 y57 ff1 fs2 fc2 sc0 ls0 ws16">tuổi lên nối ngôi.<span class="_ _0"></span> Như<span class="_ _3"></span>ng bấy giờ<span class="_ _4"></span>,<span class="_ _1"></span> đất nư<span class="_ _1"></span>ớc ta lại đứng trư<span class="_ _1"></span>ớc họa </div><div class="t m0 x4 h4 y58 ff1 fs2 fc2 sc0 ls0 ws3c">xâm lăng.<span class="_ _0"></span> Để bảo vệ giang sơn x<span class="_ _1"></span>ã tắc,<span class="_ _1"></span> Thái H<span class="_ _1"></span>ậu Dư<span class="_ _5"></span>ơng V<span class="_ _a"></span>ân Nga </div><div class="t m0 x4 h4 y59 ff1 fs2 fc2 sc0 ls0 ws3d">cùng ba quân tư<span class="_ _1"></span>ớng sĩ suy tôn L<span class="_ _1"></span>ê Hoàn lên ngôi Hoàng đế,<span class="_ _1"></span> lập </div><div class="t m0 x4 h4 y5a ff1 fs2 fc2 sc0 ls0 ws0">nên triều T<span class="_ _1"></span>iền Lê.</div></div><div class="pi" data-data='{"ctm":[1.000000,0.000000,0.000000,1.000000,0.000000,0.000000]}'></div></div>
+</div>
+<div class="loading-indicator">
+</div>
+<script src="/assets/js/thuyet-minh.js"></script>
+</body>
+</html>

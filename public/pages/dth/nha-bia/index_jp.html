@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Cố Đô Hoa Lư</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style id="inlined-all-css">
+/* Quy tắc nền tối thiểu cho nội dung xuất từ pdf2htmlEX */
+*{box-sizing:content-box}
+html,body{margin:0;padding:0}
+#page-container{position:relative;margin:0 auto;padding:0}
+.pf{position:relative;background-color:#fff;overflow:hidden;margin:0 auto;border:0;transform-origin:0 0}
+.pc{position:absolute;border:0;padding:0;margin:0;top:0;left:0;width:100%;height:100%;overflow:hidden;display:block;transform-origin:0 0}
+.pi{display:none}
+.bf,.bi{position:absolute;left:0;bottom:0;border:0;margin:0;padding:0;-ms-user-select:none;-webkit-user-select:none;user-select:none}
+.t{position:absolute;white-space:pre;transform-origin:0 100%;unicode-bidi:bidi-override}
+._{display:inline-block;color:transparent;overflow:hidden;width:0;height:0}
+.pc>*,.t{-webkit-font-smoothing:antialiased}
+@media print{.pf{margin:0;box-shadow:none;page-break-after:always;page-break-inside:avoid}}
+
+/* Dành riêng cho pdf2htmlEX (không cần thêm quy tắc) */
+
+:root{--blue:#0b3ea8;--blue2:#1a8fe3;--gold:#f2b705;--ink:#1c2a44;--bg:#eef3fb}
+*{-webkit-tap-highlight-color:transparent}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:#dfe7f3}
+#sidebar,.loading-indicator{display:none}
+a{color:var(--blue)}
+
+/* ===== Trang chủ ===== */
+.home{min-height:100vh;background:#0b2a6b url(/images/bg_v1_tinified.jpg) center top/cover fixed}
+.wrap{max-width:760px;margin:0 auto;background:rgba(255,255,255,.96);min-height:100vh;box-shadow:0 0 40px rgba(0,0,0,.35)}
+.wrap>header img,.hero img{display:block;width:100%;height:auto}
+.hero{background:linear-gradient(#fff,#e6f0fb);text-align:center;padding-bottom:6px;margin-top:-1px}
+.hero img{max-width:520px;margin:-20px auto -50px}
+.langs{display:flex;gap:10px;justify-content:center;padding:10px 12px}
+.langs button{border:2px solid transparent;background:#fff;border-radius:999px;padding:4px 12px 4px 6px;display:flex;align-items:center;gap:8px;font-weight:600;cursor:pointer;box-shadow:0 1px 4px rgba(0,0,0,.2)}
+.langs button img{width:28px;height:28px;border-radius:50%}
+.langs button.on{border-color:var(--blue2);background:#e5f2ff}
+.note{text-align:center;font-size:.85rem;color:#566;margin:0 16px 8px}
+.gallery{display:flex;gap:8px;overflow-x:auto;padding:8px 14px;scroll-snap-type:x mandatory}
+.gallery img{width:110px;height:110px;border-radius:12px;object-fit:cover;scroll-snap-align:start;border:2px solid var(--gold)}
+section.site{padding:10px 16px 18px}
+section.site h2{background:linear-gradient(90deg,var(--blue),var(--blue2));color:#fff;margin:14px 0 10px;padding:10px 14px;font-size:1.1rem;border-radius:10px;text-transform:uppercase}
+.list{display:grid;gap:8px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+.list a{display:flex;align-items:center;gap:10px;padding:10px 12px;background:var(--bg);border:1px solid #cfdcf0;border-radius:10px;text-decoration:none;color:var(--ink);font-weight:500}
+.list a:hover{background:#dbeaff;border-color:var(--blue2)}
+.list b{flex:none;min-width:30px;height:30px;border-radius:50%;background:#d62839;color:#fff;display:grid;place-items:center;font-size:.85rem}
+.list b.i{background:var(--blue2)}
+.list small{display:block;color:#667;font-weight:400}
+.wrap>footer img{display:block;width:100%;height:auto}
+.wrap>footer p{margin:0;padding:10px;text-align:center;background:#0a3aa8;color:#fff;font-size:.8rem}
+
+/* Trang thuyết minh */
+body.tm{background:#1d2740;padding-bottom:96px}
+#page-container{max-width:760px}
+#page-container .pf{margin:0 auto 10px;box-shadow:0 2px 12px rgba(0,0,0,.4)}
+.pfwrap{margin:0 auto 10px;overflow:hidden}
+#page-container .pfwrap .pf{margin:0;box-shadow:none}
+.pfwrap{box-shadow:0 2px 12px rgba(0,0,0,.4)}
+.topbar{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:8px;padding:8px 12px;background:linear-gradient(90deg,#0b3ea8,#1a8fe3);color:#fff}
+.topbar a{color:#fff;text-decoration:none;font-weight:700}
+.topbar .sp{flex:1}
+.topbar .fl{display:flex;gap:6px}
+.topbar .fl button{border:2px solid transparent;border-radius:50%;padding:0;background:none;cursor:pointer;opacity:.6}
+.topbar .fl button.on{border-color:#f2b705;opacity:1}
+.topbar .fl img{width:28px;height:28px;border-radius:50%;display:block}
+.player{position:fixed;left:0;right:0;bottom:0;z-index:30;background:#0b2a6b;color:#fff;padding:10px 14px;display:flex;align-items:center;gap:10px;box-shadow:0 -2px 12px rgba(0,0,0,.4)}
+.player .in{max-width:760px;margin:0 auto;display:flex;align-items:center;gap:10px;width:100%}
+.player button{width:44px;height:44px;border-radius:50%;border:0;background:#f2b705;color:#0b2a6b;font-size:18px;cursor:pointer;flex:none}
+.player input[type=range]{flex:1;min-width:0}
+.player .tm{font-variant-numeric:tabular-nums;font-size:.8rem;flex:none}
+.player.none{display:none}
+
+.ff0{font-family:sans-serif;visibility:hidden;}
+@font-face{font-family:ff1;font-display:swap;src:url(f1.woff)format("woff");}.ff1{font-family:ff1;line-height:1.193359;font-style:normal;font-weight:normal;visibility:visible;}
+@font-face{font-family:ff2;font-display:swap;src:url(f2.woff)format("woff");}.ff2{font-family:ff2;line-height:1.321000;font-style:normal;font-weight:normal;visibility:visible;}
+@font-face{font-family:ff3;font-display:swap;src:url(f3.woff)format("woff");}.ff3{font-family:ff3;line-height:1.016000;font-style:normal;font-weight:normal;visibility:visible;}
+@font-face{font-family:ff4;font-display:swap;src:url(f4.woff)format("woff");}.ff4{font-family:ff4;line-height:1.193359;font-style:normal;font-weight:normal;visibility:visible;}
+@font-face{font-family:ff5;font-display:swap;src:url(f5.woff)format("woff");}.ff5{font-family:ff5;line-height:1.163574;font-style:normal;font-weight:normal;visibility:visible;}
+.m0{transform:matrix(0.250000,0.000000,0.000000,0.250000,0,0);-ms-transform:matrix(0.250000,0.000000,0.000000,0.250000,0,0);-webkit-transform:matrix(0.250000,0.000000,0.000000,0.250000,0,0);}
+.v0{vertical-align:0.000000px;}
+.ls2{letter-spacing:-0.640000px;}
+.ls1{letter-spacing:-0.320000px;}
+.ls0{letter-spacing:0.000000px;}
+.sc_{text-shadow:none;}
+.sc0{text-shadow:-0.015em 0 transparent,0 0.015em transparent,0.015em 0 transparent,0 -0.015em  transparent;}
+@media screen and (-webkit-min-device-pixel-ratio:0){
+.sc_{-webkit-text-stroke:0px transparent;}
+.sc0{-webkit-text-stroke:0.015em transparent;text-shadow:none;}
+}
+.ws34{word-spacing:-3.456000px;}
+.ws8{word-spacing:-3.328000px;}
+.ws10{word-spacing:-3.008000px;}
+.ws11{word-spacing:-2.944000px;}
+.ws2f{word-spacing:-2.368000px;}
+.ws32{word-spacing:-1.984000px;}
+.ws13{word-spacing:-1.920000px;}
+.ws19{word-spacing:-1.856000px;}
+.ws24{word-spacing:-1.728000px;}
+.wsc{word-spacing:-1.536000px;}
+.ws25{word-spacing:-1.408000px;}
+.ws9{word-spacing:-1.344000px;}
+.ws1b{word-spacing:-1.216000px;}
+.ws2d{word-spacing:-1.088000px;}
+.ws26{word-spacing:-0.896000px;}
+.ws1a{word-spacing:-0.640000px;}
+.ws1d{word-spacing:-0.576000px;}
+.ws1e{word-spacing:-0.384000px;}
+.ws23{word-spacing:-0.256000px;}
+.ws33{word-spacing:-0.192000px;}
+.wsd{word-spacing:-0.128000px;}
+.ws0{word-spacing:0.000000px;}
+.ws3{word-spacing:0.064000px;}
+.ws18{word-spacing:0.256000px;}
+.ws29{word-spacing:0.448000px;}
+.wse{word-spacing:0.640000px;}
+.wsb{word-spacing:1.024000px;}
+.ws28{word-spacing:1.088000px;}
+.ws12{word-spacing:1.152000px;}
+.ws22{word-spacing:1.472000px;}
+.ws31{word-spacing:1.728000px;}
+.wsa{word-spacing:2.176000px;}
+.ws27{word-spacing:2.240000px;}
+.ws6{word-spacing:2.880000px;}
+.ws15{word-spacing:2.944000px;}
+.ws5{word-spacing:3.200000px;}
+.ws2a{word-spacing:3.392000px;}
+.ws2b{word-spacing:3.648000px;}
+.ws14{word-spacing:3.712000px;}
+.wsf{word-spacing:3.776000px;}
+.ws2e{word-spacing:3.968000px;}
+.ws20{word-spacing:4.160000px;}
+.ws4{word-spacing:4.544000px;}
+.ws7{word-spacing:4.608000px;}
+.ws16{word-spacing:4.672000px;}
+.ws1c{word-spacing:4.800000px;}
+.ws30{word-spacing:5.376000px;}
+.ws1f{word-spacing:5.440000px;}
+.ws1{word-spacing:5.504000px;}
+.ws2{word-spacing:6.016000px;}
+.ws21{word-spacing:7.232000px;}
+.ws2c{word-spacing:7.808000px;}
+.ws17{word-spacing:8.000000px;}
+._3{margin-left:-9.792000px;}
+._7{margin-left:-7.680000px;}
+._5{margin-left:-6.284800px;}
+._6{margin-left:-5.145600px;}
+._1{margin-left:-4.070400px;}
+._4{margin-left:-2.476800px;}
+._0{margin-left:-1.440000px;}
+._2{width:1.004800px;}
+._9{width:2.022400px;}
+._8{width:3.142400px;}
+.fc7{color:transparent;}
+.fc6{color:rgb(255,255,255);}
+.fc5{color:rgb(125,20,37);}
+.fc1{color:rgb(19,26,40);}
+.fc0{color:rgb(122,8,32);}
+.fc4{color:rgb(140,31,41);}
+.fc2{color:rgb(43,92,140);}
+.fc3{color:rgb(35,31,32);}
+.fs0{font-size:50.876800px;}
+.fs3{font-size:64.000000px;}
+.fs1{font-size:120.000000px;}
+.fs2{font-size:336.727200px;}
+.y0{bottom:-0.500000px;}
+.y4b{bottom:7.469200px;}
+.y1{bottom:27.040000px;}
+.y4a{bottom:31.469200px;}
+.y49{bottom:55.469200px;}
+.y16{bottom:68.944600px;}
+.y48{bottom:79.469200px;}
+.y31{bottom:84.726100px;}
+.y15{bottom:92.944600px;}
+.y47{bottom:103.469200px;}
+.y30{bottom:108.726100px;}
+.y41{bottom:114.574000px;}
+.y14{bottom:116.944600px;}
+.y46{bottom:127.469200px;}
+.y2f{bottom:132.726100px;}
+.y13{bottom:140.944600px;}
+.y45{bottom:151.469200px;}
+.y2e{bottom:156.726100px;}
+.y12{bottom:173.456600px;}
+.y44{bottom:175.469200px;}
+.y2d{bottom:180.726100px;}
+.y11{bottom:197.456600px;}
+.y43{bottom:199.469200px;}
+.y2c{bottom:204.726100px;}
+.y10{bottom:221.456600px;}
+.y42{bottom:223.469200px;}
+.y2b{bottom:228.726100px;}
+.yf{bottom:245.456600px;}
+.y2a{bottom:252.726100px;}
+.ye{bottom:269.456600px;}
+.yd{bottom:293.456600px;}
+.y32{bottom:297.803200px;}
+.yc{bottom:317.456600px;}
+.yb{bottom:341.456600px;}
+.y18{bottom:369.727000px;}
+.y1a{bottom:371.727000px;}
+.y19{bottom:391.727000px;}
+.y17{bottom:393.727000px;}
+.y40{bottom:484.214100px;}
+.y3f{bottom:508.214100px;}
+.y3e{bottom:532.214100px;}
+.y3d{bottom:556.214100px;}
+.y3c{bottom:588.726100px;}
+.y3b{bottom:612.726100px;}
+.y3a{bottom:636.726100px;}
+.y39{bottom:660.726100px;}
+.y29{bottom:669.238100px;}
+.y38{bottom:684.726100px;}
+.y28{bottom:693.238100px;}
+.y37{bottom:708.726100px;}
+.y27{bottom:717.238100px;}
+.y36{bottom:732.726100px;}
+.y26{bottom:741.238100px;}
+.y35{bottom:756.726100px;}
+.y25{bottom:765.238100px;}
+.y34{bottom:780.726100px;}
+.ya{bottom:781.968600px;}
+.y24{bottom:789.238100px;}
+.y33{bottom:804.726100px;}
+.y9{bottom:805.968600px;}
+.y23{bottom:813.238100px;}
+.y8{bottom:829.968600px;}
+.y22{bottom:837.238100px;}
+.y7{bottom:853.968600px;}
+.y21{bottom:861.238100px;}
+.y6{bottom:877.968600px;}
+.y20{bottom:885.238100px;}
+.y1f{bottom:909.238100px;}
+.y3{bottom:910.464600px;}
+.y1e{bottom:933.238100px;}
+.y5{bottom:934.464600px;}
+.y1d{bottom:957.238100px;}
+.y4{bottom:958.464600px;}
+.y1c{bottom:981.238100px;}
+.y2{bottom:999.472500px;}
+.y1b{bottom:1005.238100px;}
+.h2{height:48.442266px;}
+.h5{height:60.937500px;}
+.h7{height:62.562500px;}
+.h3{height:134.520000px;}
+.h6{height:240.110000px;}
+.h4{height:271.402123px;}
+.h0{height:1077.170000px;}
+.h1{height:1077.500000px;}
+.w2{width:413.571400px;}
+.w0{width:538.583000px;}
+.w1{width:539.000000px;}
+.x0{left:0.000000px;}
+.xd{left:4.414100px;}
+.x1{left:48.975600px;}
+.x3{left:55.261800px;}
+.x5{left:56.696600px;}
+.xc{left:67.477600px;}
+.x6{left:77.365600px;}
+.x7{left:103.061600px;}
+.x4{left:108.968600px;}
+.xb{left:151.244500px;}
+.x2{left:195.852600px;}
+.x8{left:298.853600px;}
+.x9{left:324.757600px;}
+.xa{left:474.060600px;}
+@media print{
+.v0{vertical-align:0.000000pt;}
+.ls2{letter-spacing:-0.853333pt;}
+.ls1{letter-spacing:-0.426667pt;}
+.ls0{letter-spacing:0.000000pt;}
+.ws34{word-spacing:-4.608000pt;}
+.ws8{word-spacing:-4.437333pt;}
+.ws10{word-spacing:-4.010667pt;}
+.ws11{word-spacing:-3.925333pt;}
+.ws2f{word-spacing:-3.157333pt;}
+.ws32{word-spacing:-2.645333pt;}
+.ws13{word-spacing:-2.560000pt;}
+.ws19{word-spacing:-2.474667pt;}
+.ws24{word-spacing:-2.304000pt;}
+.wsc{word-spacing:-2.048000pt;}
+.ws25{word-spacing:-1.877333pt;}
+.ws9{word-spacing:-1.792000pt;}
+.ws1b{word-spacing:-1.621333pt;}
+.ws2d{word-spacing:-1.450667pt;}
+.ws26{word-spacing:-1.194667pt;}
+.ws1a{word-spacing:-0.853333pt;}
+.ws1d{word-spacing:-0.768000pt;}
+.ws1e{word-spacing:-0.512000pt;}
+.ws23{word-spacing:-0.341333pt;}
+.ws33{word-spacing:-0.256000pt;}
+.wsd{word-spacing:-0.170667pt;}
+.ws0{word-spacing:0.000000pt;}
+.ws3{word-spacing:0.085333pt;}
+.ws18{word-spacing:0.341333pt;}
+.ws29{word-spacing:0.597333pt;}
+.wse{word-spacing:0.853333pt;}
+.wsb{word-spacing:1.365333pt;}
+.ws28{word-spacing:1.450667pt;}
+.ws12{word-spacing:1.536000pt;}
+.ws22{word-spacing:1.962667pt;}
+.ws31{word-spacing:2.304000pt;}
+.wsa{word-spacing:2.901333pt;}
+.ws27{word-spacing:2.986667pt;}
+.ws6{word-spacing:3.840000pt;}
+.ws15{word-spacing:3.925333pt;}
+.ws5{word-spacing:4.266667pt;}
+.ws2a{word-spacing:4.522667pt;}
+.ws2b{word-spacing:4.864000pt;}
+.ws14{word-spacing:4.949333pt;}
+.wsf{word-spacing:5.034667pt;}
+.ws2e{word-spacing:5.290667pt;}
+.ws20{word-spacing:5.546667pt;}
+.ws4{word-spacing:6.058667pt;}
+.ws7{word-spacing:6.144000pt;}
+.ws16{word-spacing:6.229333pt;}
+.ws1c{word-spacing:6.400000pt;}
+.ws30{word-spacing:7.168000pt;}
+.ws1f{word-spacing:7.253333pt;}
+.ws1{word-spacing:7.338667pt;}
+.ws2{word-spacing:8.021333pt;}
+.ws21{word-spacing:9.642667pt;}
+.ws2c{word-spacing:10.410667pt;}
+.ws17{word-spacing:10.666667pt;}
+._3{margin-left:-13.056000pt;}
+._7{margin-left:-10.240000pt;}
+._5{margin-left:-8.379733pt;}
+._6{margin-left:-6.860800pt;}
+._1{margin-left:-5.427200pt;}
+._4{margin-left:-3.302400pt;}
+._0{margin-left:-1.920000pt;}
+._2{width:1.339733pt;}
+._9{width:2.696533pt;}
+._8{width:4.189867pt;}
+.fs0{font-size:67.835733pt;}
+.fs3{font-size:85.333333pt;}
+.fs1{font-size:160.000000pt;}
+.fs2{font-size:448.969600pt;}
+.y0{bottom:-0.666667pt;}
+.y4b{bottom:9.958933pt;}
+.y1{bottom:36.053333pt;}
+.y4a{bottom:41.958933pt;}
+.y49{bottom:73.958933pt;}
+.y16{bottom:91.926133pt;}
+.y48{bottom:105.958933pt;}
+.y31{bottom:112.968133pt;}
+.y15{bottom:123.926133pt;}
+.y47{bottom:137.958933pt;}
+.y30{bottom:144.968133pt;}
+.y41{bottom:152.765333pt;}
+.y14{bottom:155.926133pt;}
+.y46{bottom:169.958933pt;}
+.y2f{bottom:176.968133pt;}
+.y13{bottom:187.926133pt;}
+.y45{bottom:201.958933pt;}
+.y2e{bottom:208.968133pt;}
+.y12{bottom:231.275467pt;}
+.y44{bottom:233.958933pt;}
+.y2d{bottom:240.968133pt;}
+.y11{bottom:263.275467pt;}
+.y43{bottom:265.958933pt;}
+.y2c{bottom:272.968133pt;}
+.y10{bottom:295.275467pt;}
+.y42{bottom:297.958933pt;}
+.y2b{bottom:304.968133pt;}
+.yf{bottom:327.275467pt;}
+.y2a{bottom:336.968133pt;}
+.ye{bottom:359.275467pt;}
+.yd{bottom:391.275467pt;}
+.y32{bottom:397.070933pt;}
+.yc{bottom:423.275467pt;}
+.yb{bottom:455.275467pt;}
+.y18{bottom:492.969333pt;}
+.y1a{bottom:495.636000pt;}
+.y19{bottom:522.302667pt;}
+.y17{bottom:524.969333pt;}
+.y40{bottom:645.618800pt;}
+.y3f{bottom:677.618800pt;}
+.y3e{bottom:709.618800pt;}
+.y3d{bottom:741.618800pt;}
+.y3c{bottom:784.968133pt;}
+.y3b{bottom:816.968133pt;}
+.y3a{bottom:848.968133pt;}
+.y39{bottom:880.968133pt;}
+.y29{bottom:892.317467pt;}
+.y38{bottom:912.968133pt;}
+.y28{bottom:924.317467pt;}
+.y37{bottom:944.968133pt;}
+.y27{bottom:956.317467pt;}
+.y36{bottom:976.968133pt;}
+.y26{bottom:988.317467pt;}
+.y35{bottom:1008.968133pt;}
+.y25{bottom:1020.317467pt;}
+.y34{bottom:1040.968133pt;}
+.ya{bottom:1042.624800pt;}
+.y24{bottom:1052.317467pt;}
+.y33{bottom:1072.968133pt;}
+.y9{bottom:1074.624800pt;}
+.y23{bottom:1084.317467pt;}
+.y8{bottom:1106.624800pt;}
+.y22{bottom:1116.317467pt;}
+.y7{bottom:1138.624800pt;}
+.y21{bottom:1148.317467pt;}
+.y6{bottom:1170.624800pt;}
+.y20{bottom:1180.317467pt;}
+.y1f{bottom:1212.317467pt;}
+.y3{bottom:1213.952800pt;}
+.y1e{bottom:1244.317467pt;}
+.y5{bottom:1245.952800pt;}
+.y1d{bottom:1276.317467pt;}
+.y4{bottom:1277.952800pt;}
+.y1c{bottom:1308.317467pt;}
+.y2{bottom:1332.630000pt;}
+.y1b{bottom:1340.317467pt;}
+.h2{height:64.589687pt;}
+.h5{height:81.250000pt;}
+.h7{height:83.416667pt;}
+.h3{height:179.360000pt;}
+.h6{height:320.146667pt;}
+.h4{height:361.869498pt;}
+.h0{height:1436.226667pt;}
+.h1{height:1436.666667pt;}
+.w2{width:551.428533pt;}
+.w0{width:718.110667pt;}
+.w1{width:718.666667pt;}
+.x0{left:0.000000pt;}
+.xd{left:5.885467pt;}
+.x1{left:65.300800pt;}
+.x3{left:73.682400pt;}
+.x5{left:75.595467pt;}
+.xc{left:89.970133pt;}
+.x6{left:103.154133pt;}
+.x7{left:137.415467pt;}
+.x4{left:145.291467pt;}
+.xb{left:201.659333pt;}
+.x2{left:261.136800pt;}
+.x8{left:398.471467pt;}
+.x9{left:433.010133pt;}
+.xa{left:632.080800pt;}
+}
+
+
+
+    .nha-bia-copy, .nha-bia-summary {
+      position: absolute;
+      color: rgb(35,31,32);
+      font: normal 64px/96px ff1, sans-serif;
+      text-align: justify;
+      transform: scale(.25);
+      transform-origin: 0 0;
+      -webkit-font-smoothing: antialiased;
+    }
+    .nha-bia-copy { left: 10.525%; width: 315.8%; }
+    .nha-bia-copy p, .nha-bia-summary p { margin: 0 0 28px; }
+    .nha-bia-copy p:last-child, .nha-bia-summary p:last-child { margin-bottom: 0; }
+    #pf1 .nha-bia-copy-top { top: 129px; }
+    #pf1 .nha-bia-copy-bottom { top: 740px; }
+    #pf2 .nha-bia-copy-top { top: 40px; }
+    #pf2 .nha-bia-copy-bottom { top: 810px; }
+    #pf3 .nha-bia-copy { top: 40px; }
+    @font-face {
+      font-family: nha-bia-initial;
+      src: url('initial-calligraphy.woff') format('woff');
+      font-style: normal;
+      font-weight: normal;
+      font-display: swap;
+      unicode-range: U+004D;
+    }
+    .nha-bia-intro p::first-letter {
+      float: left;
+      margin: 32px 24px -32px 0;
+      color: rgb(43,92,140);
+      font: normal 384px/.70 nha-bia-initial, ff3, ff1, sans-serif;
+    }
+    .nha-bia-summary-mask {
+      position: absolute; left: 67.5px; top: 720px;
+      width: 407.5px; height: 250px; background: #692427;
+    }
+    .nha-bia-summary {
+      left: 72px; top: 724px; width: 1576px;
+      color: white; font-family: ff5, ff1, sans-serif;
+    }
+    </style>
+    <link rel="stylesheet" href="nha-bia-translations.css?v=20261116-1">
+    <link rel="preload" as="image" href="bg1.jpg"/>
+<script>
+        var loaded = 0;
+        const totalLoaded = 6;
+    </script>
+</head>
+<body data-ja-full data-zh-full>
+<div id="sidebar">
+    <div id="outline">
+    </div>
+</div>
+<div id="page-container">
+<div id="pf1" class="pf w0 h0" data-page-no="1"><div class="pc pc1 w0 h0"><img class="bi x0 y0 w1 h1" alt="" src="bg1.jpg" decoding="async"/><div class="t m0 x1 h2 y1 ff1 fs0 fc0 sc0 ls0 ws0">28</div><h1 class="nha-bia-foreign-title">9. 碑亭</h1><div class="nha-bia-copy nha-bia-copy-top nha-bia-intro"><p>丁先皇廟の石碑システムは、非常に貴重な「石の史料庫」です。 現在の碑亭には、石に彫刻され漢字で書かれた3つの古い石碑が保存されています。 これら3つの石碑は、それぞれ異なる歴史的時期に彫られ、独自の歴史的痕跡を残しています。</p></div><div class="nha-bia-foreign-caption nha-bia-caption-1608">石碑 —<br>1608</div><div class="nha-bia-foreign-caption nha-bia-caption-1696">石碑 —<br>1696</div><div class="nha-bia-copy nha-bia-copy-bottom"><p>第一に、弘定9年（1608年）の石碑：この石碑は、都元帥総国政尚父平安王（即ち鄭松）の功徳を記録したものです。彼は前朝の聖王の功徳を深く敬い、国家の繁栄を祈願して祭祀のために七畝の田んぼを慎重に寄進しました。同時に、廟の修復における封郡公・裴時中（ブイ・ティ・チュン）と地元住民の功労も記録されています。</p></div></div></div>
+<div id="pf2" class="pf w0 h0" data-page-no="2"><div class="pc pc2 w0 h0"><img class="bi x0 y0 w1 h1" alt="" src="bg2.jpg" decoding="async" loading="lazy"/><div class="t m0 xa h2 y1 ff1 fs0 fc5 sc0 ls0 ws0">29</div><div class="nha-bia-copy nha-bia-copy-top"><p>次に、正和17年（1696年）の石碑：これは最大かつ最も独自の芸術的価値を持つ石碑です。特筆すべきは、制作者の氏名が完全に記録されている唯一の石碑であることです。銘文は翰林院の官職にあった阮（グエン）氏の進士によって起草され、漢字部分は金剛寺の住持である僧侶によって書かれ、直接彫刻を施した名工は清化（タインホア）省東山（ドンソン）県安劃（アンホアック）社の職人、黎仁富（レ・ニャン・フー）です。</p><p>石碑の装飾芸術を探求すると、荘厳な宮廷の性質と自由奔放な民間精神の奇跡的な結合に驚かされることでしょう。石碑の額には「双鳳朝日（二羽の鳳凰が太陽に向かう）」の模様が際立っています。その周りには対称的な花や葉の模様、絡み合う龍が配置され、その中には猿の家族が互いに背負い合う温かく親しみやすい姿も織り交ぜられています。</p></div><div class="nha-bia-foreign-caption nha-bia-caption-detail">石碑 — 1696年</div><div class="nha-bia-copy nha-bia-copy-bottom"><p>最もユニークなのは、石碑の台座の段差部分に生き生きと浮き彫りにされた「双鼠朝蟹（二匹のネズミがカニに向かう）」の模様です。カニとネズミは本来、田畑や農民の素朴な生活に結びついた動物ですが、ここでは廟の石碑に厳かに装飾されており、古代の彫刻芸術において比類のない組み合わせとなっています。</p></div></div></div>
+<div id="pf3" class="pf w0 h0" data-page-no="3"><div class="pc pc3 w0 h0"><img class="bi x0 y0 w1 h1" alt="" src="bg3.jpg" decoding="async" loading="lazy"/><div class="t m0 x1 h2 y1 ff1 fs0 fc0 sc0 ls0 ws0">30</div><div class="nha-bia-copy nha-bia-copy-top"><p>正面の素朴で大衆的な雰囲気とは対照的に、石碑の背面には王の威厳を象徴する柔らかくうねる龍の姿が彫刻されています。しかし、威厳を持って現れる代わりに、この龍は石碑の後ろに隠れています。朝廷の荘厳で神聖な雰囲気と村の生活のユーモアが絶妙に融合していることこそが、この石碑に唯一無二の価値をもたらしているのです。</p><p>第三に、紹治3年（1843年）の石碑：これは明命18年（1838年）の出来事を記録したものです。当時、廟が破損したため、省の役人である陳文中（チャン・ヴァン・チュン）と裴公先（ブイ・コン・ティエン）が朝廷に奏上し、王から修復のために500貫の資金を賜りました。その恩を永遠に伝えるため、紹治3年にこの石碑が建てられました。</p></div><div class="nha-bia-summary-mask" aria-hidden="true"></div><div class="nha-bia-summary"><p>丁先皇廟の石碑システムは、過去からの「手紙」であり、先人たちの熱意と道徳を完全に保存していると断言できます。長い時を経ても、これらの石の宝物は民族の誇りを静かに育み、私たち一人一人に文献の起源を思い起こさせ、国の独立という神聖な価値をさらに大切にするよう呼びかけています。</p></div></div></div>
+</div>
+<div class="loading-indicator">
+</div>
+<script src="/assets/js/thuyet-minh.js"></script>
+</body>
+</html>
