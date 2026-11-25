@@ -252,9 +252,10 @@ function showQR() {
       <button type="button" class="qr-tab-btn" role="tab" aria-selected="false" data-qr-tab="home">${esc(t.tabHomeQr)}</button>
     </div>
     <div class="qr-modal-body" data-qr-panel="scan">
-      <div class="qr-scanner-box">
+      <div class="qr-scanner-box" data-camera="idle">
         <video class="qr-scanner-video" autoplay muted playsinline></video>
         <div class="qr-scanner-reticle" aria-hidden="true"><span></span></div>
+        <button type="button" class="qr-camera-btn">${esc(t.enableCamera)}</button>
       </div>
       <p class="qr-scanner-status" role="status" aria-live="polite">${esc(t.startingCamera)}</p>
       <div class="qr-scanner-error" role="alert" hidden></div>
@@ -277,10 +278,12 @@ function showQR() {
   const startScanner = () => {
     if (activeQrScanner) { activeQrScanner.stop(); activeQrScanner = null; }
     activeQrScanner = mountQRScanner({
+      scannerBox: overlay.querySelector('.qr-scanner-box'),
       videoEl: overlay.querySelector('.qr-scanner-video'),
       statusEl: overlay.querySelector('.qr-scanner-status'),
       errorEl: overlay.querySelector('.qr-scanner-error'),
       retryBtn: overlay.querySelector('.qr-retry-btn'),
+      cameraBtn: overlay.querySelector('.qr-camera-btn'),
       fileInput: overlay.querySelector('.qr-file-input'),
       lang: state.lang,
       topics: VISIT_TOPICS,

@@ -5,7 +5,7 @@ import path from 'node:path';
 import zlib from 'node:zlib';
 import { createRequire } from 'node:module';
 import { VISIT_TOPICS } from '../public/assets/js/visit-topics.js';
-import { matchTopicFromQR } from '../public/assets/js/qr-scanner.js';
+import { matchTopicFromQR, describeCameraError } from '../public/assets/js/qr-scanner.js';
 
 const require = createRequire(import.meta.url);
 const jsQR = require('jsqr');
@@ -140,4 +140,11 @@ test('bộ đối chiếu QR từ chối mã ngoài 14 mục nội dung và ch�
   ]) {
     assert.equal(matchTopicFromQR(invalid), null, `Should reject: ${invalid}`);
   }
+});
+
+test('phân loại chính xác lỗi quyền và ngữ cảnh bảo mật camera', () => {
+  assert.match(describeCameraError({ name: 'NotSupportedError' }, 'vi', false), /HTTPS/);
+  assert.match(describeCameraError({ name: 'NotAllowedError' }, 'vi', true), /quyền camera/);
+  assert.match(describeCameraError({ name: 'NotFoundError' }, 'vi', true), /Không tìm thấy camera/);
+  assert.match(describeCameraError({ name: 'NotReadableError' }, 'vi', true), /ứng dụng hoặc tab khác/);
 });

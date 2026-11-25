@@ -1512,6 +1512,37 @@ body {
   overflow: hidden;
 }
 
+.qr-scanner-box[data-camera="idle"] .qr-scanner-reticle {
+  opacity: 0.35;
+}
+
+.qr-scanner-box[data-camera="idle"] .qr-scanner-reticle span {
+  animation: none;
+  opacity: 0;
+}
+
+.qr-camera-btn {
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-height: 44px;
+  max-width: 86%;
+  padding: 8px 16px;
+  border: 1.5px solid #fce29c;
+  border-radius: 12px;
+  background: linear-gradient(180deg, #e7b556 0%, #b5731a 100%);
+  color: #360c09;
+  font: 700 13px/1.25 system-ui, sans-serif;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.55);
+  cursor: pointer;
+}
+
+.qr-camera-btn[hidden] {
+  display: none;
+}
+
 .qr-scanner-reticle span {
   position: absolute;
   left: 6%;
