@@ -83,3 +83,13 @@ test('đã lưu ngôn ngữ trong localStorage thì vào trang chủ không bắ
   assert.match(env.stage.innerHTML, /lang-picker-backdrop/);
   assert.match(env.stage.innerHTML, /lang-picker-close/);
 });
+
+test('thanh điều khiển trên cùng có 5 cờ ở giữa và nút quét QR bên cạnh', async t => {
+  const env = setupEnv({ pathname: '/pages/tham-quan/den-vua-dinh', storedLang: 'vi' });
+  t.after(env.cleanup);
+
+  await import('../public/assets/js/app.js?top-bar-qr');
+  assert.match(env.stage.innerHTML, /class="top-control-btn top-home-btn"/);
+  assert.match(env.stage.innerHTML, /class="guide-languages"/);
+  assert.match(env.stage.innerHTML, /class="top-control-btn top-qr-btn" data-action="qr"/);
+});

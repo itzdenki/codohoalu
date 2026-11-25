@@ -8,6 +8,7 @@ const app = document.querySelector('#app');
 const state = { mode: 'home', lang: 'vi', spot: null, visit: null, menu: false, cover: true, menuReturn: null, langPicker: false, langPickerDismissible: false };
 let activeQrScanner = null;
 const qrButtonIcon = '<svg class="guide-qr-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M3.5 3.5h6v6h-6v-6Zm11 0h6v6h-6v-6Zm-11 11h6v6h-6v-6Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M5.8 5.8h1.4v1.4H5.8Zm11 0h1.4v1.4h-1.4Zm-11 11h1.4v1.4H5.8Z" fill="currentColor"/><path d="M14.5 14.5h2v2h-2v-2Zm4 0h2v2h-2v-2Zm-2 2h2v2h-2v-2Zm-2 2h2v2h-2v-2Zm4 0h2v2h-2v-2Z" fill="currentColor"/></svg>';
+const qrScanIcon = '<svg class="top-qr-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M4 8V5.5A1.5 1.5 0 0 1 5.5 4H8M16 4h2.5A1.5 1.5 0 0 1 20 5.5V8M20 16v2.5a1.5 1.5 0 0 1-1.5 1.5H16M8 20H5.5A1.5 1.5 0 0 1 4 18.5V16" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/><path d="M7.5 12h9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><rect x="8.5" y="7.5" width="2.4" height="2.4" rx="0.5" fill="currentColor"/><rect x="13.1" y="7.5" width="2.4" height="2.4" rx="0.5" fill="currentColor"/><rect x="8.5" y="14.1" width="2.4" height="2.4" rx="0.5" fill="currentColor"/><rect x="13.1" y="14.1" width="2.4" height="2.4" rx="0.5" fill="currentColor"/></svg>';
 const menuItems = [
   ['so-do-den-dinh', 'Sơ đồ tham quan\nđền vua Đinh', '/images/menu/item-1-den-dinh.png', 'dth'],
   ['so-do-den-le', 'Sơ đồ tham quan\nđền vua Lê', '/images/menu/item-2-den-le.png', 'ldh'],
@@ -48,12 +49,14 @@ function languageButtonsHTML() {
 }
 function topHTML(spotMode = false) {
   const label = esc(spotMode ? guide().mapBack : guide().home);
+  const scanLabel = esc(qrCopy(state.lang).tabScan);
   const icon = spotMode
     ? '<span class="guide-back-icon" aria-hidden="true">‹</span>'
     : '<svg class="top-home-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 2.5 1.5 11h2.7v9.5h5.4v-6.2h4.8v6.2h5.4V11h2.7L12 2.5Z"/></svg>';
   return `<div class="top-control-bar"><div class="guide-bar-inner">
     <button type="button" class="top-control-btn top-home-btn" data-action="${spotMode ? 'close-spot' : 'home'}" aria-label="${label}" title="${label}">${icon}<span class="guide-home-label">${label}</span></button>
     ${languageButtonsHTML()}
+    <button type="button" class="top-control-btn top-qr-btn" data-action="qr" aria-haspopup="dialog" aria-label="${scanLabel}" title="${scanLabel}">${qrScanIcon}<span class="guide-qr-label">${scanLabel}</span></button>
   </div></div>`;
 }
 function guideBottomHTML({ menuAction, previousAction, nextAction, page = '', first = false, last = false, showTopicQr = false }) {
