@@ -3,7 +3,7 @@
   var NAMES = { vi: 'Tiếng Việt', en: 'English', fr: 'Français', ko: '한국어', zh: '中文', ja: '日本語' };
   var FILE_CODES = { vi: 'vi', en: 'en', fr: 'fr', ko: 'kr', zh: 'cn', ja: 'jp' };
   var params = new URLSearchParams(location.search);
-  var fileMatch = location.pathname.match(/\/index_(vi|en|kr|fr|cn|jp)\.html$/);
+  var fileMatch = location.pathname.match(/\/index_(vi|en|kr|fr|cn|jp)(?:\.html)?$/);
   var fileLang = fileMatch && ({ vi: 'vi', en: 'en', kr: 'ko', fr: 'fr', cn: 'zh', jp: 'ja' })[fileMatch[1]];
   var savedLang;
   try { savedLang = localStorage.getItem('lang'); } catch (_) { /* storage unavailable */ }
@@ -72,7 +72,7 @@
     b.onclick = function () {
       if (!embedded && fileMatch && l !== lang) {
         var next = new URL(location.href);
-        next.pathname = next.pathname.replace(/index_(vi|en|kr|fr|cn|jp)\.html$/, 'index_' + FILE_CODES[l] + '.html');
+        next.pathname = next.pathname.replace(/index_(vi|en|kr|fr|cn|jp)(?:\.html)?$/, 'index_' + FILE_CODES[l] + '.html');
         next.searchParams.delete('lang');
         location.href = next.href;
       } else setLang(l);

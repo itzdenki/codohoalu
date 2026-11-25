@@ -134,7 +134,7 @@
       window.parent.postMessage({type:'spot-lang',lang}, location.origin);
     } else {
       const next = new URL(location.href);
-      next.pathname = next.pathname.replace(/index(?:_(vi|en|fr|kr|cn|jp))?\.html$/, `index_${codes[lang]}.html`);
+      next.pathname = next.pathname.replace(/index(?:_(vi|en|fr|kr|cn|jp))?(?:\.html)?$/, `index_${codes[lang]}.html`);
       location.href = next.href;
     }
   }

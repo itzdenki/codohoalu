@@ -34,7 +34,7 @@ export function dinhMapName(spot, index, lang) {
 }
 
 function initialLanguage() {
-  const match = location.pathname.match(/\/index_(vi|en|fr|kr|cn|jp)\.html$/);
+  const match = location.pathname.match(/\/index_(vi|en|fr|kr|cn|jp)(?:\.html)?$/);
   let saved;
   try { saved = localStorage.getItem('lang'); } catch (_) { /* storage unavailable */ }
   const lang = (match && FILE_LANGS[match[1]]) || new URLSearchParams(location.search).get('lang') || saved;
