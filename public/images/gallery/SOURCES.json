@@ -1,0 +1,744 @@
+[
+  {
+    "file": "dong-mon-cau-sao-khe.jpg",
+    "title": "File:YJH8973.jpg",
+    "license": "CC BY-SA 4.0",
+    "author": "GreenField120",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3AYJH8973.jpg"
+  },
+  {
+    "file": "cong-dong-hoa-lu.jpg",
+    "title": "File:Ninh Binh - NinhBinh1659.jpg",
+    "license": "CC0",
+    "author": "lumoplank",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3ANinh_Binh_-_NinhBinh1659.jpg"
+  },
+  {
+    "file": "toan-canh-ma-yen.jpg",
+    "title": "File:Codohoalu-1.jpg",
+    "license": "Public domain",
+    "author": "Kien1980v at Vietnamese Wikipedia",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3ACodohoalu-1.jpg"
+  },
+  {
+    "file": "chua-nhat-tru.jpg",
+    "title": "File:Khuôn viên Nhất Trụ tự, 2010 (2).jpg",
+    "license": "Public domain",
+    "author": "Kien1980v",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3AKhu%C3%B4n_vi%C3%AAn_Nh%E1%BA%A5t_Tr%E1%BB%A5_t%E1%BB%B1%2C_2010_(2).jpg"
+  },
+  {
+    "file": "den-le-toan-canh.jpg",
+    "title": "File:Đền vua Lê Hoàn.jpg",
+    "license": "CC BY-SA 4.0",
+    "author": "Nguoivuban",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3A%C4%90%E1%BB%81n_vua_L%C3%AA_Ho%C3%A0n.jpg"
+  },
+  {
+    "file": "nghi-mon-ngoai-long-sang.jpg",
+    "title": "File:Temple at ancient Vietnamese capital of Hoa Lu (4) (38501159131).jpg",
+    "license": "CC BY 2.0",
+    "author": "Richard Mortel from Riyadh, Saudi Arabia",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3ATemple_at_ancient_Vietnamese_capital_of_Hoa_Lu_(4)_(38501159131).jpg"
+  },
+  {
+    "file": "mat-long-sang-rong.jpg",
+    "title": "File:Đền Đinh Tiên Hoàng, sạp rồng 2.JPG",
+    "license": "CC BY-SA 3.0",
+    "author": "Nguyễn Thanh Quang",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3A%C4%90%E1%BB%81n_%C4%90inh_Ti%C3%AAn_Ho%C3%A0ng%2C_s%E1%BA%A1p_r%E1%BB%93ng_2.JPG"
+  },
+  {
+    "file": "rong-da-chau.jpg",
+    "title": "File:Đền Đinh Tiên Hoàng, rồng đá.JPG",
+    "license": "CC BY-SA 3.0",
+    "author": "Nguyễn Thanh Quang",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3A%C4%90%E1%BB%81n_%C4%90inh_Ti%C3%AAn_Ho%C3%A0ng%2C_r%E1%BB%93ng_%C4%91%C3%A1.JPG"
+  },
+  {
+    "file": "truc-than-dao-den-dinh.jpg",
+    "title": "File:Temple commémoratif au roi Dinh Tien Hoang (Hoa Lu).jpg",
+    "license": "CC BY 2.0",
+    "author": "Jean-Pierre Dalbéra",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3ATemple_comm%C3%A9moratif_au_roi_Dinh_Tien_Hoang_(Hoa_Lu).jpg"
+  },
+  {
+    "file": "ngo-mon-quan-hoang-hon.jpg",
+    "title": "File:Main Gate, Hoa Lu (49331567697).jpg",
+    "license": "CC BY-SA 2.0",
+    "author": "Rod Waddington from Kergunyah, Australia",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3AMain_Gate%2C_Hoa_Lu_(49331567697).jpg"
+  },
+  {
+    "file": "ngo-mon-quan-can-canh.jpg",
+    "title": "File:Ancient capital of Hoa Lu, 10th century (2) (38469352492).jpg",
+    "license": "CC BY 2.0",
+    "author": "Richard Mortel from Riyadh, Saudi Arabia",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3AAncient_capital_of_Hoa_Lu%2C_10th_century_(2)_(38469352492).jpg"
+  },
+  {
+    "file": "ho-ban-nguyet-nghi-mon.jpg",
+    "title": "File:Dinh Bo Linh Shrine, Hoa Lư, Ninh Bình, Vietnam, 20240203 1457 5684.jpg",
+    "license": "CC BY 4.0",
+    "author": "Jakub Hałun",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3ADinh_Bo_Linh_Shrine%2C_Hoa_L%C6%B0%2C_Ninh_B%C3%ACnh%2C_Vietnam%2C_20240203_1457_5684.jpg"
+  },
+  {
+    "file": "sap-rong-san-rong.jpg",
+    "title": "File:Đền Đinh Tiên Hoàng, sạp rồng.JPG",
+    "license": "CC BY-SA 3.0",
+    "author": "Nguyễn Thanh Quang",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3A%C4%90%E1%BB%81n_%C4%90inh_Ti%C3%AAn_Ho%C3%A0ng%2C_s%E1%BA%A1p_r%E1%BB%93ng.JPG"
+  },
+  {
+    "file": "nghe-da-san-rong.jpg",
+    "title": "File:Đền Đinh Tiên Hoàng, nghê đá.JPG",
+    "license": "CC BY-SA 3.0",
+    "author": "Nguyễn Thanh Quang",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3A%C4%90%E1%BB%81n_%C4%90inh_Ti%C3%AAn_Ho%C3%A0ng%2C_ngh%C3%AA_%C4%91%C3%A1.JPG"
+  },
+  {
+    "file": "bai-duong-den-dinh-2024.jpg",
+    "title": "File:Dinh Bo Linh Shrine, Hoa Lư, Ninh Bình, Vietnam, 20240203 1502 5693.jpg",
+    "license": "CC BY 4.0",
+    "author": "Jakub Hałun",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3ADinh_Bo_Linh_Shrine%2C_Hoa_L%C6%B0%2C_Ninh_B%C3%ACnh%2C_Vietnam%2C_20240203_1502_5693.jpg"
+  },
+  {
+    "file": "hien-den-dinh.jpg",
+    "title": "File:Temple commémoratif au roi Dinh Tien Hoang (Hoa Lu) (4365679935).jpg",
+    "license": "CC BY 2.0",
+    "author": "dalbera from Paris, France",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3ATemple_comm%C3%A9moratif_au_roi_Dinh_Tien_Hoang_(Hoa_Lu)_(4365679935).jpg"
+  },
+  {
+    "file": "noi-dien-den-dinh.jpg",
+    "title": "File:Temple at ancient Vietnamese capital of Hoa Lu (11) (38468992212).jpg",
+    "license": "CC BY 2.0",
+    "author": "Richard Mortel from Riyadh, Saudi Arabia",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3ATemple_at_ancient_Vietnamese_capital_of_Hoa_Lu_(11)_(38468992212).jpg"
+  },
+  {
+    "file": "tuong-dinh-hang-lang.jpg",
+    "title": "File:Đinh Hạng Lang.JPG",
+    "license": "CC BY-SA 3.0",
+    "author": "Nguyễn Thanh Quang",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3A%C4%90inh_H%E1%BA%A1ng_Lang.JPG"
+  },
+  {
+    "file": "phu-viet-den-dinh-2mat.jpg",
+    "title": "File:Ceremonial and ritualistic weapon at Dinh Emperor Shrine (two sides).jpg",
+    "license": "CC BY-SA 4.0",
+    "author": "Hoangkid",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3ACeremonial_and_ritualistic_weapon_at_Dinh_Emperor_Shrine_(two_sides).jpg"
+  },
+  {
+    "file": "ba-tam-bia-den-dinh.jpg",
+    "title": "File:Đền Đinh Tiên Hoàng, bia đá.JPG",
+    "license": "CC BY-SA 3.0",
+    "author": "Nguyễn Thanh Quang",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3A%C4%90%E1%BB%81n_%C4%90inh_Ti%C3%AAn_Ho%C3%A0ng%2C_bia_%C4%91%C3%A1.JPG"
+  },
+  {
+    "file": "am-co-den-dinh-2024.jpg",
+    "title": "File:Dinh Bo Linh Shrine, Hoa Lư, Ninh Bình, Vietnam, 20240203 1500 5687.jpg",
+    "license": "CC BY 4.0",
+    "author": "Jakub Hałun",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3ADinh_Bo_Linh_Shrine%2C_Hoa_L%C6%B0%2C_Ninh_B%C3%ACnh%2C_Vietnam%2C_20240203_1500_5687.jpg"
+  },
+  {
+    "file": "ao-sung-den-dinh.jpg",
+    "title": "File:Đền Đinh Tiên Hoàng, ao súng.JPG",
+    "license": "CC BY-SA 3.0",
+    "author": "Nguyễn Thanh Quang",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3A%C4%90%E1%BB%81n_%C4%90inh_Ti%C3%AAn_Ho%C3%A0ng%2C_ao_s%C3%BAng.JPG"
+  },
+  {
+    "file": "nha-khai-thanh-ngoai.jpg",
+    "title": "File:Đền Đinh Tiên Hoàng, nơi thờ cha mẹ.JPG",
+    "license": "CC BY-SA 3.0",
+    "author": "Nguyễn Thanh Quang",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3A%C4%90%E1%BB%81n_%C4%90inh_Ti%C3%AAn_Ho%C3%A0ng%2C_n%C6%A1i_th%E1%BB%9D_cha_m%E1%BA%B9.JPG"
+  },
+  {
+    "file": "tuong-dinh-cong-tru.jpg",
+    "title": "File:Dinhcongtru.jpg",
+    "license": "Public domain",
+    "author": "nguoicodo (thảo luận)",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3ADinhcongtru.jpg"
+  },
+  {
+    "file": "vuon-co-den-dinh.jpg",
+    "title": "File:Temple at ancient Vietnamese capital of Hoa Lu (14) (37614321045).jpg",
+    "license": "CC BY 2.0",
+    "author": "Richard Mortel from Riyadh, Saudi Arabia",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3ATemple_at_ancient_Vietnamese_capital_of_Hoa_Lu_(14)_(37614321045).jpg"
+  },
+  {
+    "file": "nghi-mon-den-le-ngoai.jpg",
+    "title": "File:Temple commémoratif de Le Hoan (Hoa Lu).jpg",
+    "license": "CC BY 2.0",
+    "author": "Jean-Pierre Dalbéra",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3ATemple_comm%C3%A9moratif_de_Le_Hoan_(Hoa_Lu).jpg"
+  },
+  {
+    "file": "duong-vao-den-le-2024.jpg",
+    "title": "File:Temple of Emperor Le Dai Hanh, Hoa Lư, Ninh Bình, Vietnam, 20240203 1525 5704.jpg",
+    "license": "CC BY 4.0",
+    "author": "Jakub Hałun",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3ATemple_of_Emperor_Le_Dai_Hanh%2C_Hoa_L%C6%B0%2C_Ninh_B%C3%ACnh%2C_Vietnam%2C_20240203_1525_5704.jpg"
+  },
+  {
+    "file": "duong-vao-den-le-2024-b.jpg",
+    "title": "File:Temple of Emperor Le Dai Hanh, Hoa Lư, Ninh Bình, Vietnam, 20240203 1527 5706.jpg",
+    "license": "CC BY 4.0",
+    "author": "Jakub Hałun",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3ATemple_of_Emperor_Le_Dai_Hanh%2C_Hoa_L%C6%B0%2C_Ninh_B%C3%ACnh%2C_Vietnam%2C_20240203_1527_5706.jpg"
+  },
+  {
+    "file": "cham-rong-go-den-le.jpg",
+    "title": "File:Temple at ancient Vietnamese capital of Hoa Lu (15) (38445420776).jpg",
+    "license": "CC BY 2.0",
+    "author": "Richard Mortel from Riyadh, Saudi Arabia",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3ATemple_at_ancient_Vietnamese_capital_of_Hoa_Lu_(15)_(38445420776).jpg"
+  },
+  {
+    "file": "chinh-dao-den-le.jpg",
+    "title": "File:Đền Lê Đại Hành, chính đạo.JPG",
+    "license": "CC BY-SA 3.0",
+    "author": "Nguyễn Thanh Quang",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3A%C4%90%E1%BB%81n_L%C3%AA_%C4%90%E1%BA%A1i_H%C3%A0nh%2C_ch%C3%ADnh_%C4%91%E1%BA%A1o.JPG"
+  },
+  {
+    "file": "cong-trinh-co-hoa-lu.jpg",
+    "title": "File:CodohoaluC5.jpg",
+    "license": "Public domain",
+    "author": "Kien1980v at Vietnamese Wikipedia",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3ACodohoaluC5.jpg"
+  },
+  {
+    "file": "tuong-khong-tu.jpg",
+    "title": "File:Confucius - Temple of Literature, Hanoi - DSC04600.JPG",
+    "license": "CC0",
+    "author": "Daderot",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3AConfucius_-_Temple_of_Literature%2C_Hanoi_-_DSC04600.JPG"
+  },
+  {
+    "file": "tu-phoi-khong-tu.jpg",
+    "title": "File:Disciples de Confucius (Temple de la littérature, Hanoi) (4356115370).jpg",
+    "license": "CC BY 2.0",
+    "author": "Jean-Pierre Dalbéra from Paris, France",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3ADisciples_de_Confucius_(Temple_de_la_litt%C3%A9rature%2C_Hanoi)_(4356115370).jpg"
+  },
+  {
+    "file": "noi-dien-den-le.jpg",
+    "title": "File:Temple at ancient Vietnamese capital of Hoa Lu (17) (26725235959).jpg",
+    "license": "CC BY 2.0",
+    "author": "Richard Mortel from Riyadh, Saudi Arabia",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3ATemple_at_ancient_Vietnamese_capital_of_Hoa_Lu_(17)_(26725235959).jpg"
+  },
+  {
+    "file": "hien-den-le-cham-khac.jpg",
+    "title": "File:Temple commémoratif de Le Hoan (Hoa Lu) (4365683405).jpg",
+    "license": "CC BY 2.0",
+    "author": "dalbera from Paris, France",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3ATemple_comm%C3%A9moratif_de_Le_Hoan_(Hoa_Lu)_(4365683405).jpg"
+  },
+  {
+    "file": "phu-viet-den-le-2mat.jpg",
+    "title": "File:Ceremonial and ritualistic weapon at Le Emperor Shrine (two sides).jpg",
+    "license": "CC BY-SA 4.0",
+    "author": "Hoangkid",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3ACeremonial_and_ritualistic_weapon_at_Le_Emperor_Shrine_(two_sides).jpg"
+  },
+  {
+    "file": "den-le-chinh-dien.jpg",
+    "title": "File:Đền Lê Đại Hành, chính điện.JPG",
+    "license": "CC BY-SA 3.0",
+    "author": "Nguyễn Thanh Quang",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3A%C4%90%E1%BB%81n_L%C3%AA_%C4%90%E1%BA%A1i_H%C3%A0nh%2C_ch%C3%ADnh_%C4%91i%E1%BB%87n.JPG"
+  },
+  {
+    "file": "nha-bia-den-le-trai-2024.jpg",
+    "title": "File:Temple of Emperor Le Dai Hanh, Hoa Lư, Ninh Bình, Vietnam, 20240203 1527 5707.jpg",
+    "license": "CC BY 4.0",
+    "author": "Jakub Hałun",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3ATemple_of_Emperor_Le_Dai_Hanh%2C_Hoa_L%C6%B0%2C_Ninh_B%C3%ACnh%2C_Vietnam%2C_20240203_1527_5707.jpg"
+  },
+  {
+    "file": "nha-bia-den-le-phai-2024.jpg",
+    "title": "File:Temple of Emperor Le Dai Hanh, Hoa Lư, Ninh Bình, Vietnam, 20240203 1527 5708.jpg",
+    "license": "CC BY 4.0",
+    "author": "Jakub Hałun",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3ATemple_of_Emperor_Le_Dai_Hanh%2C_Hoa_L%C6%B0%2C_Ninh_B%C3%ACnh%2C_Vietnam%2C_20240203_1527_5708.jpg"
+  },
+  {
+    "file": "cong-va-nha-bia-den-le.jpg",
+    "title": "File:Temple at ancient Vietnamese capital of Hoa Lu (16) (38468925012).jpg",
+    "license": "CC BY 2.0",
+    "author": "Richard Mortel from Riyadh, Saudi Arabia",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3ATemple_at_ancient_Vietnamese_capital_of_Hoa_Lu_(16)_(38468925012).jpg"
+  },
+  {
+    "file": "sap-da-den-le.jpg",
+    "title": "File:Đền Lê Đại Hành, sập đá.JPG",
+    "license": "CC BY-SA 3.0",
+    "author": "Nguyễn Thanh Quang",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3A%C4%90%E1%BB%81n_L%C3%AA_%C4%90%E1%BA%A1i_H%C3%A0nh%2C_s%E1%BA%ADp_%C4%91%C3%A1.JPG"
+  },
+  {
+    "file": "cot-kinh-gach-co-hoa-lu.jpg",
+    "title": "File:Codohoalu2010k92.jpg",
+    "license": "Public domain",
+    "author": "Kien1980v",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3ACodohoalu2010k92.jpg"
+  },
+  {
+    "file": "gach-dai-viet.jpg",
+    "title": "File:Đại Việt quốc quân thành chuyên.JPG",
+    "license": "CC BY-SA 3.0",
+    "author": "Nguyễn Thanh Quang",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3A%C4%90%E1%BA%A1i_Vi%E1%BB%87t_qu%E1%BB%91c_qu%C3%A2n_th%C3%A0nh_chuy%C3%AAn.JPG"
+  },
+  {
+    "file": "tien-thai-binh-hung-bao.jpg",
+    "title": "File:Thái Bình Hưng Bảo (太平興寶) - Đinh (丁) - Scan - Obverse & Reverse.jpg",
+    "license": "CC BY-SA 4.0",
+    "author": "Donald Trung Quoc Don (Chữ Hán: 徵國單) - Wikimedia Commons - © CC BY-SA 4.0 International.(Want to use this image?)Original publication 📤: --Donald Trung 『徵國單』 (No Fake News 💬) (WikiProject Numismatics 💴) (Articles 📚) 21:17, 1 December 2019 (UTC)",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3ATh%C3%A1i_B%C3%ACnh_H%C6%B0ng_B%E1%BA%A3o_(%E5%A4%AA%E5%B9%B3%E8%88%88%E5%AF%B6)_-_%C4%90inh_(%E4%B8%81)_-_Scan_-_Obverse_%26_Reverse.jpg"
+  },
+  {
+    "file": "cau-cong-dong-hoa-lu.jpg",
+    "title": "File:Bridge leading to gateway of ancient capital of Hoa Lu (26725545949).jpg",
+    "license": "CC BY 2.0",
+    "author": "Richard Mortel from Riyadh, Saudi Arabia",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3ABridge_leading_to_gateway_of_ancient_capital_of_Hoa_Lu_(26725545949).jpg"
+  },
+  {
+    "file": "cong-thanh-hoa-lu-1.jpg",
+    "title": "File:Ancient capital of Hoa Lu, 10th century (1) (38445751276).jpg",
+    "license": "CC BY 2.0",
+    "author": "Richard Mortel from Riyadh, Saudi Arabia",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3AAncient_capital_of_Hoa_Lu%2C_10th_century_(1)_(38445751276).jpg"
+  },
+  {
+    "file": "thung-lung-am-tien.jpg",
+    "title": "File:Am Tien Valley (38129062024).jpg",
+    "license": "CC BY 2.0",
+    "author": "Hòa Nguyễn",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3AAm_Tien_Valley_(38129062024).jpg"
+  },
+  {
+    "file": "song-sao-khe-hoa-lu.jpg",
+    "title": "File:Co do Hoa Lu 114.JPG",
+    "license": "Public domain",
+    "author": "Kien1980v (thảo luận) 02:34, ngày 3 tháng 9 năm 2017 (UTC)",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3ACo_do_Hoa_Lu_114.JPG"
+  },
+  {
+    "file": "nui-da-voi-hoa-lu.jpg",
+    "title": "File:Limestone mountain near Hoa Lu.jpg",
+    "license": "CC BY-SA 3.0",
+    "author": "DoktorMax",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3ALimestone_mountain_near_Hoa_Lu.jpg"
+  },
+  {
+    "file": "canh-quan-hoa-lu-1.jpg",
+    "title": "File:Typical landscape near the ancient capital of Hoa Lu (38445364896).jpg",
+    "license": "CC BY 2.0",
+    "author": "Richard Mortel from Riyadh, Saudi Arabia",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3ATypical_landscape_near_the_ancient_capital_of_Hoa_Lu_(38445364896).jpg"
+  },
+  {
+    "file": "canh-quan-hoa-lu-2.jpg",
+    "title": "File:Hoa Lu (2).jpg",
+    "license": "CC BY-SA 4.0",
+    "author": "Preparetavalise.com",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3AHoa_Lu_(2).jpg"
+  },
+  {
+    "file": "canh-quan-hoa-lu-3.jpg",
+    "title": "File:Hoa Lu.jpg",
+    "license": "CC BY-SA 4.0",
+    "author": "Preparetavalise.com",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3AHoa_Lu.jpg"
+  },
+  {
+    "file": "chua-nhat-tru-san.jpg",
+    "title": "File:Khuôn viên Nhất Trụ tự, 2010 (1).jpg",
+    "license": "Public domain",
+    "author": "Kien1980v at Vietnamese Wikipedia",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3AKhu%C3%B4n_vi%C3%AAn_Nh%E1%BA%A5t_Tr%E1%BB%A5_t%E1%BB%B1%2C_2010_(1).jpg"
+  },
+  {
+    "file": "le-hoi-den-dinh-1.jpg",
+    "title": "File:Lehoidendinh.jpg",
+    "license": "Public domain",
+    "author": "Kien1980v at Vietnamese Wikipedia",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3ALehoidendinh.jpg"
+  },
+  {
+    "file": "le-hoi-den-dinh-2.jpg",
+    "title": "File:Codohoalu2010k5.jpg",
+    "license": "Public domain",
+    "author": "Kien1980v at Vietnamese Wikipedia",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3ACodohoalu2010k5.jpg"
+  },
+  {
+    "file": "le-hoi-co-do-2012.jpg",
+    "title": "File:Festival of Dinh and Le kings at Hoa Lu.JPG",
+    "license": "CC BY-SA 3.0",
+    "author": "DoktorMax",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3AFestival_of_Dinh_and_Le_kings_at_Hoa_Lu.JPG"
+  },
+  {
+    "file": "le-te-vua-le.jpg",
+    "title": "File:Codohoalu2010k93.jpg",
+    "license": "Public domain",
+    "author": "Kien1980v at Vietnamese Wikipedia",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3ACodohoalu2010k93.jpg"
+  },
+  {
+    "file": "lang-vua-dinh-ma-yen.jpg",
+    "title": "File:Tomb of the First Emperor, Hoa Lư, Ninh Bình, Vietnam, 20240203 1515 5695.jpg",
+    "license": "CC BY 4.0",
+    "author": "Jakub Hałun",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3ATomb_of_the_First_Emperor%2C_Hoa_L%C6%B0%2C_Ninh_B%C3%ACnh%2C_Vietnam%2C_20240203_1515_5695.jpg"
+  },
+  {
+    "file": "lang-vua-le-dai-hanh.jpg",
+    "title": "File:Lăng Lê Đại Hành.JPG",
+    "license": "CC BY-SA 4.0",
+    "author": "Nguyễn Thanh Quang",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3AL%C4%83ng_L%C3%AA_%C4%90%E1%BA%A1i_H%C3%A0nh.JPG"
+  },
+  {
+    "file": "cong-lang-vua-le.jpg",
+    "title": "File:Cổng vào lăng Lê Đại Hành.JPG",
+    "license": "CC BY-SA 3.0",
+    "author": "Nguyễn Thanh Quang",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3AC%E1%BB%95ng_v%C3%A0o_l%C4%83ng_L%C3%AA_%C4%90%E1%BA%A1i_H%C3%A0nh.JPG"
+  },
+  {
+    "file": "truong-thanh-hoa-lu.jpg",
+    "title": "File:Truong thanh.jpg",
+    "license": "Public domain",
+    "author": "Tupham",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3ATruong_thanh.jpg"
+  },
+  {
+    "file": "den-dinh-san-rong-2.jpg",
+    "title": "File:Temple commémoratif au roi Dinh Tien Hoang (Hoa Lu) 2.jpg",
+    "license": "CC BY 2.0",
+    "author": "Jean-Pierre Dalbéra",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3ATemple_comm%C3%A9moratif_au_roi_Dinh_Tien_Hoang_(Hoa_Lu)_2.jpg"
+  },
+  {
+    "file": "den-dinh-ho-ban-nguyet.jpg",
+    "title": "File:Temple commémoratif au roi Dinh Tien Hoang (Hoa Lu) 3.jpg",
+    "license": "CC BY 2.0",
+    "author": "Jean-Pierre Dalbéra",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3ATemple_comm%C3%A9moratif_au_roi_Dinh_Tien_Hoang_(Hoa_Lu)_3.jpg"
+  },
+  {
+    "file": "den-dinh-cay-dai-loc.jpg",
+    "title": "File:Đền Đinh Tiên Hoàng, cây đại lộc.JPG",
+    "license": "CC BY-SA 3.0",
+    "author": "Nguyễn Thanh Quang",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3A%C4%90%E1%BB%81n_%C4%90inh_Ti%C3%AAn_Ho%C3%A0ng%2C_c%C3%A2y_%C4%91%E1%BA%A1i_l%E1%BB%99c.JPG"
+  },
+  {
+    "file": "den-dinh-san-rong-3.jpg",
+    "title": "File:Dinh Tien Hoang temple (7172236091).jpg",
+    "license": "CC BY 2.0",
+    "author": "Francisco Anzola",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3ADinh_Tien_Hoang_temple_(7172236091).jpg"
+  },
+  {
+    "file": "den-dinh-cong-2024.jpg",
+    "title": "File:Dinh Bo Linh Shrine, Hoa Lư, Ninh Bình, Vietnam, 20240203 1458 5685.jpg",
+    "license": "CC BY 4.0",
+    "author": "Jakub Hałun",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3ADinh_Bo_Linh_Shrine%2C_Hoa_L%C6%B0%2C_Ninh_B%C3%ACnh%2C_Vietnam%2C_20240203_1458_5685.jpg"
+  },
+  {
+    "file": "den-dinh-nghi-mon-gate.jpg",
+    "title": "File:Gateway to Temple of Emperor Dinh Tien Hoang, 10th century (2) (24629111998).jpg",
+    "license": "CC BY 2.0",
+    "author": "Richard Mortel from Riyadh, Saudi Arabia",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3AGateway_to_Temple_of_Emperor_Dinh_Tien_Hoang%2C_10th_century_(2)_(24629111998).jpg"
+  },
+  {
+    "file": "den-dinh-cot-da.jpg",
+    "title": "File:Pillar at Hoa Lu temple (7172249313).jpg",
+    "license": "CC BY 2.0",
+    "author": "Francisco Anzola",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3APillar_at_Hoa_Lu_temple_(7172249313).jpg"
+  },
+  {
+    "file": "den-dinh-nghi-mon-2023.jpg",
+    "title": "File:Gate at Hoa Lu - Vietnam - August 2023.jpg",
+    "license": "CC BY-SA 4.0",
+    "author": "Anass Sedrati",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3AGate_at_Hoa_Lu_-_Vietnam_-_August_2023.jpg"
+  },
+  {
+    "file": "den-dinh-nghi-mon-goc-2.jpg",
+    "title": "File:Temple at ancient Vietnamese capital of Hoa Lu (2) (38445624716).jpg",
+    "license": "CC BY 2.0",
+    "author": "Richard Mortel from Riyadh, Saudi Arabia",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3ATemple_at_ancient_Vietnamese_capital_of_Hoa_Lu_(2)_(38445624716).jpg"
+  },
+  {
+    "file": "den-dinh-nghi-mon-goc-3.jpg",
+    "title": "File:Temple at ancient Vietnamese capital of Hoa Lu (3) (37785980364).jpg",
+    "license": "CC BY 2.0",
+    "author": "Richard Mortel from Riyadh, Saudi Arabia",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3ATemple_at_ancient_Vietnamese_capital_of_Hoa_Lu_(3)_(37785980364).jpg"
+  },
+  {
+    "file": "den-dinh-ao-sen-5.jpg",
+    "title": "File:Temple at ancient Vietnamese capital of Hoa Lu (5) (26725397859).jpg",
+    "license": "CC BY 2.0",
+    "author": "Richard Mortel from Riyadh, Saudi Arabia",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3ATemple_at_ancient_Vietnamese_capital_of_Hoa_Lu_(5)_(26725397859).jpg"
+  },
+  {
+    "file": "den-dinh-truc-than-dao-6.jpg",
+    "title": "File:Temple at ancient Vietnamese capital of Hoa Lu (6) (38469082352).jpg",
+    "license": "CC BY 2.0",
+    "author": "Richard Mortel from Riyadh, Saudi Arabia",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3ATemple_at_ancient_Vietnamese_capital_of_Hoa_Lu_(6)_(38469082352).jpg"
+  },
+  {
+    "file": "den-dinh-non-bo-7.jpg",
+    "title": "File:Temple at ancient Vietnamese capital of Hoa Lu (7) (38501052651).jpg",
+    "license": "CC BY 2.0",
+    "author": "Richard Mortel from Riyadh, Saudi Arabia",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3ATemple_at_ancient_Vietnamese_capital_of_Hoa_Lu_(7)_(38501052651).jpg"
+  },
+  {
+    "file": "den-dinh-san-rong-8.jpg",
+    "title": "File:Temple at ancient Vietnamese capital of Hoa Lu (8) (38501032361).jpg",
+    "license": "CC BY 2.0",
+    "author": "Richard Mortel from Riyadh, Saudi Arabia",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3ATemple_at_ancient_Vietnamese_capital_of_Hoa_Lu_(8)_(38501032361).jpg"
+  },
+  {
+    "file": "den-dinh-san-rong-10.jpg",
+    "title": "File:Temple at ancient Vietnamese capital of Hoa Lu (10) (38469010452).jpg",
+    "license": "CC BY 2.0",
+    "author": "Richard Mortel from Riyadh, Saudi Arabia",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3ATemple_at_ancient_Vietnamese_capital_of_Hoa_Lu_(10)_(38469010452).jpg"
+  },
+  {
+    "file": "den-dinh-truc-bia-12.jpg",
+    "title": "File:Temple at ancient Vietnamese capital of Hoa Lu (12) (38468980152).jpg",
+    "license": "CC BY 2.0",
+    "author": "Richard Mortel from Riyadh, Saudi Arabia",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3ATemple_at_ancient_Vietnamese_capital_of_Hoa_Lu_(12)_(38468980152).jpg"
+  },
+  {
+    "file": "den-dinh-san-rong-13.jpg",
+    "title": "File:Temple at ancient Vietnamese capital of Hoa Lu (13) (38468965512).jpg",
+    "license": "CC BY 2.0",
+    "author": "Richard Mortel from Riyadh, Saudi Arabia",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3ATemple_at_ancient_Vietnamese_capital_of_Hoa_Lu_(13)_(38468965512).jpg"
+  },
+  {
+    "file": "den-dinh-mai-cong-18.jpg",
+    "title": "File:Temple at ancient Vietnamese capital of Hoa Lu (18) (26725228529).jpg",
+    "license": "CC BY 2.0",
+    "author": "Richard Mortel from Riyadh, Saudi Arabia",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3ATemple_at_ancient_Vietnamese_capital_of_Hoa_Lu_(18)_(26725228529).jpg"
+  },
+  {
+    "file": "den-dinh-ban-tho.jpg",
+    "title": "File:Altar at Dinh Tien Hoang temple (7357454402).jpg",
+    "license": "CC BY 2.0",
+    "author": "Francisco Anzola",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3AAltar_at_Dinh_Tien_Hoang_temple_(7357454402).jpg"
+  },
+  {
+    "file": "tuong-vua-dinh-can-canh.jpg",
+    "title": "File:Le roi Dinh Tien Hoang (Hoa Lu) (4365680475).jpg",
+    "license": "CC BY 2.0",
+    "author": "Jean-Pierre Dalbéra from Paris, France",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3ALe_roi_Dinh_Tien_Hoang_(Hoa_Lu)_(4365680475).jpg"
+  },
+  {
+    "file": "tuong-hoang-tu-dinh.jpg",
+    "title": "File:Un des fils du roi Dinh Tien Hoang (Hoa Lu) (4366425334).jpg",
+    "license": "CC BY 2.0",
+    "author": "dalbera from Paris, France",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3AUn_des_fils_du_roi_Dinh_Tien_Hoang_(Hoa_Lu)_(4366425334).jpg"
+  },
+  {
+    "file": "tuong-dinh-toan.jpg",
+    "title": "File:Dinhtoan.jpg",
+    "license": "Public domain",
+    "author": "Kien1980v at Vietnamese Wikipedia",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3ADinhtoan.jpg"
+  },
+  {
+    "file": "nghe-da-hoa-lu-19.jpg",
+    "title": "File:Temple at ancient Vietnamese capital of Hoa Lu (19) (37614257765).jpg",
+    "license": "CC BY 2.0",
+    "author": "Richard Mortel from Riyadh, Saudi Arabia",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3ATemple_at_ancient_Vietnamese_capital_of_Hoa_Lu_(19)_(37614257765).jpg"
+  },
+  {
+    "file": "den-hoa-lu-2023.jpg",
+    "title": "File:Temple in Hao Lu - August 2023.jpg",
+    "license": "CC BY-SA 4.0",
+    "author": "Anass Sedrati",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3ATemple_in_Hao_Lu_-_August_2023.jpg"
+  },
+  {
+    "file": "duong-noi-dinh-le.jpg",
+    "title": "File:Đường vào đền vua Lê Đại Hành.JPG",
+    "license": "CC BY-SA 3.0",
+    "author": "Nguyễn Thanh Quang",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3A%C4%90%C6%B0%E1%BB%9Dng_v%C3%A0o_%C4%91%E1%BB%81n_vua_L%C3%AA_%C4%90%E1%BA%A1i_H%C3%A0nh.JPG"
+  },
+  {
+    "file": "den-le-co-thu.jpg",
+    "title": "File:Đền Lê Đại Hành, cổ thụ.JPG",
+    "license": "CC BY-SA 3.0",
+    "author": "Nguyễn Thanh Quang",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3A%C4%90%E1%BB%81n_L%C3%AA_%C4%90%E1%BA%A1i_H%C3%A0nh%2C_c%E1%BB%95_th%E1%BB%A5.JPG"
+  },
+  {
+    "file": "den-le-hien-ban-tho.jpg",
+    "title": "File:Temple commémoratif de Le Hoan (Hoa Lu) (4366427002).jpg",
+    "license": "CC BY 2.0",
+    "author": "dalbera from Paris, France",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3ATemple_comm%C3%A9moratif_de_Le_Hoan_(Hoa_Lu)_(4366427002).jpg"
+  },
+  {
+    "file": "den-le-san-chinh-20.jpg",
+    "title": "File:Temple at ancient Vietnamese capital of Hoa Lu (20) (24628793458).jpg",
+    "license": "CC BY 2.0",
+    "author": "Richard Mortel from Riyadh, Saudi Arabia",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3ATemple_at_ancient_Vietnamese_capital_of_Hoa_Lu_(20)_(24628793458).jpg"
+  },
+  {
+    "file": "den-le-cong-bac.jpg",
+    "title": "File:Codohoalu2010k91.jpg",
+    "license": "Public domain",
+    "author": "Kien1980v at Vietnamese Wikipedia",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3ACodohoalu2010k91.jpg"
+  },
+  {
+    "file": "den-le-phong-canh-120.jpg",
+    "title": "File:Co do Hoa Lu 120.JPG",
+    "license": "Public domain",
+    "author": "Kien1980v (thảo luận) 02:44, ngày 3 tháng 9 năm 2017 (UTC)",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3ACo_do_Hoa_Lu_120.JPG"
+  },
+  {
+    "file": "den-le-phong-canh-121.jpg",
+    "title": "File:Co do Hoa Lu 121.JPG",
+    "license": "Public domain",
+    "author": "Kien1980v (thảo luận)",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3ACo_do_Hoa_Lu_121.JPG"
+  },
+  {
+    "file": "den-le-phong-canh-122.jpg",
+    "title": "File:Co do Hoa Lu 122.JPG",
+    "license": "Public domain",
+    "author": "Kien1980v (thảo luận) 02:47, ngày 3 tháng 9 năm 2017 (UTC)",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3ACo_do_Hoa_Lu_122.JPG"
+  },
+  {
+    "file": "tuong-vua-le-can-canh.jpg",
+    "title": "File:Le général Le Hoan (Hoa Lu) (4365684079).jpg",
+    "license": "CC BY 2.0",
+    "author": "Jean-Pierre Dalbéra from Paris, France",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3ALe_g%C3%A9n%C3%A9ral_Le_Hoan_(Hoa_Lu)_(4365684079).jpg"
+  },
+  {
+    "file": "tuong-duong-van-nga.jpg",
+    "title": "File:Dương Vân Nga.JPG",
+    "license": "Public domain",
+    "author": "unknown / Nguyễn Thanh Quang",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3AD%C6%B0%C6%A1ng_V%C3%A2n_Nga.JPG"
+  },
+  {
+    "file": "tuong-le-long-dinh.jpg",
+    "title": "File:Lelongdinh.jpg",
+    "license": "Public domain",
+    "author": "Kien1980v at Vietnamese Wikipedia",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3ALelongdinh.jpg"
+  },
+  {
+    "file": "khong-tu-nhan-hoi-tu-tu.jpg",
+    "title": "File:Disciples Yan Hui (Nhan Uyên) and Zisi (Tử Tư) - Temple of Literature, Hanoi - DSC04603.JPG",
+    "license": "CC0",
+    "author": "Daderot",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3ADisciples_Yan_Hui_(Nhan_Uy%C3%AAn)_and_Zisi_(T%E1%BB%AD_T%C6%B0)_-_Temple_of_Literature%2C_Hanoi_-_DSC04603.JPG"
+  },
+  {
+    "file": "khong-tu-manh-tu-tang-tu.jpg",
+    "title": "File:Disciples Mencius (Mạnh Tử) and Zengzi (Tăng Tử) - Temple of Literature, Hanoi - DSC04594.JPG",
+    "license": "CC0",
+    "author": "Daderot",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3ADisciples_Mencius_(M%E1%BA%A1nh_T%E1%BB%AD)_and_Zengzi_(T%C4%83ng_T%E1%BB%AD)_-_Temple_of_Literature%2C_Hanoi_-_DSC04594.JPG"
+  },
+  {
+    "file": "khong-tu-an-tho-chinh.jpg",
+    "title": "File:Altar to Confucius (Temple of Literature, Hanoi).jpg",
+    "license": "CC BY-SA 4.0",
+    "author": "Christophe95",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3AAltar_to_Confucius_(Temple_of_Literature%2C_Hanoi).jpg"
+  },
+  {
+    "file": "khong-tu-ban-tho-2.jpg",
+    "title": "File:Confucius (Temple de la littérature, Hanoi) (4356116454).jpg",
+    "license": "CC BY 2.0",
+    "author": "Jean-Pierre Dalbéra from Paris, France",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3AConfucius_(Temple_de_la_litt%C3%A9rature%2C_Hanoi)_(4356116454).jpg"
+  },
+  {
+    "file": "khong-tu-hoc-tro-can.jpg",
+    "title": "File:Disciple de Confucius (Temple de la littérature, Hanoi) (4356115844).jpg",
+    "license": "CC BY 2.0",
+    "author": "Jean-Pierre Dalbéra from Paris, France",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3ADisciple_de_Confucius_(Temple_de_la_litt%C3%A9rature%2C_Hanoi)_(4356115844).jpg"
+  },
+  {
+    "file": "khong-tu-tuong-can.jpg",
+    "title": "File:Confucius - Temple of Literature, Hanoi - DSC04635.JPG",
+    "license": "CC0",
+    "author": "Daderot",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3AConfucius_-_Temple_of_Literature%2C_Hanoi_-_DSC04635.JPG"
+  },
+  {
+    "file": "trung-bay-trieu-dinh.jpg",
+    "title": "File:Dynastie des Dinh (Musée dhistoire, Hanoi) (4359048988).jpg",
+    "license": "CC BY 2.0",
+    "author": "Jean-Pierre Dalbéra from Paris, France",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3ADynastie_des_Dinh_(Mus%C3%A9e_dhistoire%2C_Hanoi)_(4359048988).jpg"
+  },
+  {
+    "file": "tien-thai-binh-mat-truoc.jpg",
+    "title": "File:Thái Bình Hưng Bảo (太平興寶) - Đinh (丁) - Scan - Obverse.jpg",
+    "license": "CC BY-SA 4.0",
+    "author": "Donald Trung Quoc Don (Chữ Hán: 徵國單) - Wikimedia Commons - © CC BY-SA 4.0 International.(Want to use this image?)Original publication 📤: --Donald Trung 『徵國單』 (No Fake News 💬) (WikiProject Numismatics 💴) (Articles 📚) 21:17, 1 December 2019 (UTC)",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3ATh%C3%A1i_B%C3%ACnh_H%C6%B0ng_B%E1%BA%A3o_(%E5%A4%AA%E5%B9%B3%E8%88%88%E5%AF%B6)_-_%C4%90inh_(%E4%B8%81)_-_Scan_-_Obverse.jpg"
+  },
+  {
+    "file": "so-do-kinh-do-the-ky-x.jpg",
+    "title": "File:Codohoalu1-Model.jpg",
+    "license": "Public domain",
+    "author": "nguoicodo (thảo luận)",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3ACodohoalu1-Model.jpg"
+  },
+  {
+    "file": "duong-nha-bia-ly-thai-to.jpg",
+    "title": "File:Co do Hoa Lu 115.JPG",
+    "license": "Public domain",
+    "author": "Kien1980v (thảo luận) 02:36, ngày 3 tháng 9 năm 2017 (UTC)",
+    "sourcePage": "https://commons.wikimedia.org/wiki/File%3ACo_do_Hoa_Lu_115.JPG"
+  }
+]

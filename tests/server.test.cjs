@@ -57,32 +57,34 @@ test('cả mười bốn đường dẫn tham quan mở ứng dụng và giữ c
   assert.equal((await fetch(base + '/pages/tham-quan/does-not-exist')).status, 404);
 });
 
-test('mỗi mục tham quan có bản thuyết minh tiếng Việt riêng và có thể phát theo khoảng byte', async (t) => {
+test('mỗi mục tham quan có bản thuyết minh tiếng Việt và tiếng Anh riêng và phát theo khoảng byte', async (t) => {
   const { VISIT_TOPICS } = await import('../public/assets/js/visit-topics.js');
   const server = createServer();
   await new Promise(resolve => server.listen(0, '127.0.0.1', resolve));
   t.after(() => new Promise(resolve => server.close(resolve)));
   const base = `http://127.0.0.1:${server.address().port}`;
   for (const topic of VISIT_TOPICS) {
-    const audioPath = `/${topic.route}/audio_vi.mp3`;
-    for (const page of ['index.html', 'index_vi.html']) {
-      const response = await fetch(`${base}/${topic.route}/${page}`);
-      assert.equal(response.status, 200);
-      const html = await response.text();
-      assert.ok(html.includes(`src="${audioPath}"`), `${topic.id}: ${page}`);
-      assert.equal((html.match(/<audio\b/g) || []).length, 1, `${topic.id}: ${page}`);
+    for (const [lang, pages] of [['vi', ['index.html', 'index_vi.html']], ['en', ['index_en.html']]]) {
+      const audioPath = `/${topic.route}/audio_${lang}.mp3`;
+      for (const page of pages) {
+        const response = await fetch(`${base}/${topic.route}/${page}`);
+        assert.equal(response.status, 200);
+        const html = await response.text();
+        assert.ok(html.includes(`src="${audioPath}"`), `${topic.id}: ${page}`);
+        assert.equal((html.match(/<audio\b/g) || []).length, 1, `${topic.id}: ${page}`);
+      }
+      const audio = await fetch(base + audioPath, { headers: { Range: 'bytes=0-127' } });
+      assert.equal(audio.status, 206, `${topic.id} (${lang})`);
+      assert.match(audio.headers.get('content-type'), /^audio\/mpeg/);
+      assert.equal((await audio.arrayBuffer()).byteLength, 128);
+      const file = path.join(__dirname, '..', 'public', topic.route, `audio_${lang}.mp3`);
+      const bytes = fs.readFileSync(file);
+      const start = Math.floor(bytes.length / 2);
+      const seek = await fetch(base + audioPath, { headers: { Range: `bytes=${start}-${start + 127}` } });
+      assert.equal(seek.status, 206, `${topic.id} (${lang}): seek`);
+      assert.equal(seek.headers.get('content-range'), `bytes ${start}-${start + 127}/${bytes.length}`);
+      assert.deepEqual(Buffer.from(await seek.arrayBuffer()), bytes.subarray(start, start + 128));
     }
-    const audio = await fetch(base + audioPath, { headers: { Range: 'bytes=0-127' } });
-    assert.equal(audio.status, 206, topic.id);
-    assert.match(audio.headers.get('content-type'), /^audio\/mpeg/);
-    assert.equal((await audio.arrayBuffer()).byteLength, 128);
-    const file = path.join(__dirname, '..', 'public', topic.route, 'audio_vi.mp3');
-    const bytes = fs.readFileSync(file);
-    const start = Math.floor(bytes.length / 2);
-    const seek = await fetch(base + audioPath, { headers: { Range: `bytes=${start}-${start + 127}` } });
-    assert.equal(seek.status, 206, `${topic.id}: seek`);
-    assert.equal(seek.headers.get('content-range'), `bytes ${start}-${start + 127}/${bytes.length}`);
-    assert.deepEqual(Buffer.from(await seek.arrayBuffer()), bytes.subarray(start, start + 128));
   }
 });
 

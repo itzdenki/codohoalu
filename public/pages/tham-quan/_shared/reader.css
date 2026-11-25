@@ -1,5 +1,5 @@
 @import url('/assets/css/guide-theme.css');
-@import url('./reader-guide.css?v=3');
+@import url('./reader-guide.css?v=8');
 
 @font-face { font-family: visit-body; src: url('/pages/dth/nha-bia/f1.woff') format('woff'); font-display: swap; }
 @font-face { font-family: visit-latin; src: url('latin.woff') format('woff'); font-display: swap; }

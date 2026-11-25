@@ -1,6 +1,8 @@
 node_modules/
 .tmp/
+.wrangler/
 certificates/
+TIẾNG ANH/
 .env
 .env.*
 !.env.example
