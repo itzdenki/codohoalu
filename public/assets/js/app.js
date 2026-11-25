@@ -5,7 +5,7 @@ import { VISIT_TOPICS, visitTitle } from './visit-topics.js';
 import { mountQRScanner, qrCopy } from './qr-scanner.js';
 
 const app = document.querySelector('#app');
-const state = { mode: 'home', lang: 'vi', spot: null, visit: null, menu: false, cover: true, menuReturn: null };
+const state = { mode: 'home', lang: 'vi', spot: null, visit: null, menu: false, cover: true, menuReturn: null, langPicker: false, langPickerDismissible: false };
 let activeQrScanner = null;
 const qrButtonIcon = '<svg class="guide-qr-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M3.5 3.5h6v6h-6v-6Zm11 0h6v6h-6v-6Zm-11 11h6v6h-6v-6Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M5.8 5.8h1.4v1.4H5.8Zm11 0h1.4v1.4h-1.4Zm-11 11h1.4v1.4H5.8Z" fill="currentColor"/><path d="M14.5 14.5h2v2h-2v-2Zm4 0h2v2h-2v-2Zm-2 2h2v2h-2v-2Zm-2 2h2v2h-2v-2Zm4 0h2v2h-2v-2Z" fill="currentColor"/></svg>';
 const menuItems = [
@@ -80,8 +80,32 @@ function bottomHTML(spotMode = false) {
     nextAction: spotMode ? 'spot-next' : 'next',
   });
 }
+function langPickerHTML() {
+  const rows = Object.entries(labels).map(([code, label]) => {
+    const extension = code === 'zh' ? 'svg' : 'png';
+    const active = state.lang === code && state.langPickerDismissible;
+    return `<button type="button" class="lang-choice-btn${active ? ' is-active' : ''}" data-pick-lang="${code}" lang="${code}">
+      <span class="lang-choice-flag"><img src="/images/flags/${code}.${extension}" alt=""></span>
+      <span class="lang-choice-name">${esc(label)}</span>
+      <span class="lang-choice-arrow" aria-hidden="true">${active ? '✓' : '›'}</span>
+    </button>`;
+  }).join('');
+  return `<div class="lang-picker-backdrop" role="dialog" aria-modal="true" aria-labelledby="lang-picker-title">
+    <div class="lang-picker-card">
+      ${state.langPickerDismissible ? `<button type="button" class="lang-picker-close" data-action="close-lang-picker" aria-label="${esc(toc().close)}">✕</button>` : ''}
+      <div class="lang-picker-header">
+        <p class="lang-picker-eyebrow">CỐ ĐÔ HOA LƯ · AUDIO GUIDE</p>
+        <h2 id="lang-picker-title" class="lang-picker-title">Chọn ngôn ngữ</h2>
+        <p class="lang-picker-subtitle">Choose your language</p>
+      </div>
+      <div class="lang-picker-list">${rows}</div>
+    </div>
+  </div>`;
+}
 function coverHTML() {
   const menuLabel = esc(guide().index);
+  const flagExt = state.lang === 'zh' ? 'svg' : 'png';
+  const currentLangLabel = esc(labels[state.lang] || labels.vi);
   return `<section class="landing-cover" aria-labelledby="landing-cover-title">
     <div class="landing-cover-frame">
       <div class="landing-cover-photo" aria-hidden="true">
@@ -102,10 +126,16 @@ function coverHTML() {
         <button type="button" class="landing-cover-menu" data-action="enter-visit" aria-label="${menuLabel}" title="${menuLabel}">
           <span class="landing-cover-menu-icon" aria-hidden="true"></span>
         </button>
+        <button type="button" class="landing-cover-lang" data-action="open-lang-picker" aria-haspopup="dialog" aria-label="${esc(guide().language)}: ${currentLangLabel}" title="${esc(guide().language)}">
+          <img src="/images/flags/${state.lang}.${flagExt}" alt="">
+          <span>${currentLangLabel}</span>
+          <span class="landing-cover-lang-caret" aria-hidden="true">▾</span>
+        </button>
         <button type="button" class="landing-cover-qr" data-action="qr" aria-haspopup="dialog" aria-label="${esc(toc().qrTitle)}">
           <img src="/qr-access.png" width="480" height="480" alt="">
         </button>
       </footer>
+      ${state.langPicker ? langPickerHTML() : ''}
     </div>
   </section>`;
 }
@@ -389,12 +419,21 @@ function openSpot(spot) {
 function changeLanguage(lang) {
   if (!labels[lang]) return;
   state.lang = lang;
+  state.langPicker = false;
+  state.langPickerDismissible = false;
   try { localStorage.setItem('lang', lang); } catch { /* storage unavailable */ }
   renderApp();
 }
 app.addEventListener('click', event => {
+  if (event.target.classList?.contains('lang-picker-backdrop') && state.langPickerDismissible) {
+    state.langPicker = false;
+    state.langPickerDismissible = false;
+    renderApp();
+    return;
+  }
   const button = event.target.closest('button');
   if (!button || !app.contains(button)) return;
+  if (button.dataset.pickLang) { changeLanguage(button.dataset.pickLang); return; }
   if (button.dataset.visit) { navigateVisit(button.dataset.visit); return; }
   if (button.dataset.mode) { navigate(button.dataset.mode); return; }
   if (button.dataset.lang) { changeLanguage(button.dataset.lang); return; }
@@ -402,6 +441,8 @@ app.addEventListener('click', event => {
     case 'home': navigate('home'); break;
     case 'visit-home': case 'enter-visit': showVisitHome(); break;
     case 'close-visit-menu': closeVisitHome(); break;
+    case 'open-lang-picker': state.langPicker = true; state.langPickerDismissible = true; renderApp(); break;
+    case 'close-lang-picker': state.langPicker = false; state.langPickerDismissible = false; renderApp(); break;
     case 'visit-prev': case 'visit-next': {
       const index = VISIT_TOPICS.findIndex(topic => topic.id === state.visit?.id);
       const topic = VISIT_TOPICS[index + (button.dataset.action === 'visit-prev' ? -1 : 1)];
@@ -438,6 +479,11 @@ window.addEventListener('message', event => {
 });
 window.addEventListener('keydown', (event) => {
   if (event.key === 'Escape' && app.querySelector('.qr-modal-backdrop')) closeQRModal();
+  else if (event.key === 'Escape' && state.langPicker && state.langPickerDismissible) {
+    state.langPicker = false;
+    state.langPickerDismissible = false;
+    renderApp();
+  }
 });
 window.addEventListener('popstate', () => {
   closeQRModal();
@@ -445,8 +491,25 @@ window.addEventListener('popstate', () => {
   renderApp();
 });
 Object.assign(state, resolveRoute(location.pathname));
-try { const savedLang = localStorage.getItem('lang'); if (labels[savedLang]) state.lang = savedLang; } catch { /* storage unavailable */ }
 const params = new URLSearchParams(location.search);
+let hasSavedLang = false;
+try {
+  const savedLang = localStorage.getItem('lang');
+  if (labels[savedLang]) {
+    state.lang = savedLang;
+    hasSavedLang = true;
+  }
+} catch { /* storage unavailable */ }
+const queryLang = params.get('lang');
+if (labels[queryLang]) {
+  state.lang = queryLang;
+  hasSavedLang = true;
+  try { localStorage.setItem('lang', queryLang); } catch { /* storage unavailable */ }
+}
+if (state.mode === 'home' && state.cover && !hasSavedLang) {
+  state.langPicker = true;
+  state.langPickerDismissible = false;
+}
 if (params.has('qr')) {
   params.delete('qr');
   history.replaceState(null,'',location.pathname + (params.toString() ? '?' + params : '') + location.hash);
