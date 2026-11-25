@@ -25,7 +25,7 @@ const guideCopy = {
   zh: { topics: '语音讲解主题', index: '目录', overview: '参观图与专题', details: '详细内容', home: '首页', mapBack: '返回参观图', previous: '上一项', next: '下一项', language: '语言' },
   ja: { topics: '音声ガイドの項目', index: '目次', overview: '案内図と特集', details: '詳細', home: 'ホーム', mapBack: '案内図に戻る', previous: '前の項目', next: '次の項目', language: '言語' },
 };
-const labels = { vi: 'Tiếng Việt', en: 'English', ko: '한국어', fr: 'Français', zh: '中文', ja: '日本語' };
+const labels = { vi: 'Tiếng Việt', en: 'English', ko: '한국어', fr: 'Français', zh: '中文' };
 const languageFiles = { vi: 'vi', en: 'en', ko: 'kr', fr: 'fr', zh: 'cn', ja: 'jp' };
 const esc = (s) => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const toc = () => getLangData(state.lang).toc;

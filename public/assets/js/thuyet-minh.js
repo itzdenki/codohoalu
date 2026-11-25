@@ -65,6 +65,7 @@
   }
   var fl = top.querySelector('.fl');
   LANGS.forEach(function (l) {
+    if (l === 'ja') return;
     var b = document.createElement('button');
     b.title = NAMES[l];
     b.dataset.l = l;

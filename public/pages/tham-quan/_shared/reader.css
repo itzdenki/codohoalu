@@ -43,6 +43,7 @@ body { background: var(--red-main); color: #392c25; font: 19px/1.9 visit-body, v
 .reader-tools [data-language] { display: grid; place-items: center; min-width: 38px; min-height: 38px; padding: 0 7px; border-radius: 999px; letter-spacing: .04em; transition: background-color .2s, color .2s; }
 .reader-tools [data-language]:hover { background: #eadbc7; color: #692b22; }
 .reader-tools [data-language].active { color: #fff8ec; background: #762e26; box-shadow: 0 2px 6px rgba(105, 43, 34, .22); }
+.reader-tools [data-language="ja"] { display: none; }
 .reader-tools a:focus-visible { outline: 2px solid #a8793e; outline-offset: 2px; }
 .reader-heading { text-align: center; margin-bottom: 35px; }
 .reader-chapter { display: grid; place-items: center; width: 47px; height: 47px; margin: 0 auto 18px; border: 1px solid #c9ab7b; border-radius: 50%; background: #fbf4e7; color: #976b38; font: 21px/1 visit-title-latin, Georgia, serif; box-shadow: 0 3px 10px rgba(96, 59, 27, .08); }
