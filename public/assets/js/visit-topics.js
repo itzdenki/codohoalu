@@ -20,6 +20,7 @@ export const VISIT_TOPICS = slugs.map((slug, index) => ({
   id: `visit-${String(index + 1).padStart(2, '0')}`, number: index + 1, sourceNumber: index + 1, slug,
   route: `pages/tham-quan/${slug}`, title: titles.vi[index],
   image: `/pages/tham-quan/${slug}/${coverImages[index]}`,
+  qrImage: `/images/qr/${String(index + 1).padStart(2, '0')}-${slug}.png`,
   titles: Object.fromEntries(Object.entries(titles).map(([lang, values]) => [lang, values[index]])),
 }));
 export const visitTitle = (topic, lang = 'vi') => topic.titles?.[lang] || topic.title;

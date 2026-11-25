@@ -10,6 +10,7 @@
     "split-audio": "node scripts/split-section-mp3.mjs"
   },
   "devDependencies": {
+    "jsqr": "^1.4.0",
     "qrcode": "^1.5.4"
   }
 }

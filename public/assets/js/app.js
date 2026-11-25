@@ -2,9 +2,12 @@ import { getLangData } from './i18n.js';
 import { HOTSPOTS_DTH, HOTSPOTS_LDH } from './hotspots.js';
 import { pages, pathFor, resolveRoute } from './routes.js';
 import { VISIT_TOPICS, visitTitle } from './visit-topics.js';
+import { mountQRScanner, qrCopy } from './qr-scanner.js';
 
 const app = document.querySelector('#app');
 const state = { mode: 'home', lang: 'vi', spot: null, visit: null, menu: false, cover: true, menuReturn: null };
+let activeQrScanner = null;
+const qrButtonIcon = '<svg class="guide-qr-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M3.5 3.5h6v6h-6v-6Zm11 0h6v6h-6v-6Zm-11 11h6v6h-6v-6Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M5.8 5.8h1.4v1.4H5.8Zm11 0h1.4v1.4h-1.4Zm-11 11h1.4v1.4H5.8Z" fill="currentColor"/><path d="M14.5 14.5h2v2h-2v-2Zm4 0h2v2h-2v-2Zm-2 2h2v2h-2v-2Zm-2 2h2v2h-2v-2Zm4 0h2v2h-2v-2Z" fill="currentColor"/></svg>';
 const menuItems = [
   ['so-do-den-dinh', 'Sơ đồ tham quan\nđền vua Đinh', '/images/menu/item-1-den-dinh.png', 'dth'],
   ['so-do-den-le', 'Sơ đồ tham quan\nđền vua Lê', '/images/menu/item-2-den-le.png', 'ldh'],
@@ -53,11 +56,15 @@ function topHTML(spotMode = false) {
     ${languageButtonsHTML()}
   </div></div>`;
 }
-function guideBottomHTML({ menuAction, previousAction, nextAction, page = '', first = false, last = false }) {
+function guideBottomHTML({ menuAction, previousAction, nextAction, page = '', first = false, last = false, showTopicQr = false }) {
   const { index, previous, next } = guide();
+  const qrText = qrCopy(state.lang);
   return `<nav class="home-bottom-bar guide-bottom-bar" aria-label="${esc(toc().title)}">
     <div class="guide-bar-inner">
-      <button type="button" class="guide-index-button" data-action="${menuAction}"><span aria-hidden="true">☰</span>${esc(index)}</button>
+      <div class="guide-bottom-left">
+        <button type="button" class="guide-index-button" data-action="${menuAction}"><span aria-hidden="true">☰</span>${esc(index)}</button>
+        ${showTopicQr ? `<button type="button" class="guide-qr-button" data-action="topic-qr" aria-haspopup="dialog" aria-label="${esc(qrText.qrButtonLabel)}" title="${esc(qrText.qrButtonLabel)}">${qrButtonIcon}<span>${esc(qrText.qrButton)}</span></button>` : ''}
+      </div>
       <div class="guide-pagination">
         <button type="button" class="guide-step-button" data-action="${previousAction}" aria-label="${esc(previous)}" title="${esc(previous)}"${first ? ' disabled' : ''}>‹</button>
         ${page ? `<span class="guide-page-count">${page}</span>` : ''}
@@ -139,6 +146,7 @@ function visitBottomHTML() {
     page: `${index + 1} / ${VISIT_TOPICS.length}`,
     first: index <= 0,
     last: index === VISIT_TOPICS.length - 1,
+    showTopicQr: Boolean(state.visit),
   });
 }
 function iframeHTML(route, title, { noAudio = false, spotMode = false, guideMode = false } = {}) {
@@ -215,31 +223,140 @@ function openMenu() {
   </div></div>`;
   stage.appendChild(overlay);
 }
+function closeQRModal() {
+  if (activeQrScanner) {
+    activeQrScanner.stop();
+    activeQrScanner = null;
+  }
+  app.querySelector('.qr-modal-backdrop')?.remove();
+}
+
 function showQR() {
+  closeQRModal();
   const stage = app.querySelector('.experience-stage');
+  if (!stage) return;
+  const t = qrCopy(state.lang);
+  const homeUrl = `${location.origin}/`;
   const overlay = document.createElement('div');
-  overlay.className = 'pdf-modal-backdrop';
+  overlay.className = 'pdf-modal-backdrop qr-modal-backdrop';
   overlay.setAttribute('role', 'dialog');
   overlay.setAttribute('aria-modal', 'true');
   overlay.setAttribute('aria-labelledby', 'cover-qr-title');
   overlay.innerHTML = `<div class="pdf-modal-card qr-modal-card">
     <div class="pdf-modal-header">
-      <h3 id="cover-qr-title">${esc(toc().qrTitle)}</h3>
+      <h3 id="cover-qr-title">${esc(t.homeModalTitle)}</h3>
+      <button type="button" class="pdf-close-btn" data-action="close-qr" aria-label="${esc(toc().close)}">✕</button>
+    </div>
+    <div class="qr-modal-tabs" role="tablist">
+      <button type="button" class="qr-tab-btn is-active" role="tab" aria-selected="true" data-qr-tab="scan">${esc(t.tabScan)}</button>
+      <button type="button" class="qr-tab-btn" role="tab" aria-selected="false" data-qr-tab="home">${esc(t.tabHomeQr)}</button>
+    </div>
+    <div class="qr-modal-body" data-qr-panel="scan">
+      <div class="qr-scanner-box">
+        <video class="qr-scanner-video" autoplay muted playsinline></video>
+        <div class="qr-scanner-reticle" aria-hidden="true"><span></span></div>
+      </div>
+      <p class="qr-scanner-status" role="status" aria-live="polite">${esc(t.startingCamera)}</p>
+      <div class="qr-scanner-error" role="alert" hidden></div>
+      <div class="qr-scanner-actions">
+        <button type="button" class="qr-retry-btn" hidden>${esc(t.retry)}</button>
+        <label class="qr-upload-btn">${esc(t.chooseImage)}<input type="file" accept="image/*" class="qr-file-input" hidden></label>
+      </div>
+      <p class="qr-scanner-hint">${esc(t.scanHint)}</p>
+    </div>
+    <div class="qr-modal-body" data-qr-panel="home" hidden>
+      <div class="qr-code-frame">
+        <img src="/images/qr/00-home.png" alt="${esc(t.tabHomeQr)}" width="220" height="220" class="qr-image">
+      </div>
+      <p class="qr-url-badge">${esc(homeUrl)}</p>
+      <p>${esc(t.homeQrDesc)}</p>
+      <a class="qr-download-btn" href="/images/qr/00-home.png" download="00-home-codohoalu-qr.png">${esc(t.downloadQr)}</a>
+    </div>
+  </div>`;
+
+  const startScanner = () => {
+    if (activeQrScanner) { activeQrScanner.stop(); activeQrScanner = null; }
+    activeQrScanner = mountQRScanner({
+      videoEl: overlay.querySelector('.qr-scanner-video'),
+      statusEl: overlay.querySelector('.qr-scanner-status'),
+      errorEl: overlay.querySelector('.qr-scanner-error'),
+      retryBtn: overlay.querySelector('.qr-retry-btn'),
+      fileInput: overlay.querySelector('.qr-file-input'),
+      lang: state.lang,
+      topics: VISIT_TOPICS,
+      onMatch: (topic) => {
+        closeQRModal();
+        navigateVisit(topic.id);
+      },
+    });
+  };
+
+  overlay.addEventListener('click', (event) => {
+    if (event.target === overlay) { closeQRModal(); return; }
+    const tabBtn = event.target.closest('[data-qr-tab]');
+    if (!tabBtn) return;
+    const mode = tabBtn.dataset.qrTab;
+    overlay.querySelectorAll('[data-qr-tab]').forEach((btn) => {
+      const active = btn.dataset.qrTab === mode;
+      btn.classList.toggle('is-active', active);
+      btn.setAttribute('aria-selected', String(active));
+    });
+    overlay.querySelectorAll('[data-qr-panel]').forEach((panel) => {
+      panel.hidden = panel.dataset.qrPanel !== mode;
+    });
+    if (mode === 'scan') {
+      startScanner();
+    } else if (activeQrScanner) {
+      activeQrScanner.stop();
+      activeQrScanner = null;
+    }
+  });
+
+  stage.appendChild(overlay);
+  startScanner();
+}
+
+function showTopicQR(topic) {
+  if (!topic) return;
+  closeQRModal();
+  const stage = app.querySelector('.experience-stage');
+  if (!stage) return;
+  const t = qrCopy(state.lang);
+  const num = String(topic.number).padStart(2, '0');
+  const title = `${num} · ${visitTitle(topic, state.lang)}`;
+  const topicUrl = `${location.origin}/${topic.route}`;
+  const overlay = document.createElement('div');
+  overlay.className = 'pdf-modal-backdrop qr-modal-backdrop';
+  overlay.setAttribute('role', 'dialog');
+  overlay.setAttribute('aria-modal', 'true');
+  overlay.setAttribute('aria-labelledby', 'topic-qr-title');
+  overlay.innerHTML = `<div class="pdf-modal-card qr-modal-card">
+    <div class="pdf-modal-header">
+      <h3 id="topic-qr-title">${esc(t.topicQrTitle)}</h3>
       <button type="button" class="pdf-close-btn" data-action="close-qr" aria-label="${esc(toc().close)}">✕</button>
     </div>
     <div class="qr-modal-body">
-      <img src="/qr-access.png" alt="QR Code Cố đô Hoa Lư Audio Guide" width="200" height="200" class="qr-image">
-      <p>${esc(toc().qrDesc)}</p>
+      <p class="qr-topic-heading">${esc(title)}</p>
+      <div class="qr-code-frame">
+        <img src="${esc(topic.qrImage)}" alt="${esc(title)}" width="220" height="220" class="qr-image">
+      </div>
+      <p class="qr-url-badge">${esc(topicUrl)}</p>
+      <p>${esc(t.topicQrDesc)}</p>
+      <a class="qr-download-btn" href="${esc(topic.qrImage)}" download="${num}-${esc(topic.slug)}-qr.png">${esc(t.downloadQr)}</a>
     </div>
   </div>`;
+  overlay.addEventListener('click', (event) => {
+    if (event.target === overlay) closeQRModal();
+  });
   stage.appendChild(overlay);
 }
 function updateURL() {
   const path = pathFor(state.mode, state.spot, state.visit);
   if (location.pathname !== path) history.pushState(null, '', path + location.search);
 }
-function navigate(mode) { if (!sections.includes(mode)) return; state.mode=mode; state.menu=false; state.spot=null; state.visit=null; state.menuReturn=null; if (mode === 'home') state.cover=true; updateURL(); renderApp(); }
+function navigate(mode) { if (!sections.includes(mode)) return; closeQRModal(); state.mode=mode; state.menu=false; state.spot=null; state.visit=null; state.menuReturn=null; if (mode === 'home') state.cover=true; updateURL(); renderApp(); }
 function showVisitHome() {
+  closeQRModal();
   if (state.mode === 'visit' && state.visit) state.menuReturn = state.visit.id;
   else if (state.mode === 'home' && state.cover) state.menuReturn = null;
   state.mode='home'; state.cover=false; state.menu=false; state.spot=null; state.visit=null;
@@ -254,6 +371,7 @@ function closeVisitHome() {
 function navigateVisit(id) {
   const topic = VISIT_TOPICS.find(item => item.id === id);
   if (!topic) return;
+  closeQRModal();
   state.mode='visit'; state.visit=topic; state.spot=null; state.menu=false; state.menuReturn=null;
   updateURL(); renderApp();
 }
@@ -290,7 +408,8 @@ app.addEventListener('click', event => {
     case 'menu': openMenu(); break;
     case 'close-menu': state.menu=false; app.querySelector('.toc-modal-backdrop')?.remove(); break;
     case 'qr': showQR(); break;
-    case 'close-qr': app.querySelector('.pdf-modal-backdrop')?.remove(); break;
+    case 'topic-qr': showTopicQR(state.visit); break;
+    case 'close-qr': closeQRModal(); break;
     case 'close-spot': state.spot=null; updateURL(); app.querySelector('.spot-content-overlay')?.remove(); break;
     case 'prev': navigate(sections[(sections.indexOf(state.mode)-1+sections.length)%sections.length]); break;
     case 'next': navigate(sections[(sections.indexOf(state.mode)+1)%sections.length]); break;
@@ -314,7 +433,11 @@ window.addEventListener('message', event => {
   else if (data?.type === 'spot-close' && state.spot) { state.spot=null; updateURL(); app.querySelector('.spot-content-overlay')?.remove(); }
   else if (data?.type === 'spot-lang') changeLanguage(data.lang);
 });
+window.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape' && app.querySelector('.qr-modal-backdrop')) closeQRModal();
+});
 window.addEventListener('popstate', () => {
+  closeQRModal();
   Object.assign(state, { visit: null }, resolveRoute(location.pathname), { menu: false });
   renderApp();
 });
