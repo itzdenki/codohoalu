@@ -3,6 +3,10 @@ node_modules/
 .wrangler/
 certificates/
 TIẾNG ANH/
+TIẾNG HÀN/
+TIÊNG NHẬT/
+TIẾNG PHÁP/
+TIẾNG TRUNG/
 .env
 .env.*
 !.env.example

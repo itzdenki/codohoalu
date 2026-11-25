@@ -57,14 +57,21 @@ test('cả mười bốn đường dẫn tham quan mở ứng dụng và giữ c
   assert.equal((await fetch(base + '/pages/tham-quan/does-not-exist')).status, 404);
 });
 
-test('mỗi mục tham quan có bản thuyết minh tiếng Việt và tiếng Anh riêng và phát theo khoảng byte', async (t) => {
+test('mỗi mục tham quan có bản thuyết minh riêng cho cả sáu ngôn ngữ và phát theo khoảng byte', async (t) => {
   const { VISIT_TOPICS } = await import('../public/assets/js/visit-topics.js');
   const server = createServer();
   await new Promise(resolve => server.listen(0, '127.0.0.1', resolve));
   t.after(() => new Promise(resolve => server.close(resolve)));
   const base = `http://127.0.0.1:${server.address().port}`;
   for (const topic of VISIT_TOPICS) {
-    for (const [lang, pages] of [['vi', ['index.html', 'index_vi.html']], ['en', ['index_en.html']]]) {
+    for (const [lang, pages] of [
+      ['vi', ['index.html', 'index_vi.html']],
+      ['en', ['index_en.html']],
+      ['fr', ['index_fr.html']],
+      ['ko', ['index_kr.html']],
+      ['zh', ['index_cn.html']],
+      ['ja', ['index_jp.html']],
+    ]) {
       const audioPath = `/${topic.route}/audio_${lang}.mp3`;
       for (const page of pages) {
         const response = await fetch(`${base}/${topic.route}/${page}`);

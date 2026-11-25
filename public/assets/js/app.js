@@ -146,7 +146,7 @@ function iframeHTML(route, title, { noAudio = false, spotMode = false, guideMode
   if (noAudio) query.set('noaudio', '1');
   if (guideMode) {
     query.set('view', 'guide');
-    query.set('v', '11');
+    query.set('v', '12');
   }
   return `<div class="spot-content-loading" role="status">Đang tải nội dung…</div><iframe class="${spotMode ? 'spot-content-frame' : 'sodo-iframe'}" title="${esc(title)}" src="/${esc(route)}/index_${languageFiles[state.lang]}.html?${query}"${guideMode ? ' allow="autoplay"' : ''} style="visibility:hidden"></iframe>`;
 }
