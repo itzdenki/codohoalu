@@ -7,7 +7,6 @@ import { mountQRScanner, qrCopy } from './qr-scanner.js';
 const app = document.querySelector('#app');
 const state = { mode: 'home', lang: 'vi', spot: null, visit: null, menu: false, cover: true, menuReturn: null, langPicker: false, langPickerDismissible: false };
 let activeQrScanner = null;
-const qrButtonIcon = '<svg class="guide-qr-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M3.5 3.5h6v6h-6v-6Zm11 0h6v6h-6v-6Zm-11 11h6v6h-6v-6Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M5.8 5.8h1.4v1.4H5.8Zm11 0h1.4v1.4h-1.4Zm-11 11h1.4v1.4H5.8Z" fill="currentColor"/><path d="M14.5 14.5h2v2h-2v-2Zm4 0h2v2h-2v-2Zm-2 2h2v2h-2v-2Zm-2 2h2v2h-2v-2Zm4 0h2v2h-2v-2Z" fill="currentColor"/></svg>';
 const qrScanIcon = '<svg class="top-qr-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M4 8V5.5A1.5 1.5 0 0 1 5.5 4H8M16 4h2.5A1.5 1.5 0 0 1 20 5.5V8M20 16v2.5a1.5 1.5 0 0 1-1.5 1.5H16M8 20H5.5A1.5 1.5 0 0 1 4 18.5V16" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/><path d="M7.5 12h9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><rect x="8.5" y="7.5" width="2.4" height="2.4" rx="0.5" fill="currentColor"/><rect x="13.1" y="7.5" width="2.4" height="2.4" rx="0.5" fill="currentColor"/><rect x="8.5" y="14.1" width="2.4" height="2.4" rx="0.5" fill="currentColor"/><rect x="13.1" y="14.1" width="2.4" height="2.4" rx="0.5" fill="currentColor"/></svg>';
 const menuItems = [
   ['so-do-den-dinh', 'Sơ đồ tham quan\nđền vua Đinh', '/images/menu/item-1-den-dinh.png', 'dth'],
@@ -59,15 +58,11 @@ function topHTML(spotMode = false) {
     <button type="button" class="top-control-btn top-qr-btn" data-action="qr" aria-haspopup="dialog" aria-label="${scanLabel}" title="${scanLabel}">${qrScanIcon}<span class="guide-qr-label">${scanLabel}</span></button>
   </div></div>`;
 }
-function guideBottomHTML({ menuAction, previousAction, nextAction, page = '', first = false, last = false, showTopicQr = false }) {
+function guideBottomHTML({ menuAction, previousAction, nextAction, page = '', first = false, last = false }) {
   const { index, previous, next } = guide();
-  const qrText = qrCopy(state.lang);
   return `<nav class="home-bottom-bar guide-bottom-bar" aria-label="${esc(toc().title)}">
     <div class="guide-bar-inner">
-      <div class="guide-bottom-left">
-        <button type="button" class="guide-index-button" data-action="${menuAction}"><span aria-hidden="true">☰</span>${esc(index)}</button>
-        ${showTopicQr ? `<button type="button" class="guide-qr-button" data-action="topic-qr" aria-haspopup="dialog" aria-label="${esc(qrText.qrButtonLabel)}" title="${esc(qrText.qrButtonLabel)}">${qrButtonIcon}<span>${esc(qrText.qrButton)}</span></button>` : ''}
-      </div>
+      <button type="button" class="guide-index-button" data-action="${menuAction}"><span aria-hidden="true">☰</span>${esc(index)}</button>
       <div class="guide-pagination">
         <button type="button" class="guide-step-button" data-action="${previousAction}" aria-label="${esc(previous)}" title="${esc(previous)}"${first ? ' disabled' : ''}>‹</button>
         ${page ? `<span class="guide-page-count">${page}</span>` : ''}
@@ -179,7 +174,6 @@ function visitBottomHTML() {
     page: `${index + 1} / ${VISIT_TOPICS.length}`,
     first: index <= 0,
     last: index === VISIT_TOPICS.length - 1,
-    showTopicQr: Boolean(state.visit),
   });
 }
 function iframeHTML(route, title, { noAudio = false, spotMode = false, guideMode = false } = {}) {
