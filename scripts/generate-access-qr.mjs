@@ -1,4 +1,4 @@
-﻿import fs from 'node:fs/promises';
+import fs from 'node:fs/promises';
 import path from 'node:path';
 import QRCode from 'qrcode';
 import { VISIT_TOPICS } from '../public/assets/js/visit-topics.js';
