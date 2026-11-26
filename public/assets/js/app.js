@@ -4,11 +4,13 @@ import { pages, pathFor, resolveRoute } from './routes.js';
 import { VISIT_TOPICS, visitTitle } from './visit-topics.js';
 import { mountQRScanner, matchSiteQR, qrCopy } from './qr-scanner.js';
 import { ensureSession, sessionCopy } from './session.js';
+import { geofenceCopy, formatDistanceKm, startGeofenceWatcher } from './geofence.js';
 
 const app = document.querySelector('#app');
-const state = { mode: 'home', lang: 'vi', spot: null, visit: null, menu: false, cover: true, menuReturn: null, langPicker: false, langPickerDismissible: false, sessionExpiresAt: 0, sessionExpired: false };
+const state = { mode: 'home', lang: 'vi', spot: null, visit: null, menu: false, cover: true, menuReturn: null, langPicker: false, langPickerDismissible: false, sessionExpiresAt: 0, sessionExpired: false, geoLock: null, geoChecking: false };
 let activeQrScanner = null;
 let sessionTimerId = null;
+let geoWatcher = null;
 const qrScanIcon = '<svg class="top-qr-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M4 8V5.5A1.5 1.5 0 0 1 5.5 4H8M16 4h2.5A1.5 1.5 0 0 1 20 5.5V8M20 16v2.5a1.5 1.5 0 0 1-1.5 1.5H16M8 20H5.5A1.5 1.5 0 0 1 4 18.5V16" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/><path d="M7.5 12h9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><rect x="8.5" y="7.5" width="2.4" height="2.4" rx="0.5" fill="currentColor"/><rect x="13.1" y="7.5" width="2.4" height="2.4" rx="0.5" fill="currentColor"/><rect x="8.5" y="14.1" width="2.4" height="2.4" rx="0.5" fill="currentColor"/><rect x="13.1" y="14.1" width="2.4" height="2.4" rx="0.5" fill="currentColor"/></svg>';
 const menuItems = [
   ['so-do-den-dinh', 'Sơ đồ tham quan\nđền vua Đinh', '/images/menu/item-1-den-dinh.png', 'dth'],
@@ -103,6 +105,30 @@ function topHTML(spotMode = false) {
     ${languageButtonsHTML()}
     <button type="button" class="top-control-btn top-qr-btn" data-action="qr" aria-haspopup="dialog" aria-label="${scanLabel}" title="${scanLabel}">${qrScanIcon}<span class="guide-qr-label">${scanLabel}</span></button>
   </div></div>`;
+}
+function geoLockScreenHTML() {
+  const g = geofenceCopy(state.lang);
+  const isDenied = state.geoLock?.reason === 'denied';
+  const title = isDenied ? g.deniedTitle : g.outTitle;
+  const badge = isDenied ? g.deniedBadge : g.outBadge;
+  const desc = isDenied ? g.deniedDesc : g.outDesc;
+  const distanceLine = !isDenied && Number.isFinite(state.geoLock?.distanceMeters)
+    ? `<p class="session-geo-distance">${esc(g.distanceText(formatDistanceKm(state.geoLock.distanceMeters, state.lang)))}</p>`
+    : '';
+  const btnText = state.geoChecking ? g.checking : g.recheckBtn;
+  return `<section class="session-expired-screen geo-locked-screen" role="alertdialog" aria-modal="true" aria-labelledby="geo-lock-title">
+    <div class="session-expired-card">
+      <div class="session-expired-crest" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-6.5-5.6-6.5-11A6.5 6.5 0 0 1 18.5 10c0 5.4-6.5 11-6.5 11Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.4" stroke="currentColor" stroke-width="1.8"/></svg>
+      </div>
+      <p class="session-expired-eyebrow">CỐ ĐÔ HOA LƯ · AUDIO GUIDE</p>
+      <h1 id="geo-lock-title" class="session-expired-title">${esc(title)}</h1>
+      <p class="session-expired-badge">${esc(badge)}</p>
+      ${distanceLine}
+      <p class="session-expired-desc">${esc(desc)}</p>
+      <button type="button" class="session-renew-btn" data-action="recheck-geo"${state.geoChecking ? ' disabled' : ''}><span>${esc(btnText)}</span></button>
+    </div>
+  </section>`;
 }
 function expiredScreenHTML() {
   const s = sessionCopy(state.lang);
@@ -270,6 +296,11 @@ function setupFrames(container) {
   }, { once:true }));
 }
 function renderApp() {
+  if (state.geoLock) {
+    closeQRModal();
+    app.innerHTML = `<div class="experience-layout visit-layout"><div class="experience-stage">${geoLockScreenHTML()}</div></div>`;
+    return;
+  }
   if (state.sessionExpired) {
     closeQRModal();
     app.innerHTML = `<div class="experience-layout visit-layout"><div class="experience-stage">${expiredScreenHTML()}</div></div>`;
@@ -514,6 +545,7 @@ function changeLanguage(lang) {
   state.langPickerDismissible = false;
   try { localStorage.setItem('lang', lang); } catch { /* storage unavailable */ }
   renderApp();
+  ensureGeofenceWatcher();
 }
 app.addEventListener('click', event => {
   if (event.target.classList?.contains('lang-picker-backdrop') && state.langPickerDismissible) {
@@ -544,6 +576,11 @@ app.addEventListener('click', event => {
     case 'close-menu': state.menu=false; app.querySelector('.toc-modal-backdrop')?.remove(); break;
     case 'qr': showQR(); break;
     case 'renew-qr': showQR({ renewMode: true }); break;
+    case 'recheck-geo':
+      state.geoChecking = true;
+      renderApp();
+      ensureGeofenceWatcher(true);
+      break;
     case 'topic-qr': showTopicQR(state.visit); break;
     case 'close-qr': closeQRModal(); break;
     case 'close-spot': state.spot=null; updateURL(); app.querySelector('.spot-content-overlay')?.remove(); break;
@@ -569,6 +606,36 @@ window.addEventListener('message', event => {
   else if (data?.type === 'spot-close' && state.spot) { state.spot=null; updateURL(); app.querySelector('.spot-content-overlay')?.remove(); }
   else if (data?.type === 'spot-lang') changeLanguage(data.lang);
 });
+function handleGeoStatus(status) {
+  const wasChecking = state.geoChecking;
+  state.geoChecking = false;
+  if (status.transientError) {
+    if (wasChecking && state.geoLock) renderApp();
+    return;
+  }
+  if (status.allowed) {
+    if (state.geoLock) {
+      state.geoLock = null;
+      renderApp();
+    }
+    return;
+  }
+  const prevReason = state.geoLock?.reason;
+  const prevDist = state.geoLock?.distanceMeters;
+  state.geoLock = { reason: status.reason, distanceMeters: status.distanceMeters };
+  if (wasChecking || prevReason !== status.reason || Math.abs((prevDist ?? -1) - (status.distanceMeters ?? -1)) >= 100) {
+    renderApp();
+  }
+}
+
+function ensureGeofenceWatcher(forceCheck = false) {
+  if (!geoWatcher) {
+    geoWatcher = startGeofenceWatcher({ onStatus: handleGeoStatus });
+  } else if (forceCheck) {
+    geoWatcher.checkNow();
+  }
+}
+
 function tickSession() {
   if (state.sessionExpired || !state.sessionExpiresAt) return;
   if (Date.now() >= state.sessionExpiresAt) {
@@ -636,3 +703,4 @@ if (hasQrParam) {
 }
 renderApp();
 startSessionWatcher();
+if (!state.langPicker) ensureGeofenceWatcher();
