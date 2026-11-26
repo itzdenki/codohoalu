@@ -2,11 +2,13 @@ import { getLangData } from './i18n.js';
 import { HOTSPOTS_DTH, HOTSPOTS_LDH } from './hotspots.js';
 import { pages, pathFor, resolveRoute } from './routes.js';
 import { VISIT_TOPICS, visitTitle } from './visit-topics.js';
-import { mountQRScanner, qrCopy } from './qr-scanner.js';
+import { mountQRScanner, matchSiteQR, qrCopy } from './qr-scanner.js';
+import { ensureSession, formatRemaining, sessionCopy, SESSION_WARN_MS } from './session.js';
 
 const app = document.querySelector('#app');
-const state = { mode: 'home', lang: 'vi', spot: null, visit: null, menu: false, cover: true, menuReturn: null, langPicker: false, langPickerDismissible: false };
+const state = { mode: 'home', lang: 'vi', spot: null, visit: null, menu: false, cover: true, menuReturn: null, langPicker: false, langPickerDismissible: false, sessionExpiresAt: 0, sessionExpired: false };
 let activeQrScanner = null;
+let sessionTimerId = null;
 const qrScanIcon = '<svg class="top-qr-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false"><path d="M4 8V5.5A1.5 1.5 0 0 1 5.5 4H8M16 4h2.5A1.5 1.5 0 0 1 20 5.5V8M20 16v2.5a1.5 1.5 0 0 1-1.5 1.5H16M8 20H5.5A1.5 1.5 0 0 1 4 18.5V16" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/><path d="M7.5 12h9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><rect x="8.5" y="7.5" width="2.4" height="2.4" rx="0.5" fill="currentColor"/><rect x="13.1" y="7.5" width="2.4" height="2.4" rx="0.5" fill="currentColor"/><rect x="8.5" y="14.1" width="2.4" height="2.4" rx="0.5" fill="currentColor"/><rect x="13.1" y="14.1" width="2.4" height="2.4" rx="0.5" fill="currentColor"/></svg>';
 const menuItems = [
   ['so-do-den-dinh', 'Sơ đồ tham quan\nđền vua Đinh', '/images/menu/item-1-den-dinh.png', 'dth'],
@@ -102,11 +104,34 @@ function topHTML(spotMode = false) {
     <button type="button" class="top-control-btn top-qr-btn" data-action="qr" aria-haspopup="dialog" aria-label="${scanLabel}" title="${scanLabel}">${qrScanIcon}<span class="guide-qr-label">${scanLabel}</span></button>
   </div></div>`;
 }
+function sessionBadgeHTML(compact = false) {
+  if (!state.sessionExpiresAt || state.sessionExpired) return '';
+  const remaining = Math.max(0, state.sessionExpiresAt - Date.now());
+  const isLow = remaining <= SESSION_WARN_MS;
+  const label = esc(sessionCopy(state.lang).timerLabel);
+  return `<span class="session-timer-pill${compact ? ' is-compact' : ''}${isLow ? ' is-low' : ''}" role="timer" aria-label="${label}" title="${label}"><svg class="session-timer-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.9"/><path d="M12 7.5V12l3 1.8" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="session-timer-value">${formatRemaining(remaining)}</span></span>`;
+}
+function expiredScreenHTML() {
+  const s = sessionCopy(state.lang);
+  return `<section class="session-expired-screen" role="alertdialog" aria-modal="true" aria-labelledby="session-expired-title">
+    <div class="session-expired-card">
+      <div class="session-expired-crest" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5.2l3.2 2" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <p class="session-expired-eyebrow">CỐ ĐÔ HOA LƯ · AUDIO GUIDE</p>
+      <h1 id="session-expired-title" class="session-expired-title">${esc(s.expiredTitle)}</h1>
+      <p class="session-expired-badge">${esc(s.expiredSubtitle)}</p>
+      <p class="session-expired-desc">${esc(s.expiredDesc)}</p>
+      <button type="button" class="session-renew-btn" data-action="renew-qr">${qrScanIcon}<span>${esc(s.rescanBtn)}</span></button>
+    </div>
+  </section>`;
+}
 function guideBottomHTML({ menuAction, previousAction, nextAction, page = '', first = false, last = false }) {
   const { index, previous, next } = guide();
   return `<nav class="home-bottom-bar guide-bottom-bar" aria-label="${esc(toc().title)}">
     <div class="guide-bar-inner">
       <button type="button" class="guide-index-button" data-action="${menuAction}"><span aria-hidden="true">☰</span>${esc(index)}</button>
+      ${sessionBadgeHTML(true)}
       <div class="guide-pagination">
         <button type="button" class="guide-step-button" data-action="${previousAction}" aria-label="${esc(previous)}" title="${esc(previous)}"${first ? ' disabled' : ''}>‹</button>
         ${page ? `<span class="guide-page-count">${page}</span>` : ''}
@@ -175,6 +200,7 @@ function coverHTML() {
           <span class="cover-title-line" data-text="${esc(cover.title2)}">${esc(cover.title2)}</span>
         </h1>
         <p class="landing-cover-subtitle">${esc(cover.subtitle)}</p>
+        <div class="landing-cover-session">${sessionBadgeHTML(false)}</div>
       </div>
       <footer class="landing-cover-actions">
         <button type="button" class="landing-cover-menu" data-action="enter-visit" aria-label="${menuLabel}" title="${menuLabel}">
@@ -253,6 +279,11 @@ function setupFrames(container) {
   }, { once:true }));
 }
 function renderApp() {
+  if (state.sessionExpired) {
+    closeQRModal();
+    app.innerHTML = `<div class="experience-layout visit-layout"><div class="experience-stage">${expiredScreenHTML()}</div></div>`;
+    return;
+  }
   app.innerHTML = `<div class="experience-layout ${state.mode === 'home' || state.mode === 'visit' ? 'visit-layout' : ''}">${state.mode === 'home' || state.mode === 'visit' ? '' : navHTML()}<div class="experience-stage"></div></div>`;
   renderStage();
 }
@@ -314,11 +345,12 @@ function closeQRModal() {
   app.querySelector('.qr-modal-backdrop')?.remove();
 }
 
-function showQR() {
+function showQR({ renewMode = false } = {}) {
   closeQRModal();
   const stage = app.querySelector('.experience-stage');
   if (!stage) return;
   const t = qrCopy(state.lang);
+  const s = sessionCopy(state.lang);
   const homeUrl = `${location.origin}/`;
   const overlay = document.createElement('div');
   overlay.className = 'pdf-modal-backdrop qr-modal-backdrop';
@@ -327,13 +359,13 @@ function showQR() {
   overlay.setAttribute('aria-labelledby', 'cover-qr-title');
   overlay.innerHTML = `<div class="pdf-modal-card qr-modal-card">
     <div class="pdf-modal-header">
-      <h3 id="cover-qr-title">${esc(t.homeModalTitle)}</h3>
+      <h3 id="cover-qr-title">${esc(renewMode ? s.rescanBtn : t.homeModalTitle)}</h3>
       <button type="button" class="pdf-close-btn" data-action="close-qr" aria-label="${esc(toc().close)}">✕</button>
     </div>
-    <div class="qr-modal-tabs" role="tablist">
+    ${renewMode ? '' : `<div class="qr-modal-tabs" role="tablist">
       <button type="button" class="qr-tab-btn is-active" role="tab" aria-selected="true" data-qr-tab="scan">${esc(t.tabScan)}</button>
       <button type="button" class="qr-tab-btn" role="tab" aria-selected="false" data-qr-tab="home">${esc(t.tabHomeQr)}</button>
-    </div>
+    </div>`}
     <div class="qr-modal-body" data-qr-panel="scan">
       <div class="qr-scanner-box" data-camera="idle">
         <video class="qr-scanner-video" autoplay muted playsinline></video>
@@ -346,16 +378,16 @@ function showQR() {
         <button type="button" class="qr-retry-btn" hidden>${esc(t.retry)}</button>
         <label class="qr-upload-btn">${esc(t.chooseImage)}<input type="file" accept="image/*" class="qr-file-input" hidden></label>
       </div>
-      <p class="qr-scanner-hint">${esc(t.scanHint)}</p>
+      <p class="qr-scanner-hint">${esc(renewMode ? s.expiredDesc : t.scanHint)}</p>
     </div>
-    <div class="qr-modal-body" data-qr-panel="home" hidden>
+    ${renewMode ? '' : `<div class="qr-modal-body" data-qr-panel="home" hidden>
       <div class="qr-code-frame">
         <img src="/images/qr/00-home.png" alt="${esc(t.tabHomeQr)}" width="220" height="220" class="qr-image">
       </div>
       <p class="qr-url-badge">${esc(homeUrl)}</p>
       <p>${esc(t.homeQrDesc)}</p>
       <a class="qr-download-btn" href="/images/qr/00-home.png" download="00-home-codohoalu-qr.png">${esc(t.downloadQr)}</a>
-    </div>
+    </div>`}
   </div>`;
 
   const startScanner = () => {
@@ -370,9 +402,24 @@ function showQR() {
       fileInput: overlay.querySelector('.qr-file-input'),
       lang: state.lang,
       topics: VISIT_TOPICS,
-      onMatch: (topic) => {
+      matcher: renewMode ? matchSiteQR : null,
+      invalidMessage: renewMode ? s.invalidRescan : '',
+      successMessage: renewMode ? () => s.renewed : null,
+      onMatch: (result) => {
         closeQRModal();
-        navigateVisit(topic.id);
+        if (renewMode) {
+          const renewed = ensureSession({ renew: true });
+          state.sessionExpiresAt = renewed.expiresAt;
+          state.sessionExpired = false;
+          startSessionWatcher();
+          if (result?.kind === 'visit' && result.topic) {
+            navigateVisit(result.topic.id);
+          } else {
+            renderApp();
+          }
+          return;
+        }
+        navigateVisit(result.id);
       },
     });
   };
@@ -505,6 +552,7 @@ app.addEventListener('click', event => {
     case 'menu': openMenu(); break;
     case 'close-menu': state.menu=false; app.querySelector('.toc-modal-backdrop')?.remove(); break;
     case 'qr': showQR(); break;
+    case 'renew-qr': showQR({ renewMode: true }); break;
     case 'topic-qr': showTopicQR(state.visit); break;
     case 'close-qr': closeQRModal(); break;
     case 'close-spot': state.spot=null; updateURL(); app.querySelector('.spot-content-overlay')?.remove(); break;
@@ -530,6 +578,39 @@ window.addEventListener('message', event => {
   else if (data?.type === 'spot-close' && state.spot) { state.spot=null; updateURL(); app.querySelector('.spot-content-overlay')?.remove(); }
   else if (data?.type === 'spot-lang') changeLanguage(data.lang);
 });
+function tickSession() {
+  if (state.sessionExpired || !state.sessionExpiresAt) return;
+  const remaining = Math.max(0, state.sessionExpiresAt - Date.now());
+  if (remaining <= 0) {
+    state.sessionExpired = true;
+    if (sessionTimerId !== null) {
+      window.clearInterval?.(sessionTimerId);
+      sessionTimerId = null;
+    }
+    renderApp();
+    return;
+  }
+  const formatted = formatRemaining(remaining);
+  const isLow = remaining <= SESSION_WARN_MS;
+  app.querySelectorAll?.('.session-timer-pill').forEach?.((pill) => {
+    pill.classList?.toggle('is-low', isLow);
+    const val = pill.querySelector?.('.session-timer-value');
+    if (val && val.textContent !== formatted) val.textContent = formatted;
+  });
+}
+
+function startSessionWatcher() {
+  if (sessionTimerId !== null) {
+    window.clearInterval?.(sessionTimerId);
+    sessionTimerId = null;
+  }
+  if (state.sessionExpired || typeof window.setInterval !== 'function') return;
+  sessionTimerId = window.setInterval(tickSession, 1000);
+}
+
+document.addEventListener?.('visibilitychange', tickSession);
+window.addEventListener('focus', tickSession);
+
 window.addEventListener('keydown', (event) => {
   if (event.key === 'Escape' && app.querySelector('.qr-modal-backdrop')) closeQRModal();
   else if (event.key === 'Escape' && state.langPicker && state.langPickerDismissible) {
@@ -559,12 +640,17 @@ if (labels[queryLang]) {
   hasSavedLang = true;
   try { localStorage.setItem('lang', queryLang); } catch { /* storage unavailable */ }
 }
-if (state.mode === 'home' && state.cover && !hasSavedLang) {
+const hasQrParam = params.has('qr');
+const session = ensureSession({ renew: hasQrParam });
+state.sessionExpiresAt = session.expiresAt;
+state.sessionExpired = !session.active;
+if (!state.sessionExpired && state.mode === 'home' && state.cover && !hasSavedLang) {
   state.langPicker = true;
   state.langPickerDismissible = false;
 }
-if (params.has('qr')) {
+if (hasQrParam) {
   params.delete('qr');
   history.replaceState(null,'',location.pathname + (params.toString() ? '?' + params : '') + location.hash);
 }
 renderApp();
+startSessionWatcher();

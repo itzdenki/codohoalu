@@ -183,6 +183,34 @@ export function matchTopicFromQR(rawText, topics = VISIT_TOPICS) {
   return topics.find((topic) => topic.slug === slug) || null;
 }
 
+/**
+ * Matches any of the 15 official Hoa Lu QR codes (Home QR or 14 content QRs)
+ * for renewing an expired 1-hour session.
+ */
+export function matchSiteQR(rawText, topics = VISIT_TOPICS) {
+  const topic = matchTopicFromQR(rawText, topics);
+  if (topic) return { kind: 'visit', topic };
+  if (typeof rawText !== 'string') return null;
+  const text = rawText.trim();
+  if (!text) return null;
+  try {
+    if (/^https?:\/\//i.test(text)) {
+      const url = new URL(text);
+      const isHomePath = url.pathname === '/' || url.pathname === '/index.html';
+      const isKnownHost = url.hostname === 'codohoalu.pages.dev'
+        || url.hostname === 'localhost'
+        || url.hostname === '127.0.0.1'
+        || (typeof location !== 'undefined' && url.hostname === location.hostname);
+      if (isHomePath && isKnownHost) return { kind: 'home', topic: null };
+    } else if (text === '/' || text === '/index.html') {
+      return { kind: 'home', topic: null };
+    }
+  } catch {
+    return null;
+  }
+  return null;
+}
+
 let jsQRPromise = null;
 export function loadJsQR() {
   if (typeof window !== 'undefined' && typeof window.jsQR === 'function') {
@@ -292,6 +320,9 @@ export function mountQRScanner({
   fileInput,
   lang = 'vi',
   topics = VISIT_TOPICS,
+  matcher = null,
+  invalidMessage = '',
+  successMessage = null,
   onMatch,
 }) {
   const t = qrCopy(lang);
@@ -349,16 +380,19 @@ export function mountQRScanner({
 
   function handleDecodedText(rawText) {
     if (stopped) return;
-    const topic = matchTopicFromQR(rawText, topics);
-    if (!topic) {
-      showError(t.invalidQr);
+    const result = matcher ? matcher(rawText, topics) : matchTopicFromQR(rawText, topics);
+    if (!result) {
+      showError(invalidMessage || t.invalidQr);
       return;
     }
     clearError();
     paused = true;
-    setStatus(t.matched(visitTitle(topic, lang)), 'success');
+    const msg = typeof successMessage === 'function'
+      ? successMessage(result)
+      : (result?.slug ? t.matched(visitTitle(result, lang)) : t.matched('Cố đô Hoa Lư'));
+    setStatus(msg, 'success');
     stop();
-    window.setTimeout(() => onMatch(topic), 220);
+    window.setTimeout(() => onMatch(result), 220);
   }
 
   async function scanFrame() {

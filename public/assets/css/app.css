@@ -3386,6 +3386,148 @@ body,
   outline-offset: -2px;
 }
 
+.session-timer-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  border: 1px solid rgba(244, 216, 158, 0.55);
+  border-radius: 999px;
+  background: rgba(12, 34, 58, 0.68);
+  backdrop-filter: blur(4px);
+  color: #fff3d2;
+  font: 600 12px/1 system-ui, -apple-system, sans-serif;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.session-timer-pill.is-compact {
+  padding: 5px 8px;
+  border-color: rgba(217, 179, 108, 0.42);
+  background: rgba(255, 244, 216, 0.08);
+  color: var(--gold-light);
+  font-size: 11.5px;
+}
+
+.session-timer-pill.is-low {
+  border-color: #f87171;
+  background: rgba(153, 27, 27, 0.55);
+  color: #fee2e2;
+}
+
+.session-timer-icon {
+  width: 14px;
+  height: 14px;
+  flex: none;
+  display: block;
+}
+
+.session-expired-screen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  background:
+    radial-gradient(circle at 50% 25%, rgba(128, 30, 26, 0.45), transparent 65%),
+    var(--red-deep);
+}
+
+.session-expired-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 370px;
+  padding: 26px 22px 24px;
+  border: 2px solid #d59d43;
+  border-radius: 20px;
+  background: linear-gradient(180deg, #fffbf0 0%, #f8e7be 100%);
+  box-shadow:
+    0 20px 50px rgba(10, 2, 2, 0.62),
+    inset 0 0 0 2px rgba(255, 252, 242, 0.85);
+  color: #5b1410;
+  text-align: center;
+}
+
+.session-expired-crest {
+  display: grid;
+  place-items: center;
+  width: 58px;
+  height: 58px;
+  margin-bottom: 12px;
+  border: 2px solid #d59d43;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 25%, #b52520, #6d110e);
+  color: #fce29c;
+  box-shadow: 0 6px 16px rgba(96, 20, 12, 0.32);
+}
+
+.session-expired-crest svg {
+  width: 30px;
+  height: 30px;
+  display: block;
+}
+
+.session-expired-eyebrow {
+  margin: 0 0 6px;
+  color: #9c6a24;
+  font: 700 10px/1.3 'Be Vietnam Pro', system-ui, sans-serif;
+  letter-spacing: 0.16em;
+}
+
+.session-expired-title {
+  margin: 0;
+  color: #651512;
+  font: 700 22px/1.25 'Playfair Display', Georgia, serif;
+}
+
+.session-expired-badge {
+  margin: 10px 0 0;
+  padding: 4px 12px;
+  border: 1px solid #d6a44e;
+  border-radius: 999px;
+  background: rgba(213, 157, 67, 0.18);
+  color: #7c3818;
+  font: 700 12px/1.3 'Be Vietnam Pro', system-ui, sans-serif;
+}
+
+.session-expired-desc {
+  margin: 12px 0 18px;
+  color: #5b3a22;
+  font: 500 13.5px/1.55 'Be Vietnam Pro', system-ui, sans-serif;
+}
+
+.session-renew-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  min-height: 46px;
+  padding: 10px 16px;
+  border: 1.5px solid #e7b556;
+  border-radius: 12px;
+  background: linear-gradient(180deg, #b52520 0%, #73120f 100%);
+  color: #fff4d6;
+  font: 700 14px/1.25 'Be Vietnam Pro', system-ui, sans-serif;
+  box-shadow: 0 6px 16px rgba(96, 18, 12, 0.34);
+  cursor: pointer;
+}
+
+.session-renew-btn:active {
+  transform: scale(0.98);
+}
+
+.session-renew-btn .top-qr-icon {
+  color: #fce29c;
+}
+
+@media (hover: hover) {
+  .session-renew-btn:hover { filter: brightness(1.08); }
+}
+
 @media (min-width: 550px) {
   .top-control-bar .guide-bar-inner {
     display: grid;

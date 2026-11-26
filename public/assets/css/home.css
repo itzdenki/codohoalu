@@ -244,6 +244,12 @@
   text-shadow: 0 0.35cqw 1.1cqw rgba(4, 20, 48, 0.72);
 }
 
+.landing-cover-session {
+  display: flex;
+  justify-content: center;
+  margin-top: 2.2cqw;
+}
+
 .landing-cover-actions {
   position: absolute;
   z-index: 2;
