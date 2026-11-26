@@ -184,6 +184,12 @@ body.reader-guide {
   gap: 10px;
   min-height: 0;
   min-width: 0;
+  animation: guideViewEnter 0.28s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes guideViewEnter {
+  from { opacity: 0; transform: translateY(8px) scale(0.99); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
 }
 
 .guide-story-photo {
@@ -203,6 +209,12 @@ body.reader-guide {
     0 0 0 1px rgba(154, 92, 18, 0.44);
   cursor: pointer;
   user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 0.18s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.18s ease;
+}
+
+.guide-story-photo:active {
+  transform: scale(0.985);
 }
 
 .guide-photo-viewport {
@@ -396,6 +408,15 @@ body.reader-guide {
   transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
+.guide-story-photo[data-playing="false"] .guide-photo-play {
+  animation: guidePlayPulse 2.4s ease-in-out infinite;
+}
+
+@keyframes guidePlayPulse {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); box-shadow: 0 6px 18px rgba(34, 10, 6, 0.48), 0 0 0 0 rgba(252, 224, 151, 0.48); }
+  50% { transform: translate(-50%, -50%) scale(1.05); box-shadow: 0 8px 22px rgba(34, 10, 6, 0.56), 0 0 0 10px rgba(252, 224, 151, 0); }
+}
+
 .guide-story-photo[data-playing="true"] .guide-photo-play {
   opacity: 0;
   visibility: hidden;
@@ -414,6 +435,12 @@ body.reader-guide {
     inset 0 0 0 2.5px rgba(255, 251, 240, 0.85);
   cursor: pointer;
   user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 0.16s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.18s ease;
+}
+
+.guide-caption-card:active {
+  transform: scale(0.985);
 }
 
 .guide-caption-curl {
@@ -519,6 +546,7 @@ body.reader-guide {
   box-shadow:
     0 6px 20px rgba(96, 56, 16, 0.12),
     inset 0 0 0 1px rgba(255, 253, 246, 0.9);
+  animation: guideViewEnter 0.28s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 .guide-page-viewport {
@@ -527,6 +555,24 @@ body.reader-guide {
   margin: clamp(11px, 3.2vw, 16px) clamp(12px, 3.8vw, 18px) 8px;
   overflow: hidden;
   direction: ltr;
+}
+
+.guide-page-viewport.is-turn-next {
+  animation: guidePageTurnNext 0.24s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.guide-page-viewport.is-turn-prev {
+  animation: guidePageTurnPrev 0.24s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes guidePageTurnNext {
+  from { opacity: 0.5; transform: translateX(12px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes guidePageTurnPrev {
+  from { opacity: 0.5; transform: translateX(-12px); }
+  to { opacity: 1; transform: translateX(0); }
 }
 
 .guide-page-flow {
@@ -872,7 +918,42 @@ body.reader-guide {
   }
 }
 
+.guide-audio-toggle[data-playing="true"] {
+  box-shadow:
+    0 2px 9px rgba(138, 28, 22, 0.38),
+    0 0 0 2px rgba(231, 181, 86, 0.45),
+    inset 0 1px 1px rgba(255, 232, 192, 0.45);
+}
+
+.has-tap-ripple {
+  position: relative;
+  overflow: hidden;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.guide-tap-ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(213, 157, 67, 0.48) 0%, rgba(162, 54, 34, 0.16) 58%, transparent 74%);
+  transform: scale(0);
+  pointer-events: none;
+  animation: guideTapRipple 0.44s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes guideTapRipple {
+  from { transform: scale(0); opacity: 0.92; }
+  to { transform: scale(1.15); opacity: 0; }
+}
+
 @media (prefers-reduced-motion: reduce) {
+  .guide-tap-ripple { display: none; }
+  .guide-story-view,
+  .guide-reading-view,
+  .guide-story-photo[data-playing="false"] .guide-photo-play,
+  .guide-page-viewport.is-turn-next,
+  .guide-page-viewport.is-turn-prev {
+    animation: none;
+  }
   .guide-story-view[data-playing="true"] .guide-wave-stick {
     animation: none;
     transform: scaleY(0.85);
@@ -889,6 +970,8 @@ body.reader-guide {
     animation: guideSlideFadeIn 0.35s ease-out both;
   }
   .guide-pdf-button,
+  .guide-story-photo,
+  .guide-caption-card,
   .guide-photo-play,
   .guide-slide-dot,
   .guide-page-buttons button,

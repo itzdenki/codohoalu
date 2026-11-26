@@ -3538,3 +3538,154 @@ body,
   .guide-home-label,
   .guide-qr-label { display: inline; }
 }
+
+/* =========================================================
+   TACTILE PRESS ANIMATIONS, GOLDEN TAP RIPPLES & TRANSITIONS
+   ========================================================= */
+.has-tap-ripple {
+  position: relative;
+  overflow: hidden;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.tap-ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(252, 224, 151, 0.52) 0%, rgba(213, 157, 67, 0.22) 55%, transparent 72%);
+  transform: scale(0);
+  opacity: 0.95;
+  pointer-events: none;
+  animation: tapRipple 0.46s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes tapRipple {
+  0% { transform: scale(0); opacity: 0.9; }
+  100% { transform: scale(1.15); opacity: 0; }
+}
+
+.top-home-btn,
+.top-qr-btn,
+.guide-languages .top-flag-btn,
+.guide-index-button,
+.guide-step-button,
+.qr-tab-btn,
+.qr-camera-btn,
+.qr-retry-btn,
+.qr-upload-btn,
+.qr-download-btn,
+.session-renew-btn,
+.pdf-close-btn,
+.toc-card,
+.toc-close-pill-btn,
+.toc-top-close-btn {
+  -webkit-tap-highlight-color: transparent;
+  transition:
+    transform 0.16s cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 0.18s ease,
+    border-color 0.18s ease,
+    box-shadow 0.18s ease,
+    filter 0.18s ease,
+    opacity 0.18s ease;
+}
+
+.top-home-btn:active,
+.top-qr-btn:active,
+.guide-languages .top-flag-btn:active,
+.guide-step-button:enabled:active,
+.pdf-close-btn:active,
+.toc-top-close-btn:active {
+  transform: scale(0.88);
+}
+
+.guide-index-button:active,
+.qr-tab-btn:active,
+.qr-retry-btn:active,
+.qr-upload-btn:active,
+.qr-download-btn:active,
+.session-renew-btn:active,
+.toc-close-pill-btn:active {
+  transform: scale(0.95);
+}
+
+.qr-camera-btn:active {
+  transform: translate(-50%, -50%) scale(0.93);
+}
+
+.toc-card:active {
+  transform: scale(0.96);
+}
+
+.guide-languages .top-flag-btn.is-active {
+  animation: flagSelectPop 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes flagSelectPop {
+  0% { transform: scale(0.84); }
+  65% { transform: scale(1.07); }
+  100% { transform: scale(1); }
+}
+
+.pdf-modal-backdrop {
+  animation: modalFadeIn 0.2s ease-out both;
+}
+
+.pdf-modal-card,
+.session-expired-card {
+  animation: modalCardIn 0.28s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.toc-parchment-sheet {
+  animation: modalCardIn 0.28s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes modalFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes modalCardIn {
+  from { opacity: 0; transform: translateY(14px) scale(0.95); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.sodo-iframe,
+.spot-content-frame {
+  opacity: 0;
+  transition: opacity 0.24s ease-out;
+}
+
+.sodo-iframe.is-loaded,
+.spot-content-frame.is-loaded {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tap-ripple { display: none; }
+  .top-home-btn,
+  .top-qr-btn,
+  .guide-languages .top-flag-btn,
+  .guide-index-button,
+  .guide-step-button,
+  .qr-tab-btn,
+  .qr-camera-btn,
+  .qr-retry-btn,
+  .qr-upload-btn,
+  .qr-download-btn,
+  .session-renew-btn,
+  .pdf-close-btn,
+  .toc-card,
+  .toc-close-pill-btn,
+  .toc-top-close-btn,
+  .sodo-iframe,
+  .spot-content-frame {
+    transition: none;
+    animation: none;
+  }
+  .pdf-modal-backdrop,
+  .pdf-modal-card,
+  .session-expired-card,
+  .toc-parchment-sheet,
+  .guide-languages .top-flag-btn.is-active {
+    animation: none;
+  }
+}

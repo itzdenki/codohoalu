@@ -313,8 +313,15 @@ function installPageButtons(book, words) {
   }
   previous.textContent = `← ${words.previous}`;
   next.textContent = `${words.next} →`;
-  previous.addEventListener('click', () => { page--; update(); });
-  next.addEventListener('click', () => { page++; update(); });
+  function pulsePageTurn(direction) {
+    if (!viewport.classList || window.matchMedia?.('(prefers-reduced-motion: reduce)')?.matches) return;
+    const cls = direction > 0 ? 'is-turn-next' : 'is-turn-prev';
+    viewport.classList.remove('is-turn-next', 'is-turn-prev');
+    void viewport.offsetWidth;
+    viewport.classList.add(cls);
+  }
+  previous.addEventListener('click', () => { page--; update(); pulsePageTurn(-1); });
+  next.addEventListener('click', () => { page++; update(); pulsePageTurn(1); });
   flow.addEventListener('load', update, true);
   window.addEventListener('resize', update, { passive: true });
   if (typeof ResizeObserver !== 'undefined') new ResizeObserver(update).observe(viewport);
@@ -785,6 +792,27 @@ export function mountVisitGuide(audio) {
     togglePlayback();
   });
   captionCard?.addEventListener('click', togglePlayback);
+  guide.addEventListener?.('pointerdown', (event) => {
+    if (window.matchMedia?.('(prefers-reduced-motion: reduce)')?.matches) return;
+    const btn = event.target?.closest?.('.guide-page-buttons button, .guide-reading-player button, .guide-pdf-button');
+    if (!btn || btn.disabled) return;
+    const rect = btn.getBoundingClientRect?.();
+    if (!rect || !rect.width) return;
+    const size = Math.max(rect.width, rect.height) * 1.6;
+    const wave = document.createElement('span');
+    wave.className = 'guide-tap-ripple';
+    if (wave.style) {
+      wave.style.width = `${size}px`;
+      wave.style.height = `${size}px`;
+      wave.style.left = `${event.clientX - rect.left - size / 2}px`;
+      wave.style.top = `${event.clientY - rect.top - size / 2}px`;
+    }
+    btn.classList?.add('has-tap-ripple');
+    btn.append?.(wave);
+    const remove = () => wave.remove?.();
+    wave.addEventListener?.('animationend', remove, { once: true });
+    window.setTimeout?.(remove, 480);
+  }, { passive: true });
 
   document.body.append(guide);
   article.hidden = true;

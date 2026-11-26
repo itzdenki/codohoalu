@@ -106,6 +106,12 @@
   width: 100%;
   aspect-ratio: 1024 / 330;
   overflow: visible;
+  animation: coverHeaderIn 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes coverHeaderIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .landing-cover-header-bg {
@@ -260,6 +266,12 @@
   gap: 8px;
   padding: 12px;
   padding: clamp(8px, 3.6cqw, 16px);
+  animation: coverActionsIn 0.5s 0.12s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes coverActionsIn {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .landing-cover-menu {
@@ -275,6 +287,12 @@
   color: #fff9eb;
   cursor: pointer;
   box-shadow: 0 4px 10px #09101e66;
+  transition: transform 0.16s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.18s ease, background-color 0.18s ease;
+}
+
+.landing-cover-menu:active {
+  transform: scale(0.9);
+  box-shadow: 0 2px 6px #09101e88;
 }
 
 .landing-cover-menu-icon {
@@ -295,6 +313,17 @@
   background: #fff;
   box-shadow: 0 3px 10px #09101e66;
   cursor: pointer;
+  transition: transform 0.16s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.2s ease;
+  animation: qrCoverGlow 3s ease-in-out infinite;
+}
+
+.landing-cover-qr:active {
+  transform: scale(0.91);
+}
+
+@keyframes qrCoverGlow {
+  0%, 100% { box-shadow: 0 3px 10px #09101e66, 0 0 0 0 rgba(244, 216, 158, 0.35); }
+  50% { box-shadow: 0 4px 14px #09101e80, 0 0 0 5px rgba(244, 216, 158, 0); }
 }
 
 .landing-cover-qr img { display: block; width: 100%; height: 100%; }
@@ -317,6 +346,11 @@
   box-shadow: 0 4px 12px rgba(9, 16, 30, 0.48);
   cursor: pointer;
   white-space: nowrap;
+  transition: transform 0.16s cubic-bezier(0.22, 1, 0.36, 1), background-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.landing-cover-lang:active {
+  transform: scale(0.93);
 }
 
 .landing-cover-lang img {
@@ -365,6 +399,12 @@
     0 18px 44px rgba(8, 12, 24, 0.62),
     inset 0 0 0 2px rgba(255, 252, 242, 0.85);
   color: #5b1410;
+  animation: langCardIn 0.28s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes langCardIn {
+  from { opacity: 0; transform: translateY(16px) scale(0.95); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
 }
 
 .lang-picker-close {
@@ -382,6 +422,11 @@
   color: #6b1d17;
   font-size: 14px;
   cursor: pointer;
+  transition: transform 0.14s ease, background-color 0.16s ease;
+}
+
+.lang-picker-close:active {
+  transform: scale(0.88);
 }
 
 .lang-picker-header {
@@ -432,11 +477,32 @@
   font: 700 15px/1.25 'Be Vietnam Pro', system-ui, sans-serif;
   text-align: left;
   cursor: pointer;
-  transition: transform 0.12s ease, background-color 0.15s ease, border-color 0.15s ease;
+  transition: transform 0.15s cubic-bezier(0.22, 1, 0.36, 1), background-color 0.16s ease, border-color 0.16s ease, box-shadow 0.16s ease;
+  animation: langRowIn 0.3s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.lang-choice-btn:nth-child(1) { animation-delay: 0.03s; }
+.lang-choice-btn:nth-child(2) { animation-delay: 0.07s; }
+.lang-choice-btn:nth-child(3) { animation-delay: 0.11s; }
+.lang-choice-btn:nth-child(4) { animation-delay: 0.15s; }
+.lang-choice-btn:nth-child(5) { animation-delay: 0.19s; }
+
+@keyframes langRowIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .lang-choice-btn:active {
-  transform: scale(0.98);
+  transform: scale(0.965);
+  box-shadow: 0 1px 3px rgba(114, 68, 16, 0.18);
+}
+
+.lang-choice-btn .lang-choice-arrow {
+  transition: transform 0.16s ease;
+}
+
+.lang-choice-btn:active .lang-choice-arrow {
+  transform: translateX(3px);
 }
 
 .lang-choice-btn.is-active {
@@ -484,18 +550,31 @@
 }
 
 @media (hover: hover) {
-  .landing-cover-lang:hover { background: rgba(18, 59, 92, 0.96); }
+  .landing-cover-menu:hover { transform: translateY(-1px); background: #143f63; }
+  .landing-cover-qr:hover { transform: translateY(-2px) scale(1.03); }
+  .landing-cover-lang:hover { background: rgba(18, 59, 92, 0.96); transform: translateY(-1px); }
   .lang-choice-btn:hover {
     border-color: #b6761b;
     background: linear-gradient(180deg, #fff8e6 0%, #f5da9f 100%);
   }
+  .lang-choice-btn:hover .lang-choice-arrow { transform: translateX(3px); }
 }
 
 .qr-modal-card { max-height: 100%; overflow: auto; }
 .qr-modal-card .qr-image { width: min(200px, 100%); height: auto; padding: 0; }
 
 @media (prefers-reduced-motion: reduce) {
+  .landing-cover-header,
   .landing-cover-title-wrap,
-  .lang-picker-backdrop { animation: none; }
-  .lang-choice-btn { transition: none; }
+  .landing-cover-actions,
+  .landing-cover-qr,
+  .lang-picker-backdrop,
+  .lang-picker-card,
+  .lang-choice-btn { animation: none; }
+  .landing-cover-menu,
+  .landing-cover-qr,
+  .landing-cover-lang,
+  .lang-picker-close,
+  .lang-choice-btn,
+  .lang-choice-btn .lang-choice-arrow { transition: none; }
 }

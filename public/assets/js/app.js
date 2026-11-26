@@ -254,7 +254,7 @@ function iframeHTML(route, title, { noAudio = false, spotMode = false, guideMode
   if (noAudio) query.set('noaudio', '1');
   if (guideMode) {
     query.set('view', 'guide');
-    query.set('v', '12');
+    query.set('v', '13');
   }
   return `<div class="spot-content-loading" role="status">Đang tải nội dung…</div><iframe class="${spotMode ? 'spot-content-frame' : 'sodo-iframe'}" title="${esc(title)}" src="/${esc(route)}/index_${languageFiles[state.lang]}.html?${query}"${guideMode ? ' allow="autoplay"' : ''} style="visibility:hidden"></iframe>`;
 }
@@ -266,6 +266,7 @@ function setupFrames(container) {
   container.querySelectorAll('iframe').forEach(frame => frame.addEventListener('load', () => {
     frame.contentWindow?.postMessage({ type:'parent-lang', lang:state.lang }, location.origin);
     frame.style.visibility = 'visible';
+    frame.classList?.add('is-loaded');
     frame.parentElement.querySelector('.spot-content-loading')?.remove();
   }, { once:true }));
 }
@@ -515,6 +516,28 @@ function changeLanguage(lang) {
   try { localStorage.setItem('lang', lang); } catch { /* storage unavailable */ }
   renderApp();
 }
+function spawnTapRipple(event) {
+  if (typeof window === 'undefined' || window.matchMedia?.('(prefers-reduced-motion: reduce)')?.matches) return;
+  const target = event.target?.closest?.('button, .qr-upload-btn, .qr-download-btn');
+  if (!target || target.disabled || target.classList?.contains('visit-topic') || target.classList?.contains('toc-card')) return;
+  const rect = target.getBoundingClientRect?.();
+  if (!rect || !rect.width || !rect.height) return;
+  const size = Math.max(rect.width, rect.height) * 1.45;
+  const x = (Number.isFinite(event.clientX) ? event.clientX - rect.left : rect.width / 2) - size / 2;
+  const y = (Number.isFinite(event.clientY) ? event.clientY - rect.top : rect.height / 2) - size / 2;
+  const wave = document.createElement('span');
+  wave.className = 'tap-ripple';
+  wave.style.width = `${size}px`;
+  wave.style.height = `${size}px`;
+  wave.style.left = `${x}px`;
+  wave.style.top = `${y}px`;
+  target.classList.add('has-tap-ripple');
+  target.appendChild(wave);
+  const cleanup = () => wave.remove();
+  wave.addEventListener('animationend', cleanup, { once: true });
+  window.setTimeout?.(cleanup, 520);
+}
+app.addEventListener('pointerdown', spawnTapRipple, { passive: true });
 app.addEventListener('click', event => {
   if (event.target.classList?.contains('lang-picker-backdrop') && state.langPickerDismissible) {
     state.langPicker = false;
