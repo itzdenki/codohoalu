@@ -96,4 +96,5 @@ test('thanh điều khiển trên cùng có 5 cờ ở giữa và nút quét QR 
   assert.match(env.stage.innerHTML, /class="guide-languages"/);
   assert.match(env.stage.innerHTML, /class="top-control-btn top-qr-btn" data-action="qr"/);
   assert.doesNotMatch(env.stage.innerHTML, /guide-qr-button/);
+  assert.doesNotMatch(env.stage.innerHTML, /session-timer-pill/);
 });

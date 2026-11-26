@@ -3,7 +3,7 @@ import { HOTSPOTS_DTH, HOTSPOTS_LDH } from './hotspots.js';
 import { pages, pathFor, resolveRoute } from './routes.js';
 import { VISIT_TOPICS, visitTitle } from './visit-topics.js';
 import { mountQRScanner, matchSiteQR, qrCopy } from './qr-scanner.js';
-import { ensureSession, formatRemaining, sessionCopy, SESSION_WARN_MS } from './session.js';
+import { ensureSession, sessionCopy } from './session.js';
 
 const app = document.querySelector('#app');
 const state = { mode: 'home', lang: 'vi', spot: null, visit: null, menu: false, cover: true, menuReturn: null, langPicker: false, langPickerDismissible: false, sessionExpiresAt: 0, sessionExpired: false };
@@ -104,13 +104,6 @@ function topHTML(spotMode = false) {
     <button type="button" class="top-control-btn top-qr-btn" data-action="qr" aria-haspopup="dialog" aria-label="${scanLabel}" title="${scanLabel}">${qrScanIcon}<span class="guide-qr-label">${scanLabel}</span></button>
   </div></div>`;
 }
-function sessionBadgeHTML(compact = false) {
-  if (!state.sessionExpiresAt || state.sessionExpired) return '';
-  const remaining = Math.max(0, state.sessionExpiresAt - Date.now());
-  const isLow = remaining <= SESSION_WARN_MS;
-  const label = esc(sessionCopy(state.lang).timerLabel);
-  return `<span class="session-timer-pill${compact ? ' is-compact' : ''}${isLow ? ' is-low' : ''}" role="timer" aria-label="${label}" title="${label}"><svg class="session-timer-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.9"/><path d="M12 7.5V12l3 1.8" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="session-timer-value">${formatRemaining(remaining)}</span></span>`;
-}
 function expiredScreenHTML() {
   const s = sessionCopy(state.lang);
   return `<section class="session-expired-screen" role="alertdialog" aria-modal="true" aria-labelledby="session-expired-title">
@@ -131,7 +124,6 @@ function guideBottomHTML({ menuAction, previousAction, nextAction, page = '', fi
   return `<nav class="home-bottom-bar guide-bottom-bar" aria-label="${esc(toc().title)}">
     <div class="guide-bar-inner">
       <button type="button" class="guide-index-button" data-action="${menuAction}"><span aria-hidden="true">☰</span>${esc(index)}</button>
-      ${sessionBadgeHTML(true)}
       <div class="guide-pagination">
         <button type="button" class="guide-step-button" data-action="${previousAction}" aria-label="${esc(previous)}" title="${esc(previous)}"${first ? ' disabled' : ''}>‹</button>
         ${page ? `<span class="guide-page-count">${page}</span>` : ''}
@@ -200,7 +192,6 @@ function coverHTML() {
           <span class="cover-title-line" data-text="${esc(cover.title2)}">${esc(cover.title2)}</span>
         </h1>
         <p class="landing-cover-subtitle">${esc(cover.subtitle)}</p>
-        <div class="landing-cover-session">${sessionBadgeHTML(false)}</div>
       </div>
       <footer class="landing-cover-actions">
         <button type="button" class="landing-cover-menu" data-action="enter-visit" aria-label="${menuLabel}" title="${menuLabel}">
@@ -580,23 +571,14 @@ window.addEventListener('message', event => {
 });
 function tickSession() {
   if (state.sessionExpired || !state.sessionExpiresAt) return;
-  const remaining = Math.max(0, state.sessionExpiresAt - Date.now());
-  if (remaining <= 0) {
+  if (Date.now() >= state.sessionExpiresAt) {
     state.sessionExpired = true;
     if (sessionTimerId !== null) {
       window.clearInterval?.(sessionTimerId);
       sessionTimerId = null;
     }
     renderApp();
-    return;
   }
-  const formatted = formatRemaining(remaining);
-  const isLow = remaining <= SESSION_WARN_MS;
-  app.querySelectorAll?.('.session-timer-pill').forEach?.((pill) => {
-    pill.classList?.toggle('is-low', isLow);
-    const val = pill.querySelector?.('.session-timer-value');
-    if (val && val.textContent !== formatted) val.textContent = formatted;
-  });
 }
 
 function startSessionWatcher() {
