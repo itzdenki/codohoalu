@@ -97,22 +97,151 @@
 }
 
 .landing-cover-header,
-.landing-cover-title {
+.landing-cover-title-wrap {
   position: relative;
   z-index: 1;
 }
 
-.landing-cover-header img,
-.landing-cover-title img {
+.landing-cover-header {
+  width: 100%;
+  aspect-ratio: 1024 / 330;
+  overflow: visible;
+}
+
+.landing-cover-header-bg {
+  position: absolute;
+  inset: 0;
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: fill;
+  pointer-events: none;
+  filter: drop-shadow(0 0.9cqw 1.8cqw rgba(4, 24, 58, 0.34));
+}
+
+.landing-cover-header-inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 2.8cqw;
+  height: 100%;
+  padding: 2.2cqw 4.2cqw 8.5cqw 7.2cqw;
+}
+
+.landing-cover-logo {
+  flex: none;
+  display: block;
+  width: 12.2cqw;
+  height: 12.2cqw;
+  object-fit: contain;
+  filter: drop-shadow(0 0.4cqw 0.9cqw rgba(4, 28, 72, 0.35));
+}
+
+.landing-cover-org {
+  flex: 1;
+  min-width: 0;
+  text-align: center;
+  color: #ffffff;
+  font-family: 'Be Vietnam Pro', system-ui, -apple-system, sans-serif;
+  text-shadow: 0 0.35cqw 0.9cqw rgba(4, 30, 78, 0.48);
+}
+
+.landing-cover-dept {
+  margin: 0;
+  font-size: 3.45cqw;
+  font-weight: 800;
+  line-height: 1.22;
+  letter-spacing: 0.005em;
+  text-transform: uppercase;
+  text-wrap: balance;
+}
+
+.landing-cover-center {
+  margin: 1.1cqw 0 0;
+  font-size: 2.3cqw;
+  font-weight: 700;
+  line-height: 1.28;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  text-wrap: balance;
+}
+
+.landing-cover-header[data-lang="en"] .landing-cover-dept,
+.landing-cover-header[data-lang="fr"] .landing-cover-dept {
+  font-size: 2.8cqw;
+}
+
+.landing-cover-header[data-lang="en"] .landing-cover-center,
+.landing-cover-header[data-lang="fr"] .landing-cover-center {
+  font-size: 2.05cqw;
+}
+
+.landing-cover-header[data-lang="ko"] .landing-cover-dept,
+.landing-cover-header[data-lang="zh"] .landing-cover-dept,
+.landing-cover-header[data-lang="ja"] .landing-cover-dept {
+  font-size: 4.15cqw;
+  letter-spacing: 0.04em;
+}
+
+.landing-cover-header[data-lang="ko"] .landing-cover-center,
+.landing-cover-header[data-lang="zh"] .landing-cover-center,
+.landing-cover-header[data-lang="ja"] .landing-cover-center {
+  font-size: 2.9cqw;
+}
+
+.landing-cover-title-wrap {
+  margin: 3.5cqw 4.5cqw 0;
+  text-align: center;
+  animation: homeTitleSlide 2.6s ease-in-out both;
 }
 
 .landing-cover-title {
   margin: 0;
-  margin-top: -3cqw;
-  animation: homeTitleSlide 2.6s ease-in-out both;
+  font-family: 'Be Vietnam Pro', system-ui, -apple-system, sans-serif;
+  font-size: 5.55cqw;
+  font-weight: 900;
+  line-height: 1.24;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+}
+
+.landing-cover-title-wrap[data-lang="en"] .landing-cover-title,
+.landing-cover-title-wrap[data-lang="fr"] .landing-cover-title {
+  font-size: 5.05cqw;
+}
+
+.landing-cover-title-wrap[data-lang="ko"] .landing-cover-title,
+.landing-cover-title-wrap[data-lang="zh"] .landing-cover-title,
+.landing-cover-title-wrap[data-lang="ja"] .landing-cover-title {
+  font-size: 6.3cqw;
+  letter-spacing: 0.03em;
+}
+
+.cover-title-line {
+  position: relative;
+  isolation: isolate;
+  display: block;
+  color: #0e4da4;
+  text-wrap: balance;
+}
+
+.cover-title-line::before {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  color: #ffffff;
+  -webkit-text-stroke: 1.6cqw #ffffff;
+  text-shadow: 0 0.65cqw 1.6cqw rgba(4, 22, 54, 0.52);
+  pointer-events: none;
+}
+
+.landing-cover-subtitle {
+  margin: 2.2cqw 0 0;
+  color: #f6fbff;
+  font: italic 500 3.7cqw/1.3 'Be Vietnam Pro', system-ui, sans-serif;
+  text-shadow: 0 0.35cqw 1.1cqw rgba(4, 20, 48, 0.72);
 }
 
 .landing-cover-actions {
@@ -360,7 +489,7 @@
 .qr-modal-card .qr-image { width: min(200px, 100%); height: auto; padding: 0; }
 
 @media (prefers-reduced-motion: reduce) {
-  .landing-cover-title,
+  .landing-cover-title-wrap,
   .lang-picker-backdrop { animation: none; }
   .lang-choice-btn { transition: none; }
 }

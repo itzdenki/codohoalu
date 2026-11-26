@@ -30,6 +30,50 @@ const guideCopy = {
 };
 const labels = { vi: 'Tiếng Việt', en: 'English', ko: '한국어', fr: 'Français', zh: '中文' };
 const languageFiles = { vi: 'vi', en: 'en', ko: 'kr', fr: 'fr', zh: 'cn', ja: 'jp' };
+const coverCopy = {
+  vi: {
+    dept: 'SỞ VĂN HÓA VÀ THỂ THAO NINH BÌNH',
+    center: 'TRUNG TÂM BẢO TỒN DI TÍCH LỊCH SỬ - VĂN HÓA\nCỐ ĐÔ HOA LƯ',
+    title1: 'ỨNG DỤNG TRẢI NGHIỆM',
+    title2: 'THUYẾT MINH CỐ ĐÔ HOA LƯ',
+    subtitle: '(Audio tour guide app)',
+  },
+  en: {
+    dept: 'NINH BINH DEPARTMENT OF CULTURE AND SPORTS',
+    center: 'HOA LU ANCIENT CAPITAL HISTORICAL & CULTURAL\nRELIC CONSERVATION CENTER',
+    title1: 'HOA LU ANCIENT CAPITAL',
+    title2: 'AUDIO TOUR GUIDE',
+    subtitle: '(Interactive audio guide app)',
+  },
+  ko: {
+    dept: '닌빈성 문화체육청',
+    center: '호아루 고도 역사·문화 유적\n보존 센터',
+    title1: '호아루 고도',
+    title2: '오디오 가이드 체험 앱',
+    subtitle: '(Audio tour guide app)',
+  },
+  fr: {
+    dept: 'DÉPARTEMENT DE LA CULTURE ET DES SPORTS DE NINH BÌNH',
+    center: 'CENTRE DE CONSERVATION DES VESTIGES HISTORIQUES\nDE L’ANCIENNE CAPITALE HOA LƯ',
+    title1: 'GUIDE AUDIO INTERACTIF',
+    title2: 'ANCIENNE CAPITALE HOA LƯ',
+    subtitle: '(Application de visite guidée)',
+  },
+  zh: {
+    dept: '宁平省文化与体育厅',
+    center: '华闾古都历史文化遗迹\n保护中心',
+    title1: '华闾古都',
+    title2: '语音导览体验应用',
+    subtitle: '(Audio tour guide app)',
+  },
+  ja: {
+    dept: 'ニンビン省文化スポーツ局',
+    center: 'ホアルー古都歴史文化遺跡\n保存センター',
+    title1: 'ホアルー古都',
+    title2: '音声ガイド体験アプリ',
+    subtitle: '(Audio tour guide app)',
+  },
+};
 const esc = (s) => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const toc = () => getLangData(state.lang).toc;
 const guide = () => guideCopy[state.lang] || guideCopy.vi;
@@ -104,6 +148,7 @@ function coverHTML() {
   const menuLabel = esc(guide().index);
   const flagExt = state.lang === 'zh' ? 'svg' : 'png';
   const currentLangLabel = esc(labels[state.lang] || labels.vi);
+  const cover = coverCopy[state.lang] || coverCopy.vi;
   return `<section class="landing-cover" aria-labelledby="landing-cover-title">
     <div class="landing-cover-frame">
       <div class="landing-cover-photo" aria-hidden="true">
@@ -114,12 +159,23 @@ function coverHTML() {
           <img src="/images/stories/le-3-thien-phuc-dao-kenh.jpg" alt="" width="768" height="1376">
         </div>
       </div>
-      <header class="landing-cover-header" lang="vi">
-        <img src="/images/home/header.png" width="1024" height="330" alt="Sở Văn hóa và Thể thao Ninh Bình. Trung tâm Bảo tồn Di tích Lịch sử - Văn hóa Cố đô Hoa Lư">
+      <header class="landing-cover-header" lang="${state.lang}" data-lang="${state.lang}">
+        <img class="landing-cover-header-bg" src="/images/home/header-bg.svg" alt="" width="1024" height="330" aria-hidden="true">
+        <div class="landing-cover-header-inner">
+          <img class="landing-cover-logo" src="/images/home/ninh-binh-logo.png" alt="Ninh Bình" width="128" height="128">
+          <div class="landing-cover-org">
+            <p class="landing-cover-dept">${esc(cover.dept)}</p>
+            <p class="landing-cover-center">${esc(cover.center).replace('\n', '<br>')}</p>
+          </div>
+        </div>
       </header>
-      <h1 id="landing-cover-title" class="landing-cover-title" lang="vi">
-        <img src="/images/home/title.png" width="1024" height="369" alt="Ứng dụng trải nghiệm thuyết minh Cố đô Hoa Lư">
-      </h1>
+      <div class="landing-cover-title-wrap" lang="${state.lang}" data-lang="${state.lang}">
+        <h1 id="landing-cover-title" class="landing-cover-title">
+          <span class="cover-title-line" data-text="${esc(cover.title1)}">${esc(cover.title1)}</span>
+          <span class="cover-title-line" data-text="${esc(cover.title2)}">${esc(cover.title2)}</span>
+        </h1>
+        <p class="landing-cover-subtitle">${esc(cover.subtitle)}</p>
+      </div>
       <footer class="landing-cover-actions">
         <button type="button" class="landing-cover-menu" data-action="enter-visit" aria-label="${menuLabel}" title="${menuLabel}">
           <span class="landing-cover-menu-icon" aria-hidden="true"></span>

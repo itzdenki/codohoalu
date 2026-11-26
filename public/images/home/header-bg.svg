@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 330" preserveAspectRatio="none">
+  <defs>
+    <linearGradient id="bg-cyan" x1="26%" y1="95%" x2="94%" y2="12%">
+      <stop offset="0%" stop-color="#00c4ff"/>
+      <stop offset="48%" stop-color="#0095ee"/>
+      <stop offset="100%" stop-color="#0c5bd4"/>
+    </linearGradient>
+    <linearGradient id="bg-royal" x1="0%" y1="35%" x2="76%" y2="12%">
+      <stop offset="0%" stop-color="#008ee8"/>
+      <stop offset="48%" stop-color="#0267cf"/>
+      <stop offset="100%" stop-color="#0d42b0"/>
+    </linearGradient>
+    <clipPath id="banner-clip">
+      <path d="M0,0 L1024,0 L1024,214 C965,198 890,214 780,254 C640,305 550,330 460,329 C355,328 282,296 238,266 C168,274 75,264 0,286 Z"/>
+    </clipPath>
+  </defs>
+  <path d="M0,0 L1024,0 L1024,214 C965,198 890,214 780,254 C640,305 550,330 460,329 C355,328 282,296 238,266 L0,266 Z" fill="url(#bg-cyan)"/>
+  <path d="M0,0 L744,0 C662,76 566,154 448,210 C328,266 238,273 142,269 C76,266 30,273 0,286 Z" fill="url(#bg-royal)"/>
+  <path d="M740,0 L1024,0 L1024,88 C940,52 848,20 740,0 Z" fill="#093ead" fill-opacity="0.46"/>
+  <g clip-path="url(#banner-clip)" stroke="#ffffff" stroke-opacity="0.22" stroke-width="1.25" fill="none">
+    <path d="M22,160 L58,195 L112,155 L178,56 L244,44 L310,14 L336,40 L422,48 L492,76 L544,6 L638,66 L702,68 L758,76 L846,28 L870,76 L972,56 L1018,128"/>
+    <path d="M178,56 L228,128 L296,132 L336,40 L432,128 L492,76 L556,134 L638,66 L615,112 L758,76 L746,204 L810,204 L870,76 L972,56"/>
+    <path d="M228,128 L278,176 L362,188 L432,128 L556,134 L615,112 L702,68 L746,204 L615,112"/>
+    <path d="M244,44 L296,132 L362,188 L492,76 M310,14 L244,44 M422,48 L544,6 M638,66 L702,0 M758,76 L764,0 M846,28 L764,0 M870,76 L938,136 L1018,128 M810,204 L938,136 M972,56 L992,190 M870,76 L810,204 M112,155 L228,128"/>
+    <g fill="#ffffff" fill-opacity="0.34" stroke="none">
+      <circle cx="178" cy="56" r="4.2"/>
+      <circle cx="244" cy="44" r="3.4"/>
+      <circle cx="310" cy="14" r="4"/>
+      <circle cx="336" cy="40" r="3.2"/>
+      <circle cx="422" cy="48" r="3.4"/>
+      <circle cx="492" cy="76" r="3.2"/>
+      <circle cx="544" cy="6" r="4"/>
+      <circle cx="638" cy="66" r="4.5"/>
+      <circle cx="702" cy="68" r="3.2"/>
+      <circle cx="758" cy="76" r="3.4"/>
+      <circle cx="846" cy="28" r="3.2"/>
+      <circle cx="870" cy="76" r="3.4"/>
+      <circle cx="972" cy="56" r="2.8"/>
+      <circle cx="228" cy="128" r="3"/>
+      <circle cx="296" cy="132" r="4.4"/>
+      <circle cx="432" cy="128" r="4.2"/>
+      <circle cx="556" cy="134" r="4.2"/>
+      <circle cx="615" cy="112" r="4.2"/>
+      <circle cx="746" cy="204" r="2.8"/>
+      <circle cx="810" cy="204" r="3"/>
+      <circle cx="938" cy="136" r="2.8"/>
+    </g>
+  </g>
+</svg>

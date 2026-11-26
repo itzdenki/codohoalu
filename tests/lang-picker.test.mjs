@@ -63,11 +63,13 @@ test('vào trang chủ lần đầu (chưa có localStorage) hiện hộp chọn
   assert.match(env.stage.innerHTML, /data-pick-lang="zh"/);
   assert.doesNotMatch(env.stage.innerHTML, /data-pick-lang="ja"/);
 
-  // User picks English
+  // User picks English -> cover header & title switch to English too!
   env.click({ dataset: { pickLang: 'en' } });
   assert.equal(env.store.get('lang'), 'en');
   assert.doesNotMatch(env.stage.innerHTML, /lang-picker-backdrop/);
   assert.match(env.stage.innerHTML, /English/);
+  assert.match(env.stage.innerHTML, /NINH BINH DEPARTMENT OF CULTURE AND SPORTS/);
+  assert.match(env.stage.innerHTML, /AUDIO TOUR GUIDE/);
 });
 
 test('đã lưu ngôn ngữ trong localStorage thì vào trang chủ không bắt chọn lại', async t => {
@@ -77,6 +79,7 @@ test('đã lưu ngôn ngữ trong localStorage thì vào trang chủ không bắ
   await import('../public/assets/js/app.js?lang-picker-saved');
   assert.doesNotMatch(env.stage.innerHTML, /lang-picker-backdrop/);
   assert.match(env.stage.innerHTML, /Français/);
+  assert.match(env.stage.innerHTML, /GUIDE AUDIO INTERACTIF/);
 
   // Clicking the Home language pill reopens picker with close button
   env.click({ dataset: { action: 'open-lang-picker' } });
