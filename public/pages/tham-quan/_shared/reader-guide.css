@@ -266,19 +266,35 @@ body.reader-guide {
 .guide-slide-layer.is-current { z-index: 2; }
 
 .guide-slide-layer.is-current.kb-zoom-in {
-  animation: guideSlideFadeIn 0.9s ease-out both, guideKbZoomIn 12s ease-out forwards;
+  animation: guideSlideFadeIn 0.85s ease-out both, guideKbZoomIn 12s ease-out forwards;
 }
 
 .guide-slide-layer.is-current.kb-pan-left {
-  animation: guideSlideFadeIn 0.9s ease-out both, guideKbPanLeft 12s ease-in-out forwards;
+  animation: guideSlideFadeIn 0.85s ease-out both, guideKbPanLeft 12s ease-in-out forwards;
 }
 
 .guide-slide-layer.is-current.kb-pan-right {
-  animation: guideSlideFadeIn 0.9s ease-out both, guideKbPanRight 12s ease-in-out forwards;
+  animation: guideSlideFadeIn 0.85s ease-out both, guideKbPanRight 12s ease-in-out forwards;
 }
 
 .guide-slide-layer.is-current.kb-zoom-out {
-  animation: guideSlideFadeIn 0.9s ease-out both, guideKbZoomOut 12s ease-out forwards;
+  animation: guideSlideFadeIn 0.85s ease-out both, guideKbZoomOut 12s ease-out forwards;
+}
+
+.guide-slide-layer.is-current.is-quick.kb-zoom-in {
+  animation: guideSlideFadeIn 0.34s ease-out both, guideKbZoomIn 12s ease-out forwards;
+}
+
+.guide-slide-layer.is-current.is-quick.kb-pan-left {
+  animation: guideSlideFadeIn 0.34s ease-out both, guideKbPanLeft 12s ease-in-out forwards;
+}
+
+.guide-slide-layer.is-current.is-quick.kb-pan-right {
+  animation: guideSlideFadeIn 0.34s ease-out both, guideKbPanRight 12s ease-in-out forwards;
+}
+
+.guide-slide-layer.is-current.is-quick.kb-zoom-out {
+  animation: guideSlideFadeIn 0.34s ease-out both, guideKbZoomOut 12s ease-out forwards;
 }
 
 .guide-slide-layer.is-current.is-initial.kb-zoom-in {
@@ -316,6 +332,28 @@ body.reader-guide {
 @keyframes guideKbZoomOut {
   0% { transform: scale(1.1) translate3d(0, -0.7%, 0); }
   100% { transform: scale(1.01) translate3d(0, 0.4%, 0); }
+}
+
+.guide-slide-label {
+  position: absolute;
+  z-index: 3;
+  left: 50%;
+  bottom: 35px;
+  max-width: calc(100% - 28px);
+  padding: 4px 11px;
+  transform: translateX(-50%);
+  border: 1px solid rgba(252, 224, 151, 0.45);
+  border-radius: 999px;
+  background: rgba(42, 12, 8, 0.62);
+  backdrop-filter: blur(5px);
+  color: #fff6dc;
+  font: 600 11.5px/1.25 visit-body, system-ui, sans-serif;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  pointer-events: none;
 }
 
 .guide-slide-dots {
@@ -966,7 +1004,11 @@ body.reader-guide {
   .guide-slide-layer.is-current.kb-zoom-in,
   .guide-slide-layer.is-current.kb-pan-left,
   .guide-slide-layer.is-current.kb-pan-right,
-  .guide-slide-layer.is-current.kb-zoom-out {
+  .guide-slide-layer.is-current.kb-zoom-out,
+  .guide-slide-layer.is-current.is-quick.kb-zoom-in,
+  .guide-slide-layer.is-current.is-quick.kb-pan-left,
+  .guide-slide-layer.is-current.is-quick.kb-pan-right,
+  .guide-slide-layer.is-current.is-quick.kb-zoom-out {
     animation: guideSlideFadeIn 0.35s ease-out both;
   }
   .guide-pdf-button,

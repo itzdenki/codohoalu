@@ -1,21 +1,148 @@
 {
-  "gioi-thieu-di-tich": [
-    { "src": "/images/gallery/dong-mon-cau-sao-khe.jpg", "pos": "center 45%" },
-    { "src": "/images/gallery/cong-dong-hoa-lu.jpg", "pos": "center 42%" },
-    { "src": "/images/gallery/cau-cong-dong-hoa-lu.jpg", "pos": "center 48%" },
-    { "src": "/images/gallery/song-sao-khe-hoa-lu.jpg", "pos": "center 50%" },
-    { "src": "/images/gallery/toan-canh-ma-yen.jpg", "pos": "center 48%" },
-    { "src": "/images/gallery/nui-da-voi-hoa-lu.jpg", "pos": "center 45%" },
-    { "src": "/images/gallery/canh-quan-hoa-lu-1.jpg", "pos": "center 48%" },
-    { "src": "/images/gallery/canh-quan-hoa-lu-2.jpg", "pos": "center 46%" },
-    { "src": "/images/gallery/thung-lung-am-tien.jpg", "pos": "center 52%" },
-    { "src": "/images/gallery/chua-nhat-tru.jpg", "pos": "center 45%" },
-    { "src": "/images/gallery/chua-nhat-tru-san.jpg", "pos": "center 48%" },
-    { "src": "/images/gallery/bai-duong-den-dinh-2024.jpg", "pos": "center 48%" },
-    { "src": "/images/gallery/den-le-toan-canh.jpg", "pos": "center 45%" },
-    { "src": "/images/gallery/le-hoi-co-do-2012.jpg", "pos": "center 48%" },
-    { "src": "/images/stories/codo-1-kinh-do-968.jpg", "pos": "center 35%" }
-  ],
+  "gioi-thieu-di-tich": {
+    "mode": "cues",
+    "slides": [
+      {
+        "src": "/pages/tham-quan/gioi-thieu-di-tich/01-toan-canh-co-do.jpg",
+        "pos": "center 45%",
+        "at": 0,
+        "label": { "vi": "Cố đô Hoa Lư", "en": "Hoa Lư Ancient Capital", "fr": "Ancienne Capitale Hoa Lư", "ko": "호아루 고도", "zh": "华闾古都", "ja": "ホアルー古都" }
+      },
+      {
+        "src": "/pages/tham-quan/gioi-thieu-di-tich/toan-canh-khu-di-tich-co-do-hoa-lu.jpg",
+        "pos": "center 50%",
+        "at": 0.08,
+        "cue": { "vi": "Nơi phát tích", "en": "birthplace of the heroic", "fr": "berceau de l'œuvre", "ko": "3개 왕조", "zh": "三个朝代", "ja": "3つの王朝" },
+        "label": { "vi": "Quần thể di tích Cố đô Hoa Lư", "en": "Hoa Lư Historic Complex", "fr": "Complexe historique de Hoa Lư", "ko": "호아루 고도 유적군", "zh": "华闾古都遗迹群", "ja": "ホアルー古都遺跡群" }
+      },
+      {
+        "src": "/pages/tham-quan/gioi-thieu-di-tich/den-tho-vua-dinh-tien-hoang.jpg",
+        "pos": "center 22%",
+        "at": 0.12,
+        "cue": { "vi": "Năm 968", "en": "In 968", "fr": "En 968", "ko": "968년", "zh": "968年", "ja": "968年" },
+        "label": { "vi": "Vua Đinh Tiên Hoàng (968)", "en": "Emperor Đinh Tiên Hoàng (968)", "fr": "Empereur Đinh Tiên Hoàng (968)", "ko": "딘 띠엔 황 황제 (968)", "zh": "丁先皇皇帝（968年）", "ja": "丁先皇皇帝（968年）" }
+      },
+      {
+        "src": "/images/stories/codo-1-kinh-do-968.jpg",
+        "pos": "center 36%",
+        "at": 0.17,
+        "cue": { "vi": "đắp thành đào hào", "en": "building of citadel walls", "fr": "construire des remparts", "ko": "성을 쌓고", "zh": "筑城挖壕", "ja": "城を築き" },
+        "label": { "vi": "Kinh đô Đại Cồ Việt", "en": "Capital of Đại Cồ Việt", "fr": "Capitale du Đại Cồ Việt", "ko": "대구월의 도읍", "zh": "大瞿越国都", "ja": "大瞿越の都" }
+      },
+      {
+        "src": "/pages/tham-quan/gioi-thieu-di-tich/den-tho-vua-le-dai-hanh.jpg",
+        "pos": "center 22%",
+        "at": 0.22,
+        "cue": { "vi": "năm 980", "en": "in 980", "fr": "en 980", "ko": "980년", "zh": "980年", "ja": "980年" },
+        "label": { "vi": "Vua Lê Đại Hành (980)", "en": "Emperor Lê Đại Hành (980)", "fr": "Empereur Lê Đại Hành (980)", "ko": "레 다이 한 황제 (980)", "zh": "黎大行皇帝（980年）", "ja": "黎大行皇帝（980年）" }
+      },
+      {
+        "src": "/images/gallery/so-do-kinh-do-the-ky-x.jpg",
+        "pos": "center 48%",
+        "at": 0.27,
+        "cue": { "vi": "thế kỷ X", "en": "10th century", "fr": "Xe siècle", "ko": "10세기", "zh": "10世纪", "ja": "10世紀" },
+        "label": { "vi": "Kinh đô Hoa Lư thế kỷ X", "en": "10th-Century Hoa Lư Capital", "fr": "Capitale de Hoa Lư au Xe siècle", "ko": "10세기 호아루 도읍", "zh": "10世纪华闾国都", "ja": "10世紀のホアルー都城" }
+      },
+      {
+        "src": "/pages/tham-quan/gioi-thieu-di-tich/02-dia-the-hoa-lu.jpg",
+        "pos": "center 45%",
+        "at": 0.32,
+        "cue": { "vi": "vùng đất Hoa Lư hiểm trở", "en": "rugged land of Hoa Lư", "fr": "relief accidenté", "ko": "험준한 지형", "zh": "地势险要", "ja": "険しい地形" },
+        "label": { "vi": "Địa thế núi non hiểm trở", "en": "Rugged Limestone Terrain", "fr": "Relief karstique accidenté", "ko": "험준한 산악 지형", "zh": "险要山水地势", "ja": "険しい石灰岩の地形" }
+      },
+      {
+        "src": "/pages/tham-quan/gioi-thieu-di-tich/nui-non-va-dia-the-bao-quanh-co-do.png",
+        "pos": "center 48%",
+        "at": 0.37,
+        "cue": { "vi": "quân thành kiên cố", "en": "impregnable fortress", "fr": "citadelle militaire", "ko": "군사 요새", "zh": "军事堡垒", "ja": "軍事要塞" },
+        "label": { "vi": "Núi non bao quanh Cố đô", "en": "Natural Mountain Fortress", "fr": "Forteresse naturelle de Hoa Lư", "ko": "호아루를 감싼 천연 요새", "zh": "群山环抱的古都", "ja": "古都を囲む天然の要塞" }
+      },
+      {
+        "src": "/images/gallery/duong-nha-bia-ly-thai-to.jpg",
+        "pos": "center 46%",
+        "at": 0.41,
+        "cue": { "vi": "Năm 1010", "en": "In 1010", "fr": "En 1010", "ko": "1010년", "zh": "1010年", "ja": "1010年" },
+        "label": { "vi": "Vua Lý Thái Tổ dời đô (1010)", "en": "Emperor Lý Thái Tổ Moves Capital (1010)", "fr": "Transfert de la capitale (1010)", "ko": "리 타이 쪼 천도 (1010)", "zh": "李太祖迁都（1010年）", "ja": "李太祖遷都（1010年）" }
+      },
+      {
+        "src": "/images/gallery/dong-mon-cau-sao-khe.jpg",
+        "pos": "center 46%",
+        "at": 0.48,
+        "cue": { "vi": "Hoa Lư trở thành cố đô", "en": "became the ancient capital", "fr": "devenue une ancienne capitale", "ko": "호아루는 고도", "zh": "成为了古都", "ja": "古都となりました" },
+        "label": { "vi": "Cầu Đông & sông Sào Khê", "en": "East Bridge & Sào Khê River", "fr": "Pont de l'Est & rivière Sào Khê", "ko": "동문 다리와 사오케 강", "zh": "东门桥与巢溪河", "ja": "東門橋とサオケ川" }
+      },
+      {
+        "src": "/images/gallery/cong-dong-hoa-lu.jpg",
+        "pos": "center 44%",
+        "at": 0.55,
+        "cue": { "vi": "Tương truyền", "en": "According to tradition", "fr": "La légende raconte", "ko": "전해지는 바에", "zh": "相传", "ja": "言い伝えによると" },
+        "label": { "vi": "Dấu tích Cố đô xưa", "en": "Traces of the Old Capital", "fr": "Vestiges de l'ancienne cité", "ko": "옛 도읍의 흔적", "zh": "古都历史遗迹", "ja": "古都の面影" }
+      },
+      {
+        "src": "/images/gallery/cong-trinh-co-hoa-lu.jpg",
+        "pos": "center 46%",
+        "at": 0.64,
+        "cue": { "vi": "Các triều đại kế tiếp", "en": "Later dynasties", "fr": "dynasties successives", "ko": "그 뒤를 이은 왕조", "zh": "随后的各个朝代", "ja": "続く各王朝" },
+        "label": { "vi": "Công trình văn hóa - lịch sử", "en": "Restored Heritage Monuments", "fr": "Ouvrages culturels et historiques", "ko": "문화·역사 건축물", "zh": "历史文化建筑", "ja": "文化・歴史建造物" }
+      },
+      {
+        "src": "/images/gallery/le-hoi-co-do-2012.jpg",
+        "pos": "center 48%",
+        "at": 0.69,
+        "cue": { "vi": "du khách về thăm quan", "en": "visitors who come", "fr": "les visiteurs qui viennent", "ko": "방문하여 참배하는", "zh": "今天游客来到", "ja": "観光客は" },
+        "label": { "vi": "Chiêm bái Cố đô Hoa Lư", "en": "Visiting Hoa Lư Today", "fr": "Pèlerinage à Hoa Lư", "ko": "호아루 고도 참배", "zh": "参观朝拜华闾古都", "ja": "ホアルー古都参拝" }
+      },
+      {
+        "src": "/images/gallery/lang-vua-dinh-ma-yen.jpg",
+        "pos": "center 45%",
+        "at": 0.76,
+        "cue": { "vi": "hơn 20 di tích", "en": "more than 20 monuments", "fr": "plus de 20 vestiges", "ko": "20개가 넘는", "zh": "20多处", "ja": "20以上の遺跡" },
+        "label": { "vi": "Hơn 20 di tích thời Đinh - Tiền Lê", "en": "Over 20 Đinh & Early Lê Sites", "fr": "Plus de 20 vestiges Đinh - Tiền Lê", "ko": "20여 곳의 딘·전레 유적", "zh": "20余处丁朝与前黎遗迹", "ja": "20以上の丁朝・前黎遺跡" }
+      },
+      {
+        "src": "/pages/tham-quan/gioi-thieu-di-tich/chua-nhat-tru.jpg",
+        "pos": "center 45%",
+        "at": 0.848,
+        "cue": { "vi": "chùa Nhất Trụ", "en": "Nhất Trụ Pagoda", "fr": "pagode Nhất Trụ", "ko": "일주사", "zh": "一柱寺", "ja": "一柱寺" },
+        "label": { "vi": "Chùa Nhất Trụ", "en": "Nhất Trụ Pagoda", "fr": "Pagode Nhất Trụ", "ko": "일주사 (Chùa Nhất Trụ)", "zh": "一柱寺", "ja": "一柱寺" }
+      },
+      {
+        "src": "/pages/tham-quan/gioi-thieu-di-tich/den-tho-thuc-tiet-cong-chua.jpg",
+        "pos": "center 46%",
+        "at": 0.857,
+        "cue": { "vi": "Đền thờ Thục tiết", "en": "Princess Thục Tiết", "fr": "Princesse Thục Tiết", "ko": "특띠엣 공주", "zh": "淑节公主庙", "ja": "淑節公主" },
+        "label": { "vi": "Đền thờ Thục Tiết Công Chúa", "en": "Temple of Princess Thục Tiết", "fr": "Temple de la Princesse Thục Tiết", "ko": "특띠엣 공주 사당", "zh": "淑节公主庙", "ja": "淑節公主廟" }
+      },
+      {
+        "src": "/pages/tham-quan/gioi-thieu-di-tich/phu-kinh-thien.jpg",
+        "pos": "center 45%",
+        "at": 0.870,
+        "cue": { "vi": "Phủ Kình Thiên", "en": "Kình Thiên Palace", "fr": "palais Kình Thiên", "ko": "낀티엔 부", "zh": "擎天府", "ja": "擎天府" },
+        "label": { "vi": "Phủ Kình Thiên", "en": "Kình Thiên Palace", "fr": "Palais Kình Thiên", "ko": "낀티엔 부 (Phủ Kình Thiên)", "zh": "擎天府", "ja": "擎天府" }
+      },
+      {
+        "src": "/images/gallery/bai-duong-den-dinh-2024.jpg",
+        "pos": "center 48%",
+        "at": 0.908,
+        "cue": { "vi": "đền thờ vua Đinh", "en": "Emperor Đinh Tiên Hoàng", "fr": "temple du roi Đinh", "ko": "딘 띠엔 황 왕 사당", "zh": "丁先皇庙", "ja": "丁先皇廟" },
+        "label": { "vi": "Đền thờ Vua Đinh Tiên Hoàng", "en": "Temple of Emperor Đinh Tiên Hoàng", "fr": "Temple du roi Đinh Tiên Hoàng", "ko": "딘 띠엔 황 왕 사당", "zh": "丁先皇庙", "ja": "丁先皇廟" }
+      },
+      {
+        "src": "/images/gallery/den-le-toan-canh.jpg",
+        "pos": "center 45%",
+        "at": 0.923,
+        "cue": { "vi": "đền thờ vua Lê", "en": "Emperor Lê Đại Hành", "fr": "temple du roi Lê", "ko": "레 다이 한 왕 사당", "zh": "黎大行庙", "ja": "黎大行廟" },
+        "label": { "vi": "Đền thờ Vua Lê Đại Hành", "en": "Temple of Emperor Lê Đại Hành", "fr": "Temple du roi Lê Đại Hành", "ko": "레 다이 한 왕 사당", "zh": "黎大行庙", "ja": "黎大行廟" }
+      },
+      {
+        "src": "/pages/tham-quan/gioi-thieu-di-tich/03-san-rong-den-dinh.jpg",
+        "pos": "center 50%",
+        "at": 0.947,
+        "cue": { "vi": "Hai công trình này", "en": "These two structures", "fr": "Ces deux édifices", "ko": "이 두 건축물", "zh": "这两座建筑", "ja": "これら2つの建造物" },
+        "label": { "vi": "Kiến trúc thời Hậu Lê (thế kỷ XVII)", "en": "17th-Century Later Lê Architecture", "fr": "Architecture Hậu Lê (XVIIe siècle)", "ko": "17세기 후레 시대 건축 양식", "zh": "后黎时期（17世纪）建筑", "ja": "後黎朝（17世紀）建築様式" }
+      }
+    ]
+  },
   "long-sang-nghi-mon-ngoai": [
     { "src": "/images/gallery/nghi-mon-ngoai-long-sang.jpg", "pos": "center 55%" },
     { "src": "/images/gallery/mat-long-sang-rong.jpg", "pos": "center 55%" },

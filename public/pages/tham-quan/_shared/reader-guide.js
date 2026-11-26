@@ -331,6 +331,90 @@ function installPageButtons(book, words) {
 
 const slideMotions = ['kb-zoom-in', 'kb-pan-left', 'kb-pan-right', 'kb-zoom-out'];
 const SLIDE_INTERVAL_MS = 10000;
+const CUE_LEAD_MS = 180;
+
+function normalizeCueText(text) {
+  return String(text || '')
+    .toLowerCase()
+    .replace(/[’‘`]/g, "'")
+    .replace(/[“”]/g, '"')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+export function resolveSlideCues(slides, captions, timing, language) {
+  if (!Array.isArray(slides) || !slides.length) return null;
+  const hasCueData = slides.some(item => item && (item.cue || Number.isFinite(item.at)));
+  if (!hasCueData) return null;
+
+  const words = captions?.words || [];
+  const starts = timing?.starts || [];
+  const duration = Number.isFinite(timing?.duration) && timing.duration > 0
+    ? timing.duration
+    : slides.length * SLIDE_INTERVAL_MS;
+  const sep = captions?.separator ?? ' ';
+
+  let fullText = '';
+  const charToWord = [];
+  for (let i = 0; i < words.length; i++) {
+    if (i > 0 && sep) {
+      fullText += sep;
+      for (let k = 0; k < sep.length; k++) charToWord.push(i);
+    }
+    const piece = normalizeCueText(words[i]);
+    fullText += piece;
+    for (let k = 0; k < piece.length; k++) charToWord.push(i);
+  }
+
+  let cursor = 0;
+  let prevMs = 0;
+  const times = slides.map((slide, index) => {
+    if (index === 0) return 0;
+    let matchedMs = null;
+    const rawCue = typeof slide?.cue === 'string' ? slide.cue : slide?.cue?.[language];
+    if (rawCue && fullText) {
+      const needle = normalizeCueText(rawCue);
+      if (needle) {
+        let pos = fullText.indexOf(needle, cursor);
+        if (pos < 0) pos = fullText.indexOf(needle);
+        if (pos >= 0) {
+          cursor = Math.max(cursor, pos + needle.length);
+          const wordIdx = charToWord[pos];
+          if (wordIdx !== undefined && Number.isFinite(starts[wordIdx])) {
+            matchedMs = Math.max(0, starts[wordIdx] - CUE_LEAD_MS);
+          }
+        }
+      }
+    }
+    if (matchedMs === null) {
+      const ratio = Number.isFinite(slide?.at) ? Math.max(0, Math.min(0.99, slide.at)) : index / slides.length;
+      matchedMs = Math.max(0, ratio * duration - CUE_LEAD_MS);
+    }
+    const timeMs = Math.max(prevMs + 250, matchedMs);
+    prevMs = timeMs;
+    return timeMs;
+  });
+
+  return times.map((timeMs, index) => {
+    const prevGap = index > 0 ? timeMs - times[index - 1] : Infinity;
+    const nextGap = index + 1 < times.length ? times[index + 1] - timeMs : Infinity;
+    return { timeMs, quick: index > 0 && (prevGap < 4000 || nextGap < 4000) };
+  });
+}
+
+export function slideIndexAt(slides, resolvedCues, timeMs, intervalMs = SLIDE_INTERVAL_MS) {
+  if (!Array.isArray(slides) || slides.length <= 1) return 0;
+  const t = Math.max(0, Number.isFinite(timeMs) ? timeMs : 0);
+  if (Array.isArray(resolvedCues) && resolvedCues.length === slides.length) {
+    let active = 0;
+    for (let i = 1; i < resolvedCues.length; i++) {
+      if (t >= resolvedCues[i].timeMs) active = i;
+      else break;
+    }
+    return active;
+  }
+  return Math.floor(t / intervalMs) % slides.length;
+}
 
 function normalizeAssetUrl(src) {
   if (!src) return '';
@@ -383,6 +467,7 @@ export function mountVisitGuide(audio) {
         <span class="guide-photo-viewport">
           <span class="guide-slide-stack" aria-hidden="true"></span>
           <span class="guide-photo-play" aria-hidden="true">▶</span>
+          <span class="guide-slide-label" aria-hidden="true" hidden></span>
           <span class="guide-slide-dots" aria-hidden="true" hidden></span>
         </span>
       </button>
@@ -427,6 +512,7 @@ export function mountVisitGuide(audio) {
   const photoButton = guide.querySelector('.guide-story-photo');
   const photoViewport = photoButton.querySelector?.('.guide-photo-viewport') || photoButton;
   const slideStack = photoButton.querySelector?.('.guide-slide-stack') || null;
+  const slideLabel = photoButton.querySelector?.('.guide-slide-label') || null;
   const slideDots = photoButton.querySelector?.('.guide-slide-dots') || null;
   const captionCard = guide.querySelector('.guide-caption-card');
   const book = guide.querySelector('.guide-reading-view');
@@ -461,7 +547,22 @@ export function mountVisitGuide(audio) {
   let pendingSlide = -1;
   let slideOffset = 0;
   let slideToken = 0;
+  let cueMode = false;
+  let resolvedCues = null;
   const preloaded = new Set(slides[0]?.src ? [normalizeAssetUrl(slides[0].src)] : []);
+
+  function slideLabelText(index) {
+    const item = slides[index];
+    if (!item?.label) return '';
+    return typeof item.label === 'string' ? item.label : (item.label[language] || item.label.vi || '');
+  }
+
+  function updateSlideLabel(index) {
+    if (!slideLabel) return;
+    const text = slideLabelText(index);
+    slideLabel.hidden = !text;
+    if (slideLabel.textContent !== text) slideLabel.textContent = text;
+  }
 
   function preloadSlide(index) {
     if (typeof Image === 'undefined' || !slides.length) return;
@@ -506,7 +607,7 @@ export function mountVisitGuide(audio) {
     }
   }
 
-  function showSlide(targetIndex) {
+  function showSlide(targetIndex, { quick = false } = {}) {
     if (!slideStack || slides.length <= 1) return;
     const nextIndex = ((targetIndex % slides.length) + slides.length) % slides.length;
     if (nextIndex === currentSlide || nextIndex === pendingSlide) return;
@@ -518,11 +619,13 @@ export function mountVisitGuide(audio) {
     img.alt = '';
     img.decoding = 'async';
     if (slide.pos && img.style) img.style.objectPosition = slide.pos;
+    let committed = false;
     const commit = () => {
-      if (myToken !== slideToken) return;
+      if (committed || myToken !== slideToken) return;
+      committed = true;
       pendingSlide = -1;
       const layer = document.createElement('span');
-      layer.className = `guide-slide-layer is-current ${slideMotions[nextIndex % slideMotions.length]}`;
+      layer.className = `guide-slide-layer is-current${quick ? ' is-quick' : ''} ${slideMotions[nextIndex % slideMotions.length]}`;
       layer.append(img);
       const oldLayers = [...(slideStack.querySelectorAll?.('.guide-slide-layer') || [])];
       for (const old of oldLayers) {
@@ -535,8 +638,13 @@ export function mountVisitGuide(audio) {
       slideStack.append(layer);
       currentSlide = nextIndex;
       updateActiveDot(nextIndex);
+      updateSlideLabel(nextIndex);
       preloadSlide(nextIndex + 1);
       preloadSlide(nextIndex + 2);
+      if (cueMode) {
+        preloadSlide(nextIndex + 3);
+        preloadSlide(nextIndex + 4);
+      }
     };
     img.addEventListener('load', commit, { once: true });
     img.addEventListener('error', () => { if (myToken === slideToken) pendingSlide = -1; }, { once: true });
@@ -545,18 +653,44 @@ export function mountVisitGuide(audio) {
   }
 
   renderSlideDots();
+  updateSlideLabel(0);
   preloadSlide(1);
   preloadSlide(2);
 
-  const slugSource = (typeof location !== 'undefined' && location?.pathname) || audio?.src || '';
-  const topicSlug = slugSource.match(/\/pages\/tham-quan\/([^/]+)\//)?.[1] || '';
+  const pathMatch = (typeof location !== 'undefined' && location?.pathname || '').match(/\/pages\/tham-quan\/([^/?#]+)(?:\/|$)/);
+  const srcMatch = (audio?.src || '').match(/\/pages\/tham-quan\/([^/?#]+)(?:\/|$)/);
+  const topicSlug = pathMatch?.[1] || srcMatch?.[1] || '';
   if (topicSlug && typeof fetch === 'function') {
     try {
       fetch(new URL('./visit-gallery.json', import.meta.url))
         .then(response => response.ok ? response.json() : null)
         .then(gallery => {
-          const extras = gallery?.[topicSlug];
-          if (!Array.isArray(extras) || !extras.length) return;
+          const entry = gallery?.[topicSlug];
+          if (entry && !Array.isArray(entry) && entry.mode === 'cues' && Array.isArray(entry.slides) && entry.slides.length) {
+            slides.length = 0;
+            seenSlides.clear();
+            for (const item of entry.slides) {
+              if (!item?.src) continue;
+              slides.push({
+                src: item.src,
+                pos: item.pos || 'center 45%',
+                at: item.at,
+                cue: item.cue || null,
+                label: item.label || null,
+              });
+            }
+            cueMode = true;
+            resolvedCues = resolveSlideCues(slides, captions, timing, language);
+            renderSlideDots();
+            updateSlideLabel(currentSlide);
+            // Preload storyboard slides in background so quick landmark transitions have zero lag
+            for (let i = 1; i < slides.length; i++) preloadSlide(i);
+            syncCuePoller();
+            paint();
+            return;
+          }
+          const extras = Array.isArray(entry) ? entry : null;
+          if (!extras || !extras.length) return;
           let added = false;
           for (const item of extras) {
             const src = typeof item === 'string' ? item : item?.src;
@@ -647,6 +781,18 @@ export function mountVisitGuide(audio) {
     paint();
   }
 
+  let cuePollerId = null;
+  function syncCuePoller() {
+    if (!audio) return;
+    const needPoll = cueMode && Boolean(audioPlaying());
+    if (needPoll && cuePollerId === null && typeof window.setInterval === 'function') {
+      cuePollerId = window.setInterval(paint, 100);
+    } else if (!needPoll && cuePollerId !== null) {
+      window.clearInterval?.(cuePollerId);
+      cuePollerId = null;
+    }
+  }
+
   function updatePhotoButton() {
     const playing = audio ? audioPlaying() : textPlaying;
     const label = playing ? words.pause : words.play;
@@ -655,6 +801,7 @@ export function mountVisitGuide(audio) {
     photoButton.setAttribute('aria-label', label);
     photoButton.title = label;
     syncReadingPlayer();
+    syncCuePoller();
   }
   function playAudio() {
     if (audio.error) audio.load();
@@ -677,8 +824,10 @@ export function mountVisitGuide(audio) {
 
   function syncSlide(time) {
     if (slides.length <= 1) return;
-    const baseIndex = Math.floor(Math.max(0, time) / SLIDE_INTERVAL_MS) % slides.length;
-    showSlide(baseIndex + slideOffset);
+    const baseIndex = slideIndexAt(slides, resolvedCues, time, SLIDE_INTERVAL_MS);
+    const target = ((baseIndex + slideOffset) % slides.length + slides.length) % slides.length;
+    const quick = Boolean(resolvedCues?.[target]?.quick);
+    showSlide(target, { quick });
   }
 
   function paint() {
@@ -695,6 +844,9 @@ export function mountVisitGuide(audio) {
     const usable = recordedTiming && recordedTiming.starts?.length === captions.words.length
       && (!duration || Math.abs(duration - recordedTiming.duration) < 2000);
     timing = usable ? recordedTiming : estimatedStarts(captions, duration);
+    if (cueMode) {
+      resolvedCues = resolveSlideCues(slides, captions, timing, language);
+    }
     paint();
   }
 
@@ -706,6 +858,12 @@ export function mountVisitGuide(audio) {
     for (const event of ['play', 'playing', 'pause', 'ended', 'error']) audio.addEventListener(event, syncAudioButton);
     for (const event of ['loadedmetadata', 'durationchange']) audio.addEventListener(event, refreshTiming);
     audio.addEventListener('volumechange', syncReadingPlayer);
+    window.addEventListener('pagehide', () => {
+      if (cuePollerId !== null) {
+        window.clearInterval?.(cuePollerId);
+        cuePollerId = null;
+      }
+    });
     if (readingPlayer) {
       readingPlayer.hidden = false;
       readingPlayer.setAttribute?.('aria-label', words.player);
