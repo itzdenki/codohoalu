@@ -662,7 +662,7 @@ export function mountVisitGuide(audio) {
   const topicSlug = pathMatch?.[1] || srcMatch?.[1] || '';
   if (topicSlug && typeof fetch === 'function') {
     try {
-      fetch(new URL('./visit-gallery.json', import.meta.url))
+      fetch(new URL('./visit-gallery.json?v=2', import.meta.url))
         .then(response => response.ok ? response.json() : null)
         .then(gallery => {
           const entry = gallery?.[topicSlug];
@@ -681,6 +681,11 @@ export function mountVisitGuide(audio) {
             }
             cueMode = true;
             resolvedCues = resolveSlideCues(slides, captions, timing, language);
+            if (slides[0]?.src && normalizeAssetUrl(slides[0].src) !== normalizeAssetUrl(hero.getAttribute?.('src') || hero.src)) {
+              hero.src = slides[0].src;
+              if (slides[0].pos && hero.style) hero.style.objectPosition = slides[0].pos;
+              preloaded.add(normalizeAssetUrl(slides[0].src));
+            }
             renderSlideDots();
             updateSlideLabel(currentSlide);
             // Preload storyboard slides in background so quick landmark transitions have zero lag

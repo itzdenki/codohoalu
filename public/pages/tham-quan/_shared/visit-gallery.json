@@ -143,176 +143,1190 @@
       }
     ]
   },
-  "long-sang-nghi-mon-ngoai": [
-    { "src": "/images/gallery/nghi-mon-ngoai-long-sang.jpg", "pos": "center 55%" },
-    { "src": "/images/gallery/mat-long-sang-rong.jpg", "pos": "center 55%" },
-    { "src": "/images/gallery/rong-da-chau.jpg", "pos": "center 50%" },
-    { "src": "/images/gallery/sap-rong-san-rong.jpg", "pos": "center 52%" },
-    { "src": "/images/gallery/truc-than-dao-den-dinh.jpg", "pos": "center 45%" },
-    { "src": "/images/gallery/den-dinh-nghi-mon-goc-2.jpg", "pos": "center 48%" },
-    { "src": "/images/gallery/den-dinh-nghi-mon-goc-3.jpg", "pos": "center 48%" },
-    { "src": "/images/gallery/nghe-da-san-rong.jpg", "pos": "center 35%" }
-  ],
-  "nghi-mon-den-dinh": [
-    { "src": "/images/gallery/nghi-mon-ngoai-long-sang.jpg", "pos": "center 50%" },
-    { "src": "/images/gallery/ngo-mon-quan-hoang-hon.jpg", "pos": "center 45%" },
-    { "src": "/images/gallery/ngo-mon-quan-can-canh.jpg", "pos": "center 45%" },
-    { "src": "/images/gallery/ho-ban-nguyet-nghi-mon.jpg", "pos": "center 50%" },
-    { "src": "/images/gallery/den-dinh-nghi-mon-gate.jpg", "pos": "center 45%" },
-    { "src": "/images/gallery/den-dinh-nghi-mon-2023.jpg", "pos": "center 48%" },
-    { "src": "/images/gallery/den-dinh-nghi-mon-goc-2.jpg", "pos": "center 48%" },
-    { "src": "/images/gallery/den-dinh-nghi-mon-goc-3.jpg", "pos": "center 48%" },
-    { "src": "/images/gallery/den-dinh-mai-cong-18.jpg", "pos": "center 46%" },
-    { "src": "/images/gallery/den-dinh-truc-than-dao-6.jpg", "pos": "center 45%" }
-  ],
-  "long-sang-san-rong": [
-    { "src": "/images/gallery/sap-rong-san-rong.jpg", "pos": "center 52%" },
-    { "src": "/images/gallery/mat-long-sang-rong.jpg", "pos": "center 58%" },
-    { "src": "/images/gallery/rong-da-chau.jpg", "pos": "center 50%" },
-    { "src": "/images/gallery/nghe-da-san-rong.jpg", "pos": "center 35%" },
-    { "src": "/images/gallery/nghe-da-hoa-lu-19.jpg", "pos": "center 42%" },
-    { "src": "/images/gallery/den-dinh-san-rong-8.jpg", "pos": "center 50%" },
-    { "src": "/images/gallery/den-dinh-san-rong-10.jpg", "pos": "center 50%" },
-    { "src": "/images/gallery/den-dinh-san-rong-13.jpg", "pos": "center 50%" },
-    { "src": "/images/gallery/truc-than-dao-den-dinh.jpg", "pos": "center 48%" }
-  ],
-  "den-vua-dinh": [
-    { "src": "/images/gallery/bai-duong-den-dinh-2024.jpg", "pos": "center 48%" },
-    { "src": "/images/gallery/den-dinh-san-rong-2.jpg", "pos": "center 48%" },
-    { "src": "/images/gallery/den-dinh-san-rong-3.jpg", "pos": "center 48%" },
-    { "src": "/images/gallery/hien-den-dinh.jpg", "pos": "center 45%" },
-    { "src": "/images/gallery/noi-dien-den-dinh.jpg", "pos": "center 42%" },
-    { "src": "/images/gallery/den-dinh-ban-tho.jpg", "pos": "center 44%" },
-    { "src": "/images/gallery/tuong-vua-dinh-can-canh.jpg", "pos": "center 24%" },
-    { "src": "/images/gallery/tuong-dinh-hang-lang.jpg", "pos": "center 24%" },
-    { "src": "/images/gallery/tuong-dinh-toan.jpg", "pos": "center 25%" },
-    { "src": "/images/gallery/tuong-hoang-tu-dinh.jpg", "pos": "center 24%" },
-    { "src": "/images/gallery/den-dinh-ho-ban-nguyet.jpg", "pos": "center 48%" },
-    { "src": "/images/gallery/den-dinh-cot-da.jpg", "pos": "center 42%" },
-    { "src": "/images/gallery/le-hoi-den-dinh-1.jpg", "pos": "center 48%" },
-    { "src": "/images/gallery/lang-vua-dinh-ma-yen.jpg", "pos": "center 45%" },
-    { "src": "/images/stories/dinh-1-co-lau-tap-tran.jpg", "pos": "center 34%" },
-    { "src": "/images/stories/dinh-2-dep-12-su-quan.jpg", "pos": "center 35%" },
-    { "src": "/images/stories/dinh-3-hoang-de-dai-co-viet.jpg", "pos": "center 34%" },
-    { "src": "/images/stories/dinh-4-thai-binh-hung-bao-cheo.jpg", "pos": "center 36%" }
-  ],
-  "phu-viet-den-dinh": [
-    { "src": "/images/gallery/phu-viet-den-dinh-2mat.jpg", "pos": "center 45%" },
-    { "src": "/images/gallery/noi-dien-den-dinh.jpg", "pos": "center 42%" },
-    { "src": "/images/gallery/den-dinh-ban-tho.jpg", "pos": "center 44%" },
-    { "src": "/images/gallery/hien-den-dinh.jpg", "pos": "center 45%" },
-    { "src": "/images/gallery/bai-duong-den-dinh-2024.jpg", "pos": "center 48%" },
-    { "src": "/images/gallery/den-dinh-san-rong-3.jpg", "pos": "center 48%" },
-    { "src": "/images/gallery/den-dinh-truc-than-dao-6.jpg", "pos": "center 46%" },
-    { "src": "/images/gallery/tuong-vua-dinh-can-canh.jpg", "pos": "center 24%" },
-    { "src": "/images/gallery/le-hoi-den-dinh-2.jpg", "pos": "center 48%" },
-    { "src": "/images/gallery/den-hoa-lu-2023.jpg", "pos": "center 48%" }
-  ],
-  "nha-bia-den-dinh": [
-    { "src": "/images/gallery/ba-tam-bia-den-dinh.jpg", "pos": "center 45%" },
-    { "src": "/images/gallery/am-co-den-dinh-2024.jpg", "pos": "center 42%" },
-    { "src": "/images/gallery/ao-sung-den-dinh.jpg", "pos": "center 48%" },
-    { "src": "/images/gallery/den-dinh-truc-bia-12.jpg", "pos": "center 46%" },
-    { "src": "/images/gallery/den-dinh-cot-da.jpg", "pos": "center 42%" },
-    { "src": "/images/gallery/den-dinh-cong-2024.jpg", "pos": "center 45%" },
-    { "src": "/images/gallery/den-dinh-ho-ban-nguyet.jpg", "pos": "center 48%" },
-    { "src": "/images/gallery/den-dinh-ao-sen-5.jpg", "pos": "center 48%" },
-    { "src": "/images/gallery/den-dinh-cay-dai-loc.jpg", "pos": "center 48%" },
-    { "src": "/images/gallery/duong-nha-bia-ly-thai-to.jpg", "pos": "center 48%" },
-    { "src": "/images/gallery/den-dinh-san-rong-2.jpg", "pos": "center 48%" }
-  ],
-  "nha-khai-thanh": [
-    { "src": "/images/gallery/nha-khai-thanh-ngoai.jpg", "pos": "center 48%" },
-    { "src": "/images/gallery/tuong-dinh-cong-tru.jpg", "pos": "center 25%" },
-    { "src": "/images/gallery/vuon-co-den-dinh.jpg", "pos": "center 48%" },
-    { "src": "/images/gallery/den-dinh-non-bo-7.jpg", "pos": "center 48%" },
-    { "src": "/images/gallery/den-dinh-cay-dai-loc.jpg", "pos": "center 48%" },
-    { "src": "/images/gallery/den-dinh-ao-sen-5.jpg", "pos": "center 48%" },
-    { "src": "/images/gallery/ao-sung-den-dinh.jpg", "pos": "center 48%" },
-    { "src": "/images/gallery/den-dinh-cong-2024.jpg", "pos": "center 45%" },
-    { "src": "/images/gallery/bai-duong-den-dinh-2024.jpg", "pos": "center 48%" },
-    { "src": "/images/stories/dinh-1-co-lau-tap-tran.jpg", "pos": "center 34%" },
-    { "src": "/images/stories/dinh-3-hoang-de-dai-co-viet.jpg", "pos": "center 34%" }
-  ],
-  "nghi-mon-den-le": [
-    { "src": "/images/gallery/nghi-mon-den-le-ngoai.jpg", "pos": "center 48%" },
-    { "src": "/images/gallery/duong-vao-den-le-2024.jpg", "pos": "center 50%" },
-    { "src": "/images/gallery/duong-vao-den-le-2024-b.jpg", "pos": "center 48%" },
-    { "src": "/images/gallery/cham-rong-go-den-le.jpg", "pos": "center 50%" },
-    { "src": "/images/gallery/chinh-dao-den-le.jpg", "pos": "center 50%" },
-    { "src": "/images/gallery/duong-noi-dinh-le.jpg", "pos": "center 48%" },
-    { "src": "/images/gallery/den-le-cong-bac.jpg", "pos": "center 46%" },
-    { "src": "/images/gallery/den-le-co-thu.jpg", "pos": "center 45%" },
-    { "src": "/images/gallery/den-le-phong-canh-120.jpg", "pos": "center 48%" }
-  ],
-  "nha-tho-khong-tu": [
-    { "src": "/images/gallery/duong-vao-den-le-2024-b.jpg", "pos": "center 48%" },
-    { "src": "/images/gallery/cong-trinh-co-hoa-lu.jpg", "pos": "center 45%" },
-    { "src": "/images/gallery/tuong-khong-tu.jpg", "pos": "center 28%" },
-    { "src": "/images/gallery/khong-tu-an-tho-chinh.jpg", "pos": "center 34%" },
-    { "src": "/images/gallery/khong-tu-ban-tho-2.jpg", "pos": "center 36%" },
-    { "src": "/images/gallery/khong-tu-tuong-can.jpg", "pos": "center 30%" },
-    { "src": "/images/gallery/tu-phoi-khong-tu.jpg", "pos": "center 32%" },
-    { "src": "/images/gallery/khong-tu-nhan-hoi-tu-tu.jpg", "pos": "center 40%" },
-    { "src": "/images/gallery/khong-tu-manh-tu-tang-tu.jpg", "pos": "center 40%" },
-    { "src": "/images/gallery/khong-tu-hoc-tro-can.jpg", "pos": "center 26%" },
-    { "src": "/images/gallery/den-le-co-thu.jpg", "pos": "center 45%" },
-    { "src": "/images/gallery/den-le-phong-canh-121.jpg", "pos": "center 48%" },
-    { "src": "/images/gallery/duong-noi-dinh-le.jpg", "pos": "center 48%" }
-  ],
-  "den-vua-le": [
-    { "src": "/images/gallery/den-le-toan-canh.jpg", "pos": "center 45%" },
-    { "src": "/images/gallery/den-le-chinh-dien.jpg", "pos": "center 45%" },
-    { "src": "/images/gallery/den-le-san-chinh-20.jpg", "pos": "center 48%" },
-    { "src": "/images/gallery/cham-rong-go-den-le.jpg", "pos": "center 50%" },
-    { "src": "/images/gallery/noi-dien-den-le.jpg", "pos": "center 45%" },
-    { "src": "/images/gallery/hien-den-le-cham-khac.jpg", "pos": "center 38%" },
-    { "src": "/images/gallery/den-le-hien-ban-tho.jpg", "pos": "center 44%" },
-    { "src": "/images/gallery/tuong-vua-le-can-canh.jpg", "pos": "center 24%" },
-    { "src": "/images/gallery/tuong-duong-van-nga.jpg", "pos": "center 24%" },
-    { "src": "/images/gallery/tuong-le-long-dinh.jpg", "pos": "center 24%" },
-    { "src": "/images/gallery/le-te-vua-le.jpg", "pos": "center 48%" },
-    { "src": "/images/gallery/lang-vua-le-dai-hanh.jpg", "pos": "center 45%" },
-    { "src": "/images/gallery/cong-lang-vua-le.jpg", "pos": "center 45%" },
-    { "src": "/images/stories/le-1-thap-dao-len-ngoi.jpg", "pos": "center 34%" },
-    { "src": "/images/stories/le-2-pha-tong-bach-dang.jpg", "pos": "center 36%" },
-    { "src": "/images/stories/le-3-thien-phuc-dao-kenh.jpg", "pos": "center 36%" },
-    { "src": "/images/stories/dvn-2-trao-ao-long-con.jpg", "pos": "center 32%" }
-  ],
-  "phu-viet-den-le": [
-    { "src": "/images/gallery/phu-viet-den-le-2mat.jpg", "pos": "center 45%" },
-    { "src": "/images/gallery/noi-dien-den-le.jpg", "pos": "center 45%" },
-    { "src": "/images/gallery/hien-den-le-cham-khac.jpg", "pos": "center 38%" },
-    { "src": "/images/gallery/cham-rong-go-den-le.jpg", "pos": "center 50%" },
-    { "src": "/images/gallery/den-le-hien-ban-tho.jpg", "pos": "center 44%" },
-    { "src": "/images/gallery/den-le-chinh-dien.jpg", "pos": "center 45%" },
-    { "src": "/images/gallery/den-le-toan-canh.jpg", "pos": "center 45%" },
-    { "src": "/images/gallery/tuong-vua-le-can-canh.jpg", "pos": "center 24%" },
-    { "src": "/images/gallery/den-le-san-chinh-20.jpg", "pos": "center 48%" }
-  ],
-  "hai-nha-bia-den-le": [
-    { "src": "/images/gallery/nha-bia-den-le-trai-2024.jpg", "pos": "center 42%" },
-    { "src": "/images/gallery/nha-bia-den-le-phai-2024.jpg", "pos": "center 42%" },
-    { "src": "/images/gallery/cong-va-nha-bia-den-le.jpg", "pos": "center 48%" },
-    { "src": "/images/gallery/sap-da-den-le.jpg", "pos": "center 52%" },
-    { "src": "/images/gallery/den-le-san-chinh-20.jpg", "pos": "center 48%" },
-    { "src": "/images/gallery/den-le-phong-canh-122.jpg", "pos": "center 48%" },
-    { "src": "/images/gallery/den-le-co-thu.jpg", "pos": "center 45%" },
-    { "src": "/images/gallery/chinh-dao-den-le.jpg", "pos": "center 50%" },
-    { "src": "/images/gallery/duong-vao-den-le-2024.jpg", "pos": "center 50%" }
-  ],
-  "nha-trung-bay-di-san": [
-    { "src": "/images/gallery/cot-kinh-gach-co-hoa-lu.jpg", "pos": "center 48%" },
-    { "src": "/images/gallery/gach-dai-viet.jpg", "pos": "center 50%" },
-    { "src": "/images/gallery/tien-thai-binh-hung-bao.jpg", "pos": "center 50%" },
-    { "src": "/images/gallery/tien-thai-binh-mat-truoc.jpg", "pos": "center 50%" },
-    { "src": "/images/gallery/trung-bay-trieu-dinh.jpg", "pos": "center 48%" },
-    { "src": "/images/gallery/so-do-kinh-do-the-ky-x.jpg", "pos": "center 50%" },
-    { "src": "/images/gallery/chua-nhat-tru.jpg", "pos": "center 45%" },
-    { "src": "/images/gallery/truong-thanh-hoa-lu.jpg", "pos": "center 48%" },
-    { "src": "/images/gallery/toan-canh-ma-yen.jpg", "pos": "center 48%" },
-    { "src": "/images/gallery/cong-thanh-hoa-lu-1.jpg", "pos": "center 45%" },
-    { "src": "/images/gallery/canh-quan-hoa-lu-3.jpg", "pos": "center 48%" },
-    { "src": "/images/stories/codo-1-kinh-do-968.jpg", "pos": "center 35%" }
-  ]
+  "long-sang-nghi-mon-ngoai": {
+    "mode": "cues",
+    "slides": [
+      {
+        "src": "/pages/tham-quan/long-sang-nghi-mon-ngoai/03-toan-canh-long-sang.jpg",
+        "pos": "center 52%",
+        "at": 0,
+        "label": { "vi": "Long sàng — Bảo vật quốc gia (2017)", "en": "Dragon Bed — National Treasure (2017)", "fr": "Lit du Dragon — Trésor national (2017)", "ko": "돌 용상 — 국보 (2017)", "zh": "石龙床 — 国家宝物（2017）", "ja": "石の龍床 — 国宝（2017）" }
+      },
+      {
+        "src": "/pages/tham-quan/long-sang-nghi-mon-ngoai/04-long-sang-truoc-nghi-mon.jpg",
+        "pos": "center 58%",
+        "at": 0.08,
+        "cue": { "vi": "đồ thờ", "en": "ritual object", "fr": "objet de culte", "ko": "제사 도구", "zh": "祭祀用品", "ja": "祭器" },
+        "label": { "vi": "Đồ thờ bày lễ vật trước Nghi môn ngoại", "en": "Ceremonial Offering Platform", "fr": "Autel d'offrandes devant le portique", "ko": "외의문 앞 제물 진설용 용상", "zh": "外仪门前祭祀龙床", "ja": "外儀門前の祭祀用龍床" }
+      },
+      {
+        "src": "/pages/tham-quan/long-sang-nghi-mon-ngoai/05-chan-quy-da-ca.jpg",
+        "pos": "center 52%",
+        "at": 0.18,
+        "cue": { "vi": "chân quỳ dạ cá", "en": "chân quỳ dạ cá", "fr": "pieds agenouillés", "ko": "굽은 다리", "zh": "跪足鱼腹形", "ja": "脚がひざまずき" },
+        "label": { "vi": "Kiểu chân quỳ dạ cá vững chãi", "en": "Kneeling-Leg & Fish-Belly Base", "fr": "Socle « pieds agenouillés, ventre de poisson »", "ko": "호랑이 다리·물고기 배 양식 받침", "zh": "跪足鱼腹形底座", "ja": "跪足魚腹様式の台座" }
+      },
+      {
+        "src": "/pages/tham-quan/long-sang-nghi-mon-ngoai/06-hoa-van-thanh-long-sang.jpg",
+        "pos": "center 50%",
+        "at": 0.25,
+        "cue": { "vi": "uyển chuyển", "en": "graceful", "fr": "gracieux", "ko": "유려함", "zh": "雕刻而成", "ja": "しなやかさ" },
+        "label": { "vi": "Hoa văn thành đá Long sàng", "en": "Carved Stone Side Panel", "fr": "Motifs sculptés sur le rebord", "ko": "용상 측면 석조 문양", "zh": "龙床侧面石雕纹饰", "ja": "龍床側面の石彫刻文様" }
+      },
+      {
+        "src": "/pages/tham-quan/long-sang-nghi-mon-ngoai/07-mat-long-sang-rong-lon.jpg",
+        "pos": "center 50%",
+        "at": 0.30,
+        "cue": { "vi": "mặt Long sàng", "en": "top surface", "fr": "surface du Lit du Dragon", "ko": "윗면", "zh": "龙床表面", "ja": "龍床の表面" },
+        "label": { "vi": "Linh vật rồng lớn chạm nổi trên mặt đá", "en": "Great Relief Dragon on Top Surface", "fr": "Grand dragon sculpté en relief", "ko": "용상 윗면의 거대한 양각 용", "zh": "龙床表面浮雕神龙", "ja": "龍床表面の巨大な浮き彫り龍" }
+      },
+      {
+        "src": "/pages/tham-quan/long-sang-nghi-mon-ngoai/08-mong-rong-ban-tay-doc.jpg",
+        "pos": "center 50%",
+        "at": 0.48,
+        "cue": { "vi": "móng rồng", "en": "dragon claws", "fr": "griffes de dragon", "ko": "용 발톱", "zh": "龙爪", "ja": "龍の爪" },
+        "label": { "vi": "Móng rồng sắc nhọn kết hợp nét dân gian", "en": "Dragon Claws & Folk Carving", "fr": "Griffes de dragon traditionnelles", "ko": "전통 용 발톱의 정교한 조각", "zh": "传统龙爪与民间创意", "ja": "伝統的な龍の爪の彫刻" }
+      },
+      {
+        "src": "/pages/tham-quan/long-sang-nghi-mon-ngoai/09-ban-tay-nguoi-tren-long-sang.jpg",
+        "pos": "center 50%",
+        "at": 0.56,
+        "cue": { "vi": "bàn tay con người", "en": "human hands", "fr": "mains humaines", "ko": "사람의 손", "zh": "人类手掌", "ja": "人間の手" },
+        "label": { "vi": "Móng rồng biến hóa thành bàn tay người", "en": "Dragon Claw Transformed into Human Hand", "fr": "Griffe transformée en main humaine", "ko": "사람의 손으로 변형된 용 발톱", "zh": "龙爪化作人手掌", "ja": "人間の手に変化した龍の爪" }
+      },
+      {
+        "src": "/pages/tham-quan/long-sang-nghi-mon-ngoai/10-long-sang-di-san.jpg",
+        "pos": "center 52%",
+        "at": 0.76,
+        "cue": { "vi": "Long sàng đá tại Nghi môn ngoại", "en": "stone Long sàng at the Outer", "fr": "Lit du Dragon en pierre situé", "ko": "외의문(Nghi môn ngoại)에 위치한", "zh": "丁先皇庙外仪门处的石龙床", "ja": "丁廟の外儀門にある石の龍床" },
+        "label": { "vi": "Đỉnh cao điêu khắc đá truyền thống Việt Nam", "en": "Pinnacle of Vietnamese Stone Carving", "fr": "Apogée de la sculpture sur pierre", "ko": "베트남 전통 석조 조각의 정점", "zh": "越南传统石雕艺术巅峰", "ja": "ベトナム伝統石彫刻の頂点" }
+      }
+    ]
+  },
+  "nghi-mon-den-dinh": {
+    "mode": "cues",
+    "slides": [
+      {
+        "src": "/pages/tham-quan/nghi-mon-den-dinh/05-nghi-mon-ngoai-toan-canh.jpg",
+        "pos": "center 56%",
+        "at": 0,
+        "label": { "vi": "Nghi Môn Ngoại đền thờ Vua Đinh", "en": "Outer Gate of King Đinh Temple", "fr": "Portique extérieur du temple Đinh", "ko": "딘 왕 사당 외의문", "zh": "丁先皇庙外仪门", "ja": "丁先皇廟の外儀門" }
+      },
+      {
+        "src": "/pages/tham-quan/nghi-mon-den-dinh/06-mai-ngoi-nghi-mon-ngoai.jpg",
+        "pos": "center 55%",
+        "at": 0.10,
+        "cue": { "vi": "ngưỡng cửa cao", "en": "high threshold", "fr": "seuil élevé", "ko": "문지방이 높은", "zh": "门槛很高", "ja": "敷居の高い" },
+        "label": { "vi": "Ranh giới bước vào không gian linh thiêng", "en": "Threshold to Sacred Worship Space", "fr": "Passage vers l'espace sacré", "ko": "신성한 공간으로 들어서는 경계", "zh": "步入神圣空间之界", "ja": "神聖な空間への境界" }
+      },
+      {
+        "src": "/pages/tham-quan/nghi-mon-den-dinh/07-ba-hang-chan-cot-ngoai.jpg",
+        "pos": "center 50%",
+        "at": 0.22,
+        "cue": { "vi": "Ba hàng chân cột", "en": "three-row column", "fr": "trois rangées de colonnes", "ko": "3열 기둥", "zh": "三排柱", "ja": "3列の柱" },
+        "label": { "vi": "Kết cấu Ba hàng chân cột thế kỷ XVII", "en": "17th-Century Three-Row Column Structure", "fr": "Structure à 3 rangées de colonnes (XVIIe s.)", "ko": "17세기 3열 기둥 건축 구조", "zh": "17世纪三排柱建筑结构", "ja": "17世紀の3列の柱構造" }
+      },
+      {
+        "src": "/pages/tham-quan/nghi-mon-den-dinh/08-he-thong-ruong-cot.jpg",
+        "pos": "center 48%",
+        "at": 0.35,
+        "cue": { "vi": "Hệ thống Rường", "en": "rafters and columns", "fr": "système de fermes", "ko": "대들보와 기둥", "zh": "梁柱系统", "ja": "梁と柱のシステム" },
+        "label": { "vi": "Hệ thống rường cột liên kết chắc chắn", "en": "Interlocked Rafters & Columns", "fr": "Système de fermes et colonnes", "ko": "견고한 대들보와 기둥 구조", "zh": "牢固的梁柱结构", "ja": "堅固な梁と柱の組み構造" }
+      },
+      {
+        "src": "/pages/tham-quan/nghi-mon-den-dinh/09-cham-bong-cham-long-rong.jpg",
+        "pos": "center 50%",
+        "at": 0.41,
+        "cue": { "vi": "chạm bong, chạm lộng", "en": "high-relief and openwork", "fr": "haut-relief et de sculpture ajourée", "ko": "양각(chạm bong)과 투조", "zh": "高浮雕和透雕", "ja": "高浮き彫りと透かし彫り" },
+        "label": { "vi": "Kỹ thuật chạm bong, chạm lộng tinh xảo", "en": "High-Relief & Openwork Dragon Carving", "fr": "Dragons en haut-relief et ajourés", "ko": "양각·투조 기법의 용 조각", "zh": "高浮雕与透雕龙纹", "ja": "高浮き彫り・透かし彫りの龍" }
+      },
+      {
+        "src": "/pages/tham-quan/nghi-mon-den-dinh/10-rong-o-rong-dan.jpg",
+        "pos": "center 50%",
+        "at": 0.46,
+        "cue": { "vi": "Rồng ổ, Rồng đàn", "en": "nesting dragons", "fr": "nids de dragons", "ko": "둥지에 있는 용", "zh": "龙巢、群龙", "ja": "巣にいる龍" },
+        "label": { "vi": "Hình tượng Rồng ổ, Rồng đàn", "en": "Nesting & Clustered Dragons", "fr": "Nids et groupes de dragons", "ko": "둥지 속 용과 무리 지은 용", "zh": "龙巢与群龙雕刻", "ja": "巣にいる龍・群れをなす龍" }
+      },
+      {
+        "src": "/pages/tham-quan/nghi-mon-den-dinh/11-nghi-mon-noi-toan-canh.jpg",
+        "pos": "center 55%",
+        "at": 0.54,
+        "cue": { "vi": "Nghi Môn Nội, bên cạnh", "en": "On the Inner Nghi Môn", "fr": "Au niveau du portique intérieur", "ko": "내의문에서는", "zh": "在内仪门", "ja": "内儀門では" },
+        "label": { "vi": "Nghi Môn Nội đền thờ Vua Đinh", "en": "Inner Gate of King Đinh Temple", "fr": "Portique intérieur du temple Đinh", "ko": "딘 왕 사당 내의문", "zh": "丁先皇庙内仪门", "ja": "丁先皇廟の内儀門" }
+      },
+      {
+        "src": "/pages/tham-quan/nghi-mon-den-dinh/12-cham-khac-doi-song-noi.jpg",
+        "pos": "center 50%",
+        "at": 0.61,
+        "cue": { "vi": "người đấu thú", "en": "men fighting beasts", "fr": "combats vigoureux avec des bêtes", "ko": "야수와의 결투", "zh": "人类斗兽", "ja": "獣と戦う人々" },
+        "label": { "vi": "Chạm khắc đời sống dân gian trên gỗ", "en": "Folk Life Woodcarvings", "fr": "Sculptures de scènes de vie populaire", "ko": "민간 생활상이 담긴 목조각", "zh": "民间生活木雕题材", "ja": "民間の生活を描く木彫刻" }
+      },
+      {
+        "src": "/pages/tham-quan/nghi-mon-den-dinh/13-xa-cham-nghi-mon-noi.jpg",
+        "pos": "center 48%",
+        "at": 0.68,
+        "cue": { "vi": "con thú nằm nghỉ ngơi", "en": "animals resting quietly", "fr": "animaux se reposant", "ko": "짐승들이 조용히 쉬고", "zh": "野兽静静休息", "ja": "静かに休んでいる獣" },
+        "label": { "vi": "Mảng chạm bình dị gợi cảnh làng quê", "en": "Peaceful Village Motifs in Wood", "fr": "Scènes paisibles du village vietnamien", "ko": "평화로운 농촌 풍경 조각", "zh": "祥和乡村景象木雕", "ja": "平和な農村風景の彫刻" }
+      },
+      {
+        "src": "/pages/tham-quan/nghi-mon-den-dinh/14-vu-nu-cuoi-rong.jpg",
+        "pos": "center 48%",
+        "at": 0.74,
+        "cue": { "vi": "vũ nữ thiên thần cưỡi Rồng", "en": "celestial dancers riding dragons", "fr": "fées célestes chevauchant des dragons", "ko": "용을 타고 있는 선녀", "zh": "骑龙的仙女舞者", "ja": "龍に乗る天女" },
+        "label": { "vi": "Vũ nữ thiên thần cưỡi Rồng uyển chuyển", "en": "Celestial Dancers Riding Dragons", "fr": "Fées célestes chevauchant des dragons", "ko": "용을 탄 선녀 무희 조각", "zh": "骑龙仙女舞者雕刻", "ja": "龍に乗る天女の舞" }
+      },
+      {
+        "src": "/pages/tham-quan/nghi-mon-den-dinh/15-ket-cau-nghi-mon-noi.jpg",
+        "pos": "center 50%",
+        "at": 0.82,
+        "cue": { "vi": "Nhìn chung", "en": "Overall, although", "fr": "En général", "ko": "전반적으로", "zh": "总的来说", "ja": "全体として" },
+        "label": { "vi": "Không gian kiến trúc gỗ Nghi Môn Nội", "en": "Wooden Architecture of Inner Gate", "fr": "Architecture en bois du portique intérieur", "ko": "내의문의 목조 건축 공간", "zh": "内仪门木构建筑空间", "ja": "内儀門の木造建築空間" }
+      },
+      {
+        "src": "/pages/tham-quan/nghi-mon-den-dinh/16-loi-vao-den-vua-dinh.jpg",
+        "pos": "center 58%",
+        "at": 0.91,
+        "cue": { "vi": "trầm mặc", "en": "contemplative beauty", "fr": "beauté sereine", "ko": "고요하고 영기가 충만한", "zh": "沉稳而充满灵气", "ja": "静かで霊気に満ちた" },
+        "label": { "vi": "Vẻ đẹp trầm mặc & linh khí Đền Vua Đinh", "en": "Sacred Aura of King Đinh Temple", "fr": "Sérénité sacrée du temple du roi Đinh", "ko": "딘 왕 사당의 고요한 영기", "zh": "丁先皇庙沉稳灵气", "ja": "丁先皇廟の静謐な霊気" }
+      }
+    ]
+  },
+  "long-sang-san-rong": {
+    "mode": "cues",
+    "slides": [
+      {
+        "src": "/pages/tham-quan/long-sang-san-rong/04-toan-canh-long-sang-san-rong.jpg",
+        "pos": "center 58%",
+        "at": 0,
+        "label": { "vi": "Long sàng đá sân Rồng — Bảo vật quốc gia", "en": "Courtyard Dragon Bed — National Treasure", "fr": "Lit du Dragon de la cour — Trésor national", "ko": "딘 왕 사당 뜰의 돌 용상 — 국보", "zh": "丁王庙庭院石龙床 — 国家宝物", "ja": "丁王廟中庭の石の龍床 — 国宝" }
+      },
+      {
+        "src": "/pages/tham-quan/long-sang-san-rong/05-goc-nghieng-long-sang.jpg",
+        "pos": "center 54%",
+        "at": 0.09,
+        "cue": { "vi": "đồ tế khí", "en": "sacred ritual object", "fr": "objet rituel sacré", "ko": "신성한 제사 도구", "zh": "神圣的祭器", "ja": "神聖な祭器" },
+        "label": { "vi": "Đồ tế khí bày lễ vật dâng cúng", "en": "Sacred Stone Offering Platform", "fr": "Autel rituel en pierre pour offrandes", "ko": "제물을 진설하는 신성한 제사 도구", "zh": "摆放庄重祭品的神圣祭器", "ja": "供え物を置く神聖な祭器" }
+      },
+      {
+        "src": "/pages/tham-quan/long-sang-san-rong/06-mat-long-sang-rong-lon.jpg",
+        "pos": "center 50%",
+        "at": 0.27,
+        "cue": { "vi": "Trung tâm của Long Sàng", "en": "At the center of the Long sàng", "fr": "Au centre du Lit du Dragon", "ko": "용상의 중심에는", "zh": "龙床的中心", "ja": "龍床の中心" },
+        "label": { "vi": "Rồng lớn thân mập, vảy đơn & đao mác lá hỏa", "en": "Central Relief Dragon with Flame Motifs", "fr": "Grand dragon central aux écailles simples", "ko": "통통한 몸과 홑비늘의 거대한 용", "zh": "龙床中心浮雕巨龙", "ja": "中央のふっくらとした巨龍" }
+      },
+      {
+        "src": "/pages/tham-quan/long-sang-san-rong/07-toan-mat-long-sang.jpg",
+        "pos": "center 52%",
+        "at": 0.36,
+        "cue": { "vi": "mưa thuận gió hòa", "en": "favorable weather", "fr": "climat clément", "ko": "비바람이 순조롭고", "zh": "风调雨顺", "ja": "風雨が順調" },
+        "label": { "vi": "Biểu trưng vương quyền & cầu mùa màng bội thu", "en": "Symbol of Royal Authority & Harvest", "fr": "Pouvoir royal et récoltes abondantes", "ko": "왕권과 풍년의 염원", "zh": "象征王权与五谷丰登", "ja": "王権と豊作への祈り" }
+      },
+      {
+        "src": "/pages/tham-quan/long-sang-san-rong/08-diem-long-sang-ca-tom.jpg",
+        "pos": "center 52%",
+        "at": 0.46,
+        "cue": { "vi": "diềm Long Sàng", "en": "border of the Long sàng", "fr": "pourtour du Lit du Dragon", "ko": "용상 둘레에는", "zh": "龙床边缘", "ja": "龍床の縁" },
+        "label": { "vi": "Diềm Long sàng chạm rồng, cá và tôm", "en": "Border Carvings of Dragons, Fish & Shrimp", "fr": "Pourtour sculpté de dragons, poissons et crevettes", "ko": "용·물고기·새우가 새겨진 용상 둘레", "zh": "龙床边缘双龙鱼虾纹", "ja": "龍・魚・エビを彫った龍床の縁" }
+      },
+      {
+        "src": "/pages/tham-quan/long-sang-san-rong/09-hoa-van-chan-long-sang.jpg",
+        "pos": "center 50%",
+        "at": 0.52,
+        "cue": { "vi": "cá và tôm", "en": "fish, and shrimp", "fr": "poissons et des crevettes", "ko": "물고기와 새우", "zh": "鱼虾形象", "ja": "魚やエビ" },
+        "label": { "vi": "Hoa văn mây xoắn & thủy sinh ở chân đế", "en": "Spiral Cloud & Aquatic Reliefs", "fr": "Nuages en spirale et motifs aquatiques", "ko": "소용돌이 구름과 수생 문양", "zh": "卷云纹与水乡雕刻", "ja": "巻き雲と水辺の文様" }
+      },
+      {
+        "src": "/pages/tham-quan/long-sang-san-rong/10-ban-tay-nguoi-san-rong.jpg",
+        "pos": "center 50%",
+        "at": 0.57,
+        "cue": { "vi": "bàn tay con người", "en": "human hands", "fr": "mains humaines", "ko": "사람의 손", "zh": "人类手掌", "ja": "人間の手" },
+        "label": { "vi": "Cách điệu độc đáo: bàn tay con người", "en": "Human Hand Carved Beside Dragon Claws", "fr": "Mains humaines sculptées parmi les griffes", "ko": "의인화된 사람의 손 조각", "zh": "拟人化人类手掌雕刻", "ja": "人間の手を彫り込んだ擬人化表現" }
+      },
+      {
+        "src": "/pages/tham-quan/long-sang-san-rong/11-rong-chau-yen-ngua.jpg",
+        "pos": "center 46%",
+        "at": 0.70,
+        "cue": { "vi": "kiểu yên ngựa", "en": "saddle style", "fr": "selle de cheval", "ko": "말안장 형태", "zh": "马鞍形", "ja": "馬の鞍" },
+        "label": { "vi": "Hai rồng chầu kiểu yên ngựa hai bên", "en": "Flanking Saddle-Style Stone Dragons", "fr": "Dragons en forme de selle de part et d'autre", "ko": "양쪽의 말안장 형태 돌용", "zh": "两侧马鞍形石雕朝龙", "ja": "両側の馬の鞍形の石龍" }
+      },
+      {
+        "src": "/pages/tham-quan/long-sang-san-rong/12-dau-rong-da-uy-nghiem.jpg",
+        "pos": "center 46%",
+        "at": 0.76,
+        "cue": { "vi": "thế tay ngai", "en": "throne with armrests", "fr": "aspect d'un trône", "ko": "안락의자 형태", "zh": "扶手椅的姿态", "ja": "肘掛け椅子の姿勢" },
+        "label": { "vi": "Tạo thế tay ngai uy nghiêm, thành kính", "en": "Majestic Throne-Armrest Profile", "fr": "Allure solennelle de trône royal", "ko": "왕좌의 위엄을 띤 돌용 머리", "zh": "扶手椅般的威严气势", "ja": "威厳ある肘掛け椅子型の龍頭" }
+      },
+      {
+        "src": "/pages/tham-quan/long-sang-san-rong/13-long-sang-san-rong-doc-ban.jpg",
+        "pos": "center 48%",
+        "at": 0.83,
+        "cue": { "vi": "hiện vật độc bản", "en": "one-of-a-kind piece", "fr": "objet unique", "ko": "유일무이하고", "zh": "独一无二", "ja": "唯一無二" },
+        "label": { "vi": "Hiện vật độc bản điêu khắc sập thờ Việt Nam", "en": "Unique Masterpiece of Vietnamese Stone Art", "fr": "Chef-d'œuvre unique de sculpture d'autel", "ko": "베트남 제단 조각 예술의 대표작", "zh": "越南祭床石雕代表作", "ja": "ベトナム祭壇彫刻の代表的傑作" }
+      }
+    ]
+  },
+  "den-vua-dinh": {
+    "mode": "cues",
+    "slides": [
+      {
+        "src": "/pages/tham-quan/den-vua-dinh/07-canh-ngoai-den-dinh.jpg",
+        "pos": "center 52%",
+        "at": 0,
+        "label": { "vi": "Đền thờ Vua Đinh Tiên Hoàng", "en": "Temple of Emperor Đinh Tiên Hoàng", "fr": "Temple du roi Đinh Tiên Hoàng", "ko": "딘 띠엔 황 왕 사당", "zh": "丁先皇庙", "ja": "丁先皇廟" }
+      },
+      {
+        "src": "/pages/tham-quan/den-vua-dinh/08-mat-tien-den-dinh.jpg",
+        "pos": "center 54%",
+        "at": 0.014,
+        "cue": { "vi": "Nội công, ngoại quốc", "en": "nội công, ngoại quốc", "fr": "Nội công ngoại quốc", "ko": "내공외국", "zh": "内工外国", "ja": "内工外国" },
+        "label": { "vi": "Kiến trúc kiểu \"Nội công, ngoại quốc\"", "en": "\"Nội Công, Ngoại Quốc\" Architecture", "fr": "Architecture « Nội công, ngoại quốc »", "ko": "내공외국(內工外國) 건축 양식", "zh": "“内工外国”建筑格局", "ja": "「内工外国」の建築様式" }
+      },
+      {
+        "src": "/pages/tham-quan/den-vua-dinh/09-hien-den-van-bung.jpg",
+        "pos": "center 50%",
+        "at": 0.022,
+        "cue": { "vi": "Hiên đền", "en": "temple porch", "fr": "galerie du temple", "ko": "사당의 회랑", "zh": "庙宇的游廊", "ja": "縁側は彫刻" },
+        "label": { "vi": "Hiên đền & nghệ thuật chạm khắc Ván bưng", "en": "Carved Wooden Panels on Temple Porch", "fr": "Panneaux sculptés de la galerie", "ko": "사당 회랑의 판벽 목조각", "zh": "游廊挡板木雕艺术", "ja": "縁側の羽目板木彫刻" }
+      },
+      {
+        "src": "/pages/tham-quan/den-vua-dinh/10-dau-rong-cham-go-hien.jpg",
+        "pos": "center 46%",
+        "at": 0.036,
+        "cue": { "vi": "lưỡng Long", "en": "pair of dragons", "fr": "deux dragons", "ko": "두 마리 용", "zh": "双龙", "ja": "二匹の龍" },
+        "label": { "vi": "Đầu rồng chạm khắc gỗ tinh xảo ở hiên đền", "en": "Exquisite Carved Dragon Detail", "fr": "Dragon sculpté sur bois au porche", "ko": "회랑의 정교한 목조 용 조각", "zh": "游廊精美木雕龙头", "ja": "縁側の精巧な木彫り龍" }
+      },
+      {
+        "src": "/pages/tham-quan/den-vua-dinh/11-cua-va-nguong-da.jpg",
+        "pos": "center 58%",
+        "at": 0.050,
+        "cue": { "vi": "Điêu khắc đá", "en": "stone carving", "fr": "sculpture sur pierre", "ko": "석조 조각", "zh": "石雕艺术", "ja": "石彫刻" },
+        "label": { "vi": "Lối cửa & ngưỡng cửa đá thế kỷ XIX", "en": "19th-Century Stone Threshold & Doorway", "fr": "Seuil de pierre et portes du XIXe siècle", "ko": "19세기 돌 문지방과 출입문", "zh": "19世纪石门槛与大门", "ja": "19世紀の石の敷居と扉" }
+      },
+      {
+        "src": "/pages/tham-quan/den-vua-dinh/03-nguong-cua-da.jpg",
+        "pos": "center 50%",
+        "at": 0.072,
+        "cue": { "vi": "Tứ linh", "en": "Four Sacred Creatures", "fr": "Quatre animaux sacrés", "ko": "사령", "zh": "四灵", "ja": "四霊" },
+        "label": { "vi": "Ngưỡng cửa đá chạm \"Tứ linh\" (Long, Ly, Quy, Phượng)", "en": "Stone Threshold Carved with Four Sacred Creatures", "fr": "Seuil en pierre aux Quatre Animaux Sacrés", "ko": "사령(용·기린·거북·봉황) 돌 문지방", "zh": "四灵石雕门槛", "ja": "四霊を彫った石の敷居" }
+      },
+      {
+        "src": "/pages/tham-quan/den-vua-dinh/12-hanh-lang-cot-go-hien.jpg",
+        "pos": "center 50%",
+        "at": 0.102,
+        "cue": { "vi": "cầu Đông", "en": "Đông Bridge", "fr": "pont Đông", "ko": "동(Đông) 다리", "zh": "东桥", "ja": "東橋" },
+        "label": { "vi": "Hành lang hiên Đền thờ Vua Đinh", "en": "Verandah of King Đinh Temple", "fr": "Galerie extérieure du temple Đinh", "ko": "딘 왕 사당 회랑 기둥", "zh": "丁先皇庙游廊柱廊", "ja": "丁先皇廟の回廊" }
+      },
+      {
+        "src": "/pages/tham-quan/den-vua-dinh/13-truc-noi-dien-den-dinh.jpg",
+        "pos": "center 55%",
+        "at": 0.124,
+        "cue": { "vi": "Nội điện", "en": "inner sanctuary", "fr": "palais intérieur", "ko": "내전은", "zh": "内殿采用", "ja": "内殿は" },
+        "label": { "vi": "Nội điện chữ Công gồm ba tòa", "en": "Three-Hall Inner Sanctuary", "fr": "Sanctuaire intérieur en trois bâtiments", "ko": "공(工)자형 3동 내전 구조", "zh": "工字形三进内殿", "ja": "工字型の三殿構成の内殿" }
+      },
+      {
+        "src": "/pages/tham-quan/den-vua-dinh/14-toa-bai-duong.jpg",
+        "pos": "center 48%",
+        "at": 0.139,
+        "cue": { "vi": "Tòa Bái đường", "en": "The Bái Đường", "fr": "Le Bái đường", "ko": "배당은", "zh": "拜堂是", "ja": "拝堂は" },
+        "label": { "vi": "Tòa Bái đường thờ Công đồng", "en": "Bái Đường Worship Hall", "fr": "Salle de culte Bái Đường", "ko": "공동(諸神)을 모시는 배당", "zh": "供奉诸神的拜堂", "ja": "公同を祀る拝堂" }
+      },
+      {
+        "src": "/pages/tham-quan/den-vua-dinh/15-dai-tu-chinh-thong-thuy.jpg",
+        "pos": "center 28%",
+        "at": 0.148,
+        "cue": { "vi": "Chính thống thủy", "en": "Chính thống thủy", "fr": "Chính thống thủy", "ko": "정통시", "zh": "正统始", "ja": "正統始" },
+        "label": { "vi": "Bức đại tự \"Chính thống thủy\"", "en": "Plaque \"Chính Thống Thủy\"", "fr": "Panneau « Chính thống thủy »", "ko": "현판 \"정통시(正統始)\"", "zh": "“正统始”大字匾额", "ja": "扁額「正統始」" }
+      },
+      {
+        "src": "/pages/tham-quan/den-vua-dinh/16-toa-thieu-huong-van-me.jpg",
+        "pos": "center 48%",
+        "at": 0.177,
+        "cue": { "vi": "Tòa Thiêu hương", "en": "The Thiêu Hương", "fr": "Le Thiêu hương", "ko": "소향 건물은", "zh": "烧香区是", "ja": "焼香の建物は" },
+        "label": { "vi": "Tòa Thiêu hương & bộ vì Ván mê tạc Rồng", "en": "Thiêu Hương Hall & Carved Dragon Frame", "fr": "Salle Thiêu Hương et tympans sculptés", "ko": "소향 건물과 용 조각 칸막이", "zh": "烧香殿龙纹拱肩木雕", "ja": "焼香殿と龍彫りの仕切り" }
+      },
+      {
+        "src": "/pages/tham-quan/den-vua-dinh/17-van-me-rong-o-rong-dan.jpg",
+        "pos": "center 42%",
+        "at": 0.195,
+        "cue": { "vi": "Rồng săn mồi", "en": "hunting prey", "fr": "dragons chassant", "ko": "먹이를 사냥하는 용", "zh": "捕食龙", "ja": "狩りをする龍" },
+        "label": { "vi": "Hoạt cảnh Rồng săn mồi, Rồng ổ, Rồng đàn", "en": "Hunting, Nesting & Clustered Dragons", "fr": "Dragons chassant, en nid et en groupe", "ko": "사냥·둥지·무리 지은 용 조각", "zh": "捕食龙、巢中龙与群龙", "ja": "狩る龍・巣の龍・群れの龍" }
+      },
+      {
+        "src": "/pages/tham-quan/den-vua-dinh/18-toa-chinh-cung-vua-dinh.jpg",
+        "pos": "center 32%",
+        "at": 0.215,
+        "cue": { "vi": "Tòa Chính cung", "en": "The Chính Cung", "fr": "Le Chính cung", "ko": "정궁에는", "zh": "正宫内", "ja": "正宮には" },
+        "label": { "vi": "Tòa Chính cung — Tượng Vua Đinh Tiên Hoàng", "en": "Chính Cung — Statue of King Đinh", "fr": "Chính Cung — Statue du roi Đinh", "ko": "정궁 — 딘 띠엔 황 왕 동상", "zh": "正宫 — 丁先皇塑像", "ja": "正宮 — 丁先皇像" }
+      },
+      {
+        "src": "/pages/tham-quan/den-vua-dinh/05-tuong-cac-hoang-tu.jpg",
+        "pos": "center 34%",
+        "at": 0.224,
+        "cue": { "vi": "Đinh Liễn", "en": "Đinh Liễn", "fr": "Đinh Liễn", "ko": "딘 리엔", "zh": "丁琏", "ja": "丁璉" },
+        "label": { "vi": "Tượng các hoàng tử triều Đinh", "en": "Statues of the Đinh Princes", "fr": "Statues des princes de la dynastie Đinh", "ko": "딘 왕조 황자들의 동상", "zh": "丁朝皇子塑像", "ja": "丁朝の皇子たちの像" }
+      },
+      {
+        "src": "/images/stories/dinh-1-co-lau-tap-tran.jpg",
+        "pos": "center 34%",
+        "at": 0.232,
+        "cue": { "vi": "Đinh Bộ Lĩnh", "en": "Đinh Bộ Lĩnh", "fr": "Đinh Bộ Lĩnh", "ko": "딘 보 린", "zh": "丁部领", "ja": "丁部領" },
+        "label": { "vi": "Thiếu thời cờ lau tập trận (Đinh Bộ Lĩnh)", "en": "Boyhood Reed-Banner Mock Battles", "fr": "Jeunesse : batailles aux étendards de roseaux", "ko": "어린 시절 갈대꽃 깃발 진법 연습", "zh": "少年丁部领芦苇旗演阵", "ja": "少年時代の芦の旗の陣形遊び" }
+      },
+      {
+        "src": "/images/stories/dinh-2-dep-12-su-quan.jpg",
+        "pos": "center 35%",
+        "at": 0.335,
+        "cue": { "vi": "944", "en": "944", "fr": "944", "ko": "944년", "zh": "944年", "ja": "944年" },
+        "label": { "vi": "Dẹp loạn 12 sứ quân — Vạn Thắng Vương", "en": "Quelling the 12 Warlords — Vạn Thắng Vương", "fr": "Pacification des 12 seigneurs de guerre", "ko": "12사군의 난 평정 — 만승왕", "zh": "平定十二使君之乱 — 万胜王", "ja": "十二使君の乱を平定 — 万勝王" }
+      },
+      {
+        "src": "/images/stories/dinh-3-hoang-de-dai-co-viet.jpg",
+        "pos": "center 34%",
+        "at": 0.511,
+        "cue": { "vi": "Năm 968", "en": "In 968", "fr": "En 968", "ko": "968년", "zh": "968年", "ja": "968年" },
+        "label": { "vi": "Năm 968: Xưng Hoàng đế, quốc hiệu Đại Cồ Việt", "en": "968: Emperor of Đại Cồ Việt", "fr": "968 : Empereur du Đại Cồ Việt", "ko": "968년 황제 즉위 및 대구월 건국", "zh": "968年登基称帝，定国号大瞿越", "ja": "968年即位・大瞿越建国" }
+      },
+      {
+        "src": "/pages/tham-quan/den-vua-dinh/19-kien-truc-noi-dien.jpg",
+        "pos": "center 50%",
+        "at": 0.642,
+        "cue": { "vi": "Năm 971", "en": "In 971", "fr": "En 971", "ko": "971년", "zh": "971年", "ja": "971年" },
+        "label": { "vi": "Năm 971: Định phẩm trật triều đình nhà Đinh", "en": "971: Establishing the Imperial Court", "fr": "971 : Organisation de la cour impériale", "ko": "971년 중앙집권 조정과 관위 제정", "zh": "971年设定百官品级", "ja": "971年：文武百官の官位制定" }
+      },
+      {
+        "src": "/images/stories/dinh-4-thai-binh-hung-bao-cheo.jpg",
+        "pos": "center 36%",
+        "at": 0.775,
+        "cue": { "vi": "Thái Bình hưng bảo", "en": "Thái Bình hưng bảo", "fr": "Thái Bình hưng bảo", "ko": "태평흥보", "zh": "太平兴宝", "ja": "太平興宝" },
+        "label": { "vi": "Đúc tiền \"Thái Bình Hưng Bảo\" & hát Chèo cung đình", "en": "Thái Bình Hưng Bảo Coins & Court Chèo", "fr": "Monnaie Thái Bình Hưng Bảo et théâtre Chèo", "ko": "태평흥보 주조와 궁중 체오 예술", "zh": "铸造太平兴宝钱与宫廷嘲剧", "ja": "太平興宝の鋳造と宮廷チェオ" }
+      },
+      {
+        "src": "/pages/tham-quan/gioi-thieu-di-tich/den-tho-vua-dinh-tien-hoang.jpg",
+        "pos": "center 22%",
+        "at": 0.863,
+        "cue": { "vi": "Lê Văn Hưu", "en": "Lê Văn Hưu", "fr": "Lê Văn Hưu", "ko": "레 반 흐우", "zh": "黎文休", "ja": "黎文休" },
+        "label": { "vi": "Sử gia Lê Văn Hưu ca ngợi công đức Tiên Hoàng", "en": "Historian Lê Văn Hưu's Tribute to King Đinh", "fr": "Éloge de l'historien Lê Văn Hưu", "ko": "역사가 레 반 흐우의 선황 찬사", "zh": "史学家黎文休赞颂丁先皇", "ja": "歴史家・黎文休による称賛" }
+      },
+      {
+        "src": "/images/stories/dvn-2-trao-ao-long-con.jpg",
+        "pos": "center 32%",
+        "at": 0.944,
+        "cue": { "vi": "979", "en": "979", "fr": "979", "ko": "979년", "zh": "979年", "ja": "979年" },
+        "label": { "vi": "Năm 979: Chuyển giao triều đại Đinh – Tiền Lê", "en": "979: Transition from Đinh to Early Lê", "fr": "979 : Transition vers la dynastie Tiền Lê", "ko": "979년 딘 왕조에서 전레 왕조로 계승", "zh": "979年丁朝向的前黎朝交替", "ja": "979年：丁朝から前黎朝への継承" }
+      }
+    ]
+  },
+  "phu-viet-den-dinh": {
+    "mode": "cues",
+    "slides": [
+      {
+        "src": "/pages/tham-quan/phu-viet-den-dinh/04-phu-viet-bao-vat-quoc-gia.jpg",
+        "pos": "center 44%",
+        "at": 0,
+        "label": { "vi": "Phủ Việt Đền Vua Đinh — Bảo vật quốc gia (2020)", "en": "Ceremonial Axes — National Treasure (2020)", "fr": "Phủ Việt — Trésor national (2020)", "ko": "딘 왕 사당 부월 — 국보 (2020)", "zh": "丁先皇庙斧钺 — 国家宝物（2020）", "ja": "丁先皇廟の斧鉞 — 国宝（2020）" }
+      },
+      {
+        "src": "/pages/tham-quan/phu-viet-den-dinh/05-luoi-riu-phu-viet.jpg",
+        "pos": "center 48%",
+        "at": 0.06,
+        "cue": { "vi": "loại rìu", "en": "type of axe", "fr": "type de hache", "ko": "도끼의 일종", "zh": "一种斧头", "ja": "一種の斧" },
+        "label": { "vi": "Biểu tượng uy quyền từ loại binh khí cổ", "en": "Symbol of Divine & Royal Authority", "fr": "Symbole suprême du pouvoir royal", "ko": "신권과 위권의 상징이 된 도끼", "zh": "神权与威权的象征", "ja": "神権と王権の象徴となった斧" }
+      },
+      {
+        "src": "/pages/tham-quan/phu-viet-den-dinh/06-hai-hien-vat-phu-viet.jpg",
+        "pos": "center 42%",
+        "at": 0.19,
+        "cue": { "vi": "gỗ quý, sơn son thếp vàng", "en": "precious wood, lacquered red", "fr": "bois précieux, laqués de rouge", "ko": "붉은 칠과 금박", "zh": "名贵木材精心制作", "ja": "朱塗りと金箔" },
+        "label": { "vi": "Hai hiện vật gỗ quý sơn son thếp vàng dài hơn 3m", "en": "Pair of 3m Gilded Precious-Wood Axes", "fr": "Deux pièces en bois laqué rouge et doré (>3 m)", "ko": "3m가 넘는 붉은 칠·금박 부월 한 쌍", "zh": "逾三米朱漆贴金名贵木斧钺", "ja": "長さ3m超の朱塗り金箔斧鉞一対" }
+      },
+      {
+        "src": "/pages/tham-quan/phu-viet-den-dinh/07-than-bat-giac-phu-viet.jpg",
+        "pos": "center 42%",
+        "at": 0.28,
+        "cue": { "vi": "hình bát giác", "en": "octagonal", "fr": "section octogonale", "ko": "팔각형 단면", "zh": "八角形", "ja": "八角形の断面" },
+        "label": { "vi": "Phần thân Phủ Việt tiết diện hình bát giác", "en": "Octagonal Shaft & Ornamental Collar", "fr": "Hampe de section octogonale", "ko": "팔각형 단면의 부월 몸통", "zh": "八角形柄部细节", "ja": "八角形断面の胴体部分" }
+      },
+      {
+        "src": "/pages/tham-quan/phu-viet-den-dinh/08-cham-khac-than-phu-viet.jpg",
+        "pos": "center 48%",
+        "at": 0.32,
+        "cue": { "vi": "thế kỷ XVII", "en": "17th century", "fr": "XVIIe siècle", "ko": "17세기", "zh": "17世纪", "ja": "17世紀" },
+        "label": { "vi": "Phong cách chạm khắc thời Hậu Lê (thế kỷ XVII)", "en": "17th-Century Later Lê Woodcarving", "fr": "Sculpture de la période Hậu Lê (XVIIe s.)", "ko": "17세기 후레 시대 조각 양식", "zh": "后黎时期（17世纪）木雕风格", "ja": "後黎朝（17世紀）の木彫刻様式" }
+      },
+      {
+        "src": "/pages/tham-quan/phu-viet-den-dinh/09-dau-phu-viet-rong-me-con.jpg",
+        "pos": "center 44%",
+        "at": 0.40,
+        "cue": { "vi": "Phần đầu Phủ Việt", "en": "The head of the Phủ Việt", "fr": "La partie supérieure du Phủ Việt", "ko": "부월의 머리 부분은", "zh": "斧钺的头部", "ja": "斧鉞の先端部分" },
+        "label": { "vi": "Đầu Phủ Việt chạm rồng mẹ và 5 rồng con", "en": "Head Carved with Mother & Five Young Dragons", "fr": "Tête sculptée de la mère dragon et 5 petits", "ko": "어미 용과 새끼 용 다섯 마리가 새겨진 머리", "zh": "母龙与五条小龙雕刻头部", "ja": "母龍と5匹の子龍を彫った先端" }
+      },
+      {
+        "src": "/pages/tham-quan/phu-viet-den-dinh/10-can-canh-rong-me-nam-rong-con.jpg",
+        "pos": "center 50%",
+        "at": 0.50,
+        "cue": { "vi": "rồng mẹ bên các rồng con", "en": "mother dragon with her young", "fr": "mère dragon aux côtés de ses petits", "ko": "새끼 용들 곁에 있는 어미 용", "zh": "母龙与小龙相伴", "ja": "子龍たちに寄り添う母龍" },
+        "label": { "vi": "Cận cảnh rồng mẹ quây quần năm rồng con", "en": "Close-up of Mother & Young Dragons", "fr": "Détail de la mère dragon et ses petits", "ko": "어미 용과 새끼 용 근접 촬영", "zh": "母龙携五小龙特写", "ja": "母龍と子龍たちのクローズアップ" }
+      },
+      {
+        "src": "/pages/tham-quan/phu-viet-den-dinh/11-hoa-tiet-dao-lua.jpg",
+        "pos": "center 46%",
+        "at": 0.56,
+        "cue": { "vi": "đao lửa", "en": "flame-blade", "fr": "flammes", "ko": "불꽃 문양", "zh": "火焰纹", "ja": "炎の文様" },
+        "label": { "vi": "Họa tiết đao lửa tinh xảo trên đỉnh Phủ Việt", "en": "Flaming-Blade Motifs at the Crown", "fr": "Motifs de flammes au sommet", "ko": "부월 상단의 정교한 불꽃 문양", "zh": "精美火焰纹雕刻", "ja": "精巧な炎の文様" }
+      },
+      {
+        "src": "/pages/tham-quan/phu-viet-den-dinh/12-can-canh-luoi-phu-viet.jpg",
+        "pos": "center 50%",
+        "at": 0.62,
+        "cue": { "vi": "tác phẩm điêu khắc gỗ", "en": "work of wood sculpture", "fr": "œuvre de sculpture sur bois", "ko": "목조 조각 작품", "zh": "木雕作品", "ja": "木彫刻作品" },
+        "label": { "vi": "Lưỡi Phủ Việt sơn son thếp vàng rực rỡ", "en": "Red-Lacquered & Gilded Ceremonial Blade", "fr": "Lame laquée rouge et dorée à l'or", "ko": "붉은 칠과 금박이 빛나는 부월 날", "zh": "朱漆贴金斧刃细节", "ja": "朱塗りと金箔が輝く刃部" }
+      },
+      {
+        "src": "/pages/tham-quan/phu-viet-den-dinh/13-phu-viet-mat-sau.jpg",
+        "pos": "center 44%",
+        "at": 0.74,
+        "cue": { "vi": "hơn bốn thế kỷ", "en": "more than four centuries", "fr": "plus de quatre siècles", "ko": "4세기가 넘는", "zh": "四个多世纪", "ja": "4世紀以上" },
+        "label": { "vi": "Bảo vật hơn bốn thế kỷ tại Đền Vua Đinh", "en": "Over Four Centuries of Sacred Heritage", "fr": "Plus de quatre siècles d'histoire", "ko": "4세기 넘게 보존된 국보 부월", "zh": "历经四个多世纪的国宝", "ja": "4世紀以上伝わる国宝" }
+      },
+      {
+        "src": "/pages/tham-quan/phu-viet-den-dinh/14-dinh-phu-viet-thep-vang.jpg",
+        "pos": "center 46%",
+        "at": 0.87,
+        "cue": { "vi": "kính cẩn và tự hào", "en": "reverence and boundless pride", "fr": "respect et une fierté", "ko": "경외감과 자부심", "zh": "敬意与自豪", "ja": "敬意と無限の誇り" },
+        "label": { "vi": "Chi tiết đỉnh Phủ Việt thếp vàng tinh xảo", "en": "Gilded Finial of the Ceremonial Mace", "fr": "Sommet doré finement ciselé", "ko": "정교하게 조각된 금박 부월 상단", "zh": "贴金斧钺顶部细节", "ja": "精巧な金箔頂部" }
+      }
+    ]
+  },
+  "nha-bia-den-dinh": {
+    "mode": "cues",
+    "slides": [
+      {
+        "src": "/pages/tham-quan/nha-bia-den-dinh/05-nha-bia-ngoai-canh.jpg",
+        "pos": "center 54%",
+        "at": 0,
+        "label": { "vi": "Nhà bia Đền thờ Vua Đinh Tiên Hoàng", "en": "Stele House of King Đinh Temple", "fr": "Pavillon des stèles du temple Đinh", "ko": "딘 왕 사당 비각", "zh": "丁先皇庙碑亭", "ja": "丁先皇廟の碑亭" }
+      },
+      {
+        "src": "/pages/tham-quan/nha-bia-den-dinh/06-ba-tam-van-bia.jpg",
+        "pos": "center 48%",
+        "at": 0.032,
+        "cue": { "vi": "ba tấm văn bia", "en": "three ancient steles", "fr": "trois stèles anciennes", "ko": "세 개의 고비", "zh": "三块由石头雕刻", "ja": "3つの古い石碑" },
+        "label": { "vi": "Ba tấm văn bia cổ bằng đá chữ Hán", "en": "Three Ancient Stone Steles in Hán Script", "fr": "Trois stèles anciennes en caractères chinois", "ko": "한자로 새겨진 세 개의 돌비석", "zh": "三块汉字古石碑", "ja": "漢字で刻まれた3基の古石碑" }
+      },
+      {
+        "src": "/pages/tham-quan/nha-bia-den-dinh/07-bia-hoang-dinh-1608.jpg",
+        "pos": "center 44%",
+        "at": 0.095,
+        "cue": { "vi": "Hoằng Định thứ 9", "en": "9th year of the Hoằng Định", "fr": "9e année de l'ère Hoằng Định", "ko": "호앙딘(Hoằng Định) 9년", "zh": "弘定九年", "ja": "弘定9年" },
+        "label": { "vi": "Văn bia niên hiệu Hoằng Định thứ 9 (1608)", "en": "Hoằng Định 9th-Year Stele (1608)", "fr": "Stèle de l'ère Hoằng Định (1608)", "ko": "호앙딘 9년 비석 (1608)", "zh": "弘定九年碑（1608年）", "ja": "弘定9年（1608年）の石碑" }
+      },
+      {
+        "src": "/pages/tham-quan/nha-bia-den-dinh/08-minh-van-bia-hoang-dinh.jpg",
+        "pos": "center 50%",
+        "at": 0.16,
+        "cue": { "vi": "bảy mẫu ruộng", "en": "seven mẫu", "fr": "sept mẫu", "ko": "7머우", "zh": "七亩", "ja": "七畝" },
+        "label": { "vi": "Minh văn chữ Hán trên bia Hoằng Định (1608)", "en": "Inscription of Lord Trịnh Tùng's Land Grant", "fr": "Inscription du don de sept mẫu de rizières", "ko": "밭 7머우 기증 기록 한자 비문", "zh": "弘定碑赐田重修铭文", "ja": "七畝寄進を記す弘定碑の銘文" }
+      },
+      {
+        "src": "/pages/tham-quan/nha-bia-den-dinh/09-bia-chinh-hoa-1696.jpg",
+        "pos": "center 46%",
+        "at": 0.236,
+        "cue": { "vi": "Chính Hòa thứ 17", "en": "17th year of the Chính Hòa", "fr": "17e année de l'ère Chính Hòa", "ko": "찐호아(Chính Hòa) 17년", "zh": "正和十七年", "ja": "正和17年" },
+        "label": { "vi": "Văn bia niên hiệu Chính Hòa thứ 17 (1696)", "en": "Chính Hòa 17th-Year Stele (1696)", "fr": "Stèle de l'ère Chính Hòa (1696)", "ko": "찐호아 17년 비석 (1696)", "zh": "正和十七年碑（1696年）", "ja": "正和17年（1696年）の石碑" }
+      },
+      {
+        "src": "/pages/tham-quan/nha-bia-den-dinh/10-mat-truoc-bia-chinh-hoa.jpg",
+        "pos": "center 42%",
+        "at": 0.32,
+        "cue": { "vi": "Lê Nhân Phú", "en": "Lê Nhân Phú", "fr": "Lê Nhân Phú", "ko": "레 년 푸", "zh": "黎仁富", "ja": "黎仁富" },
+        "label": { "vi": "Tác phẩm của nghệ nhân đá Lê Nhân Phú", "en": "Masterwork of Artisan Lê Nhân Phú", "fr": "Œuvre du maître sculpteur Lê Nhân Phú", "ko": "장인 레 년 푸가 조각한 비석", "zh": "清化艺人黎仁富雕凿", "ja": "名工・黎仁富による彫刻" }
+      },
+      {
+        "src": "/pages/tham-quan/nha-bia-den-dinh/11-luong-phuong-chau-nhat.jpg",
+        "pos": "center 48%",
+        "at": 0.42,
+        "cue": { "vi": "lưỡng phượng chầu nhật", "en": "pair of phoenixes facing the sun", "fr": "deux phénix se tournant vers le soleil", "ko": "쌍봉조일", "zh": "双凤朝日", "ja": "双鳳朝日" },
+        "label": { "vi": "Trán bia chạm \"Lưỡng phượng chầu nhật\"", "en": "Forehead Motif: Twin Phoenixes & Sun", "fr": "Fronton : Deux phénix face au soleil", "ko": "비석 상단의 \"쌍봉조일\" 조각", "zh": "碑额“双凤朝日”图案", "ja": "碑額の「双鳳朝日」文様" }
+      },
+      {
+        "src": "/pages/tham-quan/nha-bia-den-dinh/12-luong-chuot-chau-cua.jpg",
+        "pos": "center 56%",
+        "at": 0.522,
+        "cue": { "vi": "lưỡng chuột chầu cua", "en": "two mice attending a crab", "fr": "deux souris faisant face au crabe", "ko": "쌍서조해", "zh": "双鼠朝蟹", "ja": "双鼠朝蟹" },
+        "label": { "vi": "Đế bia chạm nổi \"Lưỡng chuột chầu cua\"", "en": "Stele Base: Two Mice Attending a Crab", "fr": "Base de stèle : Deux souris face au crabe", "ko": "받침대의 독창적 \"쌍서조해\" 조각", "zh": "底座浮雕“双鼠朝蟹”", "ja": "台座浮き彫り「双鼠朝蟹」" }
+      },
+      {
+        "src": "/pages/tham-quan/nha-bia-den-dinh/13-can-canh-chuot-cua.jpg",
+        "pos": "center 50%",
+        "at": 0.57,
+        "cue": { "vi": "nông dân", "en": "farmers", "fr": "paysans", "ko": "농민들", "zh": "农民", "ja": "農民" },
+        "label": { "vi": "Cận cảnh họa tiết chuột chầu cua dân dã", "en": "Close-up of Folk Mice & Crab Relief", "fr": "Détail rustique des souris et du crabe", "ko": "농촌 정취가 담긴 쥐와 게 부조", "zh": "质朴生动的鼠蟹石雕特写", "ja": "農村の趣あふれるネズミとカニ" }
+      },
+      {
+        "src": "/pages/tham-quan/nha-bia-den-dinh/04-rong-mat-sau-bia.jpg",
+        "pos": "center 50%",
+        "at": 0.629,
+        "cue": { "vi": "mặt sau của tấm bia", "en": "back of the stele", "fr": "face arrière de la stèle", "ko": "비석 후면에는", "zh": "石碑背面", "ja": "石碑の背面" },
+        "label": { "vi": "Mặt sau bia Chính Hòa chạm rồng uốn lượn", "en": "Undulating Dragon on Back of the Stele", "fr": "Dragon ondulant sur la face arrière", "ko": "비석 후면의 부드럽게 굽이치는 용", "zh": "石碑背面蜿蜒龙纹", "ja": "石碑背面のうねる龍" }
+      },
+      {
+        "src": "/pages/tham-quan/nha-bia-den-dinh/14-bia-thieu-tri-1843.jpg",
+        "pos": "center 48%",
+        "at": 0.756,
+        "cue": { "vi": "Thiệu Trị thứ 3", "en": "3rd year of the Thiệu Trị", "fr": "3e année de l'ère Thiệu Trị", "ko": "티에우찌(Thiệu Trị) 3년", "zh": "绍治三年", "ja": "紹治3年" },
+        "label": { "vi": "Văn bia niên hiệu Thiệu Trị thứ 3 (1843)", "en": "Thiệu Trị 3rd-Year Stele (1843)", "fr": "Stèle de l'ère Thiệu Trị (1843)", "ko": "티에우찌 3년 비석 (1843)", "zh": "绍治三年碑（1843年）", "ja": "紹治3年（1843年）の石碑" }
+      },
+      {
+        "src": "/pages/tham-quan/nha-bia-den-dinh/15-tran-bia-thieu-tri.jpg",
+        "pos": "center 48%",
+        "at": 0.82,
+        "cue": { "vi": "500 quan", "en": "500 quan", "fr": "500 ligatures", "ko": "500관", "zh": "500贯", "ja": "500貫" },
+        "label": { "vi": "Trán bia & minh văn tu bổ đền (1838–1843)", "en": "Imperial Grant Inscription (1838–1843)", "fr": "Inscription du don impérial (1838–1843)", "ko": "은전 500관 하사 보수 기록 비문", "zh": "御赐500贯修缮碑铭", "ja": "500貫下賜の修復銘文" }
+      },
+      {
+        "src": "/pages/tham-quan/nha-bia-den-dinh/16-hoa-van-diem-bia.jpg",
+        "pos": "center 50%",
+        "at": 0.886,
+        "cue": { "vi": "bức thư", "en": "letters", "fr": "lettres", "ko": "편지", "zh": "信件", "ja": "手紙" },
+        "label": { "vi": "Những \"bức thư bằng đá\" từ quá khứ", "en": "\"Letters in Stone\" from the Past", "fr": "« Lettres de pierre » venues du passé", "ko": "과거로부터 온 돌의 편지", "zh": "来自过去的“石头信件”", "ja": "過去からの「石の手紙」" }
+      }
+    ]
+  },
+  "nha-khai-thanh": {
+    "mode": "cues",
+    "slides": [
+      {
+        "src": "/pages/tham-quan/nha-khai-thanh/04-nha-khai-thanh-ngoai-canh.jpg",
+        "pos": "center 54%",
+        "at": 0,
+        "label": { "vi": "Nhà Khải Thánh tại Đền Vua Đinh", "en": "Khải Thánh Hall at King Đinh Temple", "fr": "Sanctuaire de Khải Thánh", "ko": "딘 왕 사당 카이 타인 사당", "zh": "丁先皇庙启圣祠", "ja": "丁先皇廟の啓聖祠" }
+      },
+      {
+        "src": "/pages/tham-quan/nha-khai-thanh/05-hau-cung-quang-tam-hien-duc.jpg",
+        "pos": "center 44%",
+        "at": 0.044,
+        "cue": { "vi": "Đinh Công Trứ", "en": "Đinh Công Trứ", "fr": "Đinh Công Trứ", "ko": "딘 꽁 쭈", "zh": "丁公著", "ja": "丁公著" },
+        "label": { "vi": "Không gian thờ Quốc phụ & Quốc mẫu", "en": "Sanctum of the National Father & Mother", "fr": "Culte du Père et de la Mère de la Nation", "ko": "국부와 국모를 모신 신성한 공간", "zh": "供奉国父与国母的神圣空间", "ja": "国父・国母を祀る神聖な空間" }
+      },
+      {
+        "src": "/pages/tham-quan/nha-khai-thanh/06-kien-truc-chu-nhi.jpg",
+        "pos": "center 54%",
+        "at": 0.172,
+        "cue": { "vi": "kiểu chữ Nhị", "en": "character Nhị", "fr": "caractère « Nhị »", "ko": "'이(Nhị)' 자", "zh": "“二”字形", "ja": "「二」の字" },
+        "label": { "vi": "Kiến trúc chữ Nhị thời Nguyễn thế kỷ XIX", "en": "19th-Century Two-Hall \"Nhị\" Layout", "fr": "Architecture en caractère « Nhị » (XIXe s.)", "ko": "19세기 응우옌 왕조 '이(二)'자 구조", "zh": "19世纪阮朝“二”字形格局", "ja": "19世紀グエン朝「二」字形建築" }
+      },
+      {
+        "src": "/pages/tham-quan/nha-khai-thanh/07-toa-tien-bai.jpg",
+        "pos": "center 48%",
+        "at": 0.215,
+        "cue": { "vi": "Tòa Tiền bái", "en": "The Tiền Bái", "fr": "Le Tiền bái", "ko": "전배는", "zh": "前拜是", "ja": "前拝は" },
+        "label": { "vi": "Tòa Tiền bái đặt bài vị chữ Hán", "en": "Tiền Bái Front Hall with Ancestral Tablets", "fr": "Vestibule Tiền Bái et tablettes funéraires", "ko": "한자 위패를 모신 전배(Tiền bái)", "zh": "安置汉字牌位的前拜殿", "ja": "漢字の位牌を祀る前拝殿" }
+      },
+      {
+        "src": "/pages/tham-quan/nha-khai-thanh/08-tuong-quoc-phu-dinh-cong-tru.jpg",
+        "pos": "center 32%",
+        "at": 0.276,
+        "cue": { "vi": "thân phụ", "en": "was the father of King", "fr": "était le père du roi", "ko": "친아버지", "zh": "生父", "ja": "丁先皇の父親" },
+        "label": { "vi": "Tượng thờ Quốc phụ Đinh Công Trứ", "en": "Statue of National Father Đinh Công Trứ", "fr": "Statue du Père de la Nation Đinh Công Trứ", "ko": "국부 딘 꽁 쭈(Đinh Công Trứ) 동상", "zh": "国父丁公著神像", "ja": "国父・丁公著の像" }
+      },
+      {
+        "src": "/pages/tham-quan/nha-khai-thanh/09-bia-da-nha-khai-thanh.jpg",
+        "pos": "center 46%",
+        "at": 0.409,
+        "cue": { "vi": "Thuở sinh thời", "en": "In his lifetime", "fr": "De son vivant", "ko": "생전에", "zh": "生前", "ja": "生前" },
+        "label": { "vi": "Bia ghi công đức tại Nhà Khải Thánh", "en": "Commemorative Stele at Khải Thánh Hall", "fr": "Stèle commémorative de Khải Thánh", "ko": "카이 타인 사당 공덕비", "zh": "启圣祠功德碑", "ja": "啓聖祠の功徳碑" }
+      },
+      {
+        "src": "/pages/tham-quan/nha-khai-thanh/10-tuong-quoc-mau-dam-quy-thi.jpg",
+        "pos": "center 32%",
+        "at": 0.607,
+        "cue": { "vi": "Bắc Ninh", "en": "Bắc Ninh", "fr": "Bắc Ninh", "ko": "박닌", "zh": "北宁省", "ja": "バクニン省" },
+        "label": { "vi": "Tượng thờ Quốc mẫu Đàm Quý Thị", "en": "Statue of National Mother Đàm Quý Thị", "fr": "Statue de la Mère de la Nation Đàm Quý Thị", "ko": "국모 담 꾸이 티(Đàm Quý Thị) 동상", "zh": "国母谭贵氏神像", "ja": "国母・譚貴氏の像" }
+      },
+      {
+        "src": "/images/stories/dinh-1-co-lau-tap-tran.jpg",
+        "pos": "center 34%",
+        "at": 0.733,
+        "cue": { "vi": "cờ lau tập trận", "en": "reed banners", "fr": "étendards de roseaux", "ko": "갈대꽃 깃발", "zh": "芦苇旗", "ja": "芦の旗" },
+        "label": { "vi": "Tích truyện cậu bé cờ lau tập trận", "en": "Boyhood Tales of Reed-Banner Battles", "fr": "Légendes des batailles aux roseaux", "ko": "갈대꽃 깃발 진법 연습 일화", "zh": "芦苇旗演习阵法轶事", "ja": "芦の旗での陣形遊びの逸話" }
+      },
+      {
+        "src": "/pages/tham-quan/nha-khai-thanh/10-tuong-quoc-mau-dam-quy-thi.jpg",
+        "pos": "center 26%",
+        "at": 0.825,
+        "cue": { "vi": "tình mẫu tử", "en": "maternal love", "fr": "amour maternel", "ko": "모성애", "zh": "神圣母爱", "ja": "神聖な母性愛" },
+        "label": { "vi": "Tôn vinh công ơn sinh thành của Quốc mẫu", "en": "Honoring Sacred Maternal Devotion", "fr": "Hommage à l'amour maternel sacré", "ko": "국모 담씨의 숭고한 모성애", "zh": "歌颂国母崇高母爱", "ja": "国母の崇高な母性愛" }
+      },
+      {
+        "src": "/pages/tham-quan/nha-khai-thanh/04-nha-khai-thanh-ngoai-canh.jpg",
+        "pos": "center 50%",
+        "at": 0.904,
+        "cue": { "vi": "uống nước nhớ nguồn", "en": "drinking water, remember", "fr": "buvant l'eau", "ko": "물을 마실 때", "zh": "饮水思源", "ja": "水を飲むときには" },
+        "label": { "vi": "Đạo lý truyền thống \"Uống nước nhớ nguồn\"", "en": "\"When Drinking Water, Remember Its Source\"", "fr": "« En buvant l'eau, se souvenir de la source »", "ko": "전통 도리 \"음수사원(飲水思源)\"", "zh": "“饮水思源”传统美德", "ja": "「水を飲むときには源を思う」" }
+      }
+    ]
+  },
+  "nghi-mon-den-le": {
+    "mode": "cues",
+    "slides": [
+      {
+        "src": "/pages/tham-quan/nghi-mon-den-le/05-nghi-mon-ngoai-den-le.jpg",
+        "pos": "center 56%",
+        "at": 0,
+        "label": { "vi": "Nghi môn ngoại Đền thờ Vua Lê Đại Hành", "en": "Outer Gate of King Lê Temple", "fr": "Portique extérieur du temple Lê", "ko": "레 다이 한 왕 사당 외의문", "zh": "黎大行庙外仪门", "ja": "黎大行王廟の外儀門" }
+      },
+      {
+        "src": "/pages/tham-quan/nghi-mon-den-le/06-khong-gian-nghi-mon-ngoai.jpg",
+        "pos": "center 50%",
+        "at": 0.12,
+        "cue": { "vi": "triều Nguyễn", "en": "Nguyễn dynasty", "fr": "dynastie des Nguyễn", "ko": "응우옌 왕조", "zh": "阮朝", "ja": "グエン朝" },
+        "label": { "vi": "Kiến trúc Nghi môn ngoại triều Nguyễn (thế kỷ XIX)", "en": "19th-Century Nguyễn Outer Gate", "fr": "Portique extérieur de style Nguyễn (XIXe s.)", "ko": "19세기 응우옌 왕조 외의문 건축", "zh": "19世纪阮朝外仪门建筑", "ja": "19世紀グエン朝様式の外儀門" }
+      },
+      {
+        "src": "/pages/tham-quan/nghi-mon-den-le/07-cham-bat-buu-hom-sach.jpg",
+        "pos": "center 46%",
+        "at": 0.19,
+        "cue": { "vi": "Bát bửu", "en": "Bát bửu", "fr": "Bát bửu", "ko": "팔보", "zh": "八宝", "ja": "八宝" },
+        "label": { "vi": "Đề tài \"Bát bửu\": hòm sách, ống bút thếp vàng", "en": "\"Eight Treasures\" Motif: Books & Brush Pot", "fr": "« Huit Trésors » : coffret à livres et pinceaux", "ko": "팔보(八寶) 장식: 책상자와 붓통", "zh": "“八宝”纹饰：书箱与笔筒", "ja": "「八宝」装飾：本箱と筆筒" }
+      },
+      {
+        "src": "/pages/tham-quan/nghi-mon-den-le/08-cham-bat-buu-dai-lua.jpg",
+        "pos": "center 48%",
+        "at": 0.29,
+        "cue": { "vi": "dải lụa mềm mại", "en": "flowing ribbons", "fr": "rubans de soie", "ko": "부드러운 비단 띠", "zh": "柔软的丝带", "ja": "柔らかい絹の帯" },
+        "label": { "vi": "Hoa văn Bát bửu kết hợp dải lụa mềm mại", "en": "Eight Treasures Woven with Silk Ribbons", "fr": "Motifs Bát Bửu et rubans de soie", "ko": "부드러운 비단 띠와 어우러진 팔보", "zh": "丝带与八宝和谐交织", "ja": "絹の帯と調和する八宝文様" }
+      },
+      {
+        "src": "/pages/tham-quan/nghi-mon-den-le/09-cua-nghi-mon-ngoai.jpg",
+        "pos": "center 48%",
+        "at": 0.36,
+        "cue": { "vi": "hòa điệu tâm linh", "en": "spiritual harmony", "fr": "harmonies spirituelles", "ko": "영적인 조화", "zh": "心灵的共鸣", "ja": "精神的な調和" },
+        "label": { "vi": "Cổng gỗ sơn son thếp vàng Nghi môn ngoại", "en": "Red-and-Gold Doors of the Outer Gate", "fr": "Portes laquées rouge et or du portique", "ko": "붉은 칠·금박의 외의문 문틀", "zh": "外仪门朱漆贴金木门", "ja": "外儀門の朱塗り金箔の門" }
+      },
+      {
+        "src": "/pages/tham-quan/nghi-mon-den-le/10-duong-vao-nghi-mon-noi.jpg",
+        "pos": "center 54%",
+        "at": 0.43,
+        "cue": { "vi": "di chuyển vào bên trong", "en": "continue inside", "fr": "avancer pour atteindre", "ko": "계속해서 안으로", "zh": "继续向内移动", "ja": "さらに内側の内儀門" },
+        "label": { "vi": "Lối tiến vào Nghi môn nội Đền Vua Lê", "en": "Path Leading to the Inner Gate", "fr": "Allée menant au portique intérieur", "ko": "내의문으로 이어지는 길", "zh": "通往内仪门的神道", "ja": "内儀門へと続く参道" }
+      },
+      {
+        "src": "/pages/tham-quan/nghi-mon-den-le/11-ba-hang-chan-cot-den-le.jpg",
+        "pos": "center 50%",
+        "at": 0.52,
+        "cue": { "vi": "3 hàng chân cột", "en": "three-row column", "fr": "3 rangées de colonnes", "ko": "3열 기둥", "zh": "三排柱", "ja": "3列の柱" },
+        "label": { "vi": "Nghi môn nội: 3 gian, 3 hàng chân cột (thế kỷ XVII)", "en": "17th-Century Inner Gate: 3 Bays, 3 Column Rows", "fr": "Portique intérieur (XVIIe s.) : 3 rangées de colonnes", "ko": "17세기 3칸·3열 기둥 내의문", "zh": "17世纪三间三排柱内仪门", "ja": "17世紀の3間・3列柱の内儀門" }
+      },
+      {
+        "src": "/pages/tham-quan/nghi-mon-den-le/12-rong-o-rong-dan-den-le.jpg",
+        "pos": "center 48%",
+        "at": 0.64,
+        "cue": { "vi": "rồng quần tụ", "en": "gathered dragons", "fr": "rassemblements de dragons", "ko": "모여 있는 용", "zh": "群龙形象", "ja": "集まった龍" },
+        "label": { "vi": "Chạm khắc rồng ngậm ngọc, rồng ổ, rồng đàn", "en": "Gilded Nesting & Clustered Dragons", "fr": "Dragons en nid et en vol dorés", "ko": "구슬 문 용·둥지 용·무리 용 조각", "zh": "含珠龙、巢中龙与群龙木雕", "ja": "玉を咥える龍・巣の龍・群れの龍" }
+      },
+      {
+        "src": "/pages/tham-quan/nghi-mon-den-le/13-cham-khac-nghi-mon-noi.jpg",
+        "pos": "center 46%",
+        "at": 0.75,
+        "cue": { "vi": "hai cô tiên", "en": "two fairies", "fr": "deux fées", "ko": "두 명의 선녀", "zh": "两位仙女", "ja": "2人の天女" },
+        "label": { "vi": "Mảng chạm khắc dân gian tinh xảo Nghi môn nội", "en": "Exquisite Folk Carvings on Inner Gate", "fr": "Bas-reliefs folkloriques du portique intérieur", "ko": "내의문의 정교한 민간 조각", "zh": "内仪门民间特色浮雕", "ja": "内儀門の民間色豊かな浮き彫り" }
+      },
+      {
+        "src": "/pages/tham-quan/nghi-mon-den-le/14-truc-than-dao-den-le.jpg",
+        "pos": "center 52%",
+        "at": 0.91,
+        "cue": { "vi": "cổ kính", "en": "ancient Nghi Môn", "fr": "anciens portiques", "ko": "고풍스러운 의문", "zh": "古老仪门", "ja": "古風な儀門" },
+        "label": { "vi": "Trục thần đạo cổ kính vào Đền Vua Lê", "en": "Sacred Axis into King Lê Temple", "fr": "Perspective sacrée vers le temple du roi Lê", "ko": "레 왕 사당으로 향하는 고풍스러운 길", "zh": "通往黎大行庙的古朴神道", "ja": "黎大行王廟へと続く古風な参道" }
+      }
+    ]
+  },
+  "nha-tho-khong-tu": {
+    "mode": "cues",
+    "slides": [
+      {
+        "src": "/pages/tham-quan/nha-tho-khong-tu/03-nha-tho-khong-tu-ngoai-canh.jpg",
+        "pos": "center 54%",
+        "at": 0,
+        "label": { "vi": "Nhà thờ Đức Khổng Tử tại Cố đô Hoa Lư", "en": "Temple of Confucius at Hoa Lư", "fr": "Temple de Confucius à Hoa Lư", "ko": "호아루 고도의 공자 사당", "zh": "华闾古都孔子庙", "ja": "ホアルー古都の孔子廟" }
+      },
+      {
+        "src": "/pages/tham-quan/nha-tho-khong-tu/04-cong-bai-duong-khong-tu.jpg",
+        "pos": "center 42%",
+        "at": 0.13,
+        "cue": { "vi": "mộng truyền thống", "en": "mortise-and-tenon", "fr": "tenon et mortaise", "ko": "장부맞춤", "zh": "榫卯技术", "ja": "ほぞ穴技術" },
+        "label": { "vi": "Khung gỗ mộng truyền thống không dùng đinh sắt", "en": "Nail-Free Mortise-and-Tenon Wooden Hall", "fr": "Charpente traditionnelle sans clous de fer", "ko": "쇠못 없는 전통 장부맞춤 목조 건물", "zh": "传统榫卯无铁钉木构建筑", "ja": "鉄釘を使わない伝統のほぞ組木造" }
+      },
+      {
+        "src": "/pages/tham-quan/nha-tho-khong-tu/05-san-va-hau-cung.jpg",
+        "pos": "center 50%",
+        "at": 0.195,
+        "cue": { "vi": "Bái đường và Hậu cung", "en": "Bái Đường (worship hall) and the Hậu Cung", "fr": "Bái đường (salle des cérémonies) et le Hậu cung", "ko": "배당(Bái đường)과 후궁", "zh": "拜堂和后宫", "ja": "拝堂と後宮" },
+        "label": { "vi": "Bố cục hai tòa: Bái đường và Hậu cung", "en": "Two-Building Layout: Worship Hall & Sanctum", "fr": "Deux édifices : Bái Đường et Hậu Cung", "ko": "배당과 후궁의 두 건물 배치", "zh": "拜堂与后宫双殿布局", "ja": "拝堂と後宮の二棟構成" }
+      },
+      {
+        "src": "/pages/tham-quan/nha-tho-khong-tu/06-ban-tho-duc-khong-tu.jpg",
+        "pos": "center 42%",
+        "at": 0.24,
+        "cue": { "vi": "ngai thờ", "en": "throne and ancestral tablets", "fr": "l'autel et les tablettes", "ko": "위패와 제단", "zh": "神龛与牌位", "ja": "祭壇と位牌" },
+        "label": { "vi": "Hậu cung thờ Đức Khổng Tử", "en": "Rear Sanctum Altar of Confucius", "fr": "Autel de Confucius dans le Hậu Cung", "ko": "공자를 모신 후궁 제단", "zh": "后宫孔子神龛与牌位", "ja": "後宮の孔子祭壇" }
+      },
+      {
+        "src": "/pages/tham-quan/nha-tho-khong-tu/07-ngai-tho-bai-vi-khong-tu.jpg",
+        "pos": "center 42%",
+        "at": 0.282,
+        "cue": { "vi": "551", "en": "551", "fr": "551", "ko": "551년", "zh": "551年", "ja": "551年" },
+        "label": { "vi": "Đức Khổng Tử (551–479 TCN) — Khai sáng Nho giáo", "en": "Confucius (551–479 BC) — Founder of Confucianism", "fr": "Confucius (551–479 av. J.-C.)", "ko": "공자 (기원전 551~479) — 유교 창시자", "zh": "孔子（公元前551—前479）", "ja": "孔子（紀元前551–479）" }
+      },
+      {
+        "src": "/pages/tham-quan/nha-tho-khong-tu/06-ban-tho-duc-khong-tu.jpg",
+        "pos": "center 36%",
+        "at": 0.46,
+        "cue": { "vi": "nhà giáo dục vĩ đại", "en": "great educator", "fr": "grand éducateur", "ko": "위대한 교육자", "zh": "伟大的教育家", "ja": "偉大な教育者" },
+        "label": { "vi": "Tư tưởng giáo dục & tinh thần hiếu học", "en": "Confucius as Great Educator", "fr": "Confucius, grand éducateur universel", "ko": "유교무류(有教無類)의 위대한 교육자", "zh": "有教无类的伟大教育家", "ja": "有教無類を説いた偉大な教育者" }
+      },
+      {
+        "src": "/pages/tham-quan/nha-tho-khong-tu/08-ban-tho-tu-phoi-1.jpg",
+        "pos": "center 46%",
+        "at": 0.524,
+        "cue": { "vi": "học trò kiệt xuất", "en": "outstanding disciples", "fr": "disciples exceptionnels", "ko": "걸출한 제자들", "zh": "杰出的弟子们", "ja": "傑出した弟子たち" },
+        "label": { "vi": "Ban thờ Tứ phối — 4 học trò kiệt xuất", "en": "Altar of the Four Sages (Tứ Phối)", "fr": "Autel des Quatre Assesseurs (Tứ Phối)", "ko": "사배(四配) — 네 명의 걸출한 제자", "zh": "四配神位 — 四位杰出弟子", "ja": "四配 — 4人の傑出した弟子" }
+      },
+      {
+        "src": "/images/gallery/khong-tu-nhan-hoi-tu-tu.jpg",
+        "pos": "center 40%",
+        "at": 0.552,
+        "cue": { "vi": "Nhan Hồi", "en": "Nhan Hồi", "fr": "Yan Hui", "ko": "안회", "zh": "颜回", "ja": "顔回" },
+        "label": { "vi": "Nhan Hồi (521–481 TCN) — Đứng đầu Tứ phối", "en": "Yan Hui (521–481 BC) — First of the Four Sages", "fr": "Yan Hui (521–481 av. J.-C.)", "ko": "안회 (기원전 521~481) — 사배의 수석", "zh": "颜回（公元前521—前481）— 四配之首", "ja": "顔回（紀元前521–481）— 四配筆頭" }
+      },
+      {
+        "src": "/pages/tham-quan/nha-tho-khong-tu/09-ban-tho-tu-phoi-2.jpg",
+        "pos": "center 46%",
+        "at": 0.638,
+        "cue": { "vi": "Tăng Tử", "en": "Tăng Tử", "fr": "Zengzi", "ko": "증자", "zh": "曾子", "ja": "曾子" },
+        "label": { "vi": "Tăng Tử (504–435 TCN) — Sách Đại học & Hiếu kinh", "en": "Zengzi (504–435 BC) — Great Learning & Filial Piety", "fr": "Zengzi (504–435 av. J.-C.)", "ko": "증자 (기원전 504~435) — 대학·효경", "zh": "曾子（公元前504—前435）— 大学·孝经", "ja": "曾子（紀元前504–435）— 大学・孝経" }
+      },
+      {
+        "src": "/pages/tham-quan/nha-tho-khong-tu/08-ban-tho-tu-phoi-1.jpg",
+        "pos": "center 40%",
+        "at": 0.719,
+        "cue": { "vi": "Tử Tư", "en": "Tử Tư", "fr": "Zisi", "ko": "자사", "zh": "子思", "ja": "子思" },
+        "label": { "vi": "Tử Tư (483–402 TCN) — Thuật thánh, sách Trung dung", "en": "Zisi (483–402 BC) — Doctrine of the Mean", "fr": "Zisi (483–402 av. J.-C.) — Sage Transmetteur", "ko": "자사 (기원전 483~402) — 중용·술성", "zh": "子思（公元前483—前402）— 述圣·中庸", "ja": "子思（紀元前483–402）— 述聖・中庸" }
+      },
+      {
+        "src": "/images/gallery/khong-tu-manh-tu-tang-tu.jpg",
+        "pos": "center 40%",
+        "at": 0.819,
+        "cue": { "vi": "Mạnh Tử", "en": "Mạnh Tử", "fr": "Mencius", "ko": "맹자", "zh": "孟子", "ja": "孟子" },
+        "label": { "vi": "Mạnh Tử (372–289 TCN) — Á thánh Nho gia", "en": "Mencius (372–289 BC) — The Second Sage", "fr": "Mencius (372–289 av. J.-C.) — Second Sage", "ko": "맹자 (기원전 372~289) — 아성(亞聖)", "zh": "孟子（公元前372—前289）— 亚圣", "ja": "孟子（紀元前372–289）— 亜聖" }
+      },
+      {
+        "src": "/pages/tham-quan/nha-tho-khong-tu/05-san-va-hau-cung.jpg",
+        "pos": "center 48%",
+        "at": 0.871,
+        "cue": { "vi": "nhịp cầu nối liền", "en": "bridge connecting past", "fr": "pont reliant le passé", "ko": "과거와 현재를 잇는", "zh": "连接过去与现在的桥梁", "ja": "過去と現在を繋ぐ架け橋" },
+        "label": { "vi": "Nhịp cầu văn hóa nối liền quá khứ và hiện tại", "en": "Cultural Bridge Between Past & Present", "fr": "Pont culturel entre passé et présent", "ko": "과거와 현재를 잇는 문화의 가교", "zh": "连接古今的文化桥梁", "ja": "過去と現在を繋ぐ文化の架け橋" }
+      }
+    ]
+  },
+  "den-vua-le": {
+    "mode": "cues",
+    "slides": [
+      {
+        "src": "/pages/tham-quan/den-vua-le/07-canh-ngoai-den-le.jpg",
+        "pos": "center 55%",
+        "at": 0,
+        "label": { "vi": "Đền thờ Vua Lê Đại Hành", "en": "Temple of Emperor Lê Đại Hành", "fr": "Temple du roi Lê Đại Hành", "ko": "레 다이 한 왕 사당", "zh": "黎大行庙", "ja": "黎大行王廟" }
+      },
+      {
+        "src": "/pages/tham-quan/den-vua-le/08-mat-tien-den-le.jpg",
+        "pos": "center 50%",
+        "at": 0.026,
+        "cue": { "vi": "nội công ngoại quốc", "en": "nội công ngoại quốc", "fr": "nội công ngoại quốc", "ko": "내공외국", "zh": "内工外国", "ja": "内工外国" },
+        "label": { "vi": "Kiến trúc \"Nội công ngoại quốc\" thế kỷ XVII", "en": "17th-Century \"Nội Công Ngoại Quốc\" Layout", "fr": "Architecture « Nội công ngoại quốc » (XVIIe s.)", "ko": "17세기 내공외국(內工外國) 건축", "zh": "17世纪“内工外国”建筑", "ja": "17世紀「内工外国」の建築様式" }
+      },
+      {
+        "src": "/pages/tham-quan/den-vua-le/09-hien-den-le-chong-ruong.jpg",
+        "pos": "center 48%",
+        "at": 0.056,
+        "cue": { "vi": "hiên đền", "en": "temple porch", "fr": "porche du temple", "ko": "회랑 구역", "zh": "游廊区域", "ja": "縁側のエリア" },
+        "label": { "vi": "Chồng rường chạm khắc gỗ thế kỷ XVII ở hiên đền", "en": "17th-Century Woodcarvings on Porch Beams", "fr": "Sculptures sur bois du XVIIe s. au porche", "ko": "회랑 겹도리의 17세기 목조각", "zh": "游廊重檩17世纪木雕", "ja": "縁側の17世紀木彫刻" }
+      },
+      {
+        "src": "/pages/tham-quan/den-vua-le/10-cham-ho-hoa-sen-truc.jpg",
+        "pos": "center 48%",
+        "at": 0.096,
+        "cue": { "vi": "hổ và khóm trúc", "en": "tiger and a bamboo", "fr": "tigre et de la touffe de bambous", "ko": "호랑이, 대나무 숲", "zh": "老虎、竹丛", "ja": "虎、竹の茂み" },
+        "label": { "vi": "Hoa sen, hổ và khóm trúc — Truyền thuyết vua Lê", "en": "Lotus, Tiger & Bamboo — Legend of Lê Hoàn", "fr": "Lotus, tigre et bambou — Légende de Lê Hoàn", "ko": "연꽃·호랑이·대나무 — 레 호안 탄생 전설", "zh": "莲花、老虎与竹丛木雕", "ja": "蓮・虎・竹の茂みの彫刻" }
+      },
+      {
+        "src": "/pages/tham-quan/den-vua-le/11-bay-hien-than-rong.jpg",
+        "pos": "center 46%",
+        "at": 0.147,
+        "cue": { "vi": "bẩy hiên", "en": "porch brackets", "fr": "piliers du porche", "ko": "회랑 서까래", "zh": "游廊的步柱", "ja": "縁側の腕木" },
+        "label": { "vi": "Sáu chiếc bẩy hiên tạc sáu thân rồng vươn mình", "en": "Six Porch Brackets Carved as Stretching Dragons", "fr": "Six consoles sculptées en corps de dragons", "ko": "여섯 마리 용으로 조각된 회랑 서까래", "zh": "六根雕龙游廊步柱", "ja": "6匹の龍を彫った縁側の腕木" }
+      },
+      {
+        "src": "/pages/tham-quan/den-vua-le/12-long-ho-hoi-ngo.jpg",
+        "pos": "center 46%",
+        "at": 0.172,
+        "cue": { "vi": "Long Hổ hội ngộ", "en": "Long Hổ hội ngộ", "fr": "Rencontre du Dragon et du Tigre", "ko": "용호상봉", "zh": "龙虎相会", "ja": "龍虎の邂逅" },
+        "label": { "vi": "Chạm lộng \"Long Hổ hội ngộ\" & rồng phun lửa", "en": "\"Dragon & Tiger Meeting\" Openwork Carving", "fr": "Sculpture ajourée « Dragon et Tigre »", "ko": "생동감 넘치는 \"용호상봉\" 투조", "zh": "“龙虎相会”透雕作品", "ja": "「龍虎の邂逅」透かし彫り" }
+      },
+      {
+        "src": "/pages/tham-quan/den-vua-le/13-san-vao-noi-dien-le.jpg",
+        "pos": "center 56%",
+        "at": 0.201,
+        "cue": { "vi": "nội điện", "en": "inner sanctuary", "fr": "sanctuaire intérieur", "ko": "내전 구역", "zh": "内殿", "ja": "内殿エリア" },
+        "label": { "vi": "Bước vào nội điện ba tòa kiểu chữ Công", "en": "Entering the Three-Hall Inner Sanctuary", "fr": "Accès au sanctuaire intérieur en 3 salles", "ko": "공(工)자형 3동 내전으로 진입", "zh": "步入工字形三进内殿", "ja": "工字型三殿の内殿へ" }
+      },
+      {
+        "src": "/pages/tham-quan/den-vua-le/14-toa-bai-duong-den-le.jpg",
+        "pos": "center 46%",
+        "at": 0.241,
+        "cue": { "vi": "Tòa Bái đường", "en": "The Bái Đường", "fr": "La salle des Cérémonies", "ko": "배당(Bái đường", "zh": "拜堂是", "ja": "拝堂（公同" },
+        "label": { "vi": "Tòa Bái đường thờ Công đồng", "en": "Bái Đường Worship Hall", "fr": "Salle des Cérémonies (Bái Đường)", "ko": "공동을 모시는 배당", "zh": "黎大行庙拜堂", "ja": "黎大行廟の拝堂" }
+      },
+      {
+        "src": "/pages/tham-quan/den-vua-le/15-xa-nga-voi.jpg",
+        "pos": "center 50%",
+        "at": 0.255,
+        "cue": { "vi": "xà ngà voi", "en": "elephant-tusk beams", "fr": "défenses d'éléphant", "ko": "상아 모양의 쌍도리", "zh": "象牙横梁", "ja": "象牙の形をした一対の梁" },
+        "label": { "vi": "Đôi xà ngà voi cách điệu từ gỗ độc đáo", "en": "Unique Wooden Elephant-Tusk Roof Beams", "fr": "Poutres en bois en forme de défenses d'éléphant", "ko": "독특한 상아 모양의 나무 쌍도리", "zh": "独具匠心的木制象牙横梁", "ja": "象牙を模した独創的な一対の梁" }
+      },
+      {
+        "src": "/pages/tham-quan/den-vua-le/16-toa-thieu-huong-den-le.jpg",
+        "pos": "center 50%",
+        "at": 0.291,
+        "cue": { "vi": "Tòa Thiêu hương", "en": "The Thiêu Hương", "fr": "La salle de l'Encens", "ko": "소향(Thiêu hương)", "zh": "烧香区：", "ja": "焼香の建物：" },
+        "label": { "vi": "Tòa Thiêu hương tưởng nhớ công thần Tiền Lê", "en": "Thiêu Hương Hall — Early Lê Officials", "fr": "Salle Thiêu Hương — Méritants Tiền Lê", "ko": "전레 공신을 기리는 소향 건물", "zh": "缅怀前黎功臣的烧香殿", "ja": "前黎朝の功臣を偲ぶ焼香殿" }
+      },
+      {
+        "src": "/pages/tham-quan/den-vua-le/17-van-me-rong-o-den-le.jpg",
+        "pos": "center 48%",
+        "at": 0.312,
+        "cue": { "vi": "rồng ổ, rồng đàn", "en": "nesting dragons and clustered dragons", "fr": "nids de dragons, de troupes de dragons", "ko": "둥지에 있는 용, 무리 지은 용", "zh": "龙巢、群龙", "ja": "巣にいる龍や群れをなす龍" },
+        "label": { "vi": "Vì ván mê chạm khắc rồng ổ, rồng đàn", "en": "Gable Boards Carved with Nesting Dragons", "fr": "Tympans sculptés de nids de dragons", "ko": "둥지 용·무리 용이 새겨진 칸막이", "zh": "龙巢与群龙木雕拱肩", "ja": "巣の龍・群れの龍の彫刻" }
+      },
+      {
+        "src": "/pages/tham-quan/den-vua-le/18-tuong-vua-le-dai-hanh.jpg",
+        "pos": "center 32%",
+        "at": 0.341,
+        "cue": { "vi": "Tòa Chính cung", "en": "The Chính Cung", "fr": "Le Palais principal", "ko": "정궁(Chính cung)", "zh": "正宫：", "ja": "正宮：" },
+        "label": { "vi": "Tòa Chính cung — Tượng Vua Lê Đại Hành", "en": "Chính Cung — Statue of King Lê Đại Hành", "fr": "Chính Cung — Statue du roi Lê Đại Hành", "ko": "정궁 — 레 다이 한 왕 동상", "zh": "正宫 — 黎大行皇帝塑像", "ja": "正宮 — 黎大行王像" }
+      },
+      {
+        "src": "/pages/tham-quan/den-vua-le/19-tuong-thai-hau-dvn.jpg",
+        "pos": "center 30%",
+        "at": 0.356,
+        "cue": { "vi": "Dương Vân Nga", "en": "Dương Vân Nga", "fr": "Dương Vân Nga", "ko": "즈엉 반 응아", "zh": "杨云娥", "ja": "楊雲娥" },
+        "label": { "vi": "Tượng thờ Thái hậu Dương Vân Nga", "en": "Statue of Empress Dowager Dương Vân Nga", "fr": "Statue de l'Impératrice Mère Dương Vân Nga", "ko": "즈엉 반 응아 태후 동상", "zh": "杨云娥太后神像", "ja": "楊雲娥太后の像" }
+      },
+      {
+        "src": "/pages/tham-quan/den-vua-le/20-chan-dung-vua-le.jpg",
+        "pos": "center 34%",
+        "at": 0.368,
+        "cue": { "vi": "941", "en": "941", "fr": "941", "ko": "941년", "zh": "941年", "ja": "941年" },
+        "label": { "vi": "Vua Lê Đại Hành (Lê Hoàn, 941–1005)", "en": "Emperor Lê Đại Hành (Lê Hoàn, 941–1005)", "fr": "Empereur Lê Đại Hành (941–1005)", "ko": "레 다이 한 왕 (레 호안, 941~1005)", "zh": "黎大行皇帝（黎桓，941—1005）", "ja": "黎大行王（黎桓、941–1005）" }
+      },
+      {
+        "src": "/images/stories/le-1-thap-dao-len-ngoi.jpg",
+        "pos": "center 34%",
+        "at": 0.48,
+        "cue": { "vi": "Năm 980", "en": "In 980", "fr": "En 980", "ko": "980년", "zh": "980年", "ja": "980年" },
+        "label": { "vi": "Năm 980: Lên ngôi Hoàng đế, lập triều Tiền Lê", "en": "980: Ascending the Throne — Early Lê Dynasty", "fr": "980 : Fondation de la dynastie Tiền Lê", "ko": "980년 황제 즉위 및 전레 왕조 건국", "zh": "980年登基称帝，建立前黎朝", "ja": "980年即位・前黎朝樹立" }
+      },
+      {
+        "src": "/images/stories/le-2-pha-tong-bach-dang.jpg",
+        "pos": "center 36%",
+        "at": 0.545,
+        "cue": { "vi": "981", "en": "981", "fr": "981", "ko": "981년", "zh": "981年", "ja": "981年" },
+        "label": { "vi": "Chiến thắng kháng Tống trên sông Bạch Đằng (981)", "en": "981 Victory over the Song at Bạch Đằng", "fr": "Victoire de Bạch Đằng contre les Song (981)", "ko": "981년 박당 강 항송 대승", "zh": "981年白藤江抗宋大捷", "ja": "981年白藤江での抗宋大勝" }
+      },
+      {
+        "src": "/images/stories/le-3-thien-phuc-dao-kenh.jpg",
+        "pos": "center 36%",
+        "at": 0.675,
+        "cue": { "vi": "Thiên Phúc", "en": "Thiên Phúc", "fr": "Thiên Phúc", "ko": "티엔푹", "zh": "天福", "ja": "天福" },
+        "label": { "vi": "Đúc tiền Thiên Phúc, mở đường & thủy lợi", "en": "Thiên Phúc Coins, Roads & Irrigation", "fr": "Monnaie Thiên Phúc, routes et irrigation", "ko": "티엔푹 화폐 주조 및 수리·도로 정비", "zh": "铸天福钱、修路兴水利", "ja": "天福銭の鋳造と道路・水利整備" }
+      },
+      {
+        "src": "/images/gallery/tuong-le-long-dinh.jpg",
+        "pos": "center 24%",
+        "at": 0.74,
+        "cue": { "vi": "Lê Long Đĩnh", "en": "Lê Long Đĩnh", "fr": "Lê Long Đĩnh", "ko": "레 롱 딘", "zh": "黎龙铤", "ja": "黎龍铤" },
+        "label": { "vi": "Khai Minh Vương Lê Long Đĩnh", "en": "King Lê Long Đĩnh", "fr": "Roi Lê Long Đĩnh", "ko": "레 롱 딘 왕", "zh": "黎龙铤皇帝", "ja": "黎龍铤王" }
+      },
+      {
+        "src": "/pages/tham-quan/den-vua-le/21-chan-dung-duong-van-nga.jpg",
+        "pos": "center 32%",
+        "at": 0.789,
+        "cue": { "vi": "Dương Vân Nga", "en": "Dương Vân Nga", "fr": "Dương Vân Nga", "ko": "즈엉 반 응아", "zh": "杨云娥", "ja": "楊雲娥" },
+        "label": { "vi": "Thái hậu Dương Vân Nga — Bản lĩnh thế kỷ X", "en": "Empress Dowager Dương Vân Nga", "fr": "Impératrice Mère Dương Vân Nga", "ko": "10세기의 강인한 여성 — 즈엉 반 응아 태후", "zh": "10世纪传奇女性 — 杨云娥太后", "ja": "10世紀の傑出した女性・楊雲娥太后" }
+      },
+      {
+        "src": "/images/stories/dvn-2-trao-ao-long-con.jpg",
+        "pos": "center 32%",
+        "at": 0.875,
+        "cue": { "vi": "áo long cổn", "en": "dragon robe", "fr": "robe à col de dragon", "ko": "용포", "zh": "龙袍", "ja": "龍衣" },
+        "label": { "vi": "Trao áo long cổn cho Thập đạo tướng quân Lê Hoàn", "en": "Bestowing the Imperial Robe upon Lê Hoàn", "fr": "Remise de la robe impériale à Lê Hoàn", "ko": "레 호안에게 용포를 건넨 결단", "zh": "向黎桓托付龙袍大义抉择", "ja": "黎桓に龍衣を託した英断" }
+      },
+      {
+        "src": "/pages/tham-quan/den-vua-le/22-mai-co-den-vua-le.jpg",
+        "pos": "center 54%",
+        "at": 0.945,
+        "cue": { "vi": "hôm nay", "en": "Today, the Temple", "fr": "aujourd'hui", "ko": "오늘날 레 다이 한", "zh": "今天的黎大行庙", "ja": "今日の黎大行廟" },
+        "label": { "vi": "Hào khí Tiền Lê trường tồn nơi Cố đô", "en": "Enduring Heroic Spirit at Hoa Lư", "fr": "Esprit héroïque de l'ancienne capitale", "ko": "고도에 살아 숨 쉬는 전레의 기개", "zh": "古都永存的前黎豪气", "ja": "古都に息づく前黎の気概" }
+      }
+    ]
+  },
+  "phu-viet-den-le": {
+    "mode": "cues",
+    "slides": [
+      {
+        "src": "/pages/tham-quan/phu-viet-den-le/03-bo-phu-viet-den-le.jpg",
+        "pos": "center 38%",
+        "at": 0,
+        "label": { "vi": "Phủ Việt Đền Vua Lê — Bảo vật quốc gia (2020)", "en": "King Lê Ceremonial Axes — National Treasure", "fr": "Phủ Việt du temple Lê — Trésor national", "ko": "레 왕 사당 부월 — 국보 (2020)", "zh": "黎大行庙斧钺 — 国家宝物（2020）", "ja": "黎大行廟の斧鉞 — 国宝（2020）" }
+      },
+      {
+        "src": "/pages/tham-quan/phu-viet-den-le/04-phu-viet-son-son-thep-vang.jpg",
+        "pos": "center 44%",
+        "at": 0.085,
+        "cue": { "vi": "sơn son thếp vàng", "en": "lacquered red and gilded", "fr": "laqués de rouge et d'or", "ko": "붉은 칠과 금박", "zh": "朱漆贴金", "ja": "朱塗りと金箔" },
+        "label": { "vi": "Hai hiện vật gỗ quý sơn son thếp vàng dài hơn 3m", "en": "Two 3m Gilded Wooden Ceremonial Axes", "fr": "Deux pièces en bois laqué et doré (>3 m)", "ko": "3m 이상 붉은 칠·금박 목재 부월", "zh": "逾三米朱漆贴金名贵木斧钺", "ja": "長さ3m超の朱塗り金箔斧鉞" }
+      },
+      {
+        "src": "/pages/tham-quan/phu-viet-den-le/05-than-bat-giac-den-le.jpg",
+        "pos": "center 44%",
+        "at": 0.195,
+        "cue": { "vi": "hình bát giác", "en": "octagonal", "fr": "section octogonale", "ko": "팔각형 단면", "zh": "八角形", "ja": "八角形の断面" },
+        "label": { "vi": "Thân Phủ Việt tiết diện hình bát giác", "en": "Octagonal Carved Shaft", "fr": "Hampe de section octogonale", "ko": "팔각형 단면의 부월 몸통", "zh": "八角形柄部细节", "ja": "八角形断面の胴体" }
+      },
+      {
+        "src": "/pages/tham-quan/phu-viet-den-le/06-dau-phu-viet-o-rong.jpg",
+        "pos": "center 44%",
+        "at": 0.28,
+        "cue": { "vi": "ổ rồng", "en": "dragon nest", "fr": "nid de dragons", "ko": "용의 둥지", "zh": "龙巢", "ja": "龍の巣" },
+        "label": { "vi": "Đầu Phủ Việt chạm \"ổ rồng\": 1 rồng mẹ & 2 rồng con", "en": "Head Carved with \"Dragon Nest\" (Mother & 2 Young)", "fr": "« Nid de dragons » : 1 mère et 2 petits dragons", "ko": "어미 용과 새끼 용 두 마리의 \"용의 둥지\"", "zh": "头部雕刻“龙巢”：一母龙二小龙", "ja": "母龍と2匹の子龍の「龍の巣」" }
+      },
+      {
+        "src": "/pages/tham-quan/phu-viet-den-le/07-rong-me-uon-luon.jpg",
+        "pos": "center 48%",
+        "at": 0.37,
+        "cue": { "vi": "năm khúc", "en": "five powerful bends", "fr": "cinq courbes", "ko": "5번의 굽이", "zh": "盘旋成五段", "ja": "5つの曲線" },
+        "label": { "vi": "Thân rồng mẹ uốn lượn 5 khúc cùng đao lửa", "en": "Mother Dragon Coiling Five Bends in Flames", "fr": "Mère dragon ondulant en cinq courbes", "ko": "다섯 굽이로 구불거리는 어미 용과 불꽃", "zh": "母龙盘旋五段与火焰纹", "ja": "5つの曲線を描く母龍と炎の文様" }
+      },
+      {
+        "src": "/pages/tham-quan/phu-viet-den-le/08-dinh-mat-hung-than-kala.jpg",
+        "pos": "center 38%",
+        "at": 0.47,
+        "cue": { "vi": "Kala", "en": "Kala", "fr": "Kala", "ko": "칼라(Kala)", "zh": "Kala", "ja": "カーラ" },
+        "label": { "vi": "Đỉnh Phủ Việt điểm gương mặt hung thần Kala", "en": "Fierce Kala Face Motif (Champa Influence)", "fr": "Visage de Kala au sommet (influence Champa)", "ko": "참파 미술 영향의 흉신 칼라(Kala) 얼굴", "zh": "顶部占婆艺术凶神迦罗（Kala）面具", "ja": "チャンパ美術の影響・凶神カーラの顔" }
+      },
+      {
+        "src": "/pages/tham-quan/phu-viet-den-le/09-luoi-phu-viet-quang-lua.jpg",
+        "pos": "center 50%",
+        "at": 0.625,
+        "cue": { "vi": "quầng lửa", "en": "blazing halo of fire", "fr": "aura de flammes", "ko": "타오르는 불꽃", "zh": "熊熊燃烧的火焰", "ja": "燃え盛る炎" },
+        "label": { "vi": "Lưỡi Phủ Việt cách điệu thành quầng lửa bùng cháy", "en": "Blade Stylized as Blazing Fire from Dragon's Mouth", "fr": "Lame stylisée en aura de flammes ardentes", "ko": "용의 입에서 뿜어져 나오는 불꽃 모양 날", "zh": "巨龙口喷火焰状斧刃", "ja": "龍の口から噴き出す炎の刃" }
+      },
+      {
+        "src": "/pages/tham-quan/phu-viet-den-le/10-hoa-van-than-bat-giac.jpg",
+        "pos": "center 48%",
+        "at": 0.75,
+        "cue": { "vi": "văn bia", "en": "stele inscriptions", "fr": "documents épigraphiques", "ko": "비문 자료", "zh": "石碑资料", "ja": "石碑の資料" },
+        "label": { "vi": "Tạo tác và tiến cúng vào đền từ thế kỷ XVII", "en": "Presented to King Lê Temple in 17th Century", "fr": "Offert au temple dès le XVIIe siècle", "ko": "17세기에 제작되어 헌납된 유물", "zh": "17世纪虔诚制作并进献入庙", "ja": "17世紀に制作・奉納された宝物" }
+      },
+      {
+        "src": "/pages/tham-quan/phu-viet-den-le/11-phu-viet-doc-ban-den-le.jpg",
+        "pos": "center 44%",
+        "at": 0.865,
+        "cue": { "vi": "hiện vật gốc độc bản", "en": "unique original artifact", "fr": "objet original unique", "ko": "독보적인 원본 유물", "zh": "独一无二的原件文物", "ja": "唯一無二のオリジナル遺物" },
+        "label": { "vi": "Hiện vật gốc độc bản mỹ thuật thế kỷ XVII", "en": "Masterpiece of 17th-Century Vietnamese Art", "fr": "Chef-d'œuvre de la sculpture du XVIIe siècle", "ko": "17세기 베트남 조각 미술의 귀중한 자료", "zh": "17世纪越南雕塑艺术珍宝", "ja": "17世紀ベトナム彫刻美術の至宝" }
+      }
+    ]
+  },
+  "hai-nha-bia-den-le": {
+    "mode": "cues",
+    "slides": [
+      {
+        "src": "/pages/tham-quan/hai-nha-bia-den-le/03-nha-bia-trai-toan-canh.jpg",
+        "pos": "center 54%",
+        "at": 0,
+        "label": { "vi": "Hai nhà bia thời Hậu Lê (thế kỷ XVII)", "en": "Two 17th-Century Stele Houses of King Lê Temple", "fr": "Deux pavillons de stèles du XVIIe siècle", "ko": "레 왕 사당의 후레 시대(17세기) 두 비각", "zh": "黎大行庙两座后黎时期（17世纪）碑亭", "ja": "黎大行王廟の後黎朝（17世紀）二碑亭" }
+      },
+      {
+        "src": "/pages/tham-quan/hai-nha-bia-den-le/04-nha-bia-ben-trai.jpg",
+        "pos": "center 50%",
+        "at": 0.07,
+        "cue": { "vi": "bên trái của đền", "en": "left side of the temple", "fr": "côté gauche du temple", "ko": "사당 왼편", "zh": "庙宇左侧", "ja": "廟の左側" },
+        "label": { "vi": "Nhà bia phía bên trái Đền Vua Lê", "en": "Left-Side Stele Pavilion", "fr": "Pavillon de la stèle de gauche", "ko": "사당 왼편 비각과 문비", "zh": "庙宇左侧碑亭", "ja": "廟の左側の碑亭" }
+      },
+      {
+        "src": "/pages/tham-quan/hai-nha-bia-den-le/05-diem-bia-trai-cham-rong.jpg",
+        "pos": "center 50%",
+        "at": 0.195,
+        "cue": { "vi": "lưỡng Long chầu nhật", "en": "pair of dragons facing the sun", "fr": "deux dragons se tournant vers le soleil", "ko": "쌍룡조일", "zh": "双龙朝日", "ja": "太陽に向かう双龍" },
+        "label": { "vi": "Diềm bia chạm khắc lưỡng Long chầu nhật", "en": "Border Carved with Dragons & Sun", "fr": "Pourtour sculpté de deux dragons", "ko": "비석 테두리의 쌍룡 조각", "zh": "碑侧双龙朝日雕刻", "ja": "碑縁の双龍彫刻" }
+      },
+      {
+        "src": "/pages/tham-quan/hai-nha-bia-den-le/06-de-bia-giat-cap.jpg",
+        "pos": "center 56%",
+        "at": 0.22,
+        "cue": { "vi": "Đế bia", "en": "Its base", "fr": "socle de la stèle", "ko": "비석 받침대", "zh": "碑座", "ja": "石碑の台座" },
+        "label": { "vi": "Văn bia bên trái với đế giật cấp vững chắc", "en": "Stepped-Tier Stone Base of Left Stele", "fr": "Socle en gradins solide et majestueux", "ko": "견고한 계단식 비석 받침대", "zh": "稳固威严的阶梯式碑座", "ja": "堅固な段差付き石碑台座" }
+      },
+      {
+        "src": "/pages/tham-quan/hai-nha-bia-den-le/07-minh-van-bia-trai.jpg",
+        "pos": "center 48%",
+        "at": 0.257,
+        "cue": { "vi": "1611", "en": "1611", "fr": "1611", "ko": "1611년", "zh": "1611年", "ja": "1611年" },
+        "label": { "vi": "Minh văn ghi việc tạc 3 pho tượng thánh (1611–1612)", "en": "Inscription on Carving Three Sacred Statues (1611–1612)", "fr": "Création des 3 statues sacrées (1611–1612)", "ko": "1611~1612년 3존 성상 조성 기록 비문", "zh": "1611—1612年造作三尊圣像碑铭", "ja": "1611–1612年三尊聖像制作の銘文" }
+      },
+      {
+        "src": "/pages/tham-quan/hai-nha-bia-den-le/08-nha-bia-ben-phai.jpg",
+        "pos": "center 52%",
+        "at": 0.408,
+        "cue": { "vi": "bên phải của đền", "en": "right side of the temple", "fr": "côté droit du temple", "ko": "사당 오른편", "zh": "庙宇右侧", "ja": "廟の右側" },
+        "label": { "vi": "Nhà bia phía bên phải Đền Vua Lê", "en": "Right-Side Stele Pavilion", "fr": "Pavillon de la stèle de droite", "ko": "사당 오른편 비각", "zh": "庙宇右侧碑亭", "ja": "廟の右側の碑亭" }
+      },
+      {
+        "src": "/pages/tham-quan/hai-nha-bia-den-le/09-bia-phai-lung-rua.jpg",
+        "pos": "center 56%",
+        "at": 0.46,
+        "cue": { "vi": "lưng rùa", "en": "large tortoise", "fr": "dos d'une tortue", "ko": "거북이의 등", "zh": "石龟背上", "ja": "亀の背中" },
+        "label": { "vi": "Văn bia đặt trên lưng rùa đá lớn", "en": "Stele Resting on a Large Stone Tortoise", "fr": "Stèle posée sur le dos d'une grande tortue", "ko": "큰 돌거북 등 위에 세워진 비석", "zh": "立于大石龟背上的石碑", "ja": "大きな石亀の背に載る石碑" }
+      },
+      {
+        "src": "/pages/tham-quan/hai-nha-bia-den-le/10-hoa-van-bia-phai.jpg",
+        "pos": "center 48%",
+        "at": 0.51,
+        "cue": { "vi": "cả 2 mặt", "en": "both faces", "fr": "ses deux faces", "ko": "양면 모두", "zh": "两面均有", "ja": "両面に模様" },
+        "label": { "vi": "Mẫu mực về đồ án văn bia chạm khắc 2 mặt", "en": "Exemplary Two-Sided Vietnamese Stele Carving", "fr": "Modèle type de stèle gravée sur deux faces", "ko": "양면 정교한 조각의 모범 비석", "zh": "两面精雕细琢的石碑典范", "ja": "両面彫刻の模範とされる石碑" }
+      },
+      {
+        "src": "/pages/tham-quan/hai-nha-bia-den-le/11-minh-van-bia-phai.jpg",
+        "pos": "center 50%",
+        "at": 0.61,
+        "cue": { "vi": "Bia ca ngợi", "en": "stele praises", "fr": "stèle fait l'éloge", "ko": "비석은 레 다이 한", "zh": "碑文赞颂", "ja": "石碑は黎大行王を" },
+        "label": { "vi": "Ca ngợi công đức kỳ vĩ của Vua Lê Đại Hành", "en": "Praising King Lê Đại Hành's Great Merits", "fr": "Éloge des mérites du roi Lê Đại Hành", "ko": "레 다이 한 왕의 공덕을 기리는 비문", "zh": "赞颂黎大行皇帝丰功伟绩", "ja": "黎大行王の偉大な功徳を称える碑文" }
+      },
+      {
+        "src": "/pages/tham-quan/hai-nha-bia-den-le/12-hoa-van-mat-bia-phai.jpg",
+        "pos": "center 48%",
+        "at": 0.895,
+        "cue": { "vi": "khí phách hùng tráng", "en": "heroic spirit", "fr": "esprit héroïque", "ko": "웅장한 기백", "zh": "雄壮的气魄", "ja": "雄大な気迫" },
+        "label": { "vi": "Khí phách hùng tráng lưu truyền ngàn đời", "en": "Heroic Spirit Admired for Generations", "fr": "Esprit héroïque pour l'éternité", "ko": "후세가 영원히 우러러볼 웅장한 기백", "zh": "流传千古的雄壮气魄", "ja": "千秋に伝わる雄大な気迫" }
+      }
+    ]
+  },
+  "nha-trung-bay-di-san": {
+    "mode": "cues",
+    "slides": [
+      {
+        "src": "/pages/tham-quan/nha-trung-bay-di-san/04-ho-khai-quat-1977.jpg",
+        "pos": "center 52%",
+        "at": 0,
+        "label": { "vi": "Hố khai quật khảo cổ nền cung điện (1977)", "en": "1977 Palace Brick Courtyard Excavation", "fr": "Fouilles de la cour du palais (1977)", "ko": "1977년 10세기 궁궐 벽돌 안뜰 발굴 터", "zh": "1977年10世纪宫殿砖庭发掘遗址", "ja": "1977年発掘の10世紀宮殿レンガ庭" }
+      },
+      {
+        "src": "/pages/tham-quan/nha-trung-bay-di-san/03-sa-ban-kinh-do-hoa-lu.jpg",
+        "pos": "center 50%",
+        "at": 0.14,
+        "cue": { "vi": "trung tâm của Kinh đô", "en": "central area of the ancient", "fr": "centre de l'ancienne capitale", "ko": "과거 호아루 도읍의 중심", "zh": "昔日华闾国都的中心", "ja": "昔のホアルー都の中心" },
+        "label": { "vi": "Sa bàn trung tâm Kinh đô Hoa Lư thế kỷ X", "en": "Scale Map of the 10th-Century Hoa Lư Capital", "fr": "Maquette du centre de l'ancienne capitale", "ko": "10세기 호아루 도읍 중심부 사반", "zh": "10世纪华闾国都中心沙盘", "ja": "10世紀ホアルー都中心部のジオラマ" }
+      },
+      {
+        "src": "/pages/tham-quan/nha-trung-bay-di-san/05-khong-gian-trung-bay-1.jpg",
+        "pos": "center 50%",
+        "at": 0.22,
+        "cue": { "vi": "Nhà trưng bày", "en": "The exhibition house", "fr": "La salle d'exposition", "ko": "전시관은", "zh": "展示馆目前", "ja": "展示館は現在" },
+        "label": { "vi": "Không gian trưng bày hiện vật gốc thế kỷ X", "en": "Exhibition Hall of Original 10th-Century Artifacts", "fr": "Salle d'exposition d'objets originaux", "ko": "10세기 원본 유물 전시 공간", "zh": "10世纪原件文物展示空间", "ja": "10世紀オリジナル遺物展示空間" }
+      },
+      {
+        "src": "/pages/tham-quan/nha-trung-bay-di-san/06-tu-trung-bay-hien-vat.jpg",
+        "pos": "center 50%",
+        "at": 0.275,
+        "cue": { "vi": "bảo tồn", "en": "conserving", "fr": "préservation", "ko": "보존하고", "zh": "保护", "ja": "保存" },
+        "label": { "vi": "Tư liệu khoa học & bảo tồn di sản", "en": "Conservation & Heritage Research", "fr": "Préservation et mise en valeur du patrimoine", "ko": "유적지 가치 보존과 연구 자료", "zh": "科学资料与遗产保护", "ja": "科学資料と遺跡の保存活動" }
+      },
+      {
+        "src": "/pages/tham-quan/nha-trung-bay-di-san/07-vo-vai-the-ky-x.jpg",
+        "pos": "center 50%",
+        "at": 0.322,
+        "cue": { "vi": "vò, vại, bát, đĩa", "en": "jugs, large jars, bowls", "fr": "jarres, des urnes, des bols", "ko": "항아리, 독, 사발", "zh": "瓮、缸、碗、碟", "ja": "壺、甕、鉢、皿" },
+        "label": { "vi": "Di vật gốm thế kỷ X: vò, vại, bát, đĩa", "en": "10th-Century Ceramics: Jars, Jugs & Bowls", "fr": "Céramiques du Xe s. : jarres, urnes et bols", "ko": "10세기 도기 유물: 항아리·독·사발", "zh": "10世纪陶瓷文物：瓮、缸、碗、碟", "ja": "10世紀の陶器遺物：壺・甕・鉢・皿" }
+      },
+      {
+        "src": "/pages/tham-quan/nha-trung-bay-di-san/08-tien-thai-binh-thien-phuc.jpg",
+        "pos": "center 50%",
+        "at": 0.365,
+        "cue": { "vi": "Thái Bình Hưng Bảo", "en": "Thái Bình Hưng Bảo", "fr": "Thái Bình Hưng Bảo", "ko": "태평흥보", "zh": "太平兴宝", "ja": "太平興宝" },
+        "label": { "vi": "Tiền \"Thái Bình Hưng Bảo\" & \"Thiên Phúc Trấn Bảo\"", "en": "Thái Bình Hưng Bảo & Thiên Phúc Trấn Bảo Coins", "fr": "Monnaies Thái Bình Hưng Bảo et Thiên Phúc", "ko": "태평흥보·천복진보 화폐 컬렉션", "zh": "“太平兴宝”与“天福镇宝”古钱", "ja": "「太平興宝」と「天福鎮宝」硬貨" }
+      },
+      {
+        "src": "/pages/tham-quan/nha-trung-bay-di-san/09-can-canh-dong-tien-co.jpg",
+        "pos": "center 50%",
+        "at": 0.415,
+        "cue": { "vi": "độc lập dân tộc", "en": "consciousness of independence", "fr": "indépendance nationale", "ko": "민족 독립 의식", "zh": "民族独立", "ja": "民族の独立意識" },
+        "label": { "vi": "Cận cảnh tiền đồng thời Đinh – Tiền Lê", "en": "Close-up of Đinh & Early Lê Bronze Coins", "fr": "Détail des premières monnaies vietnamiennes", "ko": "딘·전레 시대 최초의 동전 근접 사진", "zh": "丁朝与前黎朝古铜钱特写", "ja": "丁朝・前黎朝銅貨のクローズアップ" }
+      },
+      {
+        "src": "/pages/tham-quan/nha-trung-bay-di-san/10-gach-dai-viet-quoc-quan-thanh-chuyen.jpg",
+        "pos": "center 50%",
+        "at": 0.461,
+        "cue": { "vi": "Đại Việt quốc quân thành chuyên", "en": "Đại Việt quốc quân thành chuyên", "fr": "Đại Việt quốc quân thành chuyên", "ko": "대월국군성전", "zh": "大越国军城砖", "ja": "大越国軍城磚" },
+        "label": { "vi": "Gạch \"Đại Việt quốc quân thành chuyên\"", "en": "Brick Inscribed \"Đại Việt Quốc Quân Thành Chuyên\"", "fr": "Brique « Đại Việt quốc quân thành chuyên »", "ko": "명문 벽돌 \"대월국군성전\"", "zh": "“大越国军城砖”铭文砖", "ja": "「大越国軍城磚」銘入りレンガ" }
+      },
+      {
+        "src": "/pages/tham-quan/nha-trung-bay-di-san/11-ngoi-ong-hoa-sen.jpg",
+        "pos": "center 50%",
+        "at": 0.505,
+        "cue": { "vi": "hoa sen", "en": "lotus", "fr": "fleurs de lotus", "ko": "연꽃", "zh": "莲花", "ja": "蓮の花" },
+        "label": { "vi": "Gạch hoa sen & ngói ống cung đình", "en": "Lotus Decorative Bricks & Cylindrical Tiles", "fr": "Tuiles tubulaires et motifs de lotus", "ko": "연꽃 문양 벽돌과 궁중 기와", "zh": "莲花纹砖与宫廷筒瓦", "ja": "蓮花文様レンガと宮廷筒瓦" }
+      },
+      {
+        "src": "/pages/tham-quan/nha-trung-bay-di-san/12-tuong-chim-phuong-dat-nung.jpg",
+        "pos": "center 46%",
+        "at": 0.525,
+        "cue": { "vi": "chim phượng", "en": "phoenix", "fr": "phénix", "ko": "봉황", "zh": "凤凰", "ja": "鳳凰" },
+        "label": { "vi": "Tượng chim phượng kiến trúc cung đình thế kỷ X", "en": "Terracotta Phoenix Roof Ornaments", "fr": "Phénix en terre cuite d'architecture palatiale", "ko": "10세기 궁중 건축의 봉황 장식", "zh": "10世纪宫廷建筑凤凰陶饰", "ja": "10世紀宮廷建築の鳳凰装飾" }
+      },
+      {
+        "src": "/pages/tham-quan/nha-trung-bay-di-san/13-cot-kinh-phat-toan-canh.jpg",
+        "pos": "center 48%",
+        "at": 0.568,
+        "cue": { "vi": "Cột kinh Phật", "en": "Buddhist Sutra Pillars", "fr": "Pilier soutra bouddhique", "ko": "불경 기둥", "zh": "佛经柱", "ja": "仏経柱" },
+        "label": { "vi": "Cột kinh Phật — Bảo vật quốc gia (2024)", "en": "Buddhist Sutra Pillar — National Treasure (2024)", "fr": "Pilier soutra bouddhique — Trésor national", "ko": "불경 기둥 (다라니 석당) — 국보 (2024)", "zh": "佛经柱 — 国家宝物（2024）", "ja": "仏経柱（ダラニ塔）— 国宝（2024）" }
+      },
+      {
+        "src": "/pages/tham-quan/nha-trung-bay-di-san/14-dinh-cot-kinh-phat.jpg",
+        "pos": "center 48%",
+        "at": 0.638,
+        "cue": { "vi": "hiện vật nguyên gốc", "en": "original artifacts, one of a kind", "fr": "objet original, unique", "ko": "유일무이한 형태의 원본", "zh": "原件文物", "ja": "オリジナル遺物" },
+        "label": { "vi": "Đỉnh búp sen trên Cột kinh Phật thế kỷ X", "en": "Lotus Bud Finial of the Sutra Pillar", "fr": "Sommet en bouton de lotus du pilier soutra", "ko": "불경 기둥 상단의 연꽃 봉오리 조각", "zh": "佛经柱顶部莲蕾石雕", "ja": "仏経柱頂部の蓮蕾彫刻" }
+      },
+      {
+        "src": "/pages/tham-quan/nha-trung-bay-di-san/15-minh-van-cot-kinh.jpg",
+        "pos": "center 50%",
+        "at": 0.685,
+        "cue": { "vi": "Nội dung minh văn", "en": "inscriptions on the sutra", "fr": "inscriptions gravées sur le pilier", "ko": "경전에 새겨진 명문", "zh": "经柱上雕刻的铭文", "ja": "経柱に刻まれた銘文" },
+        "label": { "vi": "Minh văn chữ Hán sớm nhất thời phong kiến tự chủ", "en": "Earliest Surviving Autonomous-Era Stone Inscription", "fr": "Plus ancienne inscription de l'ère autonome", "ko": "자주 봉건 시대 가장 이른 시기의 석각 명문", "zh": "越南自主封建时期最早石刻铭文", "ja": "自主封建時代最古の石刻銘文" }
+      },
+      {
+        "src": "/pages/tham-quan/nha-trung-bay-di-san/16-de-sen-cot-kinh-phat.jpg",
+        "pos": "center 52%",
+        "at": 0.785,
+        "cue": { "vi": "2024", "en": "2024", "fr": "2024", "ko": "2024년", "zh": "2024年", "ja": "2024年" },
+        "label": { "vi": "Đài sen & đế bát giác Cột kinh Phật (Bảo vật 2024)", "en": "Lotus Pedestal of the 2024 National Treasure", "fr": "Socle en lotus du Trésor national (2024)", "ko": "2024년 국보 불경 기둥의 연꽃 대좌", "zh": "2024年国家宝物佛经柱莲花底座", "ja": "2024年国宝・仏経柱の蓮華台座" }
+      },
+      {
+        "src": "/pages/tham-quan/nha-trung-bay-di-san/17-tong-the-nha-trung-bay.jpg",
+        "pos": "center 50%",
+        "at": 0.863,
+        "cue": { "vi": "Qua những di vật", "en": "The artifacts on display", "fr": "Les objets exposés", "ko": "전시된 유물들을", "zh": "通过展出的这些文物", "ja": "展示されている遺物" },
+        "label": { "vi": "Nền móng nghệ thuật văn hóa Đinh – Tiền Lê", "en": "Artistic Foundations of Đinh & Early Lê Culture", "fr": "Fondements artistiques des dynasties Đinh et Tiền Lê", "ko": "딘·전레 시대가 다진 베트남 문화의 토대", "zh": "丁朝与前黎朝文化艺术基石", "ja": "丁朝・前黎朝の文化芸術的基盤" }
+      }
+    ]
+  }
 }
