@@ -970,6 +970,9 @@ export function mountVisitGuide(audio) {
       wave.style.left = `${event.clientX - rect.left - size / 2}px`;
       wave.style.top = `${event.clientY - rect.top - size / 2}px`;
     }
+    if (typeof getComputedStyle === 'function' && getComputedStyle(btn).position === 'static') {
+      btn.classList?.add('has-tap-ripple-rel');
+    }
     btn.classList?.add('has-tap-ripple');
     btn.append?.(wave);
     const remove = () => wave.remove?.();

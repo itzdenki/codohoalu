@@ -3543,9 +3543,12 @@ body,
    TACTILE PRESS ANIMATIONS, GOLDEN TAP RIPPLES & TRANSITIONS
    ========================================================= */
 .has-tap-ripple {
-  position: relative;
   overflow: hidden;
   -webkit-tap-highlight-color: transparent;
+}
+
+.has-tap-ripple-rel {
+  position: relative;
 }
 
 .tap-ripple {

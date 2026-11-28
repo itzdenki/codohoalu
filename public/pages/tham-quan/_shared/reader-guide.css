@@ -964,9 +964,12 @@ body.reader-guide {
 }
 
 .has-tap-ripple {
-  position: relative;
   overflow: hidden;
   -webkit-tap-highlight-color: transparent;
+}
+
+.has-tap-ripple-rel {
+  position: relative;
 }
 
 .guide-tap-ripple {

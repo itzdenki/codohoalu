@@ -147,7 +147,7 @@
   });
   if (guideView) {
     document.body.classList.add('reader-guide-loading');
-    import('./reader-guide.js?v=15')
+    import('./reader-guide.js?v=16')
       .then(({ mountVisitGuide }) => mountVisitGuide(audio))
       .catch(error => {
         audio?.pause();
